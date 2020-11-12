@@ -1,0 +1,114 @@
+{
+	"__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/birch/big_door_birch_top_right",
+		"big_door_birch_top_right": "manyideas_doors:block/big_doors/birch/big_door_birch_top_right"
+	},
+	"elements": [
+		{
+			"name": "glass",
+			"from": [
+				0,
+				0,
+				1
+			],
+			"to": [
+				16,
+				15,
+				2
+			],
+			"faces": {
+				"north": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						16,
+						1,
+						0,
+						16
+					]
+				},
+				"east": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						15,
+						1,
+						16,
+						16
+					],
+					"cullface": "east"
+				},
+				"south": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						0,
+						1,
+						16,
+						16
+					]
+				}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [
+				0,
+				15,
+				1
+			],
+			"to": [
+				16,
+				16,
+				2
+			],
+			"faces": {
+				"north": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						16,
+						0,
+						0,
+						1
+					]
+				},
+				"east": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						15,
+						0,
+						16,
+						1
+					],
+					"cullface": "east"
+				},
+				"south": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					]
+				},
+				"up": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					],
+					"cullface": "up"
+				},
+				"down": {
+					"texture": "#big_door_birch_top_right",
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					]
+				}
+			}
+		}
+	]
+}

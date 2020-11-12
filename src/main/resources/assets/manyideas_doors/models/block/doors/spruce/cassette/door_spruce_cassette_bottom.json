@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_bottom",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/spruce/cassette/door_spruce_cassette_bottom",
+        "edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+    }
+}

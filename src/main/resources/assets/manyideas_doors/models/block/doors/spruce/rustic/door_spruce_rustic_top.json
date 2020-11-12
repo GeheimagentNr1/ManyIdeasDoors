@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/spruce/door_spruce_top",
+    "textures": {
+        "top": "manyideas_doors:block/doors/spruce/rustic/door_spruce_rustic_top"
+    }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "manyideas_doors:block/templates/big_doors/big_door_top_right",
+	"textures": {
+		"door": "manyideas_doors:block/big_doors/spruce/big_door_spruce_top_right",
+		"edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+	}
+}

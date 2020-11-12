@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P",
+    "G",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "manyideas_core:plank_oak"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:door_oak_glass",
+    "count": 2
+  }
+}

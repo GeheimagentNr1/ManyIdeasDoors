@@ -1,0 +1,33 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/laboratory/big_door_laboratory_bottom_left",
+        "big_door_laboratory_bottom_middle": "manyideas_doors:block/big_doors/laboratory/big_door_laboratory_bottom_middle",
+        "big_door_laboratory_bottom_left": "manyideas_doors:block/big_doors/laboratory/big_door_laboratory_bottom_left"
+    },
+    "elements": [
+        {
+            "name": "outerframe1",
+            "from": [ 0, 0, 6.5 ], 
+            "to": [ 4, 16, 9.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_laboratory_bottom_left", "uv": [ 0, 0, 4, 16 ] },
+                "east": { "texture": "#big_door_laboratory_bottom_left", "uv": [ 2, 0, 5, 16 ] },
+                "south": { "texture": "#big_door_laboratory_bottom_left", "uv": [ 0, 0, 4, 16 ] },
+                "west": { "texture": "#big_door_laboratory_bottom_left", "uv": [ 2, 0, 5, 16 ], "cullface": "west" },
+                "down": { "texture": "#big_door_laboratory_bottom_left", "uv": [ 0, 8, 4, 11 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "westframe1",
+            "from": [ 4, 0, 7 ], 
+            "to": [ 6, 16, 9 ], 
+            "faces": {
+                "north": { "texture": "#big_door_laboratory_bottom_middle", "uv": [ 8, 0, 10, 16 ] },
+                "east": { "texture": "#big_door_laboratory_bottom_middle", "uv": [ 7, 0, 9, 16 ] },
+                "south": { "texture": "#big_door_laboratory_bottom_middle", "uv": [ 6, 0, 8, 16 ] },
+                "down": { "texture": "#big_door_laboratory_bottom_middle", "uv": [ 7, 14, 9, 16 ], "cullface": "down" }
+            }
+        }
+    ]
+}

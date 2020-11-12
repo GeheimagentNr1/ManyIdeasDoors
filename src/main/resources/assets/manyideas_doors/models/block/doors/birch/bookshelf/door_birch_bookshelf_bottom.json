@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/birch/door_birch_bottom",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/birch/bookshelf/door_birch_bookshelf_bottom"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/french/door_french_bottom_hinge",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/acacia/french/door_acacia_french_bottom",
+        "edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "textures": {
+        "particle": "#top"
+    },
+    "elements": [
+        {
+            "name": "left_door_pillar",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 3, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#edge", "uv": [ 3, 0, 6, 16 ], "cullface": "north" },
+                "east": { "texture": "#top", "uv": [ 3, 0, 0, 16 ] },
+                "south": { "texture": "#edge", "uv": [ 3, 0, 6, 16 ] },
+                "west": { "texture": "#top", "uv": [ 0, 0, 3, 16 ], "cullface": "west" },
+                "up": { "texture": "#edge", "uv": [ 3, 0, 6, 3 ], "cullface": "up" }
+            }
+        },
+        {
+            "name": "right_door_pillar",
+            "from": [ 0, 0, 13 ], 
+            "to": [ 3, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#edge", "uv": [ 3, 0, 6, 16 ] },
+                "east": { "texture": "#top", "uv": [ 16, 0, 13, 16 ] },
+                "south": { "texture": "#edge", "uv": [ 3, 0, 6, 16 ], "cullface": "south" },
+                "west": { "texture": "#top", "uv": [ 13, 0, 16, 16 ], "cullface": "west" },
+                "up": { "texture": "#edge", "uv": [ 3, 0, 6, 3 ], "cullface": "up" }
+            }
+        },
+        {
+            "name": "top_door_pillar",
+            "from": [ 0, 13, 3 ], 
+            "to": [ 3, 16, 13 ], 
+            "faces": {
+                "east": { "texture": "#top", "uv": [ 13, 0, 3, 3 ] },
+                "west": { "texture": "#top", "uv": [ 3, 0, 13, 3 ], "cullface": "west" },
+                "up": { "texture": "#edge", "uv": [ 3, 3, 6, 13 ], "cullface": "up" },
+                "down": { "texture": "#edge", "uv": [ 3, 3, 6, 13 ] }
+            }
+        },
+        {
+            "name": "glass",
+            "from": [ 1, 0, 3 ], 
+            "to": [ 2, 13, 13 ], 
+            "faces": {
+                "east": { "texture": "#top", "uv": [ 13, 3, 3, 16 ] },
+                "west": { "texture": "#top", "uv": [ 3, 3, 13, 16 ] }
+            }
+        },
+        {
+            "name": "door_handle_1",
+            "from": [ 2, 0, 12 ], 
+            "to": [ 3, 1, 13 ], 
+            "faces": {
+                "north": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] },
+                "east": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] },
+                "up": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] },
+                "down": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] }
+            }
+        },
+        {
+            "name": "door_handle_2",
+            "from": [ 0, 0, 12 ], 
+            "to": [ 1, 1, 13 ], 
+            "faces": {
+                "north": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] },
+                "west": { "texture": "#top", "uv": [ 12, 15, 13, 16 ], "cullface": "west" },
+                "up": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] },
+                "down": { "texture": "#top", "uv": [ 12, 15, 13, 16 ] }
+            }
+        }
+    ]
+}

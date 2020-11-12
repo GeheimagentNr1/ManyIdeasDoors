@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_top",
+    "textures": {
+        "top": "manyideas_doors:block/doors/spruce/shoji/door_spruce_shoji_top",
+        "edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+    }
+}

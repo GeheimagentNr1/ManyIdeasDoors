@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/french/door_french_top_hinge",
+    "textures": {
+        "top": "manyideas_doors:block/doors/dark_oak/french/door_dark_oak_french_top",
+        "edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+    }
+}

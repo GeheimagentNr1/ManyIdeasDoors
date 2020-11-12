@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/acacia/door_acacia_bottom",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/acacia/bookshelf/door_acacia_bookshelf_bottom"
+    }
+}

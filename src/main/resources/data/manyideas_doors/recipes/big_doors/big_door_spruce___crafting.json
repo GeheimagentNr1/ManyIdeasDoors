@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DD",
+    "DD"
+  ],
+  "key": {
+    "D": {
+      "item": "manyideas_doors:door_spruce_rustic"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:big_door_spruce"
+  }
+}

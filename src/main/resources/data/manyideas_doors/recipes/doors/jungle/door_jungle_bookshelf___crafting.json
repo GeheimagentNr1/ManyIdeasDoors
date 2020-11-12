@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P",
+    "B",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "manyideas_core:plank_jungle"
+    },
+    "B": {
+      "item": "minecraft:bookshelf"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:door_jungle_bookshelf",
+    "count": 2
+  }
+}

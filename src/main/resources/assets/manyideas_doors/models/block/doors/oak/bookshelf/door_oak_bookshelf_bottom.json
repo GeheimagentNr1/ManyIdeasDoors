@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/oak/door_oak_bottom",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/oak/bookshelf/door_oak_bookshelf_bottom"
+    }
+}

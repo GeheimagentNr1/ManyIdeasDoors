@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_bottom_hinge",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/jungle/frosted/door_jungle_frosted_bottom",
+        "edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+    }
+}

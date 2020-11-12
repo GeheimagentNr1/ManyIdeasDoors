@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/door_top",
+    "textures": {
+        "top": "manyideas_doors:block/doors/special/redstone/door_special_redstone_top",
+        "edge": "manyideas_doors:block/doors/special/redstone/door_special_redstone_bottom"
+    }
+}

@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_top_hinge",
+    "textures": {
+        "top": "manyideas_doors:block/doors/oak/cassette/door_oak_cassette_top",
+        "edge": "minecraft:block/stripped_oak_log"
+    }
+}

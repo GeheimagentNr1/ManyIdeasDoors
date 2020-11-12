@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/french/door_french_bottom_hinge",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/spruce/french/door_spruce_french_bottom",
+        "edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+    }
+}

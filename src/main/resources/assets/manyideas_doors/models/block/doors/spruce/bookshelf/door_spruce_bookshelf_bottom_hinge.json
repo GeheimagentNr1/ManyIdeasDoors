@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/spruce/door_spruce_bottom_hinge",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/spruce/bookshelf/door_spruce_bookshelf_bottom"
+    }
+}

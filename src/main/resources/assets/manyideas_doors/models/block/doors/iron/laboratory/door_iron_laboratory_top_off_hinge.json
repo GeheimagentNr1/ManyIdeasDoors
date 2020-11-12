@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/iron/door_iron_top_hinge",
+    "textures": {
+        "top": "manyideas_doors:block/doors/iron/laboratory/door_iron_laboratory_top_off"
+    }
+}

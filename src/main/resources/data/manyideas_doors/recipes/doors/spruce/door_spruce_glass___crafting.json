@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P",
+    "G",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "manyideas_core:plank_spruce"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:door_spruce_glass",
+    "count": 2
+  }
+}

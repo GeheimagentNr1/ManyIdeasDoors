@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "IGI",
+    "GDG",
+    "IGI"
+  ],
+  "key": {
+    "I": {
+      "item": "manyideas_core:plate_iron"
+    },
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:big_door_laboratory"
+  }
+}

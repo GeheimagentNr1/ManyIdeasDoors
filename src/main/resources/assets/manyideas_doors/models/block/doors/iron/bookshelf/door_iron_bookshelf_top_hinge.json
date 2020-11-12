@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/iron/door_iron_top_hinge",
+    "textures": {
+        "top": "minecraft:block/bookshelf"
+    }
+}

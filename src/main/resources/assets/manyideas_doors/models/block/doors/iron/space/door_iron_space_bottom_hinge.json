@@ -1,0 +1,199 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/doors/iron/space/door_iron_space_bottom",
+        "bottom": "manyideas_doors:block/doors/iron/space/door_iron_space_bottom"
+    },
+    "elements": [
+        {
+            "name": "Verankerung",
+            "from": [ 0, 0, 14 ], 
+            "to": [ 2, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 0, 0, 2, 16 ] },
+                "south": { "texture": "#bottom", "uv": [ 0, 0, 2, 16 ], "cullface": "south" },
+                "west": { "texture": "#bottom", "uv": [ 2, 0, 1, 16 ], "cullface": "west" },
+                "down": { "texture": "#bottom", "uv": [ 0, 0, 2, 2 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "Infotafel",
+            "from": [ 1, 1, 0 ], 
+            "to": [ 2, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 15, 0, 16, 15 ], "cullface": "north" },
+                "east": { "texture": "#bottom", "uv": [ 13, 0, 16, 15 ] },
+                "south": { "texture": "#bottom", "uv": [ 0, 0, 1, 15 ] },
+                "west": { "texture": "#bottom", "uv": [ 16, 0, 13, 15 ] }
+            }
+        },
+        {
+            "name": "Rahmen",
+            "from": [ 1, 1, 13 ], 
+            "to": [ 2, 11, 14 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 2, 5, 3, 15 ] },
+                "west": { "texture": "#bottom", "uv": [ 2, 5, 3, 15 ] }
+            }
+        },
+        {
+            "name": "Rahmen",
+            "from": [ 1, 1, 12 ], 
+            "to": [ 2, 3, 13 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 3, 13, 4, 15 ] },
+                "west": { "texture": "#bottom", "uv": [ 3, 13, 4, 15 ] }
+            }
+        },
+        {
+            "name": "Rahmen",
+            "from": [ 1, 1, 3 ], 
+            "to": [ 2, 3, 4 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 12, 13, 13, 15 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 13, 13, 15 ] }
+            }
+        },
+        {
+            "name": "Rahmen",
+            "from": [ 1, 13, 4 ], 
+            "to": [ 2, 16, 5 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 11, 0, 12, 3 ] },
+                "west": { "texture": "#bottom", "uv": [ 11, 0, 12, 3 ] }
+            }
+        },
+        {
+            "name": "Rahmen",
+            "from": [ 1, 11, 3 ], 
+            "to": [ 2, 16, 4 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 12, 0, 13, 5 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 0, 13, 5 ] }
+            }
+        },
+        {
+            "name": "Verankerung",
+            "from": [ 2, 0, 14 ], 
+            "to": [ 3, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 0, 0, 1, 16 ] },
+                "east": { "texture": "#bottom", "uv": [ 0, 0, 2, 16 ] },
+                "south": { "texture": "#bottom", "uv": [ 0, 0, 1, 16 ], "cullface": "south" },
+                "down": { "texture": "#bottom", "uv": [ 0, 0, 1, 2 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "Rahmen",
+            "from": [ 1, 1, 4 ], 
+            "to": [ 2, 2, 12 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 4, 14, 12, 15 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 14, 4, 15 ] }
+            }
+        },
+        {
+            "name": "Verankerung oben",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 2, 1, 14 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 2, 15, 4, 16 ], "cullface": "north" },
+                "west": { "texture": "#bottom", "uv": [ 2, 15, 16, 16 ], "cullface": "west" },
+                "up": { "texture": "#bottom", "uv": [ 0, 0, 2, 14 ] },
+                "down": { "texture": "#bottom", "uv": [ 0, 0, 2, 14 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "Verankerung oben",
+            "from": [ 2, 0, 0 ], 
+            "to": [ 3, 1, 14 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 0, 0, 1, 1 ], "cullface": "north" },
+                "east": { "texture": "#bottom", "uv": [ 2, 15, 16, 16 ] },
+                "up": { "texture": "#bottom", "uv": [ 0, 0, 1, 14 ] },
+                "down": { "texture": "#bottom", "uv": [ 0, 0, 1, 14 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "Riegel",
+            "from": [ 0.25, 13, 6 ], 
+            "to": [ 2.75, 16, 14 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 6, 1, 8.5, 4 ] },
+                "east": { "texture": "#bottom", "uv": [ 2, 0, 10, 3 ] },
+                "west": { "texture": "#bottom", "uv": [ 10, 0, 2, 3 ] },
+                "down": { "texture": "#bottom", "uv": [ 5, 5, 7.5, 13 ] }
+            }
+        },
+        {
+            "name": "T�rblatt",
+            "from": [ 0.5, 13, 5 ], 
+            "to": [ 2.5, 16, 6 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 7, 1, 9, 4 ] },
+                "east": { "texture": "#bottom", "uv": [ 10, 0, 11, 3 ] },
+                "west": { "texture": "#bottom", "uv": [ 10, 0, 11, 3 ] }
+            }
+        },
+        {
+            "name": "T�rblatt",
+            "from": [ 0.5, 11, 4 ], 
+            "to": [ 2.5, 13, 14 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 7, 3, 9, 5 ] },
+                "east": { "texture": "#bottom", "uv": [ 2, 3, 12, 5 ] },
+                "south": { "texture": "#bottom", "uv": [ 5, 3, 7, 5 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 3, 2, 5 ] },
+                "up": { "texture": "#bottom", "uv": [ 6, 4, 8, 14 ] },
+                "down": { "texture": "#bottom", "uv": [ 7, 4, 9, 14 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0.5, 3, 12 ], 
+            "to": [ 2.5, 11, 13 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 6, 6, 8, 14 ] },
+                "east": { "texture": "#bottom", "uv": [ 3, 5, 4, 13 ] },
+                "south": { "texture": "#bottom", "uv": [ 6, 6, 8, 14 ] },
+                "west": { "texture": "#bottom", "uv": [ 3, 5, 4, 13 ] },
+                "down": { "texture": "#bottom", "uv": [ 4, 3, 6, 4 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0.5, 3, 3 ], 
+            "to": [ 2.5, 11, 4 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 6, 6, 8, 14 ] },
+                "east": { "texture": "#bottom", "uv": [ 12, 5, 13, 13 ] },
+                "south": { "texture": "#bottom", "uv": [ 6, 6, 8, 14 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 5, 13, 13 ] },
+                "up": { "texture": "#bottom", "uv": [ 5, 3, 7, 4 ] },
+                "down": { "texture": "#bottom", "uv": [ 4, 3, 6, 4 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 1, 3, 4 ], 
+            "to": [ 2, 11, 12 ], 
+            "faces": {
+                "east": { "texture": "#bottom", "uv": [ 4, 5, 12, 13 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 5, 4, 13 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0.5, 2, 4 ], 
+            "to": [ 2.5, 3, 12 ], 
+            "faces": {
+                "north": { "texture": "#bottom", "uv": [ 6, 2, 8, 3 ] },
+                "east": { "texture": "#bottom", "uv": [ 4, 13, 12, 14 ] },
+                "south": { "texture": "#bottom", "uv": [ 6, 2, 8, 3 ] },
+                "west": { "texture": "#bottom", "uv": [ 12, 13, 4, 14 ] },
+                "up": { "texture": "#bottom", "uv": [ 7, 6, 9, 14 ] },
+                "down": { "texture": "#bottom", "uv": [ 7, 5, 9, 13 ] }
+            }
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "P",
+    "P",
+    "P"
+  ],
+  "key": {
+    "P": {
+      "item": "manyideas_core:plate_iron"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:door_iron_rusted",
+    "count": 2
+  }
+}

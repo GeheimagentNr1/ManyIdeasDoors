@@ -1,0 +1,71 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/oak/big_door_oak_mid_bottom_right",
+        "big_door_oak_mid_bottom_right": "manyideas_doors:block/big_doors/oak/big_door_oak_mid_bottom_right"
+    },
+    "elements": [
+        {
+            "name": "blatt",
+            "from": [ 0.5, 2, 2 ], 
+            "to": [ 2.5, 14, 13 ], 
+            "faces": {
+                "east": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 13, 2, 2, 14 ] },
+                "west": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 2, 2, 13, 14 ] }
+            }
+        },
+        {
+            "name": "west frame",
+            "from": [ 0, 0, 13 ], 
+            "to": [ 3, 16, 16 ], 
+            "faces": {
+                "north": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 13, 0, 14, 16 ] },
+                "east": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 16, 0, 13, 16 ] },
+                "south": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 15, 0, 16, 16 ], "cullface": "south" },
+                "west": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 13, 0, 16, 16 ], "cullface": "west" }
+            }
+        },
+        {
+            "name": "top frame",
+            "from": [ 0.25, 14, 0 ], 
+            "to": [ 2.75, 16, 13 ], 
+            "faces": {
+                "east": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 13, 0, 0, 2 ] },
+                "west": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 0, 0, 13, 2 ] },
+                "down": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 1, 0, 13, 1 ], "rotation": 90 }
+            }
+        },
+        {
+            "name": "east frame",
+            "from": [ 0.25, 2, 0 ], 
+            "to": [ 2.75, 14, 2 ], 
+            "faces": {
+                "east": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 2, 2, 0, 14 ] },
+                "south": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 1, 1, 2, 13 ] },
+                "west": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 0, 2, 2, 14 ] }
+            }
+        },
+        {
+            "name": "bottom frame",
+            "from": [ 0.25, 0, 0 ], 
+            "to": [ 2.75, 2, 13 ], 
+            "faces": {
+                "east": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 13, 14, 0, 16 ] },
+                "west": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 0, 14, 13, 16 ] },
+                "up": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 0, 14, 13, 15 ], "rotation": 90 }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 0, 0, 12 ], 
+            "to": [ 3, 1, 13 ], 
+            "faces": {
+                "north": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 12, 15, 13, 16 ] },
+                "east": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 12, 15, 13, 16 ] },
+                "west": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 12, 15, 13, 16 ], "cullface": "west" },
+                "up": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 12, 15, 13, 16 ], "rotation": 90 },
+                "down": { "texture": "#big_door_oak_mid_bottom_right", "uv": [ 12, 15, 13, 16 ], "rotation": 90 }
+            }
+        }
+    ]
+}

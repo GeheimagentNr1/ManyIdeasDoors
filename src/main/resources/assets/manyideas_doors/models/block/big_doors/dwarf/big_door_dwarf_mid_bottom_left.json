@@ -1,0 +1,157 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/dwarf/big_door_dwarf_mid_bottom_left",
+        "big_door_dwarf_mid_bottom_left": "manyideas_doors:block/big_doors/dwarf/big_door_dwarf_mid_bottom_left"
+    },
+    "elements": [
+        {
+            "name": "west frame",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 3, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 3, 0, 0, 16 ], "cullface": "north" },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 0, 0, 3, 16 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 0, 0, 3, 16 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 0, 0, 3, 16 ], "cullface": "west" }
+            }
+        },
+        {
+            "name": "blatt",
+            "from": [ 3, 0, 1 ], 
+            "to": [ 16, 16, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 16, 0, 3, 16 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 3, 0, 16, 16 ] }
+            }
+        },
+        {
+            "name": "fresco 1",
+            "from": [ 7, 6, 0.5 ], 
+            "to": [ 16, 7, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 16, 9, 7, 10 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 7, 9, 16, 10 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 7, 9, 16, 10 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 7, 9, 16, 10 ] }
+            }
+        },
+        {
+            "name": "fresco 2",
+            "from": [ 3, 10, 0.5 ], 
+            "to": [ 6, 11, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 5, 3, 6 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 3, 5, 6, 6 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 3, 5, 6, 6 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 3, 5, 6, 6 ] }
+            }
+        },
+        {
+            "name": "fresco 3",
+            "from": [ 11, 10, 0.5 ], 
+            "to": [ 16, 11, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 16, 5, 11, 6 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 5, 16, 6 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 5, 13, 6 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 5, 16, 6 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 5, 16, 6 ] }
+            }
+        },
+        {
+            "name": "fresco 4",
+            "from": [ 10, 0, 0.5 ], 
+            "to": [ 11, 3, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 10, 13, 11, 16 ] },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 10, 13, 11, 16 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 10, 13, 11, 16 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 10, 13, 11, 16 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 10, 13, 11, 14 ] }
+            }
+        },
+        {
+            "name": "fresco 5",
+            "from": [ 6, 10, 0.5 ], 
+            "to": [ 7, 14, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 2, 7, 6 ] },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 2, 7, 6 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 2, 7, 6 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 2, 7, 6 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 2, 7, 3 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 5, 7, 6 ] }
+            }
+        },
+        {
+            "name": "fresco 6",
+            "from": [ 14, 7, 0.5 ], 
+            "to": [ 15, 10, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 6, 15, 9 ] },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 6, 15, 9 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 6, 15, 9 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 6, 15, 9 ] }
+            }
+        },
+        {
+            "name": "fresco 7",
+            "from": [ 14, 0, 0.5 ], 
+            "to": [ 15, 3, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 13, 15, 16 ] },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 13, 15, 16 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 13, 15, 16 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 13, 15, 16 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 13, 15, 14 ] }
+            }
+        },
+        {
+            "name": "fresco 8",
+            "from": [ 9, 13, 0.5 ], 
+            "to": [ 10, 16, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 9, 0, 10, 3 ] },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 9, 0, 10, 3 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 9, 0, 10, 3 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 9, 0, 10, 3 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 9, 2, 10, 3 ] }
+            }
+        },
+        {
+            "name": "fresco 9",
+            "from": [ 7, 13, 0.5 ], 
+            "to": [ 9, 14, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 9, 2, 7, 3 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 7, 2, 9, 3 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 7, 2, 9, 3 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 7, 2, 9, 3 ] }
+            }
+        },
+        {
+            "name": "fresco 10",
+            "from": [ 11, 2, 0.5 ], 
+            "to": [ 14, 3, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 14, 13, 11, 14 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 13, 14, 14 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 13, 14, 14 ] },
+                "down": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 11, 13, 14, 14 ] }
+            }
+        },
+        {
+            "name": "fresco 11",
+            "from": [ 6, 0, 0.5 ], 
+            "to": [ 7, 7, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 9, 7, 16 ] },
+                "east": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 9, 7, 16 ] },
+                "south": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 9, 7, 16 ] },
+                "west": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 9, 7, 16 ] },
+                "up": { "texture": "#big_door_dwarf_mid_bottom_left", "uv": [ 6, 9, 7, 10 ] }
+            }
+        }
+    ]
+}

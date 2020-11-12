@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/oak/door_oak_bottom_hinge",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/oak/rustic/door_oak_rustic_bottom"
+    }
+}

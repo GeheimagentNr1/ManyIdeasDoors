@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ICI",
+    "IRI"
+  ],
+  "key": {
+    "I": {
+      "item": "manyideas_core:plate_iron"
+    },
+	"C": {
+	  "item": "minecraft:comparator"
+	},
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:player_door_sensor",
+    "count": 2
+  }
+}

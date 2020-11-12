@@ -1,0 +1,7 @@
+{
+  "type": "manyideas_core:table_sawing_diamond",
+  "ingredient": {
+    "item": "minecraft:lapis_block"
+  },
+  "result": "manyideas_doors:door_special_police_box"
+}

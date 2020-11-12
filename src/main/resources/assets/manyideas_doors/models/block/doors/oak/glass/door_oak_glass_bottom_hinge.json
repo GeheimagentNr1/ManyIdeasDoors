@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/glass/door_glass_bottom_hinge",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/oak/glass/door_oak_glass_bottom",
+        "edge": "minecraft:block/stripped_oak_log"
+    }
+}

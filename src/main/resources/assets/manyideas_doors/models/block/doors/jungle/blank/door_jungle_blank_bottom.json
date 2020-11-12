@@ -1,0 +1,6 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/types/jungle/door_jungle_bottom",
+    "textures": {
+        "bottom": "manyideas_doors:block/doors/jungle/blank/door_jungle_blank_bottom"
+    }
+}

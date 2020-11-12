@@ -1,0 +1,7 @@
+{
+    "parent": "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_top_hinge",
+    "textures": {
+        "top": "manyideas_doors:block/doors/dark_oak/frosted/door_dark_oak_frosted_top",
+        "edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+    }
+}

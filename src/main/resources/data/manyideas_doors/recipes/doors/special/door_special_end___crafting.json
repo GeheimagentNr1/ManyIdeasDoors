@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "E",
+    "E"
+  ],
+  "key": {
+    "E": {
+      "item": "manyideas_core:end_block"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:door_special_end"
+  }
+}
