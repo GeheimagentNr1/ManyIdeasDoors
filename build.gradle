@@ -27,7 +27,7 @@ minecraft {
     // Simply re-run your setup task after changing the mappings to update your workspace.
     mappings channel: "${mcp_channel}", version: "${mcp_version}-${mcp_mc_version}"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
-
+    
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 
     // Default run configurations.
@@ -101,7 +101,7 @@ repositories {
         url = "https://modmaven.k-4u.nl"
     }
     maven {
-        url "https://maven.tehnut.info"
+        url = "https://maven.tehnut.info"
     }
 }
 
@@ -164,6 +164,7 @@ def reobfArtifact = artifacts.add('default', reobfFile) {
     type 'jar'
     builtBy 'reobfJar'
 }
+publish.dependsOn( "clean" )
 publishing {
     publications {
         mavenJava(MavenPublication) {

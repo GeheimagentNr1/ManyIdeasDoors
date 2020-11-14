@@ -1,6 +1,5 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.BlockItemInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.end_block.IEndBlock;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
@@ -21,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
-public class DoorSpecialEnd extends DoubleDoorBlock implements BlockItemInterface, IEndBlock {
+public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	
 	
 	public static final String registry_name = "door_special_end";
@@ -65,7 +64,7 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements BlockItemInterfac
 	public BlockRenderType getRenderType( BlockState state ) {
 		
 		if( state.get( OPEN ) ) {
-			return super.getRenderType( state );
+			return BlockRenderType.MODEL;
 		}
 		return BlockRenderType.ENTITYBLOCK_ANIMATED;
 	}

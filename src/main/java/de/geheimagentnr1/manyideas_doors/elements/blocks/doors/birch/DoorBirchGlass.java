@@ -1,6 +1,5 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.birch;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.BlockItemInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.block.Block;
@@ -9,7 +8,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
 
 
-public class DoorBirchGlass extends DoubleDoorBlock implements BlockItemInterface {
+public class DoorBirchGlass extends DoubleDoorBlock {
 	
 	
 	public static final String registry_name = "door_birch_glass";
