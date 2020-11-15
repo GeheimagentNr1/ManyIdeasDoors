@@ -1,6 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.handlers;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.BlockItemInterface;
+import de.geheimagentnr1.manyideas_core.util.BlockRegistrationHelper;
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
@@ -43,12 +43,7 @@ public class RegistryEventHandler {
 		
 		Item.Properties properties = new Item.Properties().group( ManyIdeasDoors.setup.manyIdeasDoorsItemGroup );
 		
-		for( Block block : ModBlocks.BLOCKS ) {
-			if( block instanceof BlockItemInterface ) {
-				BlockItemInterface blockItem = (BlockItemInterface)block;
-				itemRegistryEvent.getRegistry().register( blockItem.getBlockItem( properties ) );
-			}
-		}
+		BlockRegistrationHelper.registerBlockItems( itemRegistryEvent, ModBlocks.BLOCKS, properties );
 	}
 	
 	@SuppressWarnings( "ConstantConditions" )
