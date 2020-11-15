@@ -5,15 +5,19 @@ import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTile;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTileRenderer;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorTile;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 
 @SuppressWarnings( "unused" )
@@ -21,10 +25,11 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 public class RegistryEventHandler {
 	
 	
+	@OnlyIn( Dist.CLIENT )
 	@SubscribeEvent
-	public static void setup( FMLCommonSetupEvent event ) {
+	public static void handleClientSetupEvent( FMLClientSetupEvent event ) {
 		
-		ManyIdeasDoors.proxy.init();
+		ClientRegistry.bindTileEntitySpecialRenderer( DoorSpecialEndTile.class, new DoorSpecialEndTileRenderer() );
 	}
 	
 	@SubscribeEvent
