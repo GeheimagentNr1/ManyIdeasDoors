@@ -10,17 +10,24 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
+import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -33,6 +40,9 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface {
 	
 	
 	public static final String registry_name = "player_door_sensor";
+	
+	//package_private
+	static final IntegerProperty SENSOR_RANGE = IntegerProperty.create( "sensor_range", 1, 3 );
 	
 	private static final VoxelShapeMemory SINGLE = VoxelShapeMemory.createHorizontalVoxelShapes( Direction.NORTH,
 		VoxelShapeVector.create( 3, 0, 0, 13, 1.5, 1.5 ) );
@@ -50,6 +60,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface {
 		
 		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5 ).sound( SoundType.METAL ) );
 		setRegistryName( registry_name );
+		setDefaultState( getDefaultState().with( BlockStateProperties.POWERED, false ).with( SENSOR_RANGE, 1 ) );
 	}
 	
 	@SuppressWarnings( "deprecation" )
@@ -159,6 +170,25 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface {
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
+	public boolean onBlockActivated( @Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
+		@Nonnull PlayerEntity player, @Nonnull Hand handIn, @Nonnull BlockRayTraceResult hit ) {
+		
+		ItemStack stack = player.getHeldItem( handIn );
+		
+		if( stack.getItem() == Items.REDSTONE_TORCH ) {
+			state = state.cycle( SENSOR_RANGE );
+			worldIn.setBlockState( pos, state, 3 );
+			if( !worldIn.isRemote ) {
+				player.sendMessage( new StringTextComponent( "Player Door Sensor has now a range of: " +
+					state.get( SENSOR_RANGE ) ) );
+			}
+			return true;
+		}
+		return false;
+	}
+	
+	@SuppressWarnings( "deprecation" )
+	@Override
 	public void onReplaced( BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
 		@Nonnull BlockState newState, boolean isMoving ) {
 		
@@ -169,7 +199,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface {
 	protected void fillStateContainer( StateContainer.Builder<Block, BlockState> builder ) {
 		
 		builder.add( BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.POWERED,
-			ModBlockStateProperties.BLOCK_SIDE );
+			ModBlockStateProperties.BLOCK_SIDE, SENSOR_RANGE );
 	}
 	
 	//package-private
