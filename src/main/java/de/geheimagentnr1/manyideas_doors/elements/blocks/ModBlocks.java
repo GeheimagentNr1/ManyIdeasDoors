@@ -37,7 +37,7 @@ public class ModBlocks {
 	
 	public static final Block[] BLOCKS = new Block[] {//BCPFINRLT
 		//Big Doors
-		new BigDoorAcacia(),//___FINRLT
+		new BigDoorAcacia(),//BCPFINRLT
 		new BigDoorBirch(),//BCPFINRLT
 		new BigDoorDwarf(),//BCPFINRLT
 		new BigDoorLaboratory(),//BCPFINRLT

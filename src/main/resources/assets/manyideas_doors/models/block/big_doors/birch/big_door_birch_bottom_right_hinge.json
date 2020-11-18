@@ -7,109 +7,24 @@
 	"elements": [
 		{
 			"name": "glass",
-			"from": [
-				1,
-				1,
-				0
-			],
-			"to": [
-				2,
-				16,
-				16
-			],
+			"from": [ 1, 1, 0 ],
+			"to": [ 2, 16, 16 ],
 			"faces": {
-				"east": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						16,
-						0,
-						0,
-						15
-					]
-				},
-				"south": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						15,
-						0,
-						16,
-						15
-					],
-					"cullface": "south"
-				},
-				"west": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						0,
-						0,
-						16,
-						15
-					]
-				}
+				"east": { "texture": "#big_door_birch_bottom_right", "uv": [ 16, 0, 0, 15 ] },
+				"south": { "texture": "#big_door_birch_bottom_right", "uv": [ 15, 0, 16, 15 ], "cullface": "south" },
+				"west": { "texture": "#big_door_birch_bottom_right", "uv": [ 0, 0, 16, 15 ] }
 			}
 		},
 		{
 			"name": "glass",
-			"from": [
-				1,
-				0,
-				0
-			],
-			"to": [
-				2,
-				1,
-				16
-			],
+			"from": [ 1, 0, 0 ],
+			"to": [ 2, 1, 16 ],
 			"faces": {
-				"east": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						0,
-						15,
-						16,
-						16
-					]
-				},
-				"south": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						15,
-						15,
-						16,
-						16
-					],
-					"cullface": "south"
-				},
-				"west": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						16,
-						15,
-						0,
-						16
-					]
-				},
-				"up": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						0,
-						15,
-						16,
-						16
-					],
-					"rotation": 270
-				},
-				"down": {
-					"texture": "#big_door_birch_bottom_right",
-					"uv": [
-						0,
-						15,
-						16,
-						16
-					],
-					"rotation": 90,
-					"cullface": "down"
-				}
+				"east": { "texture": "#big_door_birch_bottom_right", "uv": [ 0, 15, 16, 16 ] },
+				"south": { "texture": "#big_door_birch_bottom_right", "uv": [ 15, 15, 16, 16 ], "cullface": "south" },
+				"west": { "texture": "#big_door_birch_bottom_right", "uv": [ 16, 15, 0, 16 ] },
+				"up": { "texture": "#big_door_birch_bottom_right", "uv": [ 0, 15, 16, 16 ], "rotation": 270 },
+				"down": { "texture": "#big_door_birch_bottom_right", "uv": [ 0, 15, 16, 16 ], "rotation": 90, "cullface": "down" }
 			}
 		}
 	]

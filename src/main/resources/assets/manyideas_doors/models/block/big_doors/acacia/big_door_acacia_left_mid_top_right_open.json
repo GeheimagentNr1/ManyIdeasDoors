@@ -1,0 +1,74 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/acacia/big_door_acacia_mid_top_left_hinge",
+        "big_door_acacia_mid_top_left_hinge": "manyideas_doors:block/big_doors/acacia/big_door_acacia_mid_top_left_hinge",
+        "big_door_acacia_mid_top_right": "manyideas_doors:block/big_doors/acacia/big_door_acacia_mid_top_right"
+    },
+    "elements": [
+        {
+            "name": "west frame",
+            "from": [ 13, 0, 0 ], 
+            "to": [ 16, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 16, 0, 13, 16 ], "cullface": "north" },
+                "east": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 15, 0, 16, 16 ], "cullface": "east" },
+                "south": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 3, 0, 0, 16 ] },
+                "west": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 14, 0, 13, 16 ] }
+            }
+        },
+        {
+            "name": "blatt",
+            "from": [ 0, 0, 1 ], 
+            "to": [ 13, 16, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 0, 0, 16 ] },
+                "south": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 16, 0, 3, 16 ] }
+            }
+        },
+        {
+            "name": "detail 1",
+            "from": [ 2, 0, 0.5 ], 
+            "to": [ 5, 7, 1.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 5, 9, 2, 16 ] },
+                "east": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 4, 9, 5, 16 ] },
+                "west": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 2, 9, 3, 16 ] },
+                "up": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 5, 9, 2, 10 ], "rotation": 180 }
+            }
+        },
+        {
+            "name": "detail 1 hinge",
+            "from": [ 2, 0, 1.5 ], 
+            "to": [ 5, 7, 2.5 ], 
+            "faces": {
+                "east": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 11, 9, 12, 16 ] },
+                "south": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 14, 9, 11, 16 ] },
+                "west": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 13, 9, 14, 16 ] },
+                "up": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 14, 9, 11, 10 ], "rotation": 180, "cullface": "up" }
+            }
+        },
+        {
+            "name": "detail 2",
+            "from": [ 0, 11, 0.75 ], 
+            "to": [ 13, 14, 2.25 ], 
+            "faces": {
+                "north": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 2, 0, 5 ] },
+                "south": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 16, 2, 3, 5 ] },
+                "up": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 1, 0, 2 ], "rotation": 180 },
+                "down": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 4, 0, 5 ], "rotation": 180 }
+            }
+        },
+        {
+            "name": "detail 3",
+            "from": [ 0, 4, 0.75 ], 
+            "to": [ 13, 7, 2.25 ], 
+            "faces": {
+                "north": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 9, 0, 12 ] },
+                "south": { "texture": "#big_door_acacia_mid_top_left_hinge", "uv": [ 16, 9, 3, 12 ] },
+                "up": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 9, 0, 10 ], "rotation": 180 },
+                "down": { "texture": "#big_door_acacia_mid_top_right", "uv": [ 13, 11, 0, 12 ], "rotation": 180 }
+            }
+        }
+    ]
+}
