@@ -64,10 +64,6 @@
 		"facing=north,x=1,y=3,z=0,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
 		"facing=north,x=1,y=3,z=1,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_top_right_hinge", "y": 90 },
 		"facing=north,x=0,y=3,z=1,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_top_left_hinge", "y": 90 },
-		
-		
-		
-		
 		"facing=east,x=0,y=0,z=0,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_bottom_left_hinge", "y": 270 },
 		"facing=east,x=1,y=0,z=0,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
 		"facing=east,x=1,y=0,z=1,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
@@ -132,7 +128,6 @@
 		"facing=east,x=1,y=3,z=0,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
 		"facing=east,x=1,y=3,z=1,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_top_right_hinge", "y": 180 },
 		"facing=east,x=0,y=3,z=1,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_top_left_hinge", "y": 180 },
-		
 		"facing=south,x=0,y=0,z=0,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_bottom_left_hinge" },
 		"facing=south,x=1,y=0,z=0,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
 		"facing=south,x=1,y=0,z=1,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
@@ -197,7 +192,6 @@
 		"facing=south,x=1,y=3,z=0,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
 		"facing=south,x=1,y=3,z=1,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_top_right_hinge", "y": 270 },
 		"facing=south,x=0,y=3,z=1,hinge=right,open=true": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_top_left_hinge", "y": 270 },
-		
 		"facing=west,x=0,y=0,z=0,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_bottom_left_hinge", "y": 90 },
 		"facing=west,x=1,y=0,z=0,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
 		"facing=west,x=1,y=0,z=1,hinge=left,open=false": { "model": "manyideas_doors:block/big_doors/jungle/big_door_jungle_empty" },
