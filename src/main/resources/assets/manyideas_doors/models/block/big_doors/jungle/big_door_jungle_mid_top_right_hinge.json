@@ -1,0 +1,94 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/jungle/big_door_jungle_mid_top_right",
+        "big_door_jungle_mid_top_right": "manyideas_doors:block/big_doors/jungle/big_door_jungle_mid_top_right"
+    },
+    "elements": [
+        {
+            "name": "frame side",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 3, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 16, 0, 13, 16 ], "cullface": "north" },
+                "east": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 13, 0, 14, 16 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 13, 0, 16, 16 ] },
+                "west": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 15, 0, 16, 16 ], "cullface": "west" }
+            }
+        },
+        {
+            "name": "blatt",
+            "from": [ 4, 0, 1.25 ], 
+            "to": [ 16, 16, 1.75 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 0, 12, 16 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 0, 0, 16 ] }
+            }
+        },
+        {
+            "name": "detail 2",
+            "from": [ 4, 13, 1 ], 
+            "to": [ 16, 14, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 2, 12, 3 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 2, 0, 3 ] },
+                "up": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 2, 12, 3 ] },
+                "down": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 2, 12, 3 ] }
+            }
+        },
+        {
+            "name": "detail 3",
+            "from": [ 4, 8, 1 ], 
+            "to": [ 16, 9, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 7, 12, 8 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 7, 0, 8 ] },
+                "up": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 7, 12, 8 ] },
+                "down": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 7, 12, 8 ] }
+            }
+        },
+        {
+            "name": "detail 4",
+            "from": [ 13, 0, 1 ], 
+            "to": [ 14, 16, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 2, 0, 3, 16 ] },
+                "east": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 2, 0, 3, 16 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 2, 0, 3, 16 ] },
+                "west": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 2, 0, 3, 16 ] }
+            }
+        },
+        {
+            "name": "detail 5",
+            "from": [ 8, 0, 1 ], 
+            "to": [ 9, 16, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 7, 0, 8, 16 ] },
+                "east": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 7, 0, 8, 16 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 7, 0, 8, 16 ] },
+                "west": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 7, 0, 8, 16 ] }
+            }
+        },
+        {
+            "name": "detail 6",
+            "from": [ 3, 0, 1 ], 
+            "to": [ 4, 16, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 0, 13, 16 ] },
+                "east": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 0, 13, 16 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 0, 13, 16 ] }
+            }
+        },
+        {
+            "name": "detail 7",
+            "from": [ 4, 3, 1 ], 
+            "to": [ 16, 4, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 12, 12, 13 ] },
+                "south": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 12, 12, 0, 13 ] },
+                "up": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 12, 12, 13 ] },
+                "down": { "texture": "#big_door_jungle_mid_top_right", "uv": [ 0, 12, 12, 13 ] }
+            }
+        }
+    ]
+}

@@ -40,6 +40,7 @@ public class ModBlocks {
 		new BigDoorAcacia(),//BCPFINRLT
 		new BigDoorBirch(),//BCPFINRLT
 		new BigDoorDwarf(),//BCPFINRLT
+		new BigDoorJungle(),//BCPFINRLT
 		new BigDoorLaboratory(),//BCPFINRLT
 		new BigDoorFactory(),//BCPFINRLT
 		new BigDoorOak(),//BCPFINRLT
@@ -142,6 +143,9 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDwarf.registry_name )
 	public static BigDoorDwarf BIG_DOOR_DWARF;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorJungle.registry_name )
+	public static BigDoorJungle BIG_DOOR_JUNGLE;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorLaboratory.registry_name )
 	public static BigDoorLaboratory BIG_DOOR_LABORATORY;

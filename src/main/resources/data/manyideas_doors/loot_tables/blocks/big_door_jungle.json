@@ -1,0 +1,30 @@
+{
+	"type": "minecraft:block",
+	"pools": [
+		{
+			"rolls": 1,
+			"entries": [
+				{
+					"type": "minecraft:item",
+					"conditions": [
+						{
+							"condition": "minecraft:block_state_property",
+							"block": "manyideas_doors:big_door_jungle",
+							"properties": {
+								"x": "0",
+								"y": "0",
+								"z": "0"
+							}
+						}
+					],
+					"name": "manyideas_doors:big_door_jungle"
+				}
+			],
+			"conditions": [
+				{
+					"condition": "minecraft:survives_explosion"
+				}
+			]
+		}
+	]
+}
