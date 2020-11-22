@@ -1,0 +1,61 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/barn/big_door_redbarn_bottom_right",
+        "big_door_redbarn_bottom_right": "manyideas_doors:block/big_doors/barn/big_door_redbarn_bottom_right"
+    },
+    "elements": [
+        {
+            "name": "frame bottom",
+            "from": [ 0, 0, 0 ], 
+            "to": [ 13, 3, 3 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 13, 13, 0, 16 ], "cullface": "north" },
+                "south": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 13, 13, 16 ] },
+                "up": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 13, 13, 14 ] },
+                "down": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 15, 13, 16 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "frame side",
+            "from": [ 13, 0, 0 ], 
+            "to": [ 16, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 16, 0, 13, 16 ], "cullface": "north" },
+                "east": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 15, 0, 16, 16 ], "cullface": "east" },
+                "south": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 13, 0, 16, 16 ] },
+                "west": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 13, 0, 14, 16 ] },
+                "down": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 13, 15, 16, 16 ], "cullface": "down" }
+            }
+        },
+        {
+            "name": "blatt",
+            "from": [ 1, 3, 1 ], 
+            "to": [ 13, 15, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 13, 1, 1, 13 ] },
+                "south": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 1, 1, 13, 13 ] }
+            }
+        },
+        {
+            "name": "details 1",
+            "from": [ 0, 15, 0.5 ], 
+            "to": [ 13, 16, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 13, 0, 0, 1 ] },
+                "south": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 0, 13, 1 ] },
+                "down": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 0, 13, 1 ] }
+            }
+        },
+        {
+            "name": "details 2",
+            "from": [ 0, 3, 0.5 ], 
+            "to": [ 1, 15, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 1, 1, 13 ] },
+                "east": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 1, 1, 13 ] },
+                "south": { "texture": "#big_door_redbarn_bottom_right", "uv": [ 0, 1, 1, 13 ] }
+            }
+        }
+    ]
+}

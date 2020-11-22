@@ -1,0 +1,84 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "particle": "manyideas_doors:block/big_doors/barn/big_door_redbarn_mid_top_right",
+        "big_door_redbarn_mid_top_right": "manyideas_doors:block/big_doors/barn/big_door_redbarn_mid_top_right",
+        "big_door_redbarn_mid_top_left": "manyideas_doors:block/big_doors/barn/big_door_redbarn_mid_top_left"
+    },
+    "elements": [
+        {
+            "name": "frame side",
+            "from": [ 13, 0, 0 ], 
+            "to": [ 16, 16, 3 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 16, 0, 13, 16 ], "cullface": "north" },
+                "east": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 15, 0, 16, 16 ], "cullface": "east" },
+                "south": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 13, 0, 16, 16 ] },
+                "west": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 13, 0, 14, 16 ] }
+            }
+        },
+        {
+            "name": "blatt",
+            "from": [ 1, 2, 1 ], 
+            "to": [ 13, 14, 2 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 13, 2, 1, 14 ] },
+                "south": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 1, 2, 13, 14 ] }
+            }
+        },
+        {
+            "name": "details 1",
+            "from": [ 0, 14, 0.5 ], 
+            "to": [ 13, 16, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 13, 0, 0, 2 ] },
+                "south": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 0, 13, 2 ] },
+                "down": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 0, 13, 1 ] }
+            }
+        },
+        {
+            "name": "details 2",
+            "from": [ 0, 2, 0.5 ], 
+            "to": [ 1, 14, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 2, 1, 14 ] },
+                "east": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 2, 1, 14 ] },
+                "south": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 2, 1, 14 ] }
+            }
+        },
+        {
+            "name": "diagonal 1",
+            "from": [ 0, 1, 0.75 ], 
+            "to": [ 3, 14.5, 2.25 ], 
+            "rotation": { "origin": [ 1, 14, 8 ], "axis": "z", "angle": 45.0 },
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 3, 13.5 ] },
+                "east": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 1, 13.5 ] },
+                "south": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 3, 13.5 ] },
+                "west": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 1, 13.5 ] }
+            }
+        },
+        {
+            "name": "diagonal 2",
+            "from": [ 0, -3, 0.75 ], 
+            "to": [ 3, 1, 2.25 ], 
+            "rotation": { "origin": [ 1, 14, 8 ], "axis": "z", "angle": 45.0 },
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 3, 4 ] },
+                "east": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 1, 4 ] },
+                "south": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 3, 4 ] },
+                "west": { "texture": "#big_door_redbarn_mid_top_left", "uv": [ 0, 0, 1, 4 ] }
+            }
+        },
+        {
+            "name": "details 3",
+            "from": [ 0, 0, 0.5 ], 
+            "to": [ 13, 2, 2.5 ], 
+            "faces": {
+                "north": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 13, 14, 0, 16 ] },
+                "south": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 14, 13, 16 ] },
+                "up": { "texture": "#big_door_redbarn_mid_top_right", "uv": [ 0, 14, 13, 15 ] }
+            }
+        }
+    ]
+}
