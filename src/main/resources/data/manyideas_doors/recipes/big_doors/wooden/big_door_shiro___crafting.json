@@ -1,5 +1,5 @@
 {
-	"type": "minecraft:crafting_shaped",
+	"type":    "minecraft:crafting_shaped",
 	"pattern": [
 		"PPR",
 		"PPR",
@@ -7,9 +7,9 @@
 	],
 	"key":     {
 		"P": {
-			"type": "recipes_lib:nbt",
-			"item": "manyideas_core:planks_colored",
-			"nbt": "{dye: {color: \"black\"}}",
+			"type":      "recipes_lib:nbt",
+			"item":      "manyideas_core:planks_colored",
+			"nbt":       "{dye: {color: \"black\"}}",
 			"matchType": "CONTAINS"
 		},
 		"R": {

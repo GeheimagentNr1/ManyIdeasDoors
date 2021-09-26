@@ -1,20 +1,20 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "P",
-    "W",
-    "P"
-  ],
-  "key": {
-    "P": {
-      "item": "manyideas_core:panel_jungle"
-    },
-    "W": {
-      "item": "minecraft:white_wool"
-    }
-  },
-  "result": {
-    "item": "manyideas_doors:door_jungle_shoji",
-    "count": 2
-  }
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"P",
+		"W",
+		"P"
+	],
+	"key":     {
+		"P": {
+			"item": "manyideas_core:panel_jungle"
+		},
+		"W": {
+			"item": "minecraft:white_wool"
+		}
+	},
+	"result":  {
+		"item":  "manyideas_doors:door_jungle_shoji",
+		"count": 2
+	}
 }

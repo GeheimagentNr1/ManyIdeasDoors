@@ -12,20 +12,4 @@ public class ManyIdeasDoors {
 	public static final String MODID = "manyideas_doors";
 	
 	public static final ModSetup setup = new ModSetup();
-	
-	//TODO
-	/* TODO mit änderungen
-big door:
-acacia
-shiro
-barn
-darsser
-dwarf
-factory
-safe
-terrace
-
-player door sensor
-	
-	 */
 }

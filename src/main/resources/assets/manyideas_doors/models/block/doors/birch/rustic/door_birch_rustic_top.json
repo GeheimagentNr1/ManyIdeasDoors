@@ -1,7 +1,7 @@
 {
 	"parent":   "manyideas_doors:block/templates/doors/shapes/rustic/door_rustic_top",
 	"textures": {
-		"top": "manyideas_doors:block/doors/birch/rustic/door_birch_rustic_top",
-		"edge":   "minecraft:block/stripped_birch_log"
+		"top":  "manyideas_doors:block/doors/birch/rustic/door_birch_rustic_top",
+		"edge": "minecraft:block/stripped_birch_log"
 	}
 }

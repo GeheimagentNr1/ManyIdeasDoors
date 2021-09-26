@@ -42,73 +42,31 @@ public class MiniLodgePoliceBox extends MiniLodge {
 		VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 9.5 )
 	} );
 	
-	private static final VoxelShapeMemory CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes( Direction.EAST,
-		VoxelShapeVector.create( 12.5, 0, 12.5, 16, 16, 16 ) );
+	private static final VoxelShapeMemory CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
+		Direction.EAST,
+		VoxelShapeVector.create( 12.5, 0, 12.5, 16, 16, 16 )
+	);
 	
-	private static final VoxelShapeMemory DOORS_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes( Direction.NORTH,
-		VoxelShapeVector.create( 0, 0, 0, 16, 16, 3 ) );
+	private static final VoxelShapeMemory DOORS_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
+		Direction.NORTH,
+		VoxelShapeVector.create( 0, 0, 0, 16, 16, 3 )
+	);
 	
 	public MiniLodgePoliceBox() {
 		
-		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
-			registry_name );
+		super(
+			Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			registry_name
+		);
 	}
 	
 	@Override
 	protected boolean[][][] hasBlockStatesAtPos() {
 		
 		return new boolean[][][] {
-			{
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				}
-			},
-			{
-				{
-					true,
-					false,
-					true
-				},
-				{
-					true,
-					false,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				}
-			},
-			{
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				}
-			},
+			{ { true, true, true }, { true, true, true }, { true, true, true } },
+			{ { true, false, true }, { true, false, true }, { true, true, true } },
+			{ { true, true, true }, { true, true, true }, { true, true, true } },
 		};
 	}
 	
@@ -122,7 +80,10 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	@SuppressWarnings( { "deprecation", "NestedSwitchStatement" } )
 	@Nonnull
 	@Override
-	public VoxelShape getShape( BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos,
+	public VoxelShape getShape(
+		BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );

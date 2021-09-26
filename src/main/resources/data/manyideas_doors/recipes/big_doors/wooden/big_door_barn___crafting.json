@@ -1,19 +1,19 @@
 {
-	"type": "minecraft:crafting_shaped",
+	"type":    "minecraft:crafting_shaped",
 	"pattern": [
 		"PP",
 		"PP",
 		"PP"
 	],
-	"key": {
+	"key":     {
 		"P": {
-			"type": "recipes_lib:nbt",
-			"item": "manyideas_core:planks_colored",
-			"nbt": "{dye: {color: \"red\"}}",
+			"type":      "recipes_lib:nbt",
+			"item":      "manyideas_core:planks_colored",
+			"nbt":       "{dye: {color: \"red\"}}",
 			"matchType": "CONTAINS"
 		}
 	},
-	"result": {
+	"result":  {
 		"item": "manyideas_doors:big_door_barn"
 	}
 }

@@ -1,21 +1,21 @@
 {
-	"type": "minecraft:block",
+	"type":  "minecraft:block",
 	"pools": [
 		{
-			"rolls": 1,
-			"entries": [
+			"rolls":      1,
+			"entries":    [
 				{
-					"type": "minecraft:item",
+					"type":       "minecraft:item",
 					"conditions": [
 						{
-							"condition": "minecraft:block_state_property",
-							"block": "manyideas_doors:door_birch_origin",
+							"condition":  "minecraft:block_state_property",
+							"block":      "manyideas_doors:door_birch_origin",
 							"properties": {
 								"half": "lower"
 							}
 						}
 					],
-					"name": "manyideas_doors:door_birch_origin"
+					"name":       "manyideas_doors:door_birch_origin"
 				}
 			],
 			"conditions": [

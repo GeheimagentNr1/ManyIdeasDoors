@@ -1,15 +1,15 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "DD",
-    "DD"
-  ],
-  "key": {
-    "D": {
-      "item": "manyideas_doors:door_oak_cassette"
-    }
-  },
-  "result": {
-    "item": "manyideas_doors:big_door_oak"
-  }
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"DD",
+		"DD"
+	],
+	"key":     {
+		"D": {
+			"item": "manyideas_doors:door_oak_cassette"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_oak"
+	}
 }

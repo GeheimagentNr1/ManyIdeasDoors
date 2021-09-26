@@ -1,30 +1,30 @@
 {
 	"textures": {
-		"10": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_mid_right_on",
-		"24": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_outer_mid_left_on",
+		"10":       "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_mid_right_on",
+		"24":       "manyideas_doors:block/big_doors/metal/safe/big_safe_door_outer_mid_left_on",
 		"particle": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_mid_right_on"
 	},
 	"elements": [
 		{
-			"name": "Block 1 - Hauptflaeche",
-			"from": [1, 0, 1],
-			"to": [16, 16, 2],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
-			"faces": {
-				"north": {"uv": [16, 0, 1, 16], "texture": "#24"},
-				"south": {"uv": [15, 0, 0, 16], "texture": "#10"}
+			"name":     "Block 1 - Hauptflaeche",
+			"from":     [ 1, 0, 1 ],
+			"to":       [ 16, 16, 2 ],
+			"rotation": { "angle": 0, "axis": "y", "origin": [ 16, 0, 0 ] },
+			"faces":    {
+				"north": { "uv": [ 16, 0, 1, 16 ], "texture": "#24" },
+				"south": { "uv": [ 15, 0, 0, 16 ], "texture": "#10" }
 			}
 		},
 		{
-			"name": "Block 2 - Rand",
-			"from": [0, 0, 0],
-			"to": [1, 16, 3],
-			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
-			"faces": {
-				"north": {"uv": [1, 0, 0, 16], "texture": "#24", "cullface": "north"},
-				"east": {"uv": [1, 0, 0, 16], "texture": "#24"},
-				"south": {"uv": [16, 0, 15, 16], "texture": "#10"},
-				"west": {"uv": [16, 0, 15, 16], "texture": "#10", "cullface": "west"}
+			"name":     "Block 2 - Rand",
+			"from":     [ 0, 0, 0 ],
+			"to":       [ 1, 16, 3 ],
+			"rotation": { "angle": 0, "axis": "y", "origin": [ 16, 0, 0 ] },
+			"faces":    {
+				"north": { "uv": [ 1, 0, 0, 16 ], "texture": "#24", "cullface": "north" },
+				"east":  { "uv": [ 1, 0, 0, 16 ], "texture": "#24" },
+				"south": { "uv": [ 16, 0, 15, 16 ], "texture": "#10" },
+				"west":  { "uv": [ 16, 0, 15, 16 ], "texture": "#10", "cullface": "west" }
 			}
 		}
 	]

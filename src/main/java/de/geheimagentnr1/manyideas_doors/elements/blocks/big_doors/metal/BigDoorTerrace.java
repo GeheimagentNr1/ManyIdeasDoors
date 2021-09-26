@@ -54,7 +54,10 @@ public class BigDoorTerrace extends BigDoor {
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos, @Nonnull ISelectionContext context ) {
+		BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull ISelectionContext context ) {
 		
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
 		int z = state.get( Z_SIZE );

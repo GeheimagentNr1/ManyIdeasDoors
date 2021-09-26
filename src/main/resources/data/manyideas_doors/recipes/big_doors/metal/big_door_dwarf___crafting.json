@@ -1,19 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "GG",
-    "GC",
-    "GG"
-  ],
-  "key": {
-    "G": {
-      "item": "manyideas_core:plate_gold"
-    },
-    "C": {
-      "item": "minecraft:coal_block"
-    }
-  },
-  "result": {
-    "item": "manyideas_doors:big_door_dwarf"
-  }
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"GG",
+		"GC",
+		"GG"
+	],
+	"key":     {
+		"G": {
+			"item": "manyideas_core:plate_gold"
+		},
+		"C": {
+			"item": "minecraft:coal_block"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_dwarf"
+	}
 }

@@ -1,59 +1,59 @@
 {
 	"textures": {
-		"particle": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_left",
+		"particle":                        "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_left",
 		"big_door_laboratory_bottom_left": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_left"
 	},
 	"elements": [
 		{
-			"name": "Bottom1",
-			"from": [4, 0, 7],
-			"to": [16, 2, 9],
+			"name":  "Bottom1",
+			"from":  [ 4, 0, 7 ],
+			"to":    [ 16, 2, 9 ],
 			"faces": {
-				"north": {"uv": [16, 14, 4, 16], "texture": "#big_door_laboratory_bottom_left"},
-				"south": {"uv": [4, 14, 16, 16], "texture": "#big_door_laboratory_bottom_left"},
-				"up": {"uv": [4, 14, 16, 15], "texture": "#big_door_laboratory_bottom_left"},
-				"down": {"uv": [4, 15, 16, 16], "texture": "#big_door_laboratory_bottom_left", "cullface": "down"}
+				"north": { "uv": [ 16, 14, 4, 16 ], "texture": "#big_door_laboratory_bottom_left" },
+				"south": { "uv": [ 4, 14, 16, 16 ], "texture": "#big_door_laboratory_bottom_left" },
+				"up":    { "uv": [ 4, 14, 16, 15 ], "texture": "#big_door_laboratory_bottom_left" },
+				"down":  { "uv": [ 4, 15, 16, 16 ], "texture": "#big_door_laboratory_bottom_left", "cullface": "down" }
 			}
 		},
 		{
-			"name": "outerframe1",
-			"from": [0, 0, 6.5],
-			"to": [4, 16, 9.5],
+			"name":  "outerframe1",
+			"from":  [ 0, 0, 6.5 ],
+			"to":    [ 4, 16, 9.5 ],
 			"faces": {
-				"north": {"uv": [0, 0, 4, 16], "texture": "#big_door_laboratory_bottom_left"},
-				"east": {"uv": [2, 0, 5, 16], "texture": "#big_door_laboratory_bottom_left"},
-				"south": {"uv": [0, 0, 4, 16], "texture": "#big_door_laboratory_bottom_left"},
-				"west": {"uv": [2, 0, 5, 16], "texture": "#big_door_laboratory_bottom_left", "cullface": "west"},
-				"down": {"uv": [0, 8, 4, 11], "texture": "#big_door_laboratory_bottom_left", "cullface": "down"}
+				"north": { "uv": [ 0, 0, 4, 16 ], "texture": "#big_door_laboratory_bottom_left" },
+				"east":  { "uv": [ 2, 0, 5, 16 ], "texture": "#big_door_laboratory_bottom_left" },
+				"south": { "uv": [ 0, 0, 4, 16 ], "texture": "#big_door_laboratory_bottom_left" },
+				"west":  { "uv": [ 2, 0, 5, 16 ], "texture": "#big_door_laboratory_bottom_left", "cullface": "west" },
+				"down":  { "uv": [ 0, 8, 4, 11 ], "texture": "#big_door_laboratory_bottom_left", "cullface": "down" }
 			}
 		},
 		{
-			"name": "westframe1",
-			"from": [4, 2, 7],
-			"to": [6, 16, 9],
+			"name":  "westframe1",
+			"from":  [ 4, 2, 7 ],
+			"to":    [ 6, 16, 9 ],
 			"faces": {
-				"north": {"uv": [6, 0, 4, 14], "texture": "#big_door_laboratory_bottom_left"},
-				"east": {"uv": [1, 0, 3, 14], "texture": "#big_door_laboratory_bottom_left"},
-				"south": {"uv": [4, 0, 6, 14], "texture": "#big_door_laboratory_bottom_left"}
+				"north": { "uv": [ 6, 0, 4, 14 ], "texture": "#big_door_laboratory_bottom_left" },
+				"east":  { "uv": [ 1, 0, 3, 14 ], "texture": "#big_door_laboratory_bottom_left" },
+				"south": { "uv": [ 4, 0, 6, 14 ], "texture": "#big_door_laboratory_bottom_left" }
 			}
 		},
 		{
-			"name": "midframe1",
-			"from": [6, 15, 7],
-			"to": [16, 16, 9],
+			"name":  "midframe1",
+			"from":  [ 6, 15, 7 ],
+			"to":    [ 16, 16, 9 ],
 			"faces": {
-				"north": {"uv": [6, 0, 16, 1], "texture": "#big_door_laboratory_bottom_left"},
-				"south": {"uv": [6, 0, 16, 1], "texture": "#big_door_laboratory_bottom_left"},
-				"down": {"uv": [6, 0, 16, 1], "texture": "#big_door_laboratory_bottom_left"}
+				"north": { "uv": [ 6, 0, 16, 1 ], "texture": "#big_door_laboratory_bottom_left" },
+				"south": { "uv": [ 6, 0, 16, 1 ], "texture": "#big_door_laboratory_bottom_left" },
+				"down":  { "uv": [ 6, 0, 16, 1 ], "texture": "#big_door_laboratory_bottom_left" }
 			}
 		},
 		{
-			"name": "glass1",
-			"from": [6, 2, 7.5],
-			"to": [16, 15, 8.5],
+			"name":  "glass1",
+			"from":  [ 6, 2, 7.5 ],
+			"to":    [ 16, 15, 8.5 ],
 			"faces": {
-				"north": {"uv": [6, 1, 16, 14], "texture": "#big_door_laboratory_bottom_left"},
-				"south": {"uv": [6, 1, 16, 14], "texture": "#big_door_laboratory_bottom_left"}
+				"north": { "uv": [ 6, 1, 16, 14 ], "texture": "#big_door_laboratory_bottom_left" },
+				"south": { "uv": [ 6, 1, 16, 14 ], "texture": "#big_door_laboratory_bottom_left" }
 			}
 		}
 	]

@@ -4,14 +4,14 @@
 	},
 	"elements": [
 		{
-			"from": [0, 0, 0],
-			"to": [16, 16, 3],
+			"from":  [ 0, 0, 0 ],
+			"to":    [ 16, 16, 3 ],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#outhouse", "cullface": "north"},
-				"east": {"uv": [0, 0, 3, 16], "texture": "#outhouse", "cullface": "east"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#outhouse"},
-				"west": {"uv": [0, 0, 3, 16], "texture": "#outhouse", "cullface": "west"},
-				"up": {"uv": [0, 0, 3, 16], "rotation": 90, "texture": "#outhouse", "cullface": "up"}
+				"north": { "uv": [ 0, 0, 16, 16 ], "texture": "#outhouse", "cullface": "north" },
+				"east":  { "uv": [ 0, 0, 3, 16 ], "texture": "#outhouse", "cullface": "east" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#outhouse" },
+				"west":  { "uv": [ 0, 0, 3, 16 ], "texture": "#outhouse", "cullface": "west" },
+				"up":    { "uv": [ 0, 0, 3, 16 ], "rotation": 90, "texture": "#outhouse", "cullface": "up" }
 			}
 		}
 	]

@@ -4,13 +4,13 @@
 	},
 	"elements": [
 		{
-			"name": "Cube",
-			"from": [0, 0, 0],
-			"to": [16, 16, 3],
+			"name":  "Cube",
+			"from":  [ 0, 0, 0 ],
+			"to":    [ 16, 16, 3 ],
 			"faces": {
-				"north": {"uv": [16, 0, 0, 16], "texture": "#door", "cullface": "north"},
-				"south": {"uv": [0, 0, 16, 16], "texture": "#door"},
-				"west": {"uv": [0, 0, 3, 16], "texture": "#edge", "cullface": "west"}
+				"north": { "uv": [ 16, 0, 0, 16 ], "texture": "#door", "cullface": "north" },
+				"south": { "uv": [ 0, 0, 16, 16 ], "texture": "#door" },
+				"west":  { "uv": [ 0, 0, 3, 16 ], "texture": "#edge", "cullface": "west" }
 			}
 		}
 	]

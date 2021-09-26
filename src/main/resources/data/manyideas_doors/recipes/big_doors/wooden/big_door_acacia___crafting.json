@@ -1,11 +1,11 @@
 {
-	"type": "minecraft:crafting_shaped",
+	"type":    "minecraft:crafting_shaped",
 	"pattern": [
 		"PP",
 		"II",
 		"PP"
 	],
-	"key": {
+	"key":     {
 		"P": {
 			"item": "manyideas_core:planks_seamless_acacia"
 		},
@@ -13,7 +13,7 @@
 			"item": "minecraft:iron_bars"
 		}
 	},
-	"result": {
+	"result":  {
 		"item": "manyideas_doors:big_door_acacia"
 	}
 }

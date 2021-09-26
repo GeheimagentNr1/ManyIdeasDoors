@@ -3,7 +3,6 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor;
 import de.geheimagentnr1.manyideas_core.ManyIdeasCore;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.BlockSide;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.ModBlockStateProperties;
-import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.BlockItemInterface;
 import de.geheimagentnr1.manyideas_core.elements.items.tools.redstone_key.interfaces.RedstoneKeyable;
 import de.geheimagentnr1.manyideas_core.elements.items.tools.redstone_key.models.Option;
@@ -19,23 +18,18 @@ import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.BlockItemUseContext;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.state.IntegerProperty;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
@@ -44,7 +38,6 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
 
 
 public class PlayerDoorSensor extends Block implements BlockItemInterface, RedstoneKeyable {
@@ -58,7 +51,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	private static final ITextComponent SENSOR_RANGE_CONTAINER_TITLE =
 		TranslationKeyHelper.generateMessageTranslationTextComponent( ManyIdeasDoors.MODID, "sensor_range" );
 	
-	public static final ResourceLocation ICON_TEXTURES = new ResourceLocation(
+	private static final ResourceLocation ICON_TEXTURES = new ResourceLocation(
 		ManyIdeasCore.MODID,
 		"textures/gui/redstone_key/icons/icons_numbers.png"
 	);
@@ -94,7 +87,9 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos,
+		@Nonnull BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
@@ -133,8 +128,10 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public int getWeakPower(
-		@Nonnull BlockState blockState, @Nonnull IBlockReader blockAccess,
-		@Nonnull BlockPos pos, @Nonnull Direction side ) {
+		@Nonnull BlockState blockState,
+		@Nonnull IBlockReader blockAccess,
+		@Nonnull BlockPos pos,
+		@Nonnull Direction side ) {
 		
 		return blockState.get( BlockStateProperties.POWERED ) ? 15 : 0;
 	}
@@ -142,8 +139,10 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public int getStrongPower(
-		@Nonnull BlockState blockState, @Nonnull IBlockReader blockAccess,
-		@Nonnull BlockPos pos, @Nonnull Direction side ) {
+		@Nonnull BlockState blockState,
+		@Nonnull IBlockReader blockAccess,
+		@Nonnull BlockPos pos,
+		@Nonnull Direction side ) {
 		
 		return blockState.get( BlockStateProperties.POWERED ) ? 15 : 0;
 	}
@@ -214,26 +213,6 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public boolean onBlockActivated(
-		@Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
-		@Nonnull PlayerEntity player, @Nonnull Hand handIn, @Nonnull BlockRayTraceResult hit ) {
-		
-		ItemStack stack = player.getHeldItem( handIn );
-		//TODO: Angrenzende Blöcke sollen auch angepasst werden.
-		if( stack.getItem() == Items.REDSTONE_TORCH ) {
-			state = state.cycle( SENSOR_RANGE );
-			worldIn.setBlockState( pos, state, 3 );
-			if( !worldIn.isRemote ) {
-				player.sendMessage( new StringTextComponent( "Player Door Sensor has now a range of: " +
-					state.get( SENSOR_RANGE ) ) );
-			}
-			return true;
-		}
-		return false;
-	}
-	
-	@SuppressWarnings( "deprecation" )
-	@Override
 	public void onReplaced(
 		BlockState state,
 		@Nonnull World worldIn,
@@ -248,8 +227,11 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	@Override
 	protected void fillStateContainer( StateContainer.Builder<Block, BlockState> builder ) {
 		
-		builder.add( BlockStateProperties.HORIZONTAL_FACING, BlockStateProperties.POWERED,
-			ModBlockStateProperties.BLOCK_SIDE, SENSOR_RANGE
+		builder.add(
+			BlockStateProperties.HORIZONTAL_FACING,
+			BlockStateProperties.POWERED,
+			ModBlockStateProperties.BLOCK_SIDE,
+			SENSOR_RANGE
 		);
 	}
 	
@@ -284,14 +266,8 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 		ArrayList<Option> options = new ArrayList<>();
 		for( Integer range : SENSOR_RANGE.getAllowedValues() ) {
 			options.add( new Option(
-				TranslationKeyHelper.generateMessageTranslationKey(
-					ManyIdeasDoors.MODID,
-					range + ".title"
-				),
-				TranslationKeyHelper.generateMessageTranslationKey(
-					ManyIdeasDoors.MODID,
-					range + ".description"
-				)
+				TranslationKeyHelper.generateMessageTranslationKey( ManyIdeasDoors.MODID, range + ".title" ),
+				TranslationKeyHelper.generateMessageTranslationKey( ManyIdeasDoors.MODID, range + ".description" )
 			) );
 		}
 		return options;

@@ -85,8 +85,6 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 		VoxelShapeVector.create( 0, 1, 12, 16, 5, 16 )
 	);
 	
-	//TODO: VoxelShapes
-	
 	//package-private
 	MiniLodgeOuthouse( String registry_name ) {
 		
@@ -100,57 +98,9 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	protected boolean[][][] hasBlockStatesAtPos() {
 		
 		return new boolean[][][] {
-			{
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				}
-			},
-			{
-				{
-					true,
-					false,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				}
-			},
-			{
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				}
-			},
+			{ { true, true, true }, { true, true, true }, { true, true, true } },
+			{ { true, false, true }, { true, true, true }, { true, true, true } },
+			{ { true, true, true }, { true, true, true }, { true, true, true } },
 		};
 	}
 	
@@ -158,7 +108,9 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos,
+		BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );

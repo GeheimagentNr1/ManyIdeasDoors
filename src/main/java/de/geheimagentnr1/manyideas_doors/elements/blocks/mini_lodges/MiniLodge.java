@@ -58,15 +58,21 @@ public abstract class MiniLodge extends MultiBlock {
 	@Override
 	protected BlockState getDefaultState( boolean left_sided ) {
 		
-		return getDefaultState().with( BlockStateProperties.DOOR_HINGE, left_sided ? DoorHingeSide.LEFT :
-			DoorHingeSide.RIGHT );
+		return getDefaultState().with(
+			BlockStateProperties.DOOR_HINGE,
+			left_sided ? DoorHingeSide.LEFT : DoorHingeSide.RIGHT
+		);
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public boolean onBlockActivated(
-		@Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
-		@Nonnull PlayerEntity player, @Nonnull Hand handIn, @Nonnull BlockRayTraceResult hit ) {
+		@Nonnull BlockState state,
+		@Nonnull World worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull PlayerEntity player,
+		@Nonnull Hand handIn,
+		@Nonnull BlockRayTraceResult hit ) {
 		
 		if( state.get( X_SIZE ) != 0 || state.get( Z_SIZE ) != 1 ) {
 			return false;
@@ -76,9 +82,11 @@ public abstract class MiniLodge extends MultiBlock {
 			worldIn,
 			getZeroPos( state, pos ),
 			state.get( BlockStateProperties.HORIZONTAL_FACING ),
-			( x, y, z, blockPos ) ->
-				worldIn.setBlockState( blockPos, worldIn.getBlockState( blockPos )
-					.with( BlockStateProperties.OPEN, open ), 3 ),
+			( x, y, z, blockPos ) -> worldIn.setBlockState(
+				blockPos,
+				worldIn.getBlockState( blockPos ).with( BlockStateProperties.OPEN, open ),
+				3
+			),
 			true
 		);
 		playDoorSound( player, worldIn, pos, open );
@@ -106,11 +114,13 @@ public abstract class MiniLodge extends MultiBlock {
 				worldIn,
 				zeroPos,
 				facing,
-				( x, y, z, blockPos ) ->
-					worldIn.setBlockState( blockPos, worldIn.getBlockState( blockPos ).with(
-						BlockStateProperties.POWERED,
-						isPowered
-					).with( BlockStateProperties.OPEN, isPowered ), 3 ),
+				( x, y, z, blockPos ) -> worldIn.setBlockState(
+					blockPos,
+					worldIn.getBlockState( blockPos )
+						.with( BlockStateProperties.POWERED, isPowered )
+						.with( BlockStateProperties.OPEN, isPowered ),
+					3
+				),
 				true
 			);
 			playDoorSound( null, worldIn, pos, isPowered );
@@ -119,7 +129,12 @@ public abstract class MiniLodge extends MultiBlock {
 	
 	private void playDoorSound( PlayerEntity player, World world, BlockPos pos, boolean open ) {
 		
-		world.playSound( player, pos, open ? getOpenDoorSound() : getCloseDoorSound(), SoundCategory.BLOCKS, 1.0F,
+		world.playSound(
+			player,
+			pos,
+			open ? getOpenDoorSound() : getCloseDoorSound(),
+			SoundCategory.BLOCKS,
+			1.0F,
 			1.0F
 		);
 	}

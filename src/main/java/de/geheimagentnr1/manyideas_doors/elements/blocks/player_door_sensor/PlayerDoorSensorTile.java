@@ -46,24 +46,36 @@ public class PlayerDoorSensorTile extends TileEntity implements ITickableTileEnt
 		AxisAlignedBB toCheckArea;
 		switch( facing ) {
 			case NORTH:
-				toCheckArea = new AxisAlignedBB( getPos(), getPos()
-					.offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-					.offset( facing.getOpposite(), 2 ).offset( facing.rotateY() ) );
+				toCheckArea = new AxisAlignedBB(
+					getPos(),
+					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
+						.offset( facing.getOpposite(), 2 )
+						.offset( facing.rotateY() )
+				);
 				break;
 			case EAST:
-				toCheckArea = new AxisAlignedBB( getPos().offset( facing ), getPos()
-					.offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-					.offset( facing.getOpposite() ).offset( facing.rotateY() ) );
+				toCheckArea = new AxisAlignedBB(
+					getPos().offset( facing ),
+					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
+						.offset( facing.getOpposite() )
+						.offset( facing.rotateY() )
+				);
 				break;
 			case SOUTH:
-				toCheckArea = new AxisAlignedBB( getPos().offset( facing ), getPos()
-					.offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-					.offset( facing.getOpposite() ).offset( facing.rotateYCCW() ) );
+				toCheckArea = new AxisAlignedBB(
+					getPos().offset( facing ),
+					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
+						.offset( facing.getOpposite() )
+						.offset( facing.rotateYCCW() )
+				);
 				break;
 			case WEST:
-				toCheckArea = new AxisAlignedBB( getPos(), getPos()
-					.offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-					.offset( facing.getOpposite(), 2 ).offset( facing.rotateYCCW() ) );
+				toCheckArea = new AxisAlignedBB(
+					getPos(),
+					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
+						.offset( facing.getOpposite(), 2 )
+						.offset( facing.rotateYCCW() )
+				);
 				break;
 			default:
 				return;

@@ -1,61 +1,61 @@
 {
 	"textures": {
-		"particle": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_left",
+		"particle":                "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_left",
 		"big_door_birch_top_left": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_left"
 	},
 	"elements": [
 		{
-			"name": "frame",
-			"from": [0, 0, 0],
-			"to": [3, 16, 3],
+			"name":  "frame",
+			"from":  [ 0, 0, 0 ],
+			"to":    [ 3, 16, 3 ],
 			"faces": {
-				"north": {"uv": [3, 0, 0, 16], "texture": "#big_door_birch_top_left", "cullface": "north"},
-				"east": {"uv": [2, 0, 3, 16], "texture": "#big_door_birch_top_left"},
-				"south": {"uv": [0, 0, 3, 16], "texture": "#big_door_birch_top_left"},
-				"west": {"uv": [0, 0, 1, 16], "texture": "#big_door_birch_top_left", "cullface": "west"},
-				"up": {"uv": [0, 0, 3, 1], "texture": "#big_door_birch_top_left", "cullface": "up"}
+				"north": { "uv": [ 3, 0, 0, 16 ], "texture": "#big_door_birch_top_left", "cullface": "north" },
+				"east":  { "uv": [ 2, 0, 3, 16 ], "texture": "#big_door_birch_top_left" },
+				"south": { "uv": [ 0, 0, 3, 16 ], "texture": "#big_door_birch_top_left" },
+				"west":  { "uv": [ 0, 0, 1, 16 ], "texture": "#big_door_birch_top_left", "cullface": "west" },
+				"up":    { "uv": [ 0, 0, 3, 1 ], "texture": "#big_door_birch_top_left", "cullface": "up" }
 			}
 		},
 		{
-			"name": "glass",
-			"from": [4, 0, 1],
-			"to": [16, 15, 2],
+			"name":  "glass",
+			"from":  [ 4, 0, 1 ],
+			"to":    [ 16, 15, 2 ],
 			"faces": {
-				"north": {"uv": [16, 1, 4, 16], "texture": "#big_door_birch_top_left"},
-				"south": {"uv": [4, 1, 16, 16], "texture": "#big_door_birch_top_left"}
+				"north": { "uv": [ 16, 1, 4, 16 ], "texture": "#big_door_birch_top_left" },
+				"south": { "uv": [ 4, 1, 16, 16 ], "texture": "#big_door_birch_top_left" }
 			}
 		},
 		{
-			"name": "glass",
-			"from": [3, 15, 1],
-			"to": [16, 16, 2],
+			"name":  "glass",
+			"from":  [ 3, 15, 1 ],
+			"to":    [ 16, 16, 2 ],
 			"faces": {
-				"north": {"uv": [3, 0, 16, 1], "texture": "#big_door_birch_top_left"},
-				"south": {"uv": [3, 0, 16, 1], "texture": "#big_door_birch_top_left"},
-				"up": {"uv": [3, 0, 16, 1], "texture": "#big_door_birch_top_left", "cullface": "up"},
-				"down": {"uv": [3, 0, 16, 1], "texture": "#big_door_birch_top_left"}
+				"north": { "uv": [ 3, 0, 16, 1 ], "texture": "#big_door_birch_top_left" },
+				"south": { "uv": [ 3, 0, 16, 1 ], "texture": "#big_door_birch_top_left" },
+				"up":    { "uv": [ 3, 0, 16, 1 ], "texture": "#big_door_birch_top_left", "cullface": "up" },
+				"down":  { "uv": [ 3, 0, 16, 1 ], "texture": "#big_door_birch_top_left" }
 			}
 		},
 		{
-			"name": "glass",
-			"from": [3, 0, 1],
-			"to": [4, 15, 2],
+			"name":  "glass",
+			"from":  [ 3, 0, 1 ],
+			"to":    [ 4, 15, 2 ],
 			"faces": {
-				"north": {"uv": [3, 1, 4, 16], "texture": "#big_door_birch_top_left"},
-				"east": {"uv": [3, 1, 4, 16], "texture": "#big_door_birch_top_left"},
-				"south": {"uv": [3, 1, 4, 16], "texture": "#big_door_birch_top_left"}
+				"north": { "uv": [ 3, 1, 4, 16 ], "texture": "#big_door_birch_top_left" },
+				"east":  { "uv": [ 3, 1, 4, 16 ], "texture": "#big_door_birch_top_left" },
+				"south": { "uv": [ 3, 1, 4, 16 ], "texture": "#big_door_birch_top_left" }
 			}
 		},
 		{
-			"name": "hinge",
-			"from": [3, 4, 0.75],
-			"to": [6, 6, 2.25],
+			"name":  "hinge",
+			"from":  [ 3, 4, 0.75 ],
+			"to":    [ 6, 6, 2.25 ],
 			"faces": {
-				"north": {"uv": [6, 10, 3, 12], "texture": "#big_door_birch_top_left"},
-				"east": {"uv": [5, 10, 6, 12], "texture": "#big_door_birch_top_left"},
-				"south": {"uv": [3, 10, 6, 12], "texture": "#big_door_birch_top_left"},
-				"up": {"uv": [3, 10, 6, 11], "texture": "#big_door_birch_top_left"},
-				"down": {"uv": [3, 11, 6, 12], "texture": "#big_door_birch_top_left"}
+				"north": { "uv": [ 6, 10, 3, 12 ], "texture": "#big_door_birch_top_left" },
+				"east":  { "uv": [ 5, 10, 6, 12 ], "texture": "#big_door_birch_top_left" },
+				"south": { "uv": [ 3, 10, 6, 12 ], "texture": "#big_door_birch_top_left" },
+				"up":    { "uv": [ 3, 10, 6, 11 ], "texture": "#big_door_birch_top_left" },
+				"down":  { "uv": [ 3, 11, 6, 12 ], "texture": "#big_door_birch_top_left" }
 			}
 		}
 	]

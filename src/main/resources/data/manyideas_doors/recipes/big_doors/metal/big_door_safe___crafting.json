@@ -1,19 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "IRI",
-    "IRI",
-    "IRI"
-  ],
-  "key": {
-    "I": {
-      "item": "manyideas_core:plate_iron"
-    },
-    "R": {
-      "item": "minecraft:redstone"
-    }
-  },
-  "result": {
-    "item": "manyideas_doors:big_door_safe"
-  }
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"IRI",
+		"IRI",
+		"IRI"
+	],
+	"key":     {
+		"I": {
+			"item": "manyideas_core:plate_iron"
+		},
+		"R": {
+			"item": "minecraft:redstone"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_safe"
+	}
 }

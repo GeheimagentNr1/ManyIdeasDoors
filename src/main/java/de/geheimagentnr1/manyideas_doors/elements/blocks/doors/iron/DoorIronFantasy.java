@@ -15,8 +15,10 @@ public class DoorIronFantasy extends DoubleDoorBlock {
 	
 	public DoorIronFantasy() {
 		
-		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
-			registry_name );
+		super(
+			Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			registry_name
+		);
 	}
 	
 	@Override

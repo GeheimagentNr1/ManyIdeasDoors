@@ -50,9 +50,15 @@ public class RegistryEventHandler {
 	@SubscribeEvent
 	public static void onTileEntityRegistry( RegistryEvent.Register<TileEntityType<?>> event ) {
 		
-		event.getRegistry().register( TileEntityType.Builder.create( DoorSpecialEndTile::new,
-			ModBlocks.DOOR_SPECIAL_END ).build( null ).setRegistryName( DoorSpecialEnd.registry_name ) );
-		event.getRegistry().register( TileEntityType.Builder.create( PlayerDoorSensorTile::new,
-			ModBlocks.PLAYER_DOOR_SENSOR ).build( null ).setRegistryName( PlayerDoorSensor.registry_name ) );
+		event.getRegistry().register(
+			TileEntityType.Builder.create( DoorSpecialEndTile::new, ModBlocks.DOOR_SPECIAL_END )
+				.build( null )
+				.setRegistryName( DoorSpecialEnd.registry_name )
+		);
+		event.getRegistry().register(
+			TileEntityType.Builder.create( PlayerDoorSensorTile::new, ModBlocks.PLAYER_DOOR_SENSOR )
+				.build( null )
+				.setRegistryName( PlayerDoorSensor.registry_name )
+		);
 	}
 }

@@ -1,25 +1,25 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " C ",
-    "PPP",
-    "WDP"
-  ],
-  "key": {
-    "C": {
-      "item": "minecraft:gray_concrete"
-    },
-    "P": {
-      "item": "minecraft:birch_planks"
-    },
-    "W": {
-      "item": "manyideas_core:wood_stripped_smooth_birch"
-    },
-    "D": {
-      "item": "manyideas_doors:door_birch_heart"
-    }
-  },
-  "result": {
-    "item": "manyideas_doors:mini_lodge_outhouse_birch"
-  }
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		" C ",
+		"PPP",
+		"WDP"
+	],
+	"key":     {
+		"C": {
+			"item": "minecraft:gray_concrete"
+		},
+		"P": {
+			"item": "minecraft:birch_planks"
+		},
+		"W": {
+			"item": "manyideas_core:wood_stripped_smooth_birch"
+		},
+		"D": {
+			"item": "manyideas_doors:door_birch_heart"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:mini_lodge_outhouse_birch"
+	}
 }

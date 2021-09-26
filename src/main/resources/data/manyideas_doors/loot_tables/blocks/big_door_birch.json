@@ -1,11 +1,11 @@
 {
-	"type": "minecraft:block",
+	"type":  "minecraft:block",
 	"pools": [
 		{
-			"rolls": 1,
+			"rolls":   1,
 			"entries": [
 				{
-					"type": "minecraft:item",
+					"type":       "minecraft:item",
 					"conditions": [
 						{
 							"condition": "minecraft:match_tool",
@@ -13,7 +13,7 @@
 								"enchantments": [
 									{
 										"enchantment": "minecraft:silk_touch",
-										"levels": {
+										"levels":      {
 											"min": 1
 										}
 									}
@@ -21,8 +21,8 @@
 							}
 						},
 						{
-							"condition": "minecraft:block_state_property",
-							"block": "manyideas_doors:big_door_birch",
+							"condition":  "minecraft:block_state_property",
+							"block":      "manyideas_doors:big_door_birch",
 							"properties": {
 								"x": "0",
 								"y": "0",
@@ -30,7 +30,7 @@
 							}
 						}
 					],
-					"name": "manyideas_doors:big_door_birch"
+					"name":       "manyideas_doors:big_door_birch"
 				}
 			]
 		}

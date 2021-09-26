@@ -27,8 +27,10 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	
 	public DoorSpecialEnd() {
 		
-		super( Block.Properties.create( Material.ROCK ).hardnessAndResistance( 50.0F, 1200.0F )
-			.sound( SoundType.GLASS ), registry_name );
+		super(
+			Block.Properties.create( Material.ROCK ).hardnessAndResistance( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
+			registry_name
+		);
 	}
 	
 	@Override
@@ -72,7 +74,9 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos,
+		BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
 		if( state.get( OPEN ) ) {

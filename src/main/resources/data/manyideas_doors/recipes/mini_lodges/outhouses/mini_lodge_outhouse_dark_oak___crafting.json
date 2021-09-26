@@ -1,25 +1,25 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " C ",
-    "PPP",
-    "WDP"
-  ],
-  "key": {
-    "C": {
-      "item": "minecraft:gray_concrete"
-    },
-    "P": {
-      "item": "minecraft:dark_oak_planks"
-    },
-    "W": {
-      "item": "manyideas_core:wood_stripped_smooth_dark_oak"
-    },
-    "D": {
-      "item": "manyideas_doors:door_dark_oak_heart"
-    }
-  },
-  "result": {
-    "item": "manyideas_doors:mini_lodge_outhouse_dark_oak"
-  }
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		" C ",
+		"PPP",
+		"WDP"
+	],
+	"key":     {
+		"C": {
+			"item": "minecraft:gray_concrete"
+		},
+		"P": {
+			"item": "minecraft:dark_oak_planks"
+		},
+		"W": {
+			"item": "manyideas_core:wood_stripped_smooth_dark_oak"
+		},
+		"D": {
+			"item": "manyideas_doors:door_dark_oak_heart"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:mini_lodge_outhouse_dark_oak"
+	}
 }

@@ -26,13 +26,19 @@ public class BigDoorLaboratory extends BigDoor {
 	public static final String registry_name = "big_door_laboratory";
 	
 	private static final VoxelShapeMemory SHAPE_CLOSED = VoxelShapeMemory.createHorizontalAxisVoxelShapes(
-		Direction.NORTH, VoxelShapeVector.create( 0, 0, 6.5, 16, 16, 9.5 ) );
+		Direction.NORTH,
+		VoxelShapeVector.create( 0, 0, 6.5, 16, 16, 9.5 )
+	);
 	
 	private static final VoxelShapeMemory SHAPE_OPEN_LEFT = VoxelShapeMemory.createHorizontalVoxelShapes(
-		Direction.NORTH, VoxelShapeVector.create( 0, 0, 6.5, 6, 16, 9.5 ) );
+		Direction.NORTH,
+		VoxelShapeVector.create( 0, 0, 6.5, 6, 16, 9.5 )
+	);
 	
 	private static final VoxelShapeMemory SHAPE_OPEN_RIGHT = VoxelShapeMemory.createHorizontalVoxelShapes(
-		Direction.NORTH, VoxelShapeVector.create( 10, 0, 6.5, 16, 16, 9.5 ) );
+		Direction.NORTH,
+		VoxelShapeVector.create( 10, 0, 6.5, 16, 16, 9.5 )
+	);
 	
 	public BigDoorLaboratory() {
 		
@@ -64,8 +70,11 @@ public class BigDoorLaboratory extends BigDoor {
 	
 	@Nonnull
 	@Override
-	public VoxelShape getShape( BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos, @Nonnull
-		ISelectionContext context ) {
+	public VoxelShape getShape(
+		BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull ISelectionContext context ) {
 		
 		Direction direction = state.get( BlockStateProperties.HORIZONTAL_FACING );
 		

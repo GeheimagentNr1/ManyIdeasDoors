@@ -1,11 +1,11 @@
 {
-	"type": "minecraft:crafting_shaped",
+	"type":    "minecraft:crafting_shaped",
 	"pattern": [
 		"QG",
 		"QG",
 		"QG"
 	],
-	"key": {
+	"key":     {
 		"Q": {
 			"item": "manyideas_core:plate_quartz"
 		},
@@ -13,7 +13,7 @@
 			"item": "minecraft:glass_pane"
 		}
 	},
-	"result": {
+	"result":  {
 		"item": "manyideas_doors:big_door_terrace"
 	}
 }

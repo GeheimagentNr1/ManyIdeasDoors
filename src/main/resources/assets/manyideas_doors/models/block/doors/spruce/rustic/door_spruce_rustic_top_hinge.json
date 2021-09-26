@@ -1,7 +1,7 @@
 {
 	"parent":   "manyideas_doors:block/templates/doors/shapes/rustic/door_rustic_top_hinge",
 	"textures": {
-		"top": "manyideas_doors:block/doors/spruce/rustic/door_spruce_rustic_top",
-		"edge":   "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+		"top":  "manyideas_doors:block/doors/spruce/rustic/door_spruce_rustic_top",
+		"edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
 	}
 }

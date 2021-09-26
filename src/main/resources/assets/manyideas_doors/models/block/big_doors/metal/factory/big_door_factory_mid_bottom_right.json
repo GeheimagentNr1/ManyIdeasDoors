@@ -1,57 +1,57 @@
 {
 	"textures": {
-		"particle": "manyideas_doors:block/big_doors/metal/factory/big_door_factory_mid_bottom_right",
+		"particle":                          "manyideas_doors:block/big_doors/metal/factory/big_door_factory_mid_bottom_right",
 		"big_door_factory_mid_bottom_right": "manyideas_doors:block/big_doors/metal/factory/big_door_factory_mid_bottom_right"
 	},
 	"elements": [
 		{
-			"name": "Blatt",
-			"from": [1, 1, 1],
-			"to": [15, 15, 2],
+			"name":  "Blatt",
+			"from":  [ 1, 1, 1 ],
+			"to":    [ 15, 15, 2 ],
 			"faces": {
-				"north": {"uv": [1, 1, 15, 15], "texture": "#big_door_factory_mid_bottom_right"},
-				"south": {"uv": [15, 1, 1, 15], "texture": "#big_door_factory_mid_bottom_right"}
+				"north": { "uv": [ 1, 1, 15, 15 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"south": { "uv": [ 15, 1, 1, 15 ], "texture": "#big_door_factory_mid_bottom_right" }
 			}
 		},
 		{
-			"name": "Bottom",
-			"from": [1, 0, 0.5],
-			"to": [16, 1, 2.5],
+			"name":  "Bottom",
+			"from":  [ 1, 0, 0.5 ],
+			"to":    [ 16, 1, 2.5 ],
 			"faces": {
-				"north": {"uv": [0, 15, 15, 16], "texture": "#big_door_factory_mid_bottom_right"},
-				"south": {"uv": [0, 15, 15, 16], "rotation": 180, "texture": "#big_door_factory_mid_bottom_right"},
-				"up": {"uv": [0, 15, 15, 16], "rotation": 180, "texture": "#big_door_factory_mid_bottom_right"}
+				"north": { "uv": [ 0, 15, 15, 16 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"south": { "uv": [ 0, 15, 15, 16 ], "rotation": 180, "texture": "#big_door_factory_mid_bottom_right" },
+				"up":    { "uv": [ 0, 15, 15, 16 ], "rotation": 180, "texture": "#big_door_factory_mid_bottom_right" }
 			}
 		},
 		{
-			"name": "frame west",
-			"from": [0, 0, 0],
-			"to": [1, 16, 3],
+			"name":  "frame west",
+			"from":  [ 0, 0, 0 ],
+			"to":    [ 1, 16, 3 ],
 			"faces": {
-				"north": {"uv": [15, 0, 16, 16], "texture": "#big_door_factory_mid_bottom_right", "cullface": "north"},
-				"east": {"uv": [15, 0, 16, 16], "texture": "#big_door_factory_mid_bottom_right"},
-				"south": {"uv": [15, 0, 16, 16], "texture": "#big_door_factory_mid_bottom_right"},
-				"west": {"uv": [15, 0, 16, 16], "texture": "#big_door_factory_mid_bottom_right", "cullface": "west"}
+				"north": { "uv": [ 15, 0, 16, 16 ], "texture": "#big_door_factory_mid_bottom_right", "cullface": "north" },
+				"east":  { "uv": [ 15, 0, 16, 16 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"south": { "uv": [ 15, 0, 16, 16 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"west":  { "uv": [ 15, 0, 16, 16 ], "texture": "#big_door_factory_mid_bottom_right", "cullface": "west" }
 			}
 		},
 		{
-			"name": "frame east",
-			"from": [15, 1, 0.5],
-			"to": [16, 16, 2.5],
+			"name":  "frame east",
+			"from":  [ 15, 1, 0.5 ],
+			"to":    [ 16, 16, 2.5 ],
 			"faces": {
-				"north": {"uv": [0, 0, 1, 15], "texture": "#big_door_factory_mid_bottom_right"},
-				"south": {"uv": [0, 0, 1, 15], "texture": "#big_door_factory_mid_bottom_right"},
-				"west": {"uv": [0, 0, 1, 15], "texture": "#big_door_factory_mid_bottom_right"}
+				"north": { "uv": [ 0, 0, 1, 15 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"south": { "uv": [ 0, 0, 1, 15 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"west":  { "uv": [ 0, 0, 1, 15 ], "texture": "#big_door_factory_mid_bottom_right" }
 			}
 		},
 		{
-			"name": "frame top",
-			"from": [1, 15, 0.5],
-			"to": [15, 16, 2.5],
+			"name":  "frame top",
+			"from":  [ 1, 15, 0.5 ],
+			"to":    [ 15, 16, 2.5 ],
 			"faces": {
-				"north": {"uv": [1, 0, 15, 1], "texture": "#big_door_factory_mid_bottom_right"},
-				"south": {"uv": [1, 0, 15, 1], "texture": "#big_door_factory_mid_bottom_right"},
-				"down": {"uv": [1, 0, 15, 1], "texture": "#big_door_factory_mid_bottom_right"}
+				"north": { "uv": [ 1, 0, 15, 1 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"south": { "uv": [ 1, 0, 15, 1 ], "texture": "#big_door_factory_mid_bottom_right" },
+				"down":  { "uv": [ 1, 0, 15, 1 ], "texture": "#big_door_factory_mid_bottom_right" }
 			}
 		}
 	]

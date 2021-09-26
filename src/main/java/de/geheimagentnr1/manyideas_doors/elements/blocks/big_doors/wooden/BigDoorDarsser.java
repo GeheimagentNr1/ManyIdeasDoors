@@ -19,7 +19,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
@@ -56,7 +55,10 @@ public class BigDoorDarsser extends BigDoor {
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos, @Nonnull ISelectionContext context ) {
+		BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull ISelectionContext context ) {
 		
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
 		if( state.get( BlockStateProperties.OPEN ) && state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2 ) {
@@ -70,8 +72,13 @@ public class BigDoorDarsser extends BigDoor {
 	}
 	
 	@Override
-	public boolean onBlockActivated( @Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos, @Nonnull
-		PlayerEntity player, @Nonnull Hand handIn, @Nonnull BlockRayTraceResult hit) {
+	public boolean onBlockActivated(
+		@Nonnull BlockState state,
+		@Nonnull World worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull PlayerEntity player,
+		@Nonnull Hand handIn,
+		@Nonnull BlockRayTraceResult hit ) {
 		
 		if( state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2 ) {
 			return super.onBlockActivated( state, worldIn, pos, player, handIn, hit );

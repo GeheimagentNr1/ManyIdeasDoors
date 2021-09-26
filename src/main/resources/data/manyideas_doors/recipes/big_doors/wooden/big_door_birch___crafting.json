@@ -1,11 +1,11 @@
 {
-	"type": "minecraft:crafting_shaped",
+	"type":    "minecraft:crafting_shaped",
 	"pattern": [
 		"PG",
 		"PG",
 		"PG"
 	],
-	"key": {
+	"key":     {
 		"P": {
 			"item": "manyideas_core:panel_birch"
 		},
@@ -13,7 +13,7 @@
 			"item": "minecraft:glass_pane"
 		}
 	},
-	"result": {
+	"result":  {
 		"item": "manyideas_doors:big_door_birch"
 	}
 }

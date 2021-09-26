@@ -1,22 +1,22 @@
 {
-	"type": "minecraft:block",
+	"type":  "minecraft:block",
 	"pools": [
 		{
-			"rolls": 1,
-			"entries": [
+			"rolls":      1,
+			"entries":    [
 				{
-					"type": "minecraft:item",
+					"type":       "minecraft:item",
 					"conditions": [
 						{
-							"condition": "minecraft:block_state_property",
-							"block": "manyideas_doors:big_door_terrace",
+							"condition":  "minecraft:block_state_property",
+							"block":      "manyideas_doors:big_door_terrace",
 							"properties": {
 								"y": "0",
 								"z": "0"
 							}
 						}
 					],
-					"name": "manyideas_doors:big_door_terrace"
+					"name":       "manyideas_doors:big_door_terrace"
 				}
 			],
 			"conditions": [

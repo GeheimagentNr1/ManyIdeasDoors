@@ -15,8 +15,10 @@ public class DoorDarkOakBookshelf extends DoubleDoorBlock {
 	
 	public DoorDarkOakBookshelf() {
 		
-		super( Block.Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
-			registry_name );
+		super(
+			Block.Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			registry_name
+		);
 	}
 	
 	@Override

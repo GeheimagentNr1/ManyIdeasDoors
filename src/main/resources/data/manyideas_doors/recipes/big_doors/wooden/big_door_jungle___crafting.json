@@ -1,11 +1,11 @@
 {
-	"type": "minecraft:crafting_shaped",
+	"type":    "minecraft:crafting_shaped",
 	"pattern": [
 		"PGP",
 		"IGI",
 		"PGP"
 	],
-	"key": {
+	"key":     {
 		"P": {
 			"item": "manyideas_core:panel_jungle"
 		},
@@ -16,7 +16,7 @@
 			"item": "manyideas_core:plate_iron"
 		}
 	},
-	"result": {
+	"result":  {
 		"item": "manyideas_doors:big_door_jungle"
 	}
 }
