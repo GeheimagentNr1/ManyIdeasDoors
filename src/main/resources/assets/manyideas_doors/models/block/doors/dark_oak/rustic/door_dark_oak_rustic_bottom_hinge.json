@@ -1,6 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/dark_oak/door_dark_oak_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/dark_oak/rustic/door_dark_oak_rustic_bottom"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/rustic/door_rustic_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/dark_oak/rustic/door_dark_oak_rustic_bottom",
+		"edge":   "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+	}
 }

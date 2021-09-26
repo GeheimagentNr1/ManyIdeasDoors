@@ -1,0 +1,49 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_mid",
+		"big_door_laboratory_top_mid": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_mid"
+	},
+	"elements": [
+		{
+			"name": "Bottom1",
+			"from": [0, 14, 7],
+			"to": [16, 16, 9],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 2], "texture": "#big_door_laboratory_top_mid"},
+				"south": {"uv": [16, 0, 0, 2], "texture": "#big_door_laboratory_top_mid"},
+				"up": {"uv": [0, 0, 16, 1], "rotation": 180, "texture": "#big_door_laboratory_top_mid", "cullface": "up"},
+				"down": {"uv": [0, 1, 16, 2], "texture": "#big_door_laboratory_top_mid"}
+			}
+		},
+		{
+			"name": "westframe1",
+			"from": [6, 1, 7],
+			"to": [10, 14, 9],
+			"faces": {
+				"north": {"uv": [6, 2, 10, 15], "texture": "#big_door_laboratory_top_mid"},
+				"east": {"uv": [7, 2, 9, 15], "texture": "#big_door_laboratory_top_mid"},
+				"south": {"uv": [6, 2, 10, 15], "texture": "#big_door_laboratory_top_mid"},
+				"west": {"uv": [7, 2, 9, 15], "texture": "#big_door_laboratory_top_mid"}
+			}
+		},
+		{
+			"name": "midframe1",
+			"from": [0, 0, 7],
+			"to": [16, 1, 9],
+			"faces": {
+				"north": {"uv": [0, 15, 16, 16], "texture": "#big_door_laboratory_top_mid"},
+				"south": {"uv": [0, 15, 16, 16], "texture": "#big_door_laboratory_top_mid"},
+				"up": {"uv": [0, 15, 16, 16], "texture": "#big_door_laboratory_top_mid"}
+			}
+		},
+		{
+			"name": "glass1",
+			"from": [0, 1, 7.5],
+			"to": [16, 14, 8.5],
+			"faces": {
+				"north": {"uv": [16, 2, 0, 15], "texture": "#big_door_laboratory_top_mid"},
+				"south": {"uv": [0, 2, 16, 15], "texture": "#big_door_laboratory_top_mid"}
+			}
+		}
+	]
+}

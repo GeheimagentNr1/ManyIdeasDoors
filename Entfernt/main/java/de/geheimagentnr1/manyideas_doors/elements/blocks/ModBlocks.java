@@ -42,6 +42,7 @@ public class ModBlocks {
 		//Doors: Special
 		//new DoorSpecialCarbonite(),//BCPFINRLT//TODO: Entfernen
 		//new DoorSpecialRedstone(),//BCPFINRLT//TODO: Entfernen
+		new DoorSpecialSpace(),//BCPFINRLT
 	};
 	
 	//Doors: Special
@@ -51,4 +52,7 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialRedstone.registry_name )
 	public static DoorSpecialRedstone DOOR_SPECIAL_REDSTONE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialSpace.registry_name )
+	public static DoorSpecialSpace DOOR_SPECIAL_SPACE;
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/acacia/door_acacia_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/acacia/heart/door_acacia_heart_bottom"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/acacia/door_acacia_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/acacia/heart/door_acacia_heart_bottom"
+	}
 }

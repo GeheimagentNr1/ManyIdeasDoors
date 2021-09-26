@@ -1,0 +1,18 @@
+{
+	"textures": {
+		"1": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_mid_top_right",
+		"particle": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_mid_top_right"
+	},
+	"elements": [
+		{
+			"name": "glass",
+			"from": [0, 0, 1],
+			"to": [16, 16, 2],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [15, 0, 16, 16], "texture": "#1", "cullface": "west"}
+			}
+		}
+	]
+}

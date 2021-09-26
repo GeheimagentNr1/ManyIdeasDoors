@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/types/iron/door_iron_top",
+	"textures": {
+		"top": "manyideas_doors:block/doors/iron/dwarf/door_iron_dwarf_top_off"
+	}
+}

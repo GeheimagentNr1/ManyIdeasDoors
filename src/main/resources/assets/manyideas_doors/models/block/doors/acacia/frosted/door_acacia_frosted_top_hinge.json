@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/acacia/frosted/door_acacia_frosted_top",
-        "edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_top_hinge",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/acacia/frosted/door_acacia_frosted_top",
+		"edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+	}
 }

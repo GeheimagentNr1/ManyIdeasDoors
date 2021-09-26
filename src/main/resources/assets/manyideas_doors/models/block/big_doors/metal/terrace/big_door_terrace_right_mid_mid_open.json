@@ -1,0 +1,49 @@
+{
+	"textures": {
+		"1": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_right",
+		"particle": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_mid",
+		"door": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_mid"
+	},
+	"elements": [
+		{
+			"from": [6, 0, 0.5],
+			"to": [8, 16, 1.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [8, 0, 6, 16], "texture": "#door"},
+				"east": {"uv": [9, 0, 8, 16], "texture": "#door"},
+				"south": {"uv": [6, 0, 8, 16], "texture": "#door"},
+				"west": {"uv": [7, 0, 6, 16], "texture": "#door"}
+			}
+		},
+		{
+			"from": [7, 0, 1.5],
+			"to": [9, 16, 2.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [15, 0, 13, 16], "texture": "#1"},
+				"east": {"uv": [14, 0, 13, 16], "texture": "#1"},
+				"south": {"uv": [13, 0, 15, 16], "texture": "#1"},
+				"west": {"uv": [14, 0, 13, 16], "texture": "#1"}
+			}
+		},
+		{
+			"from": [0, 0, 0.75],
+			"to": [6, 16, 1.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [6, 0, 0, 16], "texture": "#door"},
+				"south": {"uv": [6, 0, 0, 16], "texture": "#door"}
+			}
+		},
+		{
+			"from": [0, 0, 1.75],
+			"to": [7, 16, 2.25],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [13, 0, 6, 16], "texture": "#1"},
+				"south": {"uv": [13, 0, 6, 16], "texture": "#1"}
+			}
+		}
+	]
+}

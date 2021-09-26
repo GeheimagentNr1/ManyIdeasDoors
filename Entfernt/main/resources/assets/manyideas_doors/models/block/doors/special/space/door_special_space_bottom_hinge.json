@@ -1,0 +1,7 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/door_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/special/space/door_special_space_bottom",
+		"edge":   "minecraft:block/quartz_block_bottom"
+	}
+}

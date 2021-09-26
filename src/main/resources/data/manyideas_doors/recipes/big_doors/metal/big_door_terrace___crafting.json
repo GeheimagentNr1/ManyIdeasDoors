@@ -1,0 +1,19 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"QG",
+		"QG",
+		"QG"
+	],
+	"key": {
+		"Q": {
+			"item": "manyideas_core:plate_quartz"
+		},
+		"G": {
+			"item": "minecraft:glass_pane"
+		}
+	},
+	"result": {
+		"item": "manyideas_doors:big_door_terrace"
+	}
+}

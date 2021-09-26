@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/jungle/door_jungle_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/jungle/bookshelf/door_jungle_bookshelf_bottom"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/jungle/door_jungle_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/jungle/bookshelf/door_jungle_bookshelf_bottom"
+	}
 }

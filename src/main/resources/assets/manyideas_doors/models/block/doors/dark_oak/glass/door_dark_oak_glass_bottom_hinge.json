@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/glass/door_glass_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/dark_oak/glass/door_dark_oak_glass_bottom",
-        "edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/glass/door_glass_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/dark_oak/glass/door_dark_oak_glass_bottom",
+		"edge":   "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+	}
 }

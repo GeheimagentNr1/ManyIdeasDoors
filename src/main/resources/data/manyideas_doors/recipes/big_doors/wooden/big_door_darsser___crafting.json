@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "PG",
+    "PG",
+    "PG"
+  ],
+  "key": {
+    "P": {
+      "type": "recipes_lib:nbt",
+      "item": "manyideas_core:planks_colored",
+      "nbt": "{dye: {color: \"green\"}}",
+      "matchType": "CONTAINS"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:big_door_darsser"
+  }
+}

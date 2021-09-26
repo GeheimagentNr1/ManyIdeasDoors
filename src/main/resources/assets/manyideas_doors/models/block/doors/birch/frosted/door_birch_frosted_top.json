@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_top",
-    "textures": {
-        "top": "manyideas_doors:block/doors/birch/frosted/door_birch_frosted_top",
-        "edge": "minecraft:block/stripped_birch_log"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_top",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/birch/frosted/door_birch_frosted_top",
+		"edge": "minecraft:block/stripped_birch_log"
+	}
 }

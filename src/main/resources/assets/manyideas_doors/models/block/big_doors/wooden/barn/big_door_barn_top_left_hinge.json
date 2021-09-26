@@ -1,0 +1,84 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_top_left",
+		"big_door_redbarn_top_left": "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_top_left"
+	},
+	"elements": [
+		{
+			"name": "frame side",
+			"from": [13, 0, 0],
+			"to": [16, 16, 3],
+			"faces": {
+				"north": {"uv": [0, 0, 3, 16], "texture": "#big_door_redbarn_top_left", "cullface": "north"},
+				"east": {"uv": [0, 0, 1, 16], "texture": "#big_door_redbarn_top_left", "cullface": "east"},
+				"south": {"uv": [3, 0, 0, 16], "texture": "#big_door_redbarn_top_left"},
+				"west": {"uv": [2, 0, 3, 16], "texture": "#big_door_redbarn_top_left"},
+				"up": {"uv": [0, 0, 3, 1], "rotation": 180, "texture": "#big_door_redbarn_top_left", "cullface": "up"}
+			}
+		},
+		{
+			"name": "blatt",
+			"from": [1, 1, 1],
+			"to": [13, 13, 2],
+			"faces": {
+				"north": {"uv": [3, 3, 15, 15], "texture": "#big_door_redbarn_top_left"},
+				"south": {"uv": [15, 3, 3, 15], "texture": "#big_door_redbarn_top_left"}
+			}
+		},
+		{
+			"name": "frame top",
+			"from": [0, 13, 0],
+			"to": [13, 16, 3],
+			"faces": {
+				"north": {"uv": [3, 0, 16, 3], "texture": "#big_door_redbarn_top_left", "cullface": "north"},
+				"south": {"uv": [16, 0, 4, 3], "texture": "#big_door_redbarn_top_left"},
+				"up": {"uv": [3, 0, 16, 1], "rotation": 180, "texture": "#big_door_redbarn_top_left", "cullface": "up"},
+				"down": {"uv": [3, 3, 16, 2], "rotation": 180, "texture": "#big_door_redbarn_top_left"}
+			}
+		},
+		{
+			"name": "details 2",
+			"from": [0, 1, 0.5],
+			"to": [1, 13, 2.5],
+			"faces": {
+				"north": {"uv": [15, 3, 16, 15], "texture": "#big_door_redbarn_top_left"},
+				"east": {"uv": [15, 3, 16, 15], "texture": "#big_door_redbarn_top_left"},
+				"south": {"uv": [15, 3, 16, 15], "texture": "#big_door_redbarn_top_left"}
+			}
+		},
+		{
+			"name": "diagonal 1",
+			"from": [13, -1, 0.75],
+			"to": [16, 12.5, 2.25],
+			"rotation": {"angle": -45, "axis": "z", "origin": [15, 14, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 13.5], "texture": "#big_door_redbarn_top_left"},
+				"east": {"uv": [0, 0, 1, 13.5], "texture": "#big_door_redbarn_top_left"},
+				"south": {"uv": [0, 0, 3, 13.5], "texture": "#big_door_redbarn_top_left"},
+				"west": {"uv": [0, 0, 1, 13.5], "texture": "#big_door_redbarn_top_left"}
+			}
+		},
+		{
+			"name": "diagonal 2",
+			"from": [13, -5.5, 0.75],
+			"to": [16, -1, 2.25],
+			"rotation": {"angle": -45, "axis": "z", "origin": [15, 14, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 3, 4.5], "texture": "#big_door_redbarn_top_left"},
+				"east": {"uv": [0, 0, 1, 4.5], "texture": "#big_door_redbarn_top_left"},
+				"south": {"uv": [0, 0, 3, 4.5], "texture": "#big_door_redbarn_top_left"},
+				"west": {"uv": [0, 0, 2, 4.5], "texture": "#big_door_redbarn_top_left"}
+			}
+		},
+		{
+			"name": "details 3",
+			"from": [0, 0, 0.5],
+			"to": [13, 1, 2.5],
+			"faces": {
+				"north": {"uv": [3, 15, 16, 16], "texture": "#big_door_redbarn_top_left"},
+				"south": {"uv": [16, 15, 3, 16], "texture": "#big_door_redbarn_top_left"},
+				"up": {"uv": [3, 15, 16, 16], "rotation": 180, "texture": "#big_door_redbarn_top_left"}
+			}
+		}
+	]
+}

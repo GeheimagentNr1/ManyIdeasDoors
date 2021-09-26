@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/acacia/shoji/door_acacia_shoji_bottom",
-        "edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/acacia/shoji/door_acacia_shoji_bottom",
+		"edge":   "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+	}
 }

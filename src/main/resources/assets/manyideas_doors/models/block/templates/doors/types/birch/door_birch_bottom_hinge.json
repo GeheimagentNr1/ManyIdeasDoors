@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/door_bottom_hinge",
-    "textures": {
-        "edge": "minecraft:block/stripped_birch_log"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/door_bottom_hinge",
+	"textures": {
+		"edge": "minecraft:block/stripped_birch_log"
+	}
 }

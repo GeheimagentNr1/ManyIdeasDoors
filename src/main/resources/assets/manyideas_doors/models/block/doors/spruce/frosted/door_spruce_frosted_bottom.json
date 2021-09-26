@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/spruce/frosted/door_spruce_frosted_bottom",
-        "edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/spruce/frosted/door_spruce_frosted_bottom",
+		"edge":   "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+	}
 }

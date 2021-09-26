@@ -1,0 +1,32 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_right",
+		"big_door_birch_top_right": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_right"
+	},
+	"elements": [
+		{
+			"name": "glass",
+			"from": [0, 0, 1],
+			"to": [16, 15, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 1, 16, 16], "texture": "#big_door_birch_top_right"},
+				"south": {"uv": [16, 1, 0, 16], "texture": "#big_door_birch_top_right"},
+				"west": {"uv": [16, 1, 15, 16], "texture": "#big_door_birch_top_right", "cullface": "west"}
+			}
+		},
+		{
+			"name": "glass",
+			"from": [0, 15, 1],
+			"to": [16, 16, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 1], "texture": "#big_door_birch_top_right"},
+				"south": {"uv": [16, 0, 0, 1], "texture": "#big_door_birch_top_right"},
+				"west": {"uv": [16, 0, 15, 1], "texture": "#big_door_birch_top_right", "cullface": "west"},
+				"up": {"uv": [16, 0, 0, 1], "texture": "#big_door_birch_top_right", "cullface": "up"},
+				"down": {"uv": [16, 0, 0, 1], "texture": "#big_door_birch_top_right"}
+			}
+		}
+	]
+}

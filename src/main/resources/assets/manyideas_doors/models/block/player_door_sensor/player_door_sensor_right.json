@@ -1,49 +1,48 @@
 {
-    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
-    "textures": {
-        "particle": "minecraft:block/cauldron_top",
-        "cauldron_top": "minecraft:block/cauldron_top",
-        "redstone_block": "minecraft:block/redstone_block"
-    },
-    "elements": [
-        {
-            "name": "bottom",
-            "from": [ 0, 0.5, 0 ], 
-            "to": [ 5, 1, 1 ], 
-            "faces": {
-                "north": { "texture": "#cauldron_top", "uv": [ 3, 0, 8, 0.5 ], "cullface": "north" },
-                "east": { "texture": "#cauldron_top", "uv": [ 0, 0, 2, 0.5 ] },
-                "south": { "texture": "#cauldron_top", "uv": [ 0, 0, 5, 0.5 ] },
-                "west": { "texture": "#cauldron_top", "uv": [ 0, 0, 1, 0.5 ], "cullface": "west" },
-                "up": { "texture": "#cauldron_top", "uv": [ 3, 0, 8, 1 ] },
-                "down": { "texture": "#redstone_block", "uv": [ 3, 11, 8, 12 ] }
-            }
-        },
-        {
-            "name": "back",
-            "from": [ 0, 1, 0 ], 
-            "to": [ 5, 1.5, 0.5 ], 
-            "faces": {
-                "north": { "texture": "#cauldron_top", "uv": [ 1, 0, 6, 0.5 ], "cullface": "north" },
-                "east": { "texture": "#cauldron_top", "uv": [ 2, 0, 2.5, 0.5 ] },
-                "south": { "texture": "#cauldron_top", "uv": [ 0, 0, 5, 0.5 ] },
-                "west": { "texture": "#cauldron_top", "uv": [ 0, 0, 0.5, 0.5 ], "cullface": "west" },
-                "up": { "texture": "#cauldron_top", "uv": [ 2, 2, 7, 2.5 ] }
-            }
-        },
-        {
-            "name": "front",
-            "from": [ 0, -2.4, 7.25 ], 
-            "to": [ 5.01, -1.9, 8.5 ], 
-            "rotation": { "origin": [ 8, 8, 8 ], "axis": "x", "angle": 45.0 },
-            "faces": {
-                "north": { "texture": "#cauldron_top", "uv": [ 0, 0, 5.01, 0.5 ] },
-                "east": { "texture": "#cauldron_top", "uv": [ 4, 2, 5.25, 2.5 ] },
-                "south": { "texture": "#cauldron_top", "uv": [ 5.99, 0, 11, 0.5 ] },
-                "west": { "texture": "#cauldron_top", "uv": [ 6, 2, 7.25, 2.5 ], "cullface": "west" },
-                "up": { "texture": "#cauldron_top", "uv": [ 5.99, 3, 10.01, 2 ] },
-                "down": { "texture": "#cauldron_top", "uv": [ 2.99, 1, 8.01, 2 ] }
-            }
-        }
-    ]
+	"textures": {
+		"particle": "block/cauldron_top",
+		"cauldron_top": "block/cauldron_top",
+		"redstone_block": "block/redstone_block"
+	},
+	"elements": [
+		{
+			"name": "bottom",
+			"from": [0, 0.5, 0],
+			"to": [5, 1, 1],
+			"faces": {
+				"north": {"uv": [3, 0, 8, 0.5], "texture": "#cauldron_top", "cullface": "north"},
+				"east": {"uv": [0, 0, 2, 0.5], "texture": "#cauldron_top"},
+				"south": {"uv": [0, 0, 5, 0.5], "texture": "#cauldron_top"},
+				"west": {"uv": [0, 0, 1, 0.5], "texture": "#cauldron_top", "cullface": "west"},
+				"up": {"uv": [3, 0, 8, 1], "texture": "#cauldron_top"},
+				"down": {"uv": [3, 11, 8, 12], "texture": "#redstone_block"}
+			}
+		},
+		{
+			"name": "back",
+			"from": [0, 1, 0],
+			"to": [5, 1.5, 0.5],
+			"faces": {
+				"north": {"uv": [1, 0, 6, 0.5], "texture": "#cauldron_top", "cullface": "north"},
+				"east": {"uv": [2, 0, 2.5, 0.5], "texture": "#cauldron_top"},
+				"south": {"uv": [0, 0, 5, 0.5], "texture": "#cauldron_top"},
+				"west": {"uv": [0, 0, 0.5, 0.5], "texture": "#cauldron_top", "cullface": "west"},
+				"up": {"uv": [2, 2, 7, 2.5], "texture": "#cauldron_top"}
+			}
+		},
+		{
+			"name": "front",
+			"from": [0, -2.4, 7.25],
+			"to": [5.01, -1.9, 8.5],
+			"rotation": {"angle": 45, "axis": "x", "origin": [8, 8, 8]},
+			"faces": {
+				"north": {"uv": [0, 0, 5.01, 0.5], "texture": "#cauldron_top"},
+				"east": {"uv": [4, 2, 5.25, 2.5], "texture": "#cauldron_top"},
+				"south": {"uv": [5.99, 0, 11, 0.5], "texture": "#cauldron_top"},
+				"west": {"uv": [6, 2, 7.25, 2.5], "texture": "#cauldron_top", "cullface": "west"},
+				"up": {"uv": [5.99, 3, 10.01, 2], "texture": "#cauldron_top"},
+				"down": {"uv": [2.99, 1, 8.01, 2], "texture": "#cauldron_top"}
+			}
+		}
+	]
 }

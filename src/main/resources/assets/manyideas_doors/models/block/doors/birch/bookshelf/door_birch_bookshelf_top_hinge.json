@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/birch/door_birch_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/birch/bookshelf/door_birch_bookshelf_top"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/birch/door_birch_top_hinge",
+	"textures": {
+		"top": "manyideas_doors:block/doors/birch/bookshelf/door_birch_bookshelf_top"
+	}
 }

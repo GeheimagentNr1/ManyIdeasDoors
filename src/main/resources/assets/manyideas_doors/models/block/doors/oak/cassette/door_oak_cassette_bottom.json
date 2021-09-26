@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/oak/cassette/door_oak_cassette_bottom",
-        "edge": "minecraft:block/stripped_oak_log"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/oak/cassette/door_oak_cassette_bottom",
+		"edge":   "minecraft:block/stripped_oak_log"
+	}
 }

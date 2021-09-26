@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/oak/shoji/door_oak_shoji_bottom",
-        "edge": "minecraft:block/stripped_oak_log"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/oak/shoji/door_oak_shoji_bottom",
+		"edge":   "minecraft:block/stripped_oak_log"
+	}
 }

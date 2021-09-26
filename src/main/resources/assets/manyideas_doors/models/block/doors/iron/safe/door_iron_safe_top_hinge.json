@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/iron/door_iron_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/iron/safe/door_iron_safe_top"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/iron/door_iron_top_hinge",
+	"textures": {
+		"top": "manyideas_doors:block/doors/iron/safe/door_iron_safe_top"
+	}
 }

@@ -1,0 +1,68 @@
+{
+	"textures": {
+		"2": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_bottom_right_hinge",
+		"3": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak",
+		"particle": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_bottom_right_hinge",
+		"door": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_bottom_left"
+	},
+	"elements": [
+		{
+			"name": "Filling",
+			"from": [0, 3, 1],
+			"to": [13, 16, 2],
+			"faces": {
+				"north": {"uv": [3, 0, 16, 13], "texture": "#door"},
+				"south": {"uv": [0, 0, 13, 13], "texture": "#2"}
+			}
+		},
+		{
+			"name": "bottom north",
+			"from": [0, 0, 0],
+			"to": [16, 3, 2],
+			"faces": {
+				"north": {"uv": [0, 13, 16, 16], "texture": "#door", "cullface": "north"},
+				"east": {"uv": [1, 13, 3, 16], "texture": "#3", "cullface": "east"},
+				"up": {"uv": [0, 13, 16, 14], "texture": "#2"},
+				"down": {"uv": [0, 15, 16, 16], "texture": "#2", "cullface": "down"}
+			}
+		},
+		{
+			"name": "bottom south",
+			"from": [0, 0, 2],
+			"to": [16, 3, 3],
+			"faces": {
+				"east": {"uv": [0, 13, 1, 16], "texture": "#3", "cullface": "east"},
+				"south": {"uv": [0, 13, 16, 16], "texture": "#2"},
+				"up": {"uv": [0, 13, 16, 14], "texture": "#2"},
+				"down": {"uv": [0, 15, 16, 16], "texture": "#2", "cullface": "down"}
+			}
+		},
+		{
+			"name": "outer north",
+			"from": [13, 3, 0],
+			"to": [15, 16, 2],
+			"faces": {
+				"north": {"uv": [1, 0, 3, 13], "texture": "#door", "cullface": "north"},
+				"west": {"uv": [2, 0, 3, 13], "texture": "#door"}
+			}
+		},
+		{
+			"name": "outer north",
+			"from": [13, 3, 2],
+			"to": [15, 16, 3],
+			"faces": {
+				"south": {"uv": [13, 0, 15, 13], "texture": "#2"},
+				"west": {"uv": [13, 0, 14, 13], "texture": "#2"}
+			}
+		},
+		{
+			"from": [15, 3, 0],
+			"to": [16, 16, 3],
+			"faces": {
+				"north": {"uv": [15, 0, 16, 13], "texture": "#2", "cullface": "north"},
+				"east": {"uv": [0, 0, 3, 13], "texture": "#3", "cullface": "east"},
+				"south": {"uv": [0, 0, 1, 13], "texture": "#door"}
+			}
+		}
+	]
+}

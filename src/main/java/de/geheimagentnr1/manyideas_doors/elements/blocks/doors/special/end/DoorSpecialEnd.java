@@ -71,7 +71,8 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	
 	@Nonnull
 	@Override
-	public VoxelShape getShape( BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos,
+	public VoxelShape getShape(
+		BlockState state, @Nonnull IBlockReader worldIn, @Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
 		if( state.get( OPEN ) ) {

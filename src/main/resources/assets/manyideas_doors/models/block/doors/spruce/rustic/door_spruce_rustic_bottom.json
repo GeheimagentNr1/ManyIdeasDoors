@@ -1,6 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/spruce/door_spruce_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/spruce/rustic/door_spruce_rustic_bottom"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/rustic/door_rustic_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/spruce/rustic/door_spruce_rustic_bottom",
+		"edge":   "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+	}
 }

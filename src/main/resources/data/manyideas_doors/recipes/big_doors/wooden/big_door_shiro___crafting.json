@@ -1,0 +1,25 @@
+{
+	"type": "minecraft:crafting_shaped",
+	"pattern": [
+		"PPR",
+		"PPR",
+		"IIR"
+	],
+	"key":     {
+		"P": {
+			"type": "recipes_lib:nbt",
+			"item": "manyideas_core:planks_colored",
+			"nbt": "{dye: {color: \"black\"}}",
+			"matchType": "CONTAINS"
+		},
+		"R": {
+			"item": "minecraft:red_dye"
+		},
+		"I": {
+			"item": "minecraft:iron_bars"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_shiro"
+	}
+}

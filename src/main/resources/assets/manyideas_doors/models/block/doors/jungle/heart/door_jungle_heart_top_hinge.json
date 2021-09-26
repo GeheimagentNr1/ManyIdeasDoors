@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/heart/door_heart_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/jungle/heart/door_jungle_heart_top",
-        "edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/heart/door_heart_top_hinge",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/jungle/heart/door_jungle_heart_top",
+		"edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+	}
 }

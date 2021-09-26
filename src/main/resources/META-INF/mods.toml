@@ -56,3 +56,9 @@ Doors Mod for the Many Ideas Mods
     versionRange="[1.0.0,)"
     ordering="NONE"
     side="BOTH"
+[[dependencies.manyideas_doors]]
+    modId="recipes_lib"
+    mandatory=true
+    versionRange="[2.0.0,)"
+    ordering="NONE"
+    side="BOTH"

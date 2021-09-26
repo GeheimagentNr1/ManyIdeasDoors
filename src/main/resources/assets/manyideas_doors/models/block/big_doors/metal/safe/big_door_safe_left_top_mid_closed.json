@@ -1,0 +1,28 @@
+{
+	"textures": {
+		"14": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_top_mid_on",
+		"32": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_outer_top_mid_on",
+		"particle": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_top_mid_on"
+	},
+	"elements": [
+		{
+			"name": "Block 1 - Hauptflaeche",
+			"from": [0, 0, 1],
+			"to": [16, 15, 2],
+			"faces": {
+				"north": {"uv": [16, 1, 0, 16], "texture": "#32"},
+				"south": {"uv": [16, 1, 0, 16], "texture": "#14"}
+			}
+		},
+		{
+			"from": [0, 15, 0],
+			"to": [16, 16, 3],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 1], "texture": "#32", "cullface": "north"},
+				"south": {"uv": [0, 0, 16, 1], "texture": "#14"},
+				"up": {"uv": [0, 0, 16, 1], "texture": "#14", "cullface": "up"},
+				"down": {"uv": [0, 0, 16, 1], "texture": "#32"}
+			}
+		}
+	]
+}

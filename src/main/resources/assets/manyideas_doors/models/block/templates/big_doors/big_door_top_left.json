@@ -1,19 +1,18 @@
 {
-    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
-    "textures": {
-        "particle": "#door"
-    },
-    "elements": [
-        {
-            "name": "Cube",
-            "from": [ 0, 0, 0 ], 
-            "to": [ 16, 16, 3 ], 
-            "faces": {
-                "north": { "texture": "#door", "uv": [ 0, 0, 16, 16 ], "cullface": "north" },
-                "east": { "texture": "#edge", "uv": [ 0, 0, 3, 16 ], "cullface": "east" },
-                "south": { "texture": "#door", "uv": [ 16, 0, 0, 16 ] },
-                "up": { "texture": "#edge", "uv": [ 0, 0, 16, 3 ], "cullface": "up" }
-            }
-        }
-    ]
+	"textures": {
+		"particle": "#door"
+	},
+	"elements": [
+		{
+			"name": "Cube",
+			"from": [0, 0, 0],
+			"to": [16, 16, 3],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#door", "cullface": "north"},
+				"east": {"uv": [0, 0, 3, 16], "texture": "#edge", "cullface": "east"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#door"},
+				"up": {"uv": [0, 0, 16, 3], "texture": "#edge", "cullface": "up"}
+			}
+		}
+	]
 }

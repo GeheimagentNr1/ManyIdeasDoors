@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/heart/door_heart_top",
-    "textures": {
-        "top": "manyideas_doors:block/doors/dark_oak/heart/door_dark_oak_heart_top",
-        "edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/heart/door_heart_top",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/dark_oak/heart/door_dark_oak_heart_top",
+		"edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+	}
 }

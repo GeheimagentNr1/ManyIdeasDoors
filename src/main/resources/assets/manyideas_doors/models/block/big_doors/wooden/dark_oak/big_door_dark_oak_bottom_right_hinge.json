@@ -1,0 +1,74 @@
+{
+	"textures": {
+		"2": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_bottom_right_hinge",
+		"3": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak",
+		"particle": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_bottom_right_hinge",
+		"door": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_bottom_left"
+	},
+	"elements": [
+		{
+			"name": "Filling",
+			"from": [3, 3, 1],
+			"to": [16, 16, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 3, 13], "texture": "#door"},
+				"south": {"uv": [13, 0, 0, 13], "texture": "#2"}
+			}
+		},
+		{
+			"name": "bottom north",
+			"from": [0, 0, 0],
+			"to": [16, 3, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 13, 0, 16], "texture": "#door", "cullface": "north"},
+				"west": {"uv": [3, 13, 1, 16], "texture": "#3", "cullface": "west"},
+				"up": {"uv": [16, 13, 0, 14], "texture": "#2"},
+				"down": {"uv": [16, 15, 0, 16], "texture": "#2", "cullface": "down"}
+			}
+		},
+		{
+			"name": "bottom south",
+			"from": [0, 0, 2],
+			"to": [16, 3, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"south": {"uv": [16, 13, 0, 16], "texture": "#2"},
+				"west": {"uv": [1, 13, 0, 16], "texture": "#3", "cullface": "west"},
+				"up": {"uv": [16, 13, 0, 14], "texture": "#2"},
+				"down": {"uv": [16, 15, 0, 16], "texture": "#2", "cullface": "down"}
+			}
+		},
+		{
+			"name": "outer north",
+			"from": [1, 3, 0],
+			"to": [3, 16, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [3, 0, 1, 13], "texture": "#door", "cullface": "north"},
+				"east": {"uv": [3, 0, 2, 13], "texture": "#door"}
+			}
+		},
+		{
+			"name": "outer north",
+			"from": [1, 3, 2],
+			"to": [3, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"east": {"uv": [14, 0, 13, 13], "texture": "#2"},
+				"south": {"uv": [15, 0, 13, 13], "texture": "#2"}
+			}
+		},
+		{
+			"from": [0, 3, 0],
+			"to": [1, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 15, 13], "texture": "#2", "cullface": "north"},
+				"south": {"uv": [1, 0, 0, 13], "texture": "#door"},
+				"west": {"uv": [3, 0, 0, 13], "texture": "#3", "cullface": "west"}
+			}
+		}
+	]
+}

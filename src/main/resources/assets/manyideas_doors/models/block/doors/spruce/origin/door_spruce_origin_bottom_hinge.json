@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/spruce/origin/door_spruce_origin_bottom",
-        "edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/spruce/origin/door_spruce_origin_bottom",
+		"edge":   "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+	}
 }

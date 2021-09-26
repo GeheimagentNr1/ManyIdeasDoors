@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/jungle/origin/door_jungle_origin_bottom",
-        "edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/jungle/origin/door_jungle_origin_bottom",
+		"edge":   "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+	}
 }

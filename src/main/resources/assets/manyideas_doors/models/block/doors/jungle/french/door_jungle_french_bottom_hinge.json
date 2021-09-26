@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/french/door_french_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/jungle/french/door_jungle_french_bottom",
-        "edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/french/door_french_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/jungle/french/door_jungle_french_bottom",
+		"edge":   "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+	}
 }

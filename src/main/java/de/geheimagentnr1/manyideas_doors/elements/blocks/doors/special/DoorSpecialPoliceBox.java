@@ -1,5 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special;
 
+import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.block.Block;
@@ -16,7 +17,7 @@ public class DoorSpecialPoliceBox extends DoubleDoorBlock {
 	public DoorSpecialPoliceBox() {
 		
 		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
-			registry_name, true );
+			registry_name, OpenedBy.BOTH );
 	}
 	
 	@Override

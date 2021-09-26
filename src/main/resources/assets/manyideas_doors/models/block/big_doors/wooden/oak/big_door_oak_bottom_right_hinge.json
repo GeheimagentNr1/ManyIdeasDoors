@@ -1,0 +1,66 @@
+{
+	"textures": {
+		"1": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_oak",
+		"particle": "manyideas_doors:block/big_doors/wooden/oak/big_door_oak_bottom_left",
+		"big_door_oak_bottom_left": "manyideas_doors:block/big_doors/wooden/oak/big_door_oak_bottom_left"
+	},
+	"elements": [
+		{
+			"name": "blatt",
+			"from": [3, 3, 0.5],
+			"to": [14, 15, 2.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [14, 1, 3, 13], "texture": "#big_door_oak_bottom_left"},
+				"south": {"uv": [3, 1, 14, 13], "texture": "#big_door_oak_bottom_left"}
+			}
+		},
+		{
+			"name": "west frame",
+			"from": [0, 0, 0],
+			"to": [3, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [3, 0, 0, 16], "texture": "#big_door_oak_bottom_left", "cullface": "north"},
+				"east": {"uv": [16, 0, 13, 16], "texture": "#big_door_oak_bottom_left"},
+				"south": {"uv": [0, 0, 3, 16], "texture": "#big_door_oak_bottom_left"},
+				"west": {"uv": [3, 0, 0, 16], "texture": "#1", "cullface": "west"},
+				"down": {"uv": [3, 15, 0, 16], "texture": "#big_door_oak_bottom_left", "cullface": "down"}
+			}
+		},
+		{
+			"name": "bottom frame",
+			"from": [3, 0, 0],
+			"to": [16, 3, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 13, 3, 16], "texture": "#big_door_oak_bottom_left", "cullface": "north"},
+				"south": {"uv": [3, 13, 16, 16], "texture": "#big_door_oak_bottom_left"},
+				"up": {"uv": [16, 13, 3, 14], "rotation": 180, "texture": "#big_door_oak_bottom_left"},
+				"down": {"uv": [6, 15, 3, 16], "texture": "#big_door_oak_bottom_left", "cullface": "down"}
+			}
+		},
+		{
+			"name": "top frame",
+			"from": [3, 15, 0.25],
+			"to": [16, 16, 2.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 3, 1], "texture": "#big_door_oak_bottom_left"},
+				"south": {"uv": [3, 0, 16, 1], "texture": "#big_door_oak_bottom_left"},
+				"down": {"uv": [16, 0, 3, 1], "texture": "#big_door_oak_bottom_left"}
+			}
+		},
+		{
+			"name": "east frame",
+			"from": [14, 3, 0.25],
+			"to": [16, 15, 2.75],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 14, 12], "texture": "#big_door_oak_bottom_left"},
+				"south": {"uv": [14, 0, 16, 12], "texture": "#big_door_oak_bottom_left"},
+				"west": {"uv": [16, 0, 14, 12], "texture": "#big_door_oak_bottom_left"}
+			}
+		}
+	]
+}

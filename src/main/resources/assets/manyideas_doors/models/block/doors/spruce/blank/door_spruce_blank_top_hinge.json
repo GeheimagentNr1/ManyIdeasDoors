@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/spruce/door_spruce_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/spruce/blank/door_spruce_blank_top"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/spruce/door_spruce_top_hinge",
+	"textures": {
+		"top": "manyideas_doors:block/doors/spruce/blank/door_spruce_blank_top"
+	}
 }

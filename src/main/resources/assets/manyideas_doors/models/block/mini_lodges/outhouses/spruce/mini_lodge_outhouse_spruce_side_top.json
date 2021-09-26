@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/mini_lodges/outhouses/mini_lodge_outhouse_side_top",
+	"textures": {
+		"outhouse": "manyideas_doors:block/mini_lodges/outhouses/mini_lodge_outhouse_spruce"
+	}
+}

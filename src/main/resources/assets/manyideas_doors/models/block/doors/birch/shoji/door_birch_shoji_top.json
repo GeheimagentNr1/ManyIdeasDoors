@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_top",
-    "textures": {
-        "top": "manyideas_doors:block/doors/birch/shoji/door_birch_shoji_top",
-        "edge": "minecraft:block/stripped_birch_log"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_top",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/birch/shoji/door_birch_shoji_top",
+		"edge": "minecraft:block/stripped_birch_log"
+	}
 }

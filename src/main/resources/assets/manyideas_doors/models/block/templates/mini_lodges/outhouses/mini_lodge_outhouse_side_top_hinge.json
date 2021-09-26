@@ -1,0 +1,19 @@
+{
+	"textures": {
+		"particle": "#outhouse"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 16], "texture": "#outhouse", "cullface": "north"},
+				"east": {"uv": [3, 0, 0, 16], "texture": "#outhouse", "cullface": "east"},
+				"south": {"uv": [16, 0, 0, 16], "texture": "#outhouse"},
+				"west": {"uv": [3, 0, 0, 16], "texture": "#outhouse", "cullface": "west"},
+				"up": {"uv": [0, 16, 3, 0], "rotation": 90, "texture": "#outhouse", "cullface": "up"}
+			}
+		}
+	]
+}

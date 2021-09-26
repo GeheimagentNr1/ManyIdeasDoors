@@ -1,0 +1,63 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/wooden/darsser/big_door_darsser_mid_top",
+		"big_door_emerald_mid_top": "manyideas_doors:block/big_doors/wooden/darsser/big_door_darsser_mid_top"
+	},
+	"elements": [
+		{
+			"name": "top",
+			"from": [0, 13, 0],
+			"to": [16, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 0, 16, 3], "texture": "#big_door_emerald_mid_top", "cullface": "north"},
+				"south": {"uv": [16, 0, 0, 3], "texture": "#big_door_emerald_mid_top"},
+				"up": {"uv": [16, 0, 0, 1], "texture": "#big_door_emerald_mid_top", "cullface": "up"},
+				"down": {"uv": [16, 2, 0, 3], "texture": "#big_door_emerald_mid_top"}
+			}
+		},
+		{
+			"name": "side 2",
+			"from": [0, 0, 0],
+			"to": [16, 3, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 13, 0, 16], "texture": "#big_door_emerald_mid_top", "cullface": "north"},
+				"south": {"uv": [16, 13, 0, 16], "texture": "#big_door_emerald_mid_top"},
+				"up": {"uv": [16, 13, 0, 14], "texture": "#big_door_emerald_mid_top"}
+			}
+		},
+		{
+			"name": "frame 1",
+			"from": [0, 12, 0.5],
+			"to": [16, 13, 2.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 12, 16, 13], "texture": "#big_door_emerald_mid_top"},
+				"south": {"uv": [16, 3, 0, 4], "texture": "#big_door_emerald_mid_top"},
+				"down": {"uv": [16, 3, 0, 4], "texture": "#big_door_emerald_mid_top"}
+			}
+		},
+		{
+			"name": "frame 2",
+			"from": [0, 3, 0.5],
+			"to": [16, 4, 2.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 12, 16, 13], "texture": "#big_door_emerald_mid_top"},
+				"south": {"uv": [16, 12, 0, 13], "texture": "#big_door_emerald_mid_top"},
+				"up": {"uv": [16, 12, 0, 13], "texture": "#big_door_emerald_mid_top"}
+			}
+		},
+		{
+			"name": "blatt",
+			"from": [0, 4, 1],
+			"to": [16, 12, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [0, 4, 16, 12], "texture": "#big_door_emerald_mid_top"},
+				"south": {"uv": [16, 4, 0, 12], "texture": "#big_door_emerald_mid_top"}
+			}
+		}
+	]
+}

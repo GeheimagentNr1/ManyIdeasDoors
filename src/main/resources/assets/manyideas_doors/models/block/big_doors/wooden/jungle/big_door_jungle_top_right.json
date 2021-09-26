@@ -1,0 +1,104 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/wooden/jungle/big_door_jungle_top_left",
+		"big_door_jungle_top_left": "manyideas_doors:block/big_doors/wooden/jungle/big_door_jungle_top_left"
+	},
+	"elements": [
+		{
+			"name": "frame side",
+			"from": [0, 0, 0],
+			"to": [3, 16, 3],
+			"faces": {
+				"north": {"uv": [0, 0, 3, 16], "texture": "#big_door_jungle_top_left", "cullface": "north"},
+				"east": {"uv": [2, 0, 3, 16], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [3, 0, 0, 16], "texture": "#big_door_jungle_top_left"},
+				"west": {"uv": [0, 0, 1, 16], "texture": "#big_door_jungle_top_left", "cullface": "west"},
+				"up": {"uv": [0, 0, 3, 1], "texture": "#big_door_jungle_top_left", "cullface": "up"}
+			}
+		},
+		{
+			"name": "blatt",
+			"from": [4, 0, 1.25],
+			"to": [16, 12, 1.75],
+			"faces": {
+				"north": {"uv": [16, 4, 4, 16], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [4, 4, 16, 16], "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "detail 3",
+			"from": [4, 7, 1],
+			"to": [16, 8, 2],
+			"faces": {
+				"north": {"uv": [16, 8, 4, 9], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [4, 8, 16, 9], "texture": "#big_door_jungle_top_left"},
+				"up": {"uv": [4, 8, 16, 9], "rotation": 180, "texture": "#big_door_jungle_top_left"},
+				"down": {"uv": [4, 8, 16, 9], "rotation": 180, "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "detail 4",
+			"from": [3, 0, 1],
+			"to": [4, 13, 2],
+			"faces": {
+				"north": {"uv": [3, 3, 4, 16], "texture": "#big_door_jungle_top_left"},
+				"east": {"uv": [3, 3, 4, 16], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [3, 3, 4, 16], "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "detail 5",
+			"from": [8, 0, 1],
+			"to": [9, 12, 2],
+			"faces": {
+				"north": {"uv": [8, 4, 9, 16], "texture": "#big_door_jungle_top_left"},
+				"east": {"uv": [8, 4, 9, 16], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [8, 4, 9, 16], "texture": "#big_door_jungle_top_left"},
+				"west": {"uv": [8, 4, 9, 16], "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "detail 6",
+			"from": [13, 0, 1],
+			"to": [14, 12, 2],
+			"faces": {
+				"north": {"uv": [13, 4, 14, 16], "texture": "#big_door_jungle_top_left"},
+				"east": {"uv": [13, 4, 14, 16], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [13, 4, 14, 16], "texture": "#big_door_jungle_top_left"},
+				"west": {"uv": [13, 4, 14, 16], "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "detail 7",
+			"from": [4, 2, 1],
+			"to": [16, 3, 2],
+			"faces": {
+				"north": {"uv": [16, 13, 4, 14], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [4, 13, 16, 14], "texture": "#big_door_jungle_top_left"},
+				"up": {"uv": [4, 13, 16, 14], "rotation": 180, "texture": "#big_door_jungle_top_left"},
+				"down": {"uv": [4, 13, 16, 14], "rotation": 180, "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "frame top",
+			"from": [3, 13, 0],
+			"to": [16, 16, 3],
+			"faces": {
+				"north": {"uv": [16, 0, 3, 3], "texture": "#big_door_jungle_top_left", "cullface": "north"},
+				"south": {"uv": [3, 0, 16, 3], "texture": "#big_door_jungle_top_left"},
+				"up": {"uv": [3, 0, 16, 1], "texture": "#big_door_jungle_top_left", "cullface": "up"},
+				"down": {"uv": [3, 2, 16, 3], "texture": "#big_door_jungle_top_left"}
+			}
+		},
+		{
+			"name": "detail 8",
+			"from": [4, 12, 1],
+			"to": [16, 13, 2],
+			"faces": {
+				"north": {"uv": [16, 3, 4, 4], "texture": "#big_door_jungle_top_left"},
+				"south": {"uv": [4, 3, 16, 4], "texture": "#big_door_jungle_top_left"},
+				"down": {"uv": [4, 3, 16, 4], "rotation": 180, "texture": "#big_door_jungle_top_left"}
+			}
+		}
+	]
+}

@@ -42,7 +42,7 @@ public class DoorSpecialEndTile extends TileEntity {
 			return true;
 		}
 		if( direction_state.getBlock() instanceof IEndBlock ) {
-			return false;
+			return direction_state.get( BlockStateProperties.OPEN );
 		}
 		if( direction_state.getBlock().getRenderLayer() == BlockRenderLayer.SOLID ) {
 			return !Block.hasSolidSide( direction_state, world, direction_pos, direction.getOpposite() );

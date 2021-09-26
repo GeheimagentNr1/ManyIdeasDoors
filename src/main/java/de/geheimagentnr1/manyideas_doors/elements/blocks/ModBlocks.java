@@ -1,7 +1,8 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks;
 
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.*;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal.*;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.acacia.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.birch.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.dark_oak.*;
@@ -9,11 +10,11 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.iron.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.jungle.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPoliceBox;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialSpace;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTile;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodgePoliceBox;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorTile;
 import net.minecraft.block.Block;
@@ -37,14 +38,21 @@ public class ModBlocks {
 	
 	public static final Block[] BLOCKS = new Block[] {//BCPFINRLT
 		//Big Doors
-		new BigDoorAcacia(),//BCPFINRLT
-		new BigDoorBirch(),//BCPFINRLT
-		new BigDoorBarn(),//BCPFINRLT
+		//Big Doors : Metal
 		new BigDoorDwarf(),//BCPFINRLT
-		new BigDoorJungle(),//BCPFINRLT
-		new BigDoorLaboratory(),//BCPFINRLT
 		new BigDoorFactory(),//BCPFINRLT
+		new BigDoorLaboratory(),//BCPFINRLT
+		new BigDoorSafe(),//BCPFINRLT
+		new BigDoorTerrace(),//BCPFINRLT
+		//Big Doors : Wooden
+		new BigDoorAcacia(),//BCPFINRL
+		new BigDoorBarn(),//BCPFINRL
+		new BigDoorBirch(),//BCPFINRLT
+		new BigDoorDarkOak(),//BCPFINRLT
+		new BigDoorDarsser(),//BCPFINRL
+		new BigDoorJungle(),//BCPFINRLT
 		new BigDoorOak(),//BCPFINRLT
+		new BigDoorShiro(),//BCPFINRL
 		new BigDoorSpruce(),//BCPFINRLT
 		//Doors: Acacia
 		new DoorAcaciaBlank(),//BCPFINRLT
@@ -114,7 +122,6 @@ public class ModBlocks {
 		new DoorOakShoji(),//BCPFINRLT
 		//Doors: Special
 		new DoorSpecialPoliceBox(),//BCPFINRLT
-		new DoorSpecialSpace(),//BCPFINRLT
 		//Doors: Special: End Door
 		new DoorSpecialEnd(),//BCPFINRLT
 		//Doors: Spruce
@@ -130,11 +137,37 @@ public class ModBlocks {
 		new DoorSpruceShoji(),//BCPFINRLT
 		//Mini Lodges
 		new MiniLodgePoliceBox(),//BCPFINRLT
+		//Mini Lodges: Outhouses
+		new MiniLodgeOuthouseAcacia(),//BCPFINRLT
+		new MiniLodgeOuthouseBirch(),//BCPFINRLT
+		new MiniLodgeOuthouseDarkOak(),//BCPFINRLT
+		new MiniLodgeOuthouseJungle(),//BCPFINRLT
+		new MiniLodgeOuthouseOak(),//BCPFINRLT
+		new MiniLodgeOuthouseSpruce(),//BCPFINRLT
 		//Player Door Sensor
 		new PlayerDoorSensor(),//BCPFINRLT
 	};
 	
 	//Big Doors
+	
+	//Big Doors: Metal
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDwarf.registry_name )
+	public static BigDoorDwarf BIG_DOOR_DWARF;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorFactory.registry_name )
+	public static BigDoorFactory BIG_DOOR_FACTORY;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorLaboratory.registry_name )
+	public static BigDoorLaboratory BIG_DOOR_LABORATORY;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorSafe.registry_name )
+	public static BigDoorSafe BIG_DOOR_SAFE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorTerrace.registry_name )
+	public static BigDoorTerrace BIG_DOOR_TERRACE;
+	
+	//Big Doors: Wooden
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorAcacia.registry_name )
 	public static BigDoorAcacia BIG_DOOR_ACACIA;
@@ -145,20 +178,20 @@ public class ModBlocks {
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorBirch.registry_name )
 	public static BigDoorBirch BIG_DOOR_BIRCH;
 	
-	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDwarf.registry_name )
-	public static BigDoorDwarf BIG_DOOR_DWARF;
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDarkOak.registry_name )
+	public static BigDoorDarkOak BIG_DOOR_DARK_OAK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDarsser.registry_name )
+	public static BigDoorDarsser BIG_DOOR_DARSSER;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorJungle.registry_name )
 	public static BigDoorJungle BIG_DOOR_JUNGLE;
 	
-	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorLaboratory.registry_name )
-	public static BigDoorLaboratory BIG_DOOR_LABORATORY;
-	
-	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorFactory.registry_name )
-	public static BigDoorFactory BIG_DOOR_FACTORY;
-	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorOak.registry_name )
 	public static BigDoorOak BIG_DOOR_OAK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorShiro.registry_name )
+	public static BigDoorShiro BIG_DOOR_SHIRO;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorSpruce.registry_name )
 	public static BigDoorSpruce BIG_DOOR_SPRUCE;
@@ -360,9 +393,6 @@ public class ModBlocks {
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialPoliceBox.registry_name )
 	public static DoorSpecialPoliceBox DOOR_SPECIAL_POLICE_BOX;
 	
-	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialSpace.registry_name )
-	public static DoorSpecialSpace DOOR_SPECIAL_SPACE;
-	
 	//Special: End Door
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialEnd.registry_name )
@@ -407,6 +437,26 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgePoliceBox.registry_name )
 	public static MiniLodgePoliceBox MINI_LODGE_POLICE_BOX;
+	
+	//Mini Lodges: Outhouses
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseAcacia.registry_name )
+	public static MiniLodgeOuthouseAcacia MINI_LODGE_OUTHOUSE_ACACIA;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseBirch.registry_name )
+	public static MiniLodgeOuthouseBirch MINI_LODGE_OUTHOUSE_BIRCH;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseDarkOak.registry_name )
+	public static MiniLodgeOuthouseDarkOak MINI_LODGE_OUTHOUSE_DARK_OAK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseJungle.registry_name )
+	public static MiniLodgeOuthouseJungle MINI_LODGE_OUTHOUSE_JUNGLE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseOak.registry_name )
+	public static MiniLodgeOuthouseOak MINI_LODGE_OUTHOUSE_OAK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseSpruce.registry_name )
+	public static MiniLodgeOuthouseSpruce MINI_LODGE_OUTHOUSE_SPRUCE;
 	
 	//Player Door Sensor
 	

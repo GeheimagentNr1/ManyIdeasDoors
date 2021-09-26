@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/door_top",
-    "textures": {
-        "edge": "manyideas_doors:block/doors/iron/frame_iron"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/door_top",
+	"textures": {
+		"edge": "manyideas_doors:block/doors/iron/frame_iron"
+	}
 }

@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/oak/door_oak_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/oak/bookshelf/door_oak_bookshelf_top"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/oak/door_oak_top_hinge",
+	"textures": {
+		"top": "manyideas_doors:block/doors/oak/bookshelf/door_oak_bookshelf_top"
+	}
 }

@@ -1,0 +1,20 @@
+{
+	"textures": {
+		"1": "block/quartz_block_bottom",
+		"particle": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_right",
+		"door": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_right"
+	},
+	"elements": [
+		{
+			"from": [15, 0, 0],
+			"to": [16, 16, 3],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 15, 16], "texture": "#door", "cullface": "north"},
+				"east": {"uv": [16, 0, 13, 16], "texture": "#1", "cullface": "east"},
+				"south": {"uv": [16, 0, 15, 16], "texture": "#door"},
+				"west": {"uv": [16, 0, 15, 16], "texture": "#door"}
+			}
+		}
+	]
+}

@@ -1,0 +1,59 @@
+{
+	"textures": {
+		"1": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_oak",
+		"particle": "manyideas_doors:block/big_doors/wooden/oak/big_door_oak_mid_top_left",
+		"big_door_oak_mid_top_left": "manyideas_doors:block/big_doors/wooden/oak/big_door_oak_mid_top_left"
+	},
+	"elements": [
+		{
+			"name": "blatt",
+			"from": [2, 2, 0.5],
+			"to": [13, 14, 2.5],
+			"faces": {
+				"north": {"uv": [3, 2, 14, 14], "texture": "#big_door_oak_mid_top_left"},
+				"south": {"uv": [14, 2, 3, 14], "texture": "#big_door_oak_mid_top_left"}
+			}
+		},
+		{
+			"name": "west frame",
+			"from": [13, 0, 0],
+			"to": [16, 16, 3],
+			"faces": {
+				"north": {"uv": [0, 0, 3, 16], "texture": "#big_door_oak_mid_top_left", "cullface": "north"},
+				"east": {"uv": [0, 0, 3, 16], "texture": "#1", "cullface": "east"},
+				"south": {"uv": [3, 0, 0, 16], "texture": "#big_door_oak_mid_top_left"},
+				"west": {"uv": [13, 0, 16, 16], "texture": "#big_door_oak_mid_top_left"}
+			}
+		},
+		{
+			"name": "top frame",
+			"from": [0, 14, 0.25],
+			"to": [13, 16, 2.75],
+			"faces": {
+				"north": {"uv": [3, 0, 16, 2], "texture": "#big_door_oak_mid_top_left"},
+				"south": {"uv": [16, 0, 3, 2], "texture": "#big_door_oak_mid_top_left"},
+				"down": {"uv": [3, 0, 16, 1], "texture": "#big_door_oak_mid_top_left"}
+			}
+		},
+		{
+			"name": "east frame",
+			"from": [0, 2, 0.25],
+			"to": [2, 14, 2.75],
+			"faces": {
+				"north": {"uv": [14, 2, 16, 14], "texture": "#big_door_oak_mid_top_left"},
+				"east": {"uv": [14, 2, 16, 14], "texture": "#big_door_oak_mid_top_left"},
+				"south": {"uv": [16, 2, 14, 14], "texture": "#big_door_oak_mid_top_left"}
+			}
+		},
+		{
+			"name": "bottom frame",
+			"from": [0, 0, 0.25],
+			"to": [13, 2, 2.75],
+			"faces": {
+				"north": {"uv": [3, 14, 16, 16], "texture": "#big_door_oak_mid_top_left"},
+				"south": {"uv": [16, 14, 3, 16], "texture": "#big_door_oak_mid_top_left"},
+				"up": {"uv": [3, 14, 16, 15], "rotation": 180, "texture": "#big_door_oak_mid_top_left"}
+			}
+		}
+	]
+}

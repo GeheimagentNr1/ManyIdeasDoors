@@ -1,0 +1,32 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_right",
+		"big_door_laboratory_top_right": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_right",
+		"big_door_laboratory_top_mid": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_mid"
+	},
+	"elements": [
+		{
+			"name": "outerframe1",
+			"from": [12, 0, 6.5],
+			"to": [16, 16, 9.5],
+			"faces": {
+				"north": {"uv": [12, 0, 16, 16], "texture": "#big_door_laboratory_top_right"},
+				"east": {"uv": [11, 0, 14, 16], "texture": "#big_door_laboratory_top_right", "cullface": "east"},
+				"south": {"uv": [12, 0, 16, 16], "texture": "#big_door_laboratory_top_right"},
+				"west": {"uv": [11, 0, 14, 16], "texture": "#big_door_laboratory_top_right"},
+				"up": {"uv": [12, 5, 16, 8], "rotation": 180, "texture": "#big_door_laboratory_top_right", "cullface": "up"}
+			}
+		},
+		{
+			"name": "door1",
+			"from": [10, 0, 7],
+			"to": [12, 16, 9],
+			"faces": {
+				"north": {"uv": [10, 0, 8, 16], "texture": "#big_door_laboratory_top_mid"},
+				"south": {"uv": [8, 0, 10, 16], "texture": "#big_door_laboratory_top_mid"},
+				"west": {"uv": [7, 0, 9, 16], "texture": "#big_door_laboratory_top_mid"},
+				"up": {"uv": [7, 0, 9, 2], "texture": "#big_door_laboratory_top_mid", "cullface": "up"}
+			}
+		}
+	]
+}

@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DD",
+    "DD",
+    "CG"
+  ],
+  "key": {
+    "D": {
+      "item": "manyideas_doors:door_dark_oak_blank"
+    },
+    "C": {
+      "item": "minecraft:coal_block"
+    },
+    "G": {
+      "item": "minecraft:gold_ingot"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:big_door_dark_oak"
+  }
+}

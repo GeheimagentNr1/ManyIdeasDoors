@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/glass/door_glass_top",
-    "textures": {
-        "top": "manyideas_doors:block/doors/acacia/glass/door_acacia_glass_top",
-        "edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/glass/door_glass_top",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/acacia/glass/door_acacia_glass_top",
+		"edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+	}
 }

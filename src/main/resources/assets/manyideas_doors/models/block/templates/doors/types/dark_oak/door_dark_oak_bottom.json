@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/door_bottom",
-    "textures": {
-        "edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/door_bottom",
+	"textures": {
+		"edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+	}
 }

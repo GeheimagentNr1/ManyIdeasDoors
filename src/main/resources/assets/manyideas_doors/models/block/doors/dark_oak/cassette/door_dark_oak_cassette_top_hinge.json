@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_top",
-    "textures": {
-        "top": "manyideas_doors:block/doors/dark_oak/cassette/door_dark_oak_cassette_top",
-        "edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_top",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/dark_oak/cassette/door_dark_oak_cassette_top",
+		"edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+	}
 }

@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/spruce/shoji/door_spruce_shoji_bottom",
-        "edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/spruce/shoji/door_spruce_shoji_bottom",
+		"edge":   "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+	}
 }

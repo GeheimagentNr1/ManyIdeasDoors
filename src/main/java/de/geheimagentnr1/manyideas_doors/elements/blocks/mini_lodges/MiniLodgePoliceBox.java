@@ -1,5 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges;
 
+import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeHelper;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
@@ -25,7 +26,21 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	
 	public static final String registry_name = "mini_lodge_police_box";
 	
-	private static final VoxelShape ROOF_SHAPE = makeCuboidShape( -3.5, 0, -3.5, 19.5, 9, 19.5 );
+	private static final VoxelShapeMemory ROOF_CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
+		Direction.EAST,
+		VoxelShapeVector.create( 12.5, 0, 12.5, 16, 4, 16 )
+	);
+	
+	private static final VoxelShapeMemory ROOF_SIDE_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
+		Direction.NORTH,
+		VoxelShapeVector.create( 0, 0, 0, 16, 4, 3.5 )
+	);
+	
+	private static final VoxelShape ROOF_SHAPE = VoxelShapeHelper.vectorsToVoxelShape( new VoxelShapeVector[] {
+		VoxelShapeVector.create( 0, 0, 0, 16, 4, 16 ),
+		//VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 6.5 )
+		VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 9.5 )
+	} );
 	
 	private static final VoxelShapeMemory CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes( Direction.EAST,
 		VoxelShapeVector.create( 12.5, 0, 12.5, 16, 16, 16 ) );
@@ -37,6 +52,64 @@ public class MiniLodgePoliceBox extends MiniLodge {
 		
 		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
 			registry_name );
+	}
+	
+	@Override
+	protected boolean[][][] hasBlockStatesAtPos() {
+		
+		return new boolean[][][] {
+			{
+				{
+					true,
+					true,
+					true
+				},
+				{
+					true,
+					true,
+					true
+				},
+				{
+					true,
+					true,
+					true
+				}
+			},
+			{
+				{
+					true,
+					false,
+					true
+				},
+				{
+					true,
+					false,
+					true
+				},
+				{
+					true,
+					true,
+					true
+				}
+			},
+			{
+				{
+					true,
+					true,
+					true
+				},
+				{
+					true,
+					true,
+					true
+				},
+				{
+					true,
+					true,
+					true
+				}
+			},
+		};
 	}
 	
 	@SuppressWarnings( "deprecation" )
@@ -54,44 +127,85 @@ public class MiniLodgePoliceBox extends MiniLodge {
 		
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
 		int x = state.get( X_SIZE );
+		int y = state.get( Y_SIZE );
 		int z = state.get( Z_SIZE );
-		switch( x ) {
-			case 0:
-				switch( z ) {
-					case 0:
-						return CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
-					case 1:
-						if( state.get( BlockStateProperties.OPEN ) ) {
-							if( state.get( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
-								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
-							} else {
-								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
-							}
-						} else {
-							return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
-						}
-					case 2:
-						return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
-				}
-				break;
+		
+		switch( y ) {
+			case 0: //fall trough
 			case 1:
-				switch( z ) {
+				switch( x ) {
 					case 0:
-						return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+						switch( z ) {
+							case 0:
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
+							case 1:
+								if( state.get( BlockStateProperties.OPEN ) ) {
+									if( state.get( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
+										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+									} else {
+										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+									}
+								} else {
+									return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
+								}
+							case 2:
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+						}
+						break;
 					case 1:
-						return ROOF_SHAPE;
+						switch( z ) {
+							case 0:
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+							case 1:
+								return ROOF_SHAPE;
+							case 2:
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+						}
+						break;
 					case 2:
-						return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+						switch( z ) {
+							case 0:
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+							case 1:
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+							case 2:
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+						}
+						break;
 				}
 				break;
 			case 2:
-				switch( z ) {
+				switch( x ) {
 					case 0:
-						return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+						switch( z ) {
+							case 0:
+								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
+							case 1:
+								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing );
+							case 2:
+								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+						}
+						break;
 					case 1:
-						return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+						switch( z ) {
+							case 0:
+								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+							case 1:
+								return ROOF_SHAPE;
+							case 2:
+								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+						}
+						break;
 					case 2:
-						return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+						switch( z ) {
+							case 0:
+								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+							case 1:
+								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+							case 2:
+								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+						}
+						break;
 				}
 				break;
 		}

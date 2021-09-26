@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/french/door_french_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/oak/french/door_oak_french_bottom",
-        "edge": "minecraft:block/stripped_oak_log"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/french/door_french_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/oak/french/door_oak_french_bottom",
+		"edge":   "minecraft:block/stripped_oak_log"
+	}
 }

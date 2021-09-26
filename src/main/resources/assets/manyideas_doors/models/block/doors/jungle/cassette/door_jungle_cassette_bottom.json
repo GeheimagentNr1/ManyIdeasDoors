@@ -1,7 +1,7 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/jungle/cassette/door_jungle_cassette_bottom",
-        "edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/shapes/cassette/door_cassette_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/jungle/cassette/door_jungle_cassette_bottom",
+		"edge":   "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+	}
 }

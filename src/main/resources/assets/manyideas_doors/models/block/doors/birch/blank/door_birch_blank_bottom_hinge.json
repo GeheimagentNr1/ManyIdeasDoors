@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/birch/door_birch_bottom_hinge",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/birch/blank/door_birch_blank_bottom"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/birch/door_birch_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/birch/blank/door_birch_blank_bottom"
+	}
 }

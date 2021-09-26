@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:item/generated",
+	"parent":   "minecraft:item/generated",
 	"textures": {
-		"layer0": "manyideas_doors:item/big_doors/big_door_laboratory"
+		"layer0": "manyideas_doors:item/big_doors/metal/big_door_laboratory"
 	}
 }

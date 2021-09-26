@@ -1,6 +1,6 @@
 {
-    "parent": "manyideas_doors:block/templates/doors/types/jungle/door_jungle_top_hinge",
-    "textures": {
-        "top": "manyideas_doors:block/doors/jungle/blank/door_jungle_blank_top"
-    }
+	"parent":   "manyideas_doors:block/templates/doors/types/jungle/door_jungle_top_hinge",
+	"textures": {
+		"top": "manyideas_doors:block/doors/jungle/blank/door_jungle_blank_top"
+	}
 }

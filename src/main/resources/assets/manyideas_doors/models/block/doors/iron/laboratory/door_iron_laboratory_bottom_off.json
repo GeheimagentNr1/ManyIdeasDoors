@@ -1,6 +1,0 @@
-{
-    "parent": "manyideas_doors:block/templates/doors/types/iron/door_iron_bottom",
-    "textures": {
-        "bottom": "manyideas_doors:block/doors/iron/laboratory/door_iron_laboratory_bottom_off"
-    }
-}

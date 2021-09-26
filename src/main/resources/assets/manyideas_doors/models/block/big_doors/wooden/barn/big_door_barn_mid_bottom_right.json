@@ -1,0 +1,58 @@
+{
+	"textures": {
+		"particle": "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_mid_bottom_left",
+		"big_door_redbarn_mid_bottom_left": "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_mid_bottom_left"
+	},
+	"elements": [
+		{
+			"name": "frame side",
+			"from": [0, 0, 0],
+			"to": [3, 16, 3],
+			"faces": {
+				"north": {"uv": [3, 0, 0, 16], "texture": "#big_door_redbarn_mid_bottom_left", "cullface": "north"},
+				"east": {"uv": [2, 0, 3, 16], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"south": {"uv": [0, 0, 3, 16], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"west": {"uv": [0, 0, 1, 16], "texture": "#big_door_redbarn_mid_bottom_left", "cullface": "west"}
+			}
+		},
+		{
+			"name": "blatt",
+			"from": [3, 2, 1],
+			"to": [15, 14, 2],
+			"faces": {
+				"north": {"uv": [15, 2, 3, 14], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"south": {"uv": [3, 2, 15, 14], "texture": "#big_door_redbarn_mid_bottom_left"}
+			}
+		},
+		{
+			"name": "details 1",
+			"from": [3, 14, 0.5],
+			"to": [16, 16, 2.5],
+			"faces": {
+				"north": {"uv": [16, 0, 3, 2], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"south": {"uv": [3, 0, 16, 2], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"down": {"uv": [3, 1, 16, 2], "texture": "#big_door_redbarn_mid_bottom_left"}
+			}
+		},
+		{
+			"name": "details 2",
+			"from": [15, 2, 0.5],
+			"to": [16, 14, 2.5],
+			"faces": {
+				"north": {"uv": [15, 2, 16, 14], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"south": {"uv": [15, 2, 16, 14], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"west": {"uv": [15, 2, 16, 14], "texture": "#big_door_redbarn_mid_bottom_left"}
+			}
+		},
+		{
+			"name": "details 3",
+			"from": [3, 0, 0.5],
+			"to": [16, 2, 2.5],
+			"faces": {
+				"north": {"uv": [16, 14, 3, 16], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"south": {"uv": [3, 14, 16, 16], "texture": "#big_door_redbarn_mid_bottom_left"},
+				"up": {"uv": [3, 14, 16, 15], "texture": "#big_door_redbarn_mid_bottom_left"}
+			}
+		}
+	]
+}

@@ -16,12 +16,10 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 
 
-//package-private
-abstract class MiniLodge extends MultiBlock {
+public abstract class MiniLodge extends MultiBlock {
 	
 	
-	//package-private
-	MiniLodge( Block.Properties properties, String registry_name ) {
+	protected MiniLodge( Block.Properties properties, String registry_name ) {
 		
 		super( properties, registry_name );
 		setDefaultState( getDefaultState().with( BlockStateProperties.OPEN, false )
@@ -58,64 +56,6 @@ abstract class MiniLodge extends MultiBlock {
 	}
 	
 	@Override
-	protected boolean[][][] hasBlockStatesAtPos() {
-		
-		return new boolean[][][] {
-			{
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					false,
-					false,
-					false
-				}
-			},
-			{
-				{
-					true,
-					false,
-					true
-				},
-				{
-					true,
-					false,
-					true
-				},
-				{
-					false,
-					true,
-					false
-				}
-			},
-			{
-				{
-					true,
-					true,
-					true
-				},
-				{
-					true,
-					true,
-					true
-				},
-				{
-					false,
-					false,
-					false
-				}
-			},
-		};
-	}
-	
-	@Override
 	protected BlockState getDefaultState( boolean left_sided ) {
 		
 		return getDefaultState().with( BlockStateProperties.DOOR_HINGE, left_sided ? DoorHingeSide.LEFT :
@@ -124,25 +64,36 @@ abstract class MiniLodge extends MultiBlock {
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public boolean onBlockActivated( @Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
+	public boolean onBlockActivated(
+		@Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
 		@Nonnull PlayerEntity player, @Nonnull Hand handIn, @Nonnull BlockRayTraceResult hit ) {
 		
 		if( state.get( X_SIZE ) != 0 || state.get( Z_SIZE ) != 1 ) {
 			return false;
 		}
 		boolean open = !state.get( BlockStateProperties.OPEN );
-		runForBlocks( getZeroPos( state, pos ), state.get( BlockStateProperties.HORIZONTAL_FACING ),
+		runForBlocks(
+			worldIn,
+			getZeroPos( state, pos ),
+			state.get( BlockStateProperties.HORIZONTAL_FACING ),
 			( x, y, z, blockPos ) ->
 				worldIn.setBlockState( blockPos, worldIn.getBlockState( blockPos )
-					.with( BlockStateProperties.OPEN, open ), 3 ) );
+					.with( BlockStateProperties.OPEN, open ), 3 ),
+			true
+		);
 		playDoorSound( player, worldIn, pos, open );
 		return true;
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public void neighborChanged( @Nonnull BlockState state, @Nonnull World worldIn, @Nonnull BlockPos pos,
-		@Nonnull Block blockIn, @Nonnull BlockPos fromPos, boolean isMoving ) {
+	public void neighborChanged(
+		@Nonnull BlockState state,
+		@Nonnull World worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull Block blockIn,
+		@Nonnull BlockPos fromPos,
+		boolean isMoving ) {
 		
 		if( blockIn == this ) {
 			return;
@@ -151,9 +102,17 @@ abstract class MiniLodge extends MultiBlock {
 		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
 		boolean isPowered = isPowered( worldIn, zeroPos, facing );
 		if( isPowered != state.get( BlockStateProperties.POWERED ) ) {
-			runForBlocks( zeroPos, facing, ( x, y, z, blockPos ) ->
-				worldIn.setBlockState( blockPos, worldIn.getBlockState( blockPos ).with( BlockStateProperties.POWERED,
-					isPowered ).with( BlockStateProperties.OPEN, isPowered ), 3 ) );
+			runForBlocks(
+				worldIn,
+				zeroPos,
+				facing,
+				( x, y, z, blockPos ) ->
+					worldIn.setBlockState( blockPos, worldIn.getBlockState( blockPos ).with(
+						BlockStateProperties.POWERED,
+						isPowered
+					).with( BlockStateProperties.OPEN, isPowered ), 3 ),
+				true
+			);
 			playDoorSound( null, worldIn, pos, isPowered );
 		}
 	}
@@ -161,7 +120,8 @@ abstract class MiniLodge extends MultiBlock {
 	private void playDoorSound( PlayerEntity player, World world, BlockPos pos, boolean open ) {
 		
 		world.playSound( player, pos, open ? getOpenDoorSound() : getCloseDoorSound(), SoundCategory.BLOCKS, 1.0F,
-			1.0F );
+			1.0F
+		);
 	}
 	
 	private SoundEvent getCloseDoorSound() {

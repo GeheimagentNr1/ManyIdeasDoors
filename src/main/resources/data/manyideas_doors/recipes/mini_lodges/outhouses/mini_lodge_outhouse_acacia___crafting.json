@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " C ",
+    "PPP",
+    "WDP"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:gray_concrete"
+    },
+    "P": {
+      "item": "minecraft:acacia_planks"
+    },
+    "W": {
+      "item": "manyideas_core:wood_stripped_smooth_acacia"
+    },
+    "D": {
+      "item": "manyideas_doors:door_acacia_heart"
+    }
+  },
+  "result": {
+    "item": "manyideas_doors:mini_lodge_outhouse_acacia"
+  }
+}
