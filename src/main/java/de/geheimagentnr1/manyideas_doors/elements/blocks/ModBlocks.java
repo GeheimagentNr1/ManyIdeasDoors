@@ -37,7 +37,6 @@ public class ModBlocks {
 	// T - Tags fertig
 	
 	public static final Block[] BLOCKS = new Block[] {//BCPFINRLT
-		//Big Doors
 		//Big Doors : Metal
 		new BigDoorDwarf(),//BCPFINRLT
 		new BigDoorFactory(),//BCPFINRLT

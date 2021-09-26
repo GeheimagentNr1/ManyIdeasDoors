@@ -39,15 +39,6 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 		return true;
 	}
 	
-	/**
-	 * Called throughout the code as a replacement for ITileEntityProvider.createNewTileEntity
-	 * Return the same thing you would from that function.
-	 * This will fall back to ITileEntityProvider.createNewTileEntity(World) if this block is a ITileEntityProvider
-	 *
-	 * @param state The state of the current block
-	 * @param world The world to create the TE in
-	 * @return A instance of a class extending TileEntity
-	 */
 	@Nullable
 	@Override
 	public TileEntity createTileEntity( BlockState state, IBlockReader world ) {
@@ -55,10 +46,6 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 		return new DoorSpecialEndTile();
 	}
 	
-	/**
-	 * The type of render function called. MODEL for mixed tesr and static model, MODELBLOCK_ANIMATED for TESR-only,
-	 * LIQUID for vanilla liquids, INVISIBLE to skip all rendering
-	 */
 	@Deprecated
 	@SuppressWarnings( "deprecation" )
 	@Nonnull

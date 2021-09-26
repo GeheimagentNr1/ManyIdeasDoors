@@ -119,7 +119,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 		int z = state.get( Z_SIZE );
 		
 		switch( y ) {
-			case 0: //fall trough
+			case 0: //fall through
 			case 1:
 				switch( x ) {
 					case 0:

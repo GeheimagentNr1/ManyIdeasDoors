@@ -214,7 +214,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Redst
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public void onReplaced(
-		BlockState state,
+		@Nonnull BlockState state,
 		@Nonnull World worldIn,
 		@Nonnull BlockPos pos,
 		@Nonnull BlockState newState,
