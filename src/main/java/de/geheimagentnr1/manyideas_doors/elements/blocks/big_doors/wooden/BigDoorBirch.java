@@ -16,7 +16,7 @@ public class BigDoorBirch extends BigDoor {
 	public BigDoorBirch() {
 		
 		super(
-			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.GLASS ),
 			registry_name,
 			OpenedBy.BOTH,
 			true
