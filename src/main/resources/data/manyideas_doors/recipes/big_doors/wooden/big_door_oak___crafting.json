@@ -1,12 +1,16 @@
 {
 	"type":    "minecraft:crafting_shaped",
 	"pattern": [
-		"DD",
-		"DD"
+		"WW",
+		"WI",
+		"WW"
 	],
 	"key":     {
-		"D": {
-			"item": "manyideas_doors:door_oak_cassette"
+		"W": {
+			"item": "manyideas_core:wood_stripped_smooth_oak"
+		},
+		"I": {
+			"item": "minecraft:iron_ingot"
 		}
 	},
 	"result":  {

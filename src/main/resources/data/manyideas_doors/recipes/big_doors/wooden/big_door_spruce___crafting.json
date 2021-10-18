@@ -1,12 +1,19 @@
 {
 	"type":    "minecraft:crafting_shaped",
 	"pattern": [
-		"DD",
-		"DD"
+		"WW",
+		"BI",
+		"WW"
 	],
 	"key":     {
-		"D": {
-			"item": "manyideas_doors:door_spruce_rustic"
+		"W": {
+			"item": "manyideas_core:wood_stripped_smooth_spruce"
+		},
+		"I": {
+			"item": "minecraft:iron_ingot"
+		},
+		"B": {
+			"item": "minecraft:iron_bars"
 		}
 	},
 	"result":  {
