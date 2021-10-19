@@ -8,11 +8,12 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoorHingeSide;
-import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -45,11 +46,10 @@ public class BigDoorDarsser extends BigDoor {
 		);
 	}
 	
-	@Nonnull
 	@Override
-	public BlockRenderLayer getRenderLayer() {
+	public RenderType getRenderType() {
 		
-		return BlockRenderLayer.TRANSLUCENT;
+		return RenderType.getTranslucent();
 	}
 	
 	@Nonnull
@@ -72,7 +72,7 @@ public class BigDoorDarsser extends BigDoor {
 	}
 	
 	@Override
-	public boolean onBlockActivated(
+	public ActionResultType onBlockActivated(
 		@Nonnull BlockState state,
 		@Nonnull World worldIn,
 		@Nonnull BlockPos pos,
@@ -83,7 +83,7 @@ public class BigDoorDarsser extends BigDoor {
 		if( state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2 ) {
 			return super.onBlockActivated( state, worldIn, pos, player, handIn, hit );
 		}
-		return false;
+		return ActionResultType.PASS;
 	}
 	
 	@Override

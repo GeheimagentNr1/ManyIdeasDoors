@@ -29,7 +29,9 @@ public class RegistryEventHandler {
 	@SubscribeEvent
 	public static void handleClientSetupEvent( FMLClientSetupEvent event ) {
 		
-		ClientRegistry.bindTileEntitySpecialRenderer( DoorSpecialEndTile.class, new DoorSpecialEndTileRenderer() );
+		ClientRegistry.bindTileEntityRenderer( ModBlocks.DOOR_SPECIAL_END_TILE, DoorSpecialEndTileRenderer::new );
+		
+		BlockRegistrationHelper.registerBlockRenderTypes( ModBlocks.BLOCKS );
 	}
 	
 	@SubscribeEvent

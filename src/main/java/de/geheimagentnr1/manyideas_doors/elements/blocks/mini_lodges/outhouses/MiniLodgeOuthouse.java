@@ -6,6 +6,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodge;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoorHingeSide;
 import net.minecraft.util.Direction;

@@ -5,10 +5,8 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.item.Item;
-import net.minecraft.util.BlockRenderLayer;
-
-import javax.annotation.Nonnull;
 
 
 public class BigDoorJungle extends BigDoor {
@@ -44,11 +42,10 @@ public class BigDoorJungle extends BigDoor {
 		return 2;
 	}
 	
-	@Nonnull
 	@Override
-	public BlockRenderLayer getRenderLayer() {
+	public RenderType getRenderType() {
 		
-		return BlockRenderLayer.TRANSLUCENT;
+		return RenderType.getTranslucent();
 	}
 	
 	@Override

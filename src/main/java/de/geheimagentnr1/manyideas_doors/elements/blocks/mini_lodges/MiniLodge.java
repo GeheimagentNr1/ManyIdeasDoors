@@ -1,9 +1,11 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges;
 
+import de.geheimagentnr1.manyideas_core.elements.blocks.BlockRenderTypeInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.multi_block.MultiBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
@@ -16,21 +18,20 @@ import net.minecraft.world.World;
 import javax.annotation.Nonnull;
 
 
-public abstract class MiniLodge extends MultiBlock {
+public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInterface {
 	
 	
 	protected MiniLodge( Block.Properties properties, String registry_name ) {
 		
-		super( properties, registry_name );
+		super( properties.notSolid(), registry_name );
 		setDefaultState( getDefaultState().with( BlockStateProperties.OPEN, false )
 			.with( BlockStateProperties.POWERED, false ) );
 	}
 	
-	@Nonnull
 	@Override
-	public BlockRenderLayer getRenderLayer() {
+	public RenderType getRenderType() {
 		
-		return BlockRenderLayer.CUTOUT;
+		return RenderType.getCutout();
 	}
 	
 	@Override
@@ -62,7 +63,7 @@ public abstract class MiniLodge extends MultiBlock {
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public boolean onBlockActivated(
+	public ActionResultType onBlockActivated(
 		@Nonnull BlockState state,
 		@Nonnull World worldIn,
 		@Nonnull BlockPos pos,
@@ -71,7 +72,7 @@ public abstract class MiniLodge extends MultiBlock {
 		@Nonnull BlockRayTraceResult hit ) {
 		
 		if( state.get( X_SIZE ) != 0 || state.get( Z_SIZE ) != 1 ) {
-			return false;
+			return ActionResultType.PASS;
 		}
 		boolean open = !state.get( BlockStateProperties.OPEN );
 		runForBlocks(
@@ -86,7 +87,7 @@ public abstract class MiniLodge extends MultiBlock {
 			true
 		);
 		playDoorSound( player, worldIn, pos, open );
-		return true;
+		return ActionResultType.SUCCESS;
 	}
 	
 	@SuppressWarnings( "deprecation" )
