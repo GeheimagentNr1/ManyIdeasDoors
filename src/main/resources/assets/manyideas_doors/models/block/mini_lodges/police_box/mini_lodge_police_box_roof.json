@@ -27,7 +27,7 @@
 				"south": { "uv": [ 0, 0, 16, 1 ], "texture": "#roof", "cullface": "south" },
 				"west":  { "uv": [ 0, 0, 16, 1 ], "texture": "#roof", "cullface": "west" },
 				"up":    { "uv": [ 0, 0, 16, 16 ], "texture": "#roof" },
-				"down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#roof", "cullface": "down" }
+				"down":  { "uv": [ 0, 0, 16, 16 ], "texture": "#roof" }
 			}
 		},
 		{
