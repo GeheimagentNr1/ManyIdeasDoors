@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                   "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_top_right",
 		"big_door_redbarn_top_right": "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_top_right"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "frame top",
 			"from":  [ 3, 13, 0 ],

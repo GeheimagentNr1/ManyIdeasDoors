@@ -1,11 +1,12 @@
 {
-	"textures": {
+	"textures":         {
 		"0":        "manyideas_doors:block/doors/acacia/log_stripped_acacia",
 		"1":        "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_mid_top_left_inside",
 		"2":        "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_mid_top_left_outside",
 		"particle": "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_mid_top_left_inside"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":     "east frame",
 			"from":     [ 12, 0, 0 ],

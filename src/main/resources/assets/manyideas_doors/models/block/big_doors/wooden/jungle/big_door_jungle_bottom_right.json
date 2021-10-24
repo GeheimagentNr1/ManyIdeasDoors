@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                    "manyideas_doors:block/big_doors/wooden/jungle/big_door_jungle_bottom_left",
 		"big_door_jungle_bottom_left": "manyideas_doors:block/big_doors/wooden/jungle/big_door_jungle_bottom_left"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "frame side",
 			"from":  [ 0, 0, 0 ],

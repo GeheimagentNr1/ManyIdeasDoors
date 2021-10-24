@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                               "manyideas_doors:block/big_doors/wooden/shiro/big_door_shiro_mid_bottom_left_outside",
 		"big_door_shiro_mid_bottom_left_outside": "manyideas_doors:block/big_doors/wooden/shiro/big_door_shiro_mid_bottom_left_outside",
 		"big_door_shiro_mid_bottom_right_inside": "manyideas_doors:block/big_doors/wooden/shiro/big_door_shiro_mid_bottom_right_inside"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "west frame",
 			"from":  [ 0, 0, 0 ],

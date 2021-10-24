@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                 "manyideas_doors:block/big_doors/wooden/darsser/big_door_darsser_mid_mid",
 		"big_door_emerald_mid_mid": "manyideas_doors:block/big_doors/wooden/darsser/big_door_darsser_mid_mid"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "top",
 			"from":  [ 0, 13, 0 ],

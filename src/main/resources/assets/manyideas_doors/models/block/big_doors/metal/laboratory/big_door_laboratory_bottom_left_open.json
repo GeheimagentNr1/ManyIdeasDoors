@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"big_door_laboratory_bottom_mid":  "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_mid",
 		"particle":                        "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_left",
 		"big_door_laboratory_bottom_left": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_left"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "outerframe1",
 			"from":  [ 0, 0, 6.5 ],

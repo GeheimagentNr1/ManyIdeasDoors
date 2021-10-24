@@ -1,11 +1,12 @@
 {
-	"textures": {
+	"textures":         {
 		"2":        "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_top_right",
 		"particle": "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_top_right",
 		"door":     "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_top_left_hinge",
 		"edge":     "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":  [ 15, 0, 0.5 ],
 			"to":    [ 16, 13, 2.5 ],

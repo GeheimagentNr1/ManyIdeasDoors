@@ -1,8 +1,9 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "#top"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "left_door_pillar",
 			"from":  [ 0, 0, 0 ],

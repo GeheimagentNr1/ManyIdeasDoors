@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "manyideas_doors:block/mini_lodges/outhouses/fly",
 		"fly":      "manyideas_doors:block/mini_lodges/outhouses/fly"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":     [ 14.1, 11, -5 ],
 			"to":       [ 14.9, 12, -4.2 ],

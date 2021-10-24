@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                       "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_mid",
 		"big_door_laboratory_bottom_mid": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_bottom_mid"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Bottom1",
 			"from":  [ 0, 0, 7 ],

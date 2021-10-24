@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"1":        "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_right",
 		"particle": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_mid",
 		"door":     "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_mid"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":  [ 8, 0, 0.5 ],
 			"to":    [ 10, 16, 1.5 ],

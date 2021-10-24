@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "manyideas_doors:block/mini_lodges/police_box/mini_lodge_police_box_roof",
 		"roof":     "manyideas_doors:block/mini_lodges/police_box/mini_lodge_police_box_roof"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Au�enpfosten",
 			"from":  [ 12.5, 0, 12.5 ],
