@@ -16,7 +16,7 @@ public class DoorIronGlass extends DoubleDoorBlock {
 	public DoorIronGlass() {
 		
 		super(
-			Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Block.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name
 		);
 	}

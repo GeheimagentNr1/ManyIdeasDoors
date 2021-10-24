@@ -27,7 +27,7 @@ public class PlayerDoorSensorTile extends TileEntity implements ITickableTileEnt
 	@Override
 	public void tick() {
 		
-		if( Objects.requireNonNull( world ).isRemote ) {
+		if( Objects.requireNonNull( level ).isClientSide ) {
 			return;
 		}
 		update_timer--;
@@ -35,60 +35,60 @@ public class PlayerDoorSensorTile extends TileEntity implements ITickableTileEnt
 			return;
 		}
 		update_timer = 5;
-		BlockState state = world.getBlockState( getPos() );
+		BlockState state = level.getBlockState( getBlockPos() );
 		Block block = state.getBlock();
 		
 		if( !( block instanceof PlayerDoorSensor ) ) {
 			return;
 		}
 		PlayerDoorSensor playerDoorSensor = (PlayerDoorSensor)block;
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		AxisAlignedBB toCheckArea;
 		switch( facing ) {
 			case NORTH:
 				toCheckArea = new AxisAlignedBB(
-					getPos(),
-					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-						.offset( facing.getOpposite(), 2 )
-						.offset( facing.rotateY() )
+					getBlockPos(),
+					getBlockPos().relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
+						.relative( facing.getOpposite(), 2 )
+						.relative( facing.getClockWise() )
 				);
 				break;
 			case EAST:
 				toCheckArea = new AxisAlignedBB(
-					getPos().offset( facing ),
-					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-						.offset( facing.getOpposite() )
-						.offset( facing.rotateY() )
+					getBlockPos().relative( facing ),
+					getBlockPos().relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
+						.relative( facing.getOpposite() )
+						.relative( facing.getClockWise() )
 				);
 				break;
 			case SOUTH:
 				toCheckArea = new AxisAlignedBB(
-					getPos().offset( facing ),
-					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-						.offset( facing.getOpposite() )
-						.offset( facing.rotateYCCW() )
+					getBlockPos().relative( facing ),
+					getBlockPos().relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
+						.relative( facing.getOpposite() )
+						.relative( facing.getCounterClockWise() )
 				);
 				break;
 			case WEST:
 				toCheckArea = new AxisAlignedBB(
-					getPos(),
-					getPos().offset( Direction.DOWN, state.get( PlayerDoorSensor.SENSOR_RANGE ) )
-						.offset( facing.getOpposite(), 2 )
-						.offset( facing.rotateYCCW() )
+					getBlockPos(),
+					getBlockPos().relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
+						.relative( facing.getOpposite(), 2 )
+						.relative( facing.getCounterClockWise() )
 				);
 				break;
 			default:
 				return;
 		}
 		
-		List<PlayerEntity> foundEntities = world.getEntitiesWithinAABB( PlayerEntity.class, toCheckArea );
+		List<PlayerEntity> foundEntities = level.getEntitiesOfClass( PlayerEntity.class, toCheckArea );
 		
 		if( foundEntities.isEmpty() ) {
-			world.setBlockState( pos, state.with( BlockStateProperties.POWERED, false ), 3 );
-			playerDoorSensor.notifyNeighbors( world, pos, block, facing );
+			level.setBlock( getBlockPos(), state.setValue( BlockStateProperties.POWERED, false ), 3 );
+			playerDoorSensor.notifyNeighbors( level, getBlockPos(), block, facing );
 		} else {
-			world.setBlockState( pos, state.with( BlockStateProperties.POWERED, true ), 3 );
-			playerDoorSensor.notifyNeighbors( world, pos, block, facing );
+			level.setBlock( getBlockPos(), state.setValue( BlockStateProperties.POWERED, true ), 3 );
+			playerDoorSensor.notifyNeighbors( level, getBlockPos(), block, facing );
 			update_timer = 15;
 		}
 	}

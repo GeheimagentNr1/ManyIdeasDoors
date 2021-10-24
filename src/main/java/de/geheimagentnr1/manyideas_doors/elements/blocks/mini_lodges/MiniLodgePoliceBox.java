@@ -55,7 +55,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	public MiniLodgePoliceBox() {
 		
 		super(
-			Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Block.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name
 		);
 	}
@@ -70,11 +70,10 @@ public class MiniLodgePoliceBox extends MiniLodge {
 		};
 	}
 	
-	@SuppressWarnings( "deprecation" )
 	@Override
-	public int getLightValue( BlockState state ) {
+	public int getLightValue( BlockState state, IBlockReader world, BlockPos pos ) {
 		
-		return state.get( X_SIZE ) == 1 && state.get( Z_SIZE ) == 1 ? 7 : 0;
+		return state.getValue( X_SIZE ) == 1 && state.getValue( Z_SIZE ) == 1 ? 7 : 0;
 	}
 	
 	@SuppressWarnings( { "deprecation", "NestedSwitchStatement" } )
@@ -86,10 +85,10 @@ public class MiniLodgePoliceBox extends MiniLodge {
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
-		int x = state.get( X_SIZE );
-		int y = state.get( Y_SIZE );
-		int z = state.get( Z_SIZE );
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		int x = state.getValue( X_SIZE );
+		int y = state.getValue( Y_SIZE );
+		int z = state.getValue( Z_SIZE );
 		
 		switch( y ) {
 			case 0: //fall through
@@ -100,33 +99,33 @@ public class MiniLodgePoliceBox extends MiniLodge {
 							case 0:
 								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
 							case 1:
-								if( state.get( BlockStateProperties.OPEN ) ) {
-									if( state.get( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
-										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								if( state.getValue( BlockStateProperties.OPEN ) ) {
+									if( state.getValue( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
+										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 									} else {
-										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 									}
 								} else {
 									return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
 								}
 							case 2:
-								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 1:
 						switch( z ) {
 							case 0:
-								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return ROOF_SHAPE;
 							case 2:
-								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 2:
 						switch( z ) {
 							case 0:
-								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
 							case 2:
@@ -144,23 +143,23 @@ public class MiniLodgePoliceBox extends MiniLodge {
 							case 1:
 								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing );
 							case 2:
-								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 1:
 						switch( z ) {
 							case 0:
-								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return ROOF_SHAPE;
 							case 2:
-								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 2:
 						switch( z ) {
 							case 0:
-								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
 							case 2:
@@ -170,7 +169,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 				}
 				break;
 		}
-		return VoxelShapes.fullCube();
+		return VoxelShapes.block();
 	}
 	
 	@Override

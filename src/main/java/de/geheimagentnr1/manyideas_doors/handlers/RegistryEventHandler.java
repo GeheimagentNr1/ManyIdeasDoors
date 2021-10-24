@@ -43,7 +43,7 @@ public class RegistryEventHandler {
 	@SubscribeEvent
 	public static void onItemsRegistry( RegistryEvent.Register<Item> itemRegistryEvent ) {
 		
-		Item.Properties properties = new Item.Properties().group( ManyIdeasDoors.setup.manyIdeasDoorsItemGroup );
+		Item.Properties properties = new Item.Properties().tab( ManyIdeasDoors.setup.manyIdeasDoorsItemGroup );
 		
 		BlockRegistrationHelper.registerBlockItems( itemRegistryEvent, ModBlocks.BLOCKS, properties );
 	}
@@ -53,12 +53,12 @@ public class RegistryEventHandler {
 	public static void onTileEntityRegistry( RegistryEvent.Register<TileEntityType<?>> event ) {
 		
 		event.getRegistry().register(
-			TileEntityType.Builder.create( DoorSpecialEndTile::new, ModBlocks.DOOR_SPECIAL_END )
+			TileEntityType.Builder.of( DoorSpecialEndTile::new, ModBlocks.DOOR_SPECIAL_END )
 				.build( null )
 				.setRegistryName( DoorSpecialEnd.registry_name )
 		);
 		event.getRegistry().register(
-			TileEntityType.Builder.create( PlayerDoorSensorTile::new, ModBlocks.PLAYER_DOOR_SENSOR )
+			TileEntityType.Builder.of( PlayerDoorSensorTile::new, ModBlocks.PLAYER_DOOR_SENSOR )
 				.build( null )
 				.setRegistryName( PlayerDoorSensor.registry_name )
 		);

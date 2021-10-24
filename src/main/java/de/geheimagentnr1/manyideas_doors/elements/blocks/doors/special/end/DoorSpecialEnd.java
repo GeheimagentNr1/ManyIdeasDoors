@@ -28,7 +28,7 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	public DoorSpecialEnd() {
 		
 		super(
-			Block.Properties.create( Material.ROCK ).hardnessAndResistance( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
+			Block.Properties.of( Material.STONE ).strength( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
 			registry_name
 		);
 	}
@@ -50,9 +50,9 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	@SuppressWarnings( "deprecation" )
 	@Nonnull
 	@Override
-	public BlockRenderType getRenderType( BlockState state ) {
+	public BlockRenderType getRenderShape( BlockState state ) {
 		
-		if( state.get( OPEN ) ) {
+		if( state.getValue( OPEN ) ) {
 			return BlockRenderType.MODEL;
 		}
 		return BlockRenderType.ENTITYBLOCK_ANIMATED;
@@ -66,10 +66,10 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		if( state.get( OPEN ) ) {
+		if( state.getValue( OPEN ) ) {
 			return super.getShape( state, worldIn, pos, context );
 		}
-		return VoxelShapes.fullCube();
+		return VoxelShapes.block();
 	}
 	
 	@Override

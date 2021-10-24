@@ -23,15 +23,18 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	
 	protected MiniLodge( Block.Properties properties, String registry_name ) {
 		
-		super( properties.notSolid(), registry_name );
-		setDefaultState( getDefaultState().with( BlockStateProperties.OPEN, false )
-			.with( BlockStateProperties.POWERED, false ) );
+		super(
+			properties.noOcclusion().isViewBlocking( ( p_test_1_, p_test_2_, p_test_3_ ) -> false ),
+			registry_name
+		);
+		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
+			.setValue( BlockStateProperties.POWERED, false ) );
 	}
 	
 	@Override
 	public RenderType getRenderType() {
 		
-		return RenderType.getCutout();
+		return RenderType.cutout();
 	}
 	
 	@Override
@@ -55,7 +58,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	@Override
 	protected BlockState getDefaultState( boolean left_sided ) {
 		
-		return getDefaultState().with(
+		return defaultBlockState().setValue(
 			BlockStateProperties.DOOR_HINGE,
 			left_sided ? DoorHingeSide.LEFT : DoorHingeSide.RIGHT
 		);
@@ -63,7 +66,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public ActionResultType onBlockActivated(
+	public ActionResultType use(
 		@Nonnull BlockState state,
 		@Nonnull World worldIn,
 		@Nonnull BlockPos pos,
@@ -71,17 +74,17 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 		@Nonnull Hand handIn,
 		@Nonnull BlockRayTraceResult hit ) {
 		
-		if( state.get( X_SIZE ) != 0 || state.get( Z_SIZE ) != 1 ) {
+		if( state.getValue( X_SIZE ) != 0 || state.getValue( Z_SIZE ) != 1 ) {
 			return ActionResultType.PASS;
 		}
-		boolean open = !state.get( BlockStateProperties.OPEN );
+		boolean open = !state.getValue( BlockStateProperties.OPEN );
 		runForBlocks(
 			worldIn,
 			getZeroPos( state, pos ),
-			state.get( BlockStateProperties.HORIZONTAL_FACING ),
-			( x, y, z, blockPos ) -> worldIn.setBlockState(
+			state.getValue( BlockStateProperties.HORIZONTAL_FACING ),
+			( x, y, z, blockPos ) -> worldIn.setBlock(
 				blockPos,
-				worldIn.getBlockState( blockPos ).with( BlockStateProperties.OPEN, open ),
+				worldIn.getBlockState( blockPos ).setValue( BlockStateProperties.OPEN, open ),
 				3
 			),
 			true
@@ -104,18 +107,18 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 			return;
 		}
 		BlockPos zeroPos = getZeroPos( state, pos );
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		boolean isPowered = isPowered( worldIn, zeroPos, facing );
-		if( isPowered != state.get( BlockStateProperties.POWERED ) ) {
+		if( isPowered != state.getValue( BlockStateProperties.POWERED ) ) {
 			runForBlocks(
 				worldIn,
 				zeroPos,
 				facing,
-				( x, y, z, blockPos ) -> worldIn.setBlockState(
+				( x, y, z, blockPos ) -> worldIn.setBlock(
 					blockPos,
 					worldIn.getBlockState( blockPos )
-						.with( BlockStateProperties.POWERED, isPowered )
-						.with( BlockStateProperties.OPEN, isPowered ),
+						.setValue( BlockStateProperties.POWERED, isPowered )
+						.setValue( BlockStateProperties.OPEN, isPowered ),
 					3
 				),
 				true
@@ -136,20 +139,20 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 		);
 	}
 	
-	private SoundEvent getCloseDoorSound() {
-		
-		return material == Material.IRON ? SoundEvents.BLOCK_IRON_DOOR_OPEN : SoundEvents.BLOCK_WOODEN_DOOR_OPEN;
-	}
-	
 	private SoundEvent getOpenDoorSound() {
 		
-		return material == Material.IRON ? SoundEvents.BLOCK_IRON_DOOR_CLOSE : SoundEvents.BLOCK_WOODEN_DOOR_CLOSE;
+		return material == Material.METAL ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.WOODEN_DOOR_OPEN;
+	}
+	
+	private SoundEvent getCloseDoorSound() {
+		
+		return material == Material.METAL ? SoundEvents.IRON_DOOR_CLOSE : SoundEvents.WOODEN_DOOR_CLOSE;
 	}
 	
 	@Override
-	protected void fillStateContainer( StateContainer.Builder<Block, BlockState> builder ) {
+	protected void createBlockStateDefinition( StateContainer.Builder<Block, BlockState> builder ) {
 		
-		super.fillStateContainer( builder );
+		super.createBlockStateDefinition( builder );
 		builder.add( BlockStateProperties.DOOR_HINGE, BlockStateProperties.OPEN, BlockStateProperties.POWERED );
 	}
 }

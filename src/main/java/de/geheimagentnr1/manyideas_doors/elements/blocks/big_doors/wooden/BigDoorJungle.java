@@ -17,7 +17,7 @@ public class BigDoorJungle extends BigDoor {
 	public BigDoorJungle() {
 		
 		super(
-			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			true
@@ -45,7 +45,7 @@ public class BigDoorJungle extends BigDoor {
 	@Override
 	public RenderType getRenderType() {
 		
-		return RenderType.getTranslucent();
+		return RenderType.translucent();
 	}
 	
 	@Override

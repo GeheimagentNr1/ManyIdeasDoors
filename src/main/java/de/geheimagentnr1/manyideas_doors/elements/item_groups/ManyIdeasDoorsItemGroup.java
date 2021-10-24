@@ -19,7 +19,7 @@ public class ManyIdeasDoorsItemGroup extends ItemGroup {
 	
 	@Nonnull
 	@Override
-	public ItemStack createIcon() {
+	public ItemStack makeIcon() {
 		
 		return new ItemStack( ModBlocks.DOOR_OAK_ORIGIN );
 	}

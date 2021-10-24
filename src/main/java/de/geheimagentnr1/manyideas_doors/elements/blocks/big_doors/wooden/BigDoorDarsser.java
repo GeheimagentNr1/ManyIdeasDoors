@@ -39,7 +39,7 @@ public class BigDoorDarsser extends BigDoor {
 	public BigDoorDarsser() {
 		
 		super(
-			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -49,7 +49,7 @@ public class BigDoorDarsser extends BigDoor {
 	@Override
 	public RenderType getRenderType() {
 		
-		return RenderType.getTranslucent();
+		return RenderType.translucent();
 	}
 	
 	@Nonnull
@@ -60,19 +60,20 @@ public class BigDoorDarsser extends BigDoor {
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
-		if( state.get( BlockStateProperties.OPEN ) && state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2 ) {
-			if( state.get( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
-				return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		if( state.getValue( BlockStateProperties.OPEN ) && state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
+			if( state.getValue( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
+				return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 			} else {
-				return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+				return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 			}
 		}
 		return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
 	}
 	
+	@Nonnull
 	@Override
-	public ActionResultType onBlockActivated(
+	public ActionResultType use(
 		@Nonnull BlockState state,
 		@Nonnull World worldIn,
 		@Nonnull BlockPos pos,
@@ -80,8 +81,8 @@ public class BigDoorDarsser extends BigDoor {
 		@Nonnull Hand handIn,
 		@Nonnull BlockRayTraceResult hit ) {
 		
-		if( state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2 ) {
-			return super.onBlockActivated( state, worldIn, pos, player, handIn, hit );
+		if( state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
+			return super.use( state, worldIn, pos, player, handIn, hit );
 		}
 		return ActionResultType.PASS;
 	}

@@ -43,7 +43,7 @@ public class BigDoorLaboratory extends BigDoor {
 	public BigDoorLaboratory() {
 		
 		super(
-			Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -76,10 +76,10 @@ public class BigDoorLaboratory extends BigDoor {
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		Direction direction = state.get( BlockStateProperties.HORIZONTAL_FACING );
+		Direction direction = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		
-		if( state.get( BlockStateProperties.OPEN ) ) {
-			switch( state.get( Z_SIZE ) ) {
+		if( state.getValue( BlockStateProperties.OPEN ) ) {
+			switch( state.getValue( Z_SIZE ) ) {
 				case 0:
 					return SHAPE_OPEN_LEFT.getShapeFromHorizontalFacing( direction );
 				case 2:

@@ -16,7 +16,7 @@ public class BigDoorSpruce extends BigDoor {
 	public BigDoorSpruce() {
 		
 		super(
-			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

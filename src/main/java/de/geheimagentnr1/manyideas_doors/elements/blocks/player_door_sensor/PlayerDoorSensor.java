@@ -79,9 +79,15 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	
 	public PlayerDoorSensor() {
 		
-		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5 ).sound( SoundType.METAL ) );
+		super(
+			Block.Properties.of( Material.METAL )
+				.strength( 5 )
+				.noOcclusion()
+				.isViewBlocking( ( p_test_1_, p_test_2_, p_test_3_ ) -> false ).sound( SoundType.METAL )
+		);
 		setRegistryName( registry_name );
-		setDefaultState( getDefaultState().with( BlockStateProperties.POWERED, false ).with( SENSOR_RANGE, 1 ) );
+		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.POWERED, false )
+			.setValue( SENSOR_RANGE, 1 ) );
 	}
 	
 	@SuppressWarnings( "deprecation" )
@@ -93,8 +99,8 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
-		switch( state.get( ModBlockStateProperties.BLOCK_SIDE ) ) {
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		switch( state.getValue( ModBlockStateProperties.BLOCK_SIDE ) ) {
 			case SINGLE:
 				return SINGLE.getShapeFromHorizontalFacing( facing );
 			case LEFT:
@@ -120,54 +126,47 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		return new PlayerDoorSensorTile();
 	}
 	
-	@SuppressWarnings( "deprecation" )
-	public boolean canProvidePower( @Nonnull BlockState state ) {
-		
-		return true;
-	}
-	
-	@SuppressWarnings( "deprecation" )
 	@Override
-	public int getWeakPower(
+	public int getDirectSignal(
 		@Nonnull BlockState blockState,
 		@Nonnull IBlockReader blockAccess,
 		@Nonnull BlockPos pos,
 		@Nonnull Direction side ) {
 		
-		return blockState.get( BlockStateProperties.POWERED ) ? 15 : 0;
+		return getSignal( blockState, blockAccess, pos, side );
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public int getStrongPower(
+	public int getSignal(
 		@Nonnull BlockState blockState,
 		@Nonnull IBlockReader blockAccess,
 		@Nonnull BlockPos pos,
 		@Nonnull Direction side ) {
 		
-		return blockState.get( BlockStateProperties.POWERED ) ? 15 : 0;
+		return blockState.getValue( BlockStateProperties.POWERED ) ? 15 : 0;
 	}
 	
 	@Override
 	public RenderType getRenderType() {
 		
-		return RenderType.getCutout();
+		return RenderType.cutout();
 	}
 	
 	@Nullable
 	@Override
 	public BlockState getStateForPlacement( @Nonnull BlockItemUseContext context ) {
 		
-		return setProperties( getDefaultState().with(
+		return setProperties( defaultBlockState().setValue(
 			BlockStateProperties.HORIZONTAL_FACING,
-			context.getPlacementHorizontalFacing()
-		), context.getWorld(), context.getPos() );
+			context.getHorizontalDirection()
+		), context.getLevel(), context.getClickedPos() );
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Nonnull
 	@Override
-	public BlockState updatePostPlacement(
+	public BlockState updateShape(
 		@Nonnull BlockState stateIn,
 		@Nonnull Direction facing,
 		@Nonnull BlockState facingState,
@@ -175,57 +174,57 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		@Nonnull BlockPos currentPos,
 		@Nonnull BlockPos facingPos ) {
 		
-		BlockState newState = setProperties( stateIn, worldIn.getWorld(), currentPos );
+		BlockState newState = setProperties( stateIn, worldIn, currentPos );
 		if( facingState.getBlock() == this ) {
-			return newState.with( SENSOR_RANGE, facingState.get( SENSOR_RANGE ) );
+			return newState.setValue( SENSOR_RANGE, facingState.getValue( SENSOR_RANGE ) );
 		} else {
 			return newState;
 		}
 	}
 	
-	private BlockState setProperties( BlockState stateIn, World worldIn, BlockPos currentPos ) {
+	private BlockState setProperties( BlockState stateIn, IWorld worldIn, BlockPos currentPos ) {
 		
-		Direction direction = stateIn.get( BlockStateProperties.HORIZONTAL_FACING );
-		BlockState leftState = worldIn.getBlockState( currentPos.offset( direction.rotateYCCW() ) );
-		BlockState rightState = worldIn.getBlockState( currentPos.offset( direction.rotateY() ) );
+		Direction direction = stateIn.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		BlockState leftState = worldIn.getBlockState( currentPos.relative( direction.getCounterClockWise() ) );
+		BlockState rightState = worldIn.getBlockState( currentPos.relative( direction.getClockWise() ) );
 		boolean leftBlockIsPlayerDoorSensor = leftState.getBlock() == ModBlocks.PLAYER_DOOR_SENSOR &&
-			leftState.get( BlockStateProperties.HORIZONTAL_FACING ) == direction;
+			leftState.getValue( BlockStateProperties.HORIZONTAL_FACING ) == direction;
 		boolean rightBlockIsPlayerDoorSensor = rightState.getBlock() == ModBlocks.PLAYER_DOOR_SENSOR &&
-			rightState.get( BlockStateProperties.HORIZONTAL_FACING ) == direction;
+			rightState.getValue( BlockStateProperties.HORIZONTAL_FACING ) == direction;
 		
 		if( leftBlockIsPlayerDoorSensor ) {
 			if( rightBlockIsPlayerDoorSensor ) {
-				return stateIn.with( ModBlockStateProperties.BLOCK_SIDE, BlockSide.MIDDLE )
-					.with( SENSOR_RANGE, leftState.get( SENSOR_RANGE ) );
+				return stateIn.setValue( ModBlockStateProperties.BLOCK_SIDE, BlockSide.MIDDLE )
+					.setValue( SENSOR_RANGE, leftState.getValue( SENSOR_RANGE ) );
 			} else {
-				return stateIn.with( ModBlockStateProperties.BLOCK_SIDE, BlockSide.RIGHT )
-					.with( SENSOR_RANGE, leftState.get( SENSOR_RANGE ) );
+				return stateIn.setValue( ModBlockStateProperties.BLOCK_SIDE, BlockSide.RIGHT )
+					.setValue( SENSOR_RANGE, leftState.getValue( SENSOR_RANGE ) );
 			}
 		} else {
 			if( rightBlockIsPlayerDoorSensor ) {
-				return stateIn.with( ModBlockStateProperties.BLOCK_SIDE, BlockSide.LEFT )
-					.with( SENSOR_RANGE, rightState.get( SENSOR_RANGE ) );
+				return stateIn.setValue( ModBlockStateProperties.BLOCK_SIDE, BlockSide.LEFT )
+					.setValue( SENSOR_RANGE, rightState.getValue( SENSOR_RANGE ) );
 			} else {
-				return stateIn.with( ModBlockStateProperties.BLOCK_SIDE, BlockSide.SINGLE );
+				return stateIn.setValue( ModBlockStateProperties.BLOCK_SIDE, BlockSide.SINGLE );
 			}
 		}
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
-	public void onReplaced(
+	public void onRemove(
 		@Nonnull BlockState state,
 		@Nonnull World worldIn,
 		@Nonnull BlockPos pos,
 		@Nonnull BlockState newState,
 		boolean isMoving ) {
 		
-		super.onReplaced( state, worldIn, pos, newState, isMoving );
-		notifyNeighbors( worldIn, pos, this, state.get( BlockStateProperties.HORIZONTAL_FACING ) );
+		super.onRemove( state, worldIn, pos, newState, isMoving );
+		notifyNeighbors( worldIn, pos, this, state.getValue( BlockStateProperties.HORIZONTAL_FACING ) );
 	}
 	
 	@Override
-	protected void fillStateContainer( StateContainer.Builder<Block, BlockState> builder ) {
+	protected void createBlockStateDefinition( StateContainer.Builder<Block, BlockState> builder ) {
 		
 		builder.add(
 			BlockStateProperties.HORIZONTAL_FACING,
@@ -238,8 +237,8 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	//package-private
 	void notifyNeighbors( World world, BlockPos pos, Block block, Direction facing ) {
 		
-		world.notifyNeighborsOfStateChange( pos, block );
-		world.notifyNeighborsOfStateChange( pos.offset( facing ), block );
+		world.updateNeighborsAt( pos, block );
+		world.updateNeighborsAt( pos.relative( facing ), block );
 	}
 	
 	@Override
@@ -264,7 +263,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	public List<Option> getOptions() {
 		
 		ArrayList<Option> options = new ArrayList<>();
-		for( Integer range : SENSOR_RANGE.getAllowedValues() ) {
+		for( Integer range : SENSOR_RANGE.getPossibleValues() ) {
 			options.add( new Option(
 				TranslationKeyHelper.generateMessageTranslationKey( ManyIdeasDoors.MODID, range + ".title" ),
 				TranslationKeyHelper.generateMessageTranslationKey( ManyIdeasDoors.MODID, range + ".description" )
@@ -276,7 +275,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Override
 	public int getStateIndex( BlockState state ) {
 		
-		return state.get( SENSOR_RANGE ) - 1;
+		return state.getValue( SENSOR_RANGE ) - 1;
 	}
 	
 	@Override
@@ -287,6 +286,6 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		int stateIndex,
 		PlayerEntity player ) {
 		
-		world.setBlockState( pos, state.with( SENSOR_RANGE, stateIndex + 1 ), 3 );
+		world.setBlock( pos, state.setValue( SENSOR_RANGE, stateIndex + 1 ), 3 );
 	}
 }

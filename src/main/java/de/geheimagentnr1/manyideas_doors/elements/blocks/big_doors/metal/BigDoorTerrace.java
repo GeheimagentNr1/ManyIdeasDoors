@@ -44,7 +44,7 @@ public class BigDoorTerrace extends BigDoor {
 	public BigDoorTerrace() {
 		
 		super(
-			Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -59,11 +59,11 @@ public class BigDoorTerrace extends BigDoor {
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
-		int z = state.get( Z_SIZE );
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		int z = state.getValue( Z_SIZE );
 		
-		if( state.get( BlockStateProperties.OPEN ) ) {
-			if( state.get( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
+		if( state.getValue( BlockStateProperties.OPEN ) ) {
+			if( state.getValue( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
 				switch( z ) {
 					case 0:
 						return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );

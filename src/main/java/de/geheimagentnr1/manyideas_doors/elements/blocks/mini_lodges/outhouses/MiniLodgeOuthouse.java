@@ -90,7 +90,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	MiniLodgeOuthouse( String registry_name ) {
 		
 		super(
-			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name
 		);
 	}
@@ -114,10 +114,10 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
-		Direction facing = state.get( BlockStateProperties.HORIZONTAL_FACING );
-		int x = state.get( X_SIZE );
-		int y = state.get( Y_SIZE );
-		int z = state.get( Z_SIZE );
+		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		int x = state.getValue( X_SIZE );
+		int y = state.getValue( Y_SIZE );
+		int z = state.getValue( Z_SIZE );
 		
 		switch( y ) {
 			case 0: //fall through
@@ -128,33 +128,33 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 							case 0:
 								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
 							case 1:
-								if( state.get( BlockStateProperties.OPEN ) ) {
-									if( state.get( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
-										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								if( state.getValue( BlockStateProperties.OPEN ) ) {
+									if( state.getValue( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
+										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 									} else {
-										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 									}
 								} else {
 									return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
 								}
 							case 2:
-								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 1:
 						switch( z ) {
 							case 0:
-								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return VoxelShapes.empty();
 							case 2:
-								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 2:
 						switch( z ) {
 							case 0:
-								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
 							case 2:
@@ -172,23 +172,23 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 							case 1:
 								return HIGH_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing );
 							case 2:
-								return HIGH_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return HIGH_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 1:
 						switch( z ) {
 							case 0:
-								return LEFT_MID_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.rotateY() );
+								return LEFT_MID_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 							case 1:
 								return ROOF_SHAPES.getShapeFromFacing( facing );
 							case 2:
-								return RIGHT_MID_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return RIGHT_MID_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 						}
 						break;
 					case 2:
 						switch( z ) {
 							case 0:
-								return LOW_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.rotateYCCW() );
+								return LOW_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
 							case 1:
 								return LOW_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
 							case 2:
@@ -198,6 +198,6 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 				}
 				break;
 		}
-		return VoxelShapes.fullCube();
+		return VoxelShapes.block();
 	}
 }

@@ -16,7 +16,7 @@ public class BigDoorFactory extends BigDoor {
 	public BigDoorFactory() {
 		
 		super(
-			Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

@@ -16,7 +16,7 @@ public class DoorAcaciaRustic extends DoubleDoorBlock {
 	public DoorAcaciaRustic() {
 		
 		super(
-			Block.Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Block.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name
 		);
 	}
