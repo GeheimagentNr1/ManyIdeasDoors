@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "manyideas_doors:block/mini_lodges/police_box/mini_lodge_police_box_roof",
 		"roof":     "manyideas_doors:block/mini_lodges/police_box/mini_lodge_police_box_roof",
 		"lantern":  "block/lantern"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Deckel",
 			"from":  [ -2, 1, -2 ],

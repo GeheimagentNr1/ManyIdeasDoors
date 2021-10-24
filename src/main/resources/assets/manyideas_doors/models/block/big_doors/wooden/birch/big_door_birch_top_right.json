@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                 "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_right",
 		"big_door_birch_top_right": "manyideas_doors:block/big_doors/wooden/birch/big_door_birch_top_right"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":     "glass",
 			"from":     [ 0, 0, 1 ],

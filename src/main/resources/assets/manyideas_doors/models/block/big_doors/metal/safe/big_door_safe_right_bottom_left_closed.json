@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"0":        "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_bottom_left_on",
 		"22":       "manyideas_doors:block/big_doors/metal/safe/big_safe_door_outer_bottom_right_on",
 		"particle": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_bottom_left_on"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":     "Block 1 - Hauptflaeche",
 			"from":     [ 0, 1, 1 ],

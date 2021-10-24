@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "manyideas_doors:block/doors/iron/ship/door_iron_ship_bottom",
 		"bottom":   "manyideas_doors:block/doors/iron/ship/door_iron_ship_bottom"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Cube",
 			"from":  [ 1, 1, 0.5 ],

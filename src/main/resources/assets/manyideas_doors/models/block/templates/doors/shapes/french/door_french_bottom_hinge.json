@@ -1,8 +1,9 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "#bottom"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "right_door_pillar",
 			"from":  [ 0, 0, 0 ],

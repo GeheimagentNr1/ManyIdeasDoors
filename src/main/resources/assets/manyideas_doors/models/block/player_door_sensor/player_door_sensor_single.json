@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":       "block/cauldron_top",
 		"cauldron_top":   "block/cauldron_top",
 		"redstone_block": "block/redstone_block"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "bottom",
 			"from":  [ 3, 0.5, 0 ],
@@ -45,7 +46,7 @@
 			}
 		}
 	],
-	"display":  {
+	"display":          {
 		"thirdperson_righthand": {
 			"rotation":    [ 57, 113, 0 ],
 			"translation": [ 1, 2.5, 1 ],

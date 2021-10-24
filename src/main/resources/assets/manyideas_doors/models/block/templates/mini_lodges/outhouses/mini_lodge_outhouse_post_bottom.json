@@ -1,8 +1,9 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "#outhouse"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":  [ 0, 0, 0 ],
 			"to":    [ 4, 16, 4 ],

@@ -1,10 +1,11 @@
 {
-	"textures": {
+	"textures":         {
 		"1":                            "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_oak",
 		"particle":                     "manyideas_doors:block/big_doors/wooden/oak/big_door_oak_mid_bottom_left",
 		"big_door_oak_mid_bottom_left": "manyideas_doors:block/big_doors/wooden/oak/big_door_oak_mid_bottom_left"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "blatt",
 			"from":  [ 2, 2, 0.5 ],

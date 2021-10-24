@@ -1,8 +1,9 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "#top"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":  [ 0, 0, 0 ],
 			"to":    [ 16, 16, 3 ],

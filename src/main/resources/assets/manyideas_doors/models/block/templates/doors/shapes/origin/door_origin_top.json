@@ -1,8 +1,9 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "#top"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Kopfleiste",
 			"from":  [ 0, 14, 0 ],

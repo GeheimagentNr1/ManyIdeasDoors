@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "manyideas_doors:block/doors/iron/space/door_iron_space_top",
 		"top":      "manyideas_doors:block/doors/iron/space/door_iron_space_top"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Verankerung",
 			"from":  [ 14, 0, 1 ],

@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "manyideas_doors:block/doors/iron/fantasy/door_iron_fantasy_top",
 		"top":      "manyideas_doors:block/doors/iron/fantasy/door_iron_fantasy_top"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "Seitenleiste",
 			"from":  [ 0, 0, 1 ],
