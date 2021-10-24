@@ -1,12 +1,13 @@
 {
-	"textures": {
+	"textures":         {
 		"1":        "block/quartz_block_bottom",
 		"2":        "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_top_mid",
 		"3":        "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_top_right",
 		"particle": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_top_left",
 		"door":     "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_top_left"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":  [ 0, 15, 0 ],
 			"to":    [ 16, 16, 3 ],

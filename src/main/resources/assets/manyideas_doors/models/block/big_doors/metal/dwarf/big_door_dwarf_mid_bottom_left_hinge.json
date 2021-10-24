@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle":                        "manyideas_doors:block/big_doors/metal/dwarf/big_door_dwarf_mid_bottom_right",
 		"big_door_dwarf_mid_bottom_right": "manyideas_doors:block/big_doors/metal/dwarf/big_door_dwarf_mid_bottom_right"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"name":  "blatt",
 			"from":  [ 0, 0, 1 ],

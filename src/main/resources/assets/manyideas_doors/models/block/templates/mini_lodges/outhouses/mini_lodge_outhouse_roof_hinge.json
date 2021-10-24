@@ -1,9 +1,10 @@
 {
-	"textures": {
+	"textures":         {
 		"particle": "#outhouse",
 		"roof":     "manyideas_doors:block/mini_lodges/outhouses/mini_lodge_outhouse_roof_tiles"
 	},
-	"elements": [
+	"ambientocclusion": false,
+	"elements":         [
 		{
 			"from":     [ 0, 0, 16 ],
 			"to":       [ 16, 1, 19 ],
