@@ -61,7 +61,8 @@ public class BigDoorDarsser extends BigDoor {
 		@Nonnull ISelectionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
-		if( state.getValue( BlockStateProperties.OPEN ) && state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
+		if( state.getValue( BlockStateProperties.OPEN ) && state.getValue( Z_SIZE ) == 1 &&
+			state.getValue( Y_SIZE ) != 2 ) {
 			if( state.getValue( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
 				return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
 			} else {
