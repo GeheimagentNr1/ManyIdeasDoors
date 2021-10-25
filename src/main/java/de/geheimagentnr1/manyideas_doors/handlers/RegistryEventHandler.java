@@ -1,13 +1,13 @@
 package de.geheimagentnr1.manyideas_doors.handlers;
 
 import de.geheimagentnr1.manyideas_core.util.BlockRegistrationHelper;
-import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTile;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTileRenderer;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorTile;
+import de.geheimagentnr1.manyideas_doors.elements.item_groups.ModItemGroups;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
@@ -43,7 +43,7 @@ public class RegistryEventHandler {
 	@SubscribeEvent
 	public static void onItemsRegistry( RegistryEvent.Register<Item> itemRegistryEvent ) {
 		
-		Item.Properties properties = new Item.Properties().group( ManyIdeasDoors.setup.manyIdeasDoorsItemGroup );
+		Item.Properties properties = new Item.Properties().group( ModItemGroups.MANYIDEAS_DOORS_ITEM_GROUP );
 		
 		BlockRegistrationHelper.registerBlockItems( itemRegistryEvent, ModBlocks.BLOCKS, properties );
 	}
