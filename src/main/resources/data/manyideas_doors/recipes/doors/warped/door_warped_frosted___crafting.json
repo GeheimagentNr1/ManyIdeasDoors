@@ -1,0 +1,20 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"P",
+		"W",
+		"P"
+	],
+	"key":     {
+		"P": {
+			"item": "manyideas_core:panel_warped"
+		},
+		"W": {
+			"item": "minecraft:white_stained_glass"
+		}
+	},
+	"result":  {
+		"item":  "manyideas_doors:door_warped_frosted",
+		"count": 2
+	}
+}

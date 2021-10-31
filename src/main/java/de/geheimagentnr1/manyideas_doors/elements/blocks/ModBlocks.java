@@ -5,6 +5,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.acacia.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.birch.*;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.crimson.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.dark_oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.iron.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.jungle.*;
@@ -13,6 +14,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpeci
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTile;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce.*;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.warped.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodgePoliceBox;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
@@ -75,6 +77,17 @@ public class ModBlocks {
 		new DoorBirchOrigin(),//BCPFINRLT
 		new DoorBirchRustic(),//BCPFINRLT
 		new DoorBirchShoji(),//BCPFINRLT
+		//Doors: Crimson
+		new DoorCrimsonBlank(),//BCPFINRLT
+		new DoorCrimsonBookshelf(),//BCPFINRLT
+		new DoorCrimsonCassette(),//BCPFINRLT
+		new DoorCrimsonFrench(),//BCPFINRLT
+		new DoorCrimsonFrosted(),//BCPFINRLT
+		new DoorCrimsonGlass(),//BCPFINRLT
+		new DoorCrimsonHeart(),//BCPFINRLT
+		new DoorCrimsonOrigin(),//BCPFINRLT
+		new DoorCrimsonRustic(),//BCPFINRLT
+		new DoorCrimsonShoji(),//BCPFINRLT
 		//Doors: Dark Oak
 		new DoorDarkOakBlank(),//BCPFINRLT
 		new DoorDarkOakBookshelf(),//BCPFINRLT
@@ -134,6 +147,17 @@ public class ModBlocks {
 		new DoorSpruceOrigin(),//BCPFINRLT
 		new DoorSpruceRustic(),//BCPFINRLT
 		new DoorSpruceShoji(),//BCPFINRLT
+		//Doors: Warped
+		new DoorWarpedBlank(),//BCPFINRLT
+		new DoorWarpedBookshelf(),//BCPFINRLT
+		new DoorWarpedCassette(),//BCPFINRLT
+		new DoorWarpedFrench(),//BCPFINRLT
+		new DoorWarpedFrosted(),//BCPFINRLT
+		new DoorWarpedGlass(),//BCPFINRLT
+		new DoorWarpedHeart(),//BCPFINRLT
+		new DoorWarpedOrigin(),//BCPFINRLT
+		new DoorWarpedRustic(),//BCPFINRLT
+		new DoorWarpedShoji(),//BCPFINRLT
 		//Mini Lodges
 		new MiniLodgePoliceBox(),//BCPFINRLT
 		//Mini Lodges: Outhouses
@@ -258,6 +282,38 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorBirchShoji.registry_name )
 	public static DoorBirchShoji DOOR_BIRCH_SHOJI;
+	
+	//Doors: Crimson
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonBlank.registry_name )
+	public static DoorCrimsonBlank DOOR_CRIMSON_BLANK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonBookshelf.registry_name )
+	public static DoorCrimsonBookshelf DOOR_CRIMSON_BOOKSHELF;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonCassette.registry_name )
+	public static DoorCrimsonCassette DOOR_CRIMSON_CASSETTE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonFrench.registry_name )
+	public static DoorCrimsonFrench DOOR_CRIMSON_FRENCH;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonFrosted.registry_name )
+	public static DoorCrimsonFrosted DOOR_CRIMSON_FROSTED;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonGlass.registry_name )
+	public static DoorCrimsonGlass DOOR_CRIMSON_GLASS;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonHeart.registry_name )
+	public static DoorCrimsonHeart DOOR_CRIMSON_HEART;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonOrigin.registry_name )
+	public static DoorCrimsonOrigin DOOR_CRIMSON_ORIGIN;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonRustic.registry_name )
+	public static DoorCrimsonRustic DOOR_CRIMSON_RUSTIC;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonShoji.registry_name )
+	public static DoorCrimsonShoji DOOR_CRIMSON_SHOJI;
 	
 	//Doors: Dark Oak
 	
@@ -431,6 +487,38 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpruceShoji.registry_name )
 	public static DoorSpruceShoji DOOR_SPRUCE_SHOJI;
+	
+	//Doors: Warped
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedBlank.registry_name )
+	public static DoorWarpedBlank DOOR_WARPED_BLANK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedBookshelf.registry_name )
+	public static DoorWarpedBookshelf DOOR_WARPED_BOOKSHELF;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedCassette.registry_name )
+	public static DoorWarpedCassette DOOR_WARPED_CASSETTE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedFrench.registry_name )
+	public static DoorWarpedFrench DOOR_WARPED_FRENCH;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedFrosted.registry_name )
+	public static DoorWarpedFrosted DOOR_WARPED_FROSTED;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedGlass.registry_name )
+	public static DoorWarpedGlass DOOR_WARPED_GLASS;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedHeart.registry_name )
+	public static DoorWarpedHeart DOOR_WARPED_HEART;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedOrigin.registry_name )
+	public static DoorWarpedOrigin DOOR_WARPED_ORIGIN;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedRustic.registry_name )
+	public static DoorWarpedRustic DOOR_WARPED_RUSTIC;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorWarpedShoji.registry_name )
+	public static DoorWarpedShoji DOOR_WARPED_SHOJI;
 	
 	//Mini Lodges
 	

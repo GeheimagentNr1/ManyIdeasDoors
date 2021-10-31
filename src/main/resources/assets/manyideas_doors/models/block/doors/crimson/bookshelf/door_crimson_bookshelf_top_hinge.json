@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/types/crimson/door_crimson_top_hinge",
+	"textures": {
+		"top": "manyideas_doors:block/doors/crimson/bookshelf/door_crimson_bookshelf_top"
+	}
+}

@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/types/warped/door_warped_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/warped/blank/door_warped_blank_bottom"
+	}
+}

@@ -1,0 +1,7 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/warped/origin/door_warped_origin_bottom",
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_warped"
+	}
+}

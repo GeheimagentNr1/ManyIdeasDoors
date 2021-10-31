@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/types/warped/door_warped_top",
+	"textures": {
+		"top": "manyideas_doors:block/doors/warped/bookshelf/door_warped_bookshelf_top"
+	}
+}

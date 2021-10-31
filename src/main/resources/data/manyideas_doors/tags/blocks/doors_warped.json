@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values":  [
+		"manyideas_doors:door_warped_blank",
+		"manyideas_doors:door_warped_bookshelf",
+		"manyideas_doors:door_warped_cassette",
+		"manyideas_doors:door_warped_french",
+		"manyideas_doors:door_warped_frosted",
+		"manyideas_doors:door_warped_glass",
+		"manyideas_doors:door_warped_heart",
+		"manyideas_doors:door_warped_origin",
+		"manyideas_doors:door_warped_rustic",
+		"manyideas_doors:door_warped_shoji"
+	]
+}

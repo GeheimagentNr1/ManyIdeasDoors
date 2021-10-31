@@ -1,0 +1,7 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_top",
+	"textures": {
+		"top":  "manyideas_doors:block/doors/crimson/shoji/door_crimson_shoji_top",
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_crimson"
+	}
+}

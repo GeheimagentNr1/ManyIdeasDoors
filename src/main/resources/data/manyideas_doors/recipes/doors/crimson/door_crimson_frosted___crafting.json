@@ -1,0 +1,20 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"P",
+		"W",
+		"P"
+	],
+	"key":     {
+		"P": {
+			"item": "manyideas_core:panel_crimson"
+		},
+		"W": {
+			"item": "minecraft:white_stained_glass"
+		}
+	},
+	"result":  {
+		"item":  "manyideas_doors:door_crimson_frosted",
+		"count": 2
+	}
+}
