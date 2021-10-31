@@ -1,6 +1,7 @@
 {
-	"parent":   "manyideas_doors:block/templates/doors/types/dark_oak/door_dark_oak_bottom",
+	"parent":   "manyideas_doors:block/templates/doors/shapes/heart/door_heart_bottom",
 	"textures": {
-		"bottom": "manyideas_doors:block/doors/dark_oak/heart/door_dark_oak_heart_bottom"
+		"bottom": "manyideas_doors:block/doors/dark_oak/heart/door_dark_oak_heart_bottom",
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_dark_oak"
 	}
 }

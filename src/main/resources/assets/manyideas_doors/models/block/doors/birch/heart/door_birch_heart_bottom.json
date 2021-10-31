@@ -1,6 +1,7 @@
 {
-	"parent":   "manyideas_doors:block/templates/doors/types/birch/door_birch_bottom",
+	"parent":   "manyideas_doors:block/templates/doors/shapes/heart/door_heart_bottom",
 	"textures": {
-		"bottom": "manyideas_doors:block/doors/birch/heart/door_birch_heart_bottom"
+		"bottom": "manyideas_doors:block/doors/birch/heart/door_birch_heart_bottom",
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_birch"
 	}
 }

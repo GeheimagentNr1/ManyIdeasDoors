@@ -1,6 +1,6 @@
 {
 	"textures":         {
-		"0":        "manyideas_doors:block/doors/acacia/log_stripped_acacia",
+		"0":        "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_acacia",
 		"1":        "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_bottom_right_inside",
 		"2":        "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_bottom_right_outside",
 		"particle": "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_bottom_right_inside"

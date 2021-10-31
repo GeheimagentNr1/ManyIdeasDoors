@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/frosted/door_frosted_bottom",
 	"textures": {
 		"bottom": "manyideas_doors:block/doors/jungle/frosted/door_jungle_frosted_bottom",
-		"edge":   "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_jungle"
 	}
 }

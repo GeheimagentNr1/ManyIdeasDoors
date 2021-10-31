@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/big_doors/big_door_bottom_left_hinge",
 	"textures": {
 		"door": "manyideas_doors:block/big_doors/wooden/spruce/big_door_spruce_bottom_right",
-		"edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_spruce"
 	}
 }

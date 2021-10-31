@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/glass/door_glass_top_hinge",
 	"textures": {
 		"top":  "manyideas_doors:block/doors/spruce/glass/door_spruce_glass_top",
-		"edge": "manyideas_doors:block/doors/spruce/log_stripped_spruce"
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_spruce"
 	}
 }
