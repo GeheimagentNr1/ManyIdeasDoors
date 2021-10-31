@@ -1,6 +1,6 @@
 {
 	"parent":   "manyideas_doors:block/templates/doors/door_bottom_hinge",
 	"textures": {
-		"edge": "manyideas_doors:block/doors/dark_oak/log_stripped_dark_oak"
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_dark_oak"
 	}
 }

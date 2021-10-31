@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/glass/door_glass_bottom_hinge",
 	"textures": {
 		"bottom": "manyideas_doors:block/doors/birch/glass/door_birch_glass_bottom",
-		"edge":   "minecraft:block/stripped_birch_log"
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_birch"
 	}
 }

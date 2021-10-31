@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/shoji/door_shoji_top_hinge",
 	"textures": {
 		"top":  "manyideas_doors:block/doors/acacia/shoji/door_acacia_shoji_top",
-		"edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_acacia"
 	}
 }
