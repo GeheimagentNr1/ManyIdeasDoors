@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/rustic/door_rustic_top_hinge",
 	"textures": {
 		"top":  "manyideas_doors:block/doors/jungle/rustic/door_jungle_rustic_top",
-		"edge": "manyideas_doors:block/doors/jungle/log_stripped_jungle"
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_jungle"
 	}
 }

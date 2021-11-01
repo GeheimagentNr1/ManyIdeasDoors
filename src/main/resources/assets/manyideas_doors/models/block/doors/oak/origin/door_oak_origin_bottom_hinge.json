@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom_hinge",
 	"textures": {
 		"bottom": "manyideas_doors:block/doors/oak/origin/door_oak_origin_bottom",
-		"edge":   "minecraft:block/stripped_oak_log"
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_oak"
 	}
 }

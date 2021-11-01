@@ -2,6 +2,6 @@
 	"parent":   "manyideas_doors:block/templates/doors/shapes/origin/door_origin_bottom_hinge",
 	"textures": {
 		"bottom": "manyideas_doors:block/doors/acacia/origin/door_acacia_origin_bottom",
-		"edge":   "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+		"edge":   "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_acacia"
 	}
 }

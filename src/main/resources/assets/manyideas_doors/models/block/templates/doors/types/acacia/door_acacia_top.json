@@ -1,6 +1,6 @@
 {
 	"parent":   "manyideas_doors:block/templates/doors/door_top",
 	"textures": {
-		"edge": "manyideas_doors:block/doors/acacia/log_stripped_acacia"
+		"edge": "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_acacia"
 	}
 }
