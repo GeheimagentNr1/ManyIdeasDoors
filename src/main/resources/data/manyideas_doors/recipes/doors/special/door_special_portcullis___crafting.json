@@ -1,0 +1,25 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"B",
+		"I",
+		"N"
+	],
+	"key":     {
+		"B": {
+			"type":      "recipes_lib:nbt",
+			"item":      "manyideas_core:wood_colored",
+			"nbt":       "{dye: {color: \"black\"}}",
+			"matchType": "CONTAINS"
+		},
+		"I": {
+			"item": "minecraft:iron_bars"
+		},
+		"N": {
+			"item": "minecraft:netherite_ingot"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:door_special_portcullis"
+	}
+}

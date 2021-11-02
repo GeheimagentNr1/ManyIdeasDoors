@@ -11,6 +11,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.iron.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.jungle.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPoliceBox;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPortcullis;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTile;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce.*;
@@ -43,18 +44,21 @@ public class ModBlocks {
 		new BigDoorDwarf(),//BCPFINRLT
 		new BigDoorFactory(),//BCPFINRLT
 		new BigDoorLaboratory(),//BCPFINRLT
+		new BigDoorPortcullis(),//BCPFINRLT
 		new BigDoorSafe(),//BCPFINRLT
 		new BigDoorTerrace(),//BCPFINRLT
 		//Big Doors : Wooden
 		new BigDoorAcacia(),//BCPFINRL
-		new BigDoorBarn(),//BCPFINRL
+		new BigDoorBarn(),//BCPFINRLT
 		new BigDoorBirch(),//BCPFINRLT
+		new BigDoorCrimson(),//BCPFINRLT
 		new BigDoorDarkOak(),//BCPFINRLT
 		new BigDoorDarsser(),//BCPFINRL
 		new BigDoorJungle(),//BCPFINRLT
 		new BigDoorOak(),//BCPFINRLT
 		new BigDoorShiro(),//BCPFINRL
 		new BigDoorSpruce(),//BCPFINRLT
+		new BigDoorWarped(),//BCPFINRLT
 		//Doors: Acacia
 		new DoorAcaciaBlank(),//BCPFINRLT
 		new DoorAcaciaBookshelf(),//BCPFINRLT
@@ -134,6 +138,7 @@ public class ModBlocks {
 		new DoorOakShoji(),//BCPFINRLT
 		//Doors: Special
 		new DoorSpecialPoliceBox(),//BCPFINRLT
+		new DoorSpecialPortcullis(),//BCPFINRLT
 		//Doors: Special: End Door
 		new DoorSpecialEnd(),//BCPFINRLT
 		//Doors: Spruce
@@ -184,6 +189,9 @@ public class ModBlocks {
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorLaboratory.registry_name )
 	public static BigDoorLaboratory BIG_DOOR_LABORATORY;
 	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorPortcullis.registry_name )
+	public static BigDoorPortcullis BIG_DOOR_PORTCULLIS;
+	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorSafe.registry_name )
 	public static BigDoorSafe BIG_DOOR_SAFE;
 	
@@ -200,6 +208,9 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorBirch.registry_name )
 	public static BigDoorBirch BIG_DOOR_BIRCH;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorCrimson.registry_name )
+	public static BigDoorCrimson BIG_DOOR_CRIMSON;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDarkOak.registry_name )
 	public static BigDoorDarkOak BIG_DOOR_DARK_OAK;
@@ -218,6 +229,9 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorSpruce.registry_name )
 	public static BigDoorSpruce BIG_DOOR_SPRUCE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorWarped.registry_name )
+	public static BigDoorWarped BIG_DOOR_WARPED;
 	
 	//Doors: Acacia
 	
@@ -447,6 +461,9 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialPoliceBox.registry_name )
 	public static DoorSpecialPoliceBox DOOR_SPECIAL_POLICE_BOX;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialPortcullis.registry_name )
+	public static DoorSpecialPortcullis DOOR_SPECIAL_PORTCULLIS;
 	
 	//Special: End Door
 	

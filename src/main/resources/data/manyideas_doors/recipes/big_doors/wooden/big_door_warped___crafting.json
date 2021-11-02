@@ -1,0 +1,19 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"PP",
+		"WW",
+		"WW"
+	],
+	"key":     {
+		"P": {
+			"item": "manyideas_core:panel_warped"
+		},
+		"W": {
+			"item": "manyideas_core:wood_stripped_smooth_warped"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_warped"
+	}
+}
