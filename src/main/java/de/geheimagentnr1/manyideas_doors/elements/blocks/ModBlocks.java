@@ -168,10 +168,12 @@ public class ModBlocks {
 		//Mini Lodges: Outhouses
 		new MiniLodgeOuthouseAcacia(),//BCPFINRLT
 		new MiniLodgeOuthouseBirch(),//BCPFINRLT
+		new MiniLodgeOuthouseCrimson(),//BCPFINRLT
 		new MiniLodgeOuthouseDarkOak(),//BCPFINRLT
 		new MiniLodgeOuthouseJungle(),//BCPFINRLT
 		new MiniLodgeOuthouseOak(),//BCPFINRLT
 		new MiniLodgeOuthouseSpruce(),//BCPFINRLT
+		new MiniLodgeOuthouseWarped(),//BCPFINRLT
 		//Player Door Sensor
 		new PlayerDoorSensor(),//BCPFINRLT
 	};
@@ -550,6 +552,9 @@ public class ModBlocks {
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseBirch.registry_name )
 	public static MiniLodgeOuthouseBirch MINI_LODGE_OUTHOUSE_BIRCH;
 	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseCrimson.registry_name )
+	public static MiniLodgeOuthouseCrimson MINI_LODGE_OUTHOUSE_CRIMSON;
+	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseDarkOak.registry_name )
 	public static MiniLodgeOuthouseDarkOak MINI_LODGE_OUTHOUSE_DARK_OAK;
 	
@@ -561,6 +566,9 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseSpruce.registry_name )
 	public static MiniLodgeOuthouseSpruce MINI_LODGE_OUTHOUSE_SPRUCE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseWarped.registry_name )
+	public static MiniLodgeOuthouseWarped MINI_LODGE_OUTHOUSE_WARPED;
 	
 	//Player Door Sensor
 	
