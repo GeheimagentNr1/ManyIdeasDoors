@@ -5,6 +5,7 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -39,7 +40,7 @@ public class BigDoorDarsser extends BigDoor {
 	public BigDoorDarsser() {
 		
 		super(
-			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			AbstractBlock.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -56,7 +57,7 @@ public class BigDoorDarsser extends BigDoor {
 	@Override
 	public VoxelShape getShape(
 		BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
@@ -76,14 +77,14 @@ public class BigDoorDarsser extends BigDoor {
 	@Override
 	public ActionResultType use(
 		@Nonnull BlockState state,
-		@Nonnull World worldIn,
+		@Nonnull World level,
 		@Nonnull BlockPos pos,
 		@Nonnull PlayerEntity player,
-		@Nonnull Hand handIn,
-		@Nonnull BlockRayTraceResult hit ) {
+		@Nonnull Hand hand,
+		@Nonnull BlockRayTraceResult hitResult ) {
 		
 		if( state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
-			return super.use( state, worldIn, pos, player, handIn, hit );
+			return super.use( state, level, pos, player, hand, hitResult );
 		}
 		return ActionResultType.PASS;
 	}
@@ -107,8 +108,8 @@ public class BigDoorDarsser extends BigDoor {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.BIG_DOOR_DARSSER, properties, registry_name );
+		return createBlockItem( ModBlocks.BIG_DOOR_DARSSER, _properties, registry_name );
 	}
 }

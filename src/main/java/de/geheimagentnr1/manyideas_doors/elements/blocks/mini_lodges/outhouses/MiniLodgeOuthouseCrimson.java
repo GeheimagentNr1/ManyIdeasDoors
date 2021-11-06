@@ -15,8 +15,8 @@ public class MiniLodgeOuthouseCrimson extends MiniLodgeOuthouse {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_CRIMSON, properties, registry_name );
+		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_CRIMSON, _properties, registry_name );
 	}
 }

@@ -3,6 +3,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodge;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -89,7 +90,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	MiniLodgeOuthouse( String registry_name ) {
 		
 		super(
-			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			AbstractBlock.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name
 		);
 	}
@@ -109,7 +110,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	@Override
 	public VoxelShape getShape(
 		BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		

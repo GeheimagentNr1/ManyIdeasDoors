@@ -11,22 +11,22 @@ import javax.annotation.Nonnull;
 public class DoorSpecialEndTileRenderer extends EndPortalTileEntityRenderer<DoorSpecialEndTile> {
 	
 	
-	public DoorSpecialEndTileRenderer( TileEntityRendererDispatcher rendererDispatcherIn ) {
+	public DoorSpecialEndTileRenderer( TileEntityRendererDispatcher rendererDispatcher ) {
 		
-		super( rendererDispatcherIn );
+		super( rendererDispatcher );
 	}
 	
 	@Override
 	public void render(
-		DoorSpecialEndTile tileEntityIn,
+		DoorSpecialEndTile tileEntity,
 		float partialTicks,
-		@Nonnull MatrixStack matrixStackIn,
-		@Nonnull IRenderTypeBuffer bufferIn,
-		int combinedLightIn,
-		int combinedOverlayIn ) {
+		@Nonnull MatrixStack matrixStack,
+		@Nonnull IRenderTypeBuffer buffer,
+		int combinedLight,
+		int combinedOverlay ) {
 		
-		if( tileEntityIn.shouldRender() ) {
-			super.render( tileEntityIn, partialTicks, matrixStackIn, bufferIn, combinedLightIn, combinedOverlayIn );
+		if( tileEntity.shouldRender() ) {
+			super.render( tileEntity, partialTicks, matrixStack, buffer, combinedLight, combinedOverlay );
 		}
 	}
 	

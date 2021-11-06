@@ -12,6 +12,7 @@ import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -80,10 +81,10 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	public PlayerDoorSensor() {
 		
 		super(
-			Block.Properties.of( Material.METAL )
+			AbstractBlock.Properties.of( Material.METAL )
 				.strength( 5 )
 				.noOcclusion()
-				.isViewBlocking( ( p_test_1_, p_test_2_, p_test_3_ ) -> false ).sound( SoundType.METAL )
+				.isViewBlocking( ( state, level, pos ) -> false ).sound( SoundType.METAL )
 		);
 		setRegistryName( registry_name );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.POWERED, false )
@@ -95,7 +96,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Override
 	public VoxelShape getShape(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
@@ -121,30 +122,31 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	
 	@Nullable
 	@Override
-	public TileEntity createTileEntity( BlockState state, IBlockReader world ) {
+	public TileEntity createTileEntity( BlockState state, IBlockReader level ) {
 		
 		return new PlayerDoorSensorTile();
 	}
 	
+	@SuppressWarnings( "deprecation" )
 	@Override
 	public int getDirectSignal(
-		@Nonnull BlockState blockState,
-		@Nonnull IBlockReader blockAccess,
+		@Nonnull BlockState state,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull Direction side ) {
 		
-		return getSignal( blockState, blockAccess, pos, side );
+		return getSignal( state, level, pos, side );
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public int getSignal(
-		@Nonnull BlockState blockState,
-		@Nonnull IBlockReader blockAccess,
+		@Nonnull BlockState state,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull Direction side ) {
 		
-		return blockState.getValue( BlockStateProperties.POWERED ) ? 15 : 0;
+		return state.getValue( BlockStateProperties.POWERED ) ? 15 : 0;
 	}
 	
 	@Override
@@ -167,14 +169,14 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Nonnull
 	@Override
 	public BlockState updateShape(
-		@Nonnull BlockState stateIn,
+		@Nonnull BlockState state,
 		@Nonnull Direction facing,
 		@Nonnull BlockState facingState,
-		@Nonnull IWorld worldIn,
+		@Nonnull IWorld level,
 		@Nonnull BlockPos currentPos,
 		@Nonnull BlockPos facingPos ) {
 		
-		BlockState newState = setProperties( stateIn, worldIn, currentPos );
+		BlockState newState = setProperties( state, level, currentPos );
 		if( facingState.getBlock() == this ) {
 			return newState.setValue( SENSOR_RANGE, facingState.getValue( SENSOR_RANGE ) );
 		} else {
@@ -214,13 +216,13 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Override
 	public void onRemove(
 		@Nonnull BlockState state,
-		@Nonnull World worldIn,
+		@Nonnull World level,
 		@Nonnull BlockPos pos,
 		@Nonnull BlockState newState,
 		boolean isMoving ) {
 		
-		super.onRemove( state, worldIn, pos, newState, isMoving );
-		notifyNeighbors( worldIn, pos, this, state.getValue( BlockStateProperties.HORIZONTAL_FACING ) );
+		super.onRemove( state, level, pos, newState, isMoving );
+		notifyNeighbors( level, pos, this, state.getValue( BlockStateProperties.HORIZONTAL_FACING ) );
 	}
 	
 	@Override
@@ -242,9 +244,9 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.PLAYER_DOOR_SENSOR, properties, registry_name );
+		return createBlockItem( ModBlocks.PLAYER_DOOR_SENSOR, _properties, registry_name );
 	}
 	
 	@Override
@@ -280,12 +282,12 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	
 	@Override
 	public void setBlockStateValue(
-		World world,
+		World level,
 		BlockState state,
 		BlockPos pos,
 		int stateIndex,
 		PlayerEntity player ) {
 		
-		world.setBlock( pos, state.setValue( SENSOR_RANGE, stateIndex + 1 ), 3 );
+		level.setBlock( pos, state.setValue( SENSOR_RANGE, stateIndex + 1 ), 3 );
 	}
 }

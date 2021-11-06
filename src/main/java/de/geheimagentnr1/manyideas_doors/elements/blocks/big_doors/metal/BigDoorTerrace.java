@@ -5,6 +5,7 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -44,7 +45,7 @@ public class BigDoorTerrace extends BigDoor {
 	public BigDoorTerrace() {
 		
 		super(
-			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -55,7 +56,7 @@ public class BigDoorTerrace extends BigDoor {
 	@Override
 	public VoxelShape getShape(
 		BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
@@ -103,8 +104,8 @@ public class BigDoorTerrace extends BigDoor {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.BIG_DOOR_TERRACE, properties, registry_name );
+		return createBlockItem( ModBlocks.BIG_DOOR_TERRACE, _properties, registry_name );
 	}
 }

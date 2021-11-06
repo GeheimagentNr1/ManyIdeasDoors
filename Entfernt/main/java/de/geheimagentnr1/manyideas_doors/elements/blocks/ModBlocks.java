@@ -19,7 +19,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorS
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodgePoliceBox;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
-import net.minecraft.block.Block;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraftforge.registries.ObjectHolder;
 

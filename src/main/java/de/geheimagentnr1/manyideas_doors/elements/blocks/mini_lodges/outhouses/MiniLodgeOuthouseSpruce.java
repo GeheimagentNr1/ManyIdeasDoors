@@ -15,8 +15,8 @@ public class MiniLodgeOuthouseSpruce extends MiniLodgeOuthouse {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_SPRUCE, properties, registry_name );
+		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_SPRUCE, _properties, registry_name );
 	}
 }

@@ -3,6 +3,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.BigDoor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
@@ -16,7 +17,7 @@ public class BigDoorAcacia extends BigDoor {
 	public BigDoorAcacia() {
 		
 		super(
-			Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			AbstractBlock.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			true
@@ -42,8 +43,8 @@ public class BigDoorAcacia extends BigDoor {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.BIG_DOOR_ACACIA, properties, registry_name );
+		return createBlockItem( ModBlocks.BIG_DOOR_ACACIA, _properties, registry_name );
 	}
 }

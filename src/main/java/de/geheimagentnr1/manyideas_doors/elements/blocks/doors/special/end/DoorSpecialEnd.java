@@ -3,7 +3,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 import de.geheimagentnr1.manyideas_core.elements.blocks.end_block.IEndBlock;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.Block;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
@@ -28,7 +28,7 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	public DoorSpecialEnd() {
 		
 		super(
-			Block.Properties.of( Material.STONE ).strength( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
+			AbstractBlock.Properties.of( Material.STONE ).strength( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
 			registry_name
 		);
 	}
@@ -41,7 +41,7 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	
 	@Nullable
 	@Override
-	public TileEntity createTileEntity( BlockState state, IBlockReader world ) {
+	public TileEntity createTileEntity( BlockState state, IBlockReader level ) {
 		
 		return new DoorSpecialEndTile();
 	}
@@ -62,19 +62,19 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	@Override
 	public VoxelShape getShape(
 		BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
 		if( state.getValue( OPEN ) ) {
-			return super.getShape( state, worldIn, pos, context );
+			return super.getShape( state, level, pos, context );
 		}
 		return VoxelShapes.block();
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_END, properties, registry_name );
+		return createBlockItem( ModBlocks.DOOR_SPECIAL_END, _properties, registry_name );
 	}
 }

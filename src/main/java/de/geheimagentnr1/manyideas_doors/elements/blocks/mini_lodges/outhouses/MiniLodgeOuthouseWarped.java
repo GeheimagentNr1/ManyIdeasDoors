@@ -15,8 +15,8 @@ public class MiniLodgeOuthouseWarped extends MiniLodgeOuthouse {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_WARPED, properties, registry_name );
+		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_WARPED, _properties, registry_name );
 	}
 }

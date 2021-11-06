@@ -22,7 +22,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 
 @SuppressWarnings( "unused" )
 @Mod.EventBusSubscriber( bus = Mod.EventBusSubscriber.Bus.MOD )
-public class RegistryEventHandler {
+public class ModEventHandler {
 	
 	
 	@OnlyIn( Dist.CLIENT )
@@ -35,22 +35,22 @@ public class RegistryEventHandler {
 	}
 	
 	@SubscribeEvent
-	public static void onBlocksRegistry( RegistryEvent.Register<Block> blockRegistryEvent ) {
+	public static void handleBlockRegistryEvent( RegistryEvent.Register<Block> event ) {
 		
-		blockRegistryEvent.getRegistry().registerAll( ModBlocks.BLOCKS );
+		event.getRegistry().registerAll( ModBlocks.BLOCKS );
 	}
 	
 	@SubscribeEvent
-	public static void onItemsRegistry( RegistryEvent.Register<Item> itemRegistryEvent ) {
+	public static void handleItemRegistryEvent( RegistryEvent.Register<Item> event ) {
 		
 		Item.Properties properties = new Item.Properties().tab( ModItemGroups.MANYIDEAS_DOORS_ITEM_GROUP );
 		
-		BlockRegistrationHelper.registerBlockItems( itemRegistryEvent, ModBlocks.BLOCKS, properties );
+		BlockRegistrationHelper.registerBlockItems( event, ModBlocks.BLOCKS, properties );
 	}
 	
 	@SuppressWarnings( "ConstantConditions" )
 	@SubscribeEvent
-	public static void onTileEntityRegistry( RegistryEvent.Register<TileEntityType<?>> event ) {
+	public static void handleTileEntityRegistryEvent( RegistryEvent.Register<TileEntityType<?>> event ) {
 		
 		event.getRegistry().register(
 			TileEntityType.Builder.of( DoorSpecialEndTile::new, ModBlocks.DOOR_SPECIAL_END )

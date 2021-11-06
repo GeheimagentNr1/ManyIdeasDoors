@@ -5,11 +5,11 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Do
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
-import net.minecraft.state.properties.DoubleBlockHalf;
 import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.shapes.ISelectionContext;
@@ -45,7 +45,7 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 	public DoorSpecialPortcullis() {
 		
 		super(
-			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.REDSTONE
 		);
@@ -95,8 +95,8 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_PORTCULLIS, properties, registry_name );
+		return createBlockItem( ModBlocks.DOOR_SPECIAL_PORTCULLIS, _properties, registry_name );
 	}
 }

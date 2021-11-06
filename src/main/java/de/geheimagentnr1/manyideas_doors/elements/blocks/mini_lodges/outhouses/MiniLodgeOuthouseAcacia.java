@@ -15,8 +15,8 @@ public class MiniLodgeOuthouseAcacia extends MiniLodgeOuthouse {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_ACACIA, properties, registry_name );
+		return createBlockItem( ModBlocks.MINI_LODGE_OUTHOUSE_ACACIA, _properties, registry_name );
 	}
 }

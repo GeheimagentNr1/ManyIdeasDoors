@@ -4,7 +4,7 @@ import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeHelper;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.Block;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
@@ -38,7 +38,6 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	
 	private static final VoxelShape ROOF_SHAPE = VoxelShapeHelper.vectorsToVoxelShape( new VoxelShapeVector[] {
 		VoxelShapeVector.create( 0, 0, 0, 16, 4, 16 ),
-		//VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 6.5 )
 		VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 9.5 )
 	} );
 	
@@ -55,7 +54,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	public MiniLodgePoliceBox() {
 		
 		super(
-			Block.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name
 		);
 	}
@@ -71,7 +70,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	}
 	
 	@Override
-	public int getLightValue( BlockState state, IBlockReader world, BlockPos pos ) {
+	public int getLightValue( BlockState state, IBlockReader level, BlockPos pos ) {
 		
 		return state.getValue( X_SIZE ) == 1 && state.getValue( Z_SIZE ) == 1 ? 7 : 0;
 	}
@@ -81,7 +80,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	@Override
 	public VoxelShape getShape(
 		BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull ISelectionContext context ) {
 		
@@ -173,8 +172,8 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	}
 	
 	@Override
-	public Item getBlockItem( Item.Properties properties ) {
+	public Item getBlockItem( Item.Properties _properties ) {
 		
-		return createBlockItem( ModBlocks.MINI_LODGE_POLICE_BOX, properties, registry_name );
+		return createBlockItem( ModBlocks.MINI_LODGE_POLICE_BOX, _properties, registry_name );
 	}
 }

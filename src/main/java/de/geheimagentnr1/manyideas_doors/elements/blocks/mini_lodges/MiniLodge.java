@@ -2,6 +2,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.BlockRenderTypeInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.multi_block.MultiBlock;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
@@ -21,10 +22,10 @@ import javax.annotation.Nonnull;
 public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInterface {
 	
 	
-	protected MiniLodge( Block.Properties properties, String registry_name ) {
+	protected MiniLodge( AbstractBlock.Properties _properties, String registry_name ) {
 		
 		super(
-			properties.noOcclusion().isViewBlocking( ( p_test_1_, p_test_2_, p_test_3_ ) -> false ),
+			_properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ),
 			registry_name
 		);
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
@@ -65,31 +66,32 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	}
 	
 	@SuppressWarnings( "deprecation" )
+	@Nonnull
 	@Override
 	public ActionResultType use(
 		@Nonnull BlockState state,
-		@Nonnull World worldIn,
+		@Nonnull World level,
 		@Nonnull BlockPos pos,
 		@Nonnull PlayerEntity player,
-		@Nonnull Hand handIn,
-		@Nonnull BlockRayTraceResult hit ) {
+		@Nonnull Hand hand,
+		@Nonnull BlockRayTraceResult hitResult ) {
 		
 		if( state.getValue( X_SIZE ) != 0 || state.getValue( Z_SIZE ) != 1 ) {
 			return ActionResultType.PASS;
 		}
 		boolean open = !state.getValue( BlockStateProperties.OPEN );
 		runForBlocks(
-			worldIn,
+			level,
 			getZeroPos( state, pos ),
 			state.getValue( BlockStateProperties.HORIZONTAL_FACING ),
-			( x, y, z, blockPos ) -> worldIn.setBlock(
+			( x, y, z, blockPos ) -> level.setBlock(
 				blockPos,
-				worldIn.getBlockState( blockPos ).setValue( BlockStateProperties.OPEN, open ),
+				level.getBlockState( blockPos ).setValue( BlockStateProperties.OPEN, open ),
 				3
 			),
 			true
 		);
-		playDoorSound( player, worldIn, pos, open );
+		playDoorSound( player, level, pos, open );
 		return ActionResultType.SUCCESS;
 	}
 	
@@ -97,33 +99,33 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	@Override
 	public void neighborChanged(
 		@Nonnull BlockState state,
-		@Nonnull World worldIn,
+		@Nonnull World level,
 		@Nonnull BlockPos pos,
-		@Nonnull Block blockIn,
+		@Nonnull Block block,
 		@Nonnull BlockPos fromPos,
 		boolean isMoving ) {
 		
-		if( blockIn == this ) {
+		if( block == this ) {
 			return;
 		}
 		BlockPos zeroPos = getZeroPos( state, pos );
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
-		boolean isPowered = isPowered( worldIn, zeroPos, facing );
+		boolean isPowered = isPowered( level, zeroPos, facing );
 		if( isPowered != state.getValue( BlockStateProperties.POWERED ) ) {
 			runForBlocks(
-				worldIn,
+				level,
 				zeroPos,
 				facing,
-				( x, y, z, blockPos ) -> worldIn.setBlock(
+				( x, y, z, blockPos ) -> level.setBlock(
 					blockPos,
-					worldIn.getBlockState( blockPos )
+					level.getBlockState( blockPos )
 						.setValue( BlockStateProperties.POWERED, isPowered )
 						.setValue( BlockStateProperties.OPEN, isPowered ),
 					3
 				),
 				true
 			);
-			playDoorSound( null, worldIn, pos, isPowered );
+			playDoorSound( null, level, pos, isPowered );
 		}
 	}
 	
