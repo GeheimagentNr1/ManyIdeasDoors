@@ -34,7 +34,7 @@ credits="Thanks for the logo, the models and the textures goes to Muse31" #optio
 authors="GeheimagentNr1, Muse31" #optional
 # The description text for the mod (multi line!) (#mandatory)
 description='''
-Provides over 116 big multiblock and normal-sized doors.
+Provides over 110 big multiblock and normal-sized doors.
 '''
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.manyideas_doors]] #optional
