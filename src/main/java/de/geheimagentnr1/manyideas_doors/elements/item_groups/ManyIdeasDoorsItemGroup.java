@@ -3,13 +3,13 @@ package de.geheimagentnr1.manyideas_doors.elements.item_groups;
 
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
 
-public class ManyIdeasDoorsItemGroup extends ItemGroup {
+public class ManyIdeasDoorsItemGroup extends CreativeModeTab {
 	
 	
 	public ManyIdeasDoorsItemGroup() {

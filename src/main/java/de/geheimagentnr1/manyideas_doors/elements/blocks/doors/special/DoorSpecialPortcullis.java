@@ -5,17 +5,17 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Do
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 
@@ -45,7 +45,7 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 	public DoorSpecialPortcullis() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.REDSTONE
 		);
@@ -55,27 +55,22 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 	@Override
 	public VoxelShape getShape(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		Direction.Axis axis = state.getValue( FACING ).getAxis();
 		if( state.getValue( OPEN ) ) {
-			switch( state.getValue( HALF ) ) {
-				case UPPER:
-					return TOP_OPEN.getShapeFromHorizontalAxis( axis );
-				case LOWER:
-					return VoxelShapes.empty();
-			}
+			return switch( state.getValue( HALF ) ) {
+				case UPPER -> TOP_OPEN.getShapeFromHorizontalAxis( axis );
+				case LOWER -> Shapes.empty();
+			};
 		} else {
-			switch( state.getValue( HALF ) ) {
-				case UPPER:
-					return TOP_CLOSED.getShapeFromHorizontalAxis( axis );
-				case LOWER:
-					return BOTTOM_CLOSED.getShapeFromHorizontalAxis( axis );
-			}
+			return switch( state.getValue( HALF ) ) {
+				case UPPER -> TOP_CLOSED.getShapeFromHorizontalAxis( axis );
+				case LOWER -> BOTTOM_CLOSED.getShapeFromHorizontalAxis( axis );
+			};
 		}
-		return VoxelShapes.block();
 	}
 	
 	@SuppressWarnings( "deprecation" )
@@ -83,12 +78,12 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 	@Override
 	public VoxelShape getCollisionShape(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		if( state.getValue( OPEN ) ) {
-			return VoxelShapes.empty();
+			return Shapes.empty();
 		} else {
 			return super.getCollisionShape( state, level, pos, context );
 		}

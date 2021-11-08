@@ -4,19 +4,19 @@ import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeHelper;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.DoorHingeSide;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 
@@ -54,7 +54,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	public MiniLodgePoliceBox() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name
 		);
 	}
@@ -70,7 +70,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	}
 	
 	@Override
-	public int getLightValue( BlockState state, IBlockReader level, BlockPos pos ) {
+	public int getLightEmission( BlockState state, BlockGetter world, BlockPos pos ) {
 		
 		return state.getValue( X_SIZE ) == 1 && state.getValue( Z_SIZE ) == 1 ? 7 : 0;
 	}
@@ -79,10 +79,10 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockState state,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		int x = state.getValue( X_SIZE );
@@ -168,7 +168,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 				}
 				break;
 		}
-		return VoxelShapes.block();
+		return Shapes.block();
 	}
 	
 	@Override

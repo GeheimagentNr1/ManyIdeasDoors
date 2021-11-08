@@ -3,10 +3,10 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 
 
 public class DoorSpecialPoliceBox extends DoubleDoorBlock {
@@ -17,7 +17,7 @@ public class DoorSpecialPoliceBox extends DoubleDoorBlock {
 	public DoorSpecialPoliceBox() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH
 		);

@@ -5,18 +5,18 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 
@@ -40,7 +40,7 @@ public class BigDoorPortcullis extends BigDoor {
 	public BigDoorPortcullis() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -51,16 +51,16 @@ public class BigDoorPortcullis extends BigDoor {
 	@Override
 	public VoxelShape getShape(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		Direction.Axis axis = state.getValue( BlockStateProperties.HORIZONTAL_FACING ).getAxis();
 		if( state.getValue( Y_SIZE ) == 6 ) {
 			return TOP.getShapeFromHorizontalAxis( axis );
 		} else {
 			if( state.getValue( BlockStateProperties.OPEN ) ) {
-				return VoxelShapes.empty();
+				return Shapes.empty();
 			} else {
 				return DEFAULT.getShapeFromHorizontalAxis( axis );
 			}

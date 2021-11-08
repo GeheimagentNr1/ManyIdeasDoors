@@ -5,24 +5,24 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.Item;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.DoorHingeSide;
-import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Direction;
-import net.minecraft.util.Hand;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 
@@ -40,7 +40,7 @@ public class BigDoorDarsser extends BigDoor {
 	public BigDoorDarsser() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
@@ -56,10 +56,10 @@ public class BigDoorDarsser extends BigDoor {
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockState state,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		if( state.getValue( BlockStateProperties.OPEN ) && state.getValue( Z_SIZE ) == 1 &&
@@ -75,18 +75,18 @@ public class BigDoorDarsser extends BigDoor {
 	
 	@Nonnull
 	@Override
-	public ActionResultType use(
+	public InteractionResult use(
 		@Nonnull BlockState state,
-		@Nonnull World level,
+		@Nonnull Level level,
 		@Nonnull BlockPos pos,
-		@Nonnull PlayerEntity player,
-		@Nonnull Hand hand,
-		@Nonnull BlockRayTraceResult hitResult ) {
+		@Nonnull Player player,
+		@Nonnull InteractionHand hand,
+		@Nonnull BlockHitResult hitResult ) {
 		
 		if( state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
 			return super.use( state, level, pos, player, hand, hitResult );
 		}
-		return ActionResultType.PASS;
+		return InteractionResult.PASS;
 	}
 	
 	@Override

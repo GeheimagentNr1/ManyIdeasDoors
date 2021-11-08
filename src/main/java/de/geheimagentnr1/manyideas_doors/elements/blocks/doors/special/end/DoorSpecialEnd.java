@@ -3,24 +3,25 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 import de.geheimagentnr1.manyideas_core.elements.blocks.end_block.IEndBlock;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockRenderType;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
-public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
+public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock, IEndBlock {
 	
 	
 	public static final String registry_name = "door_special_end";
@@ -28,48 +29,41 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements IEndBlock {
 	public DoorSpecialEnd() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.STONE ).strength( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
+			BlockBehaviour.Properties.of( Material.STONE ).strength( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
 			registry_name
 		);
 	}
 	
-	@Override
-	public boolean hasTileEntity( BlockState state ) {
-		
-		return true;
-	}
-	
 	@Nullable
 	@Override
-	public TileEntity createTileEntity( BlockState state, IBlockReader level ) {
+	public BlockEntity newBlockEntity( @Nonnull BlockPos pos, @Nonnull BlockState state ) {
 		
-		return new DoorSpecialEndTile();
+		return new DoorSpecialEndEntity( pos, state );
 	}
 	
-	@Deprecated
 	@SuppressWarnings( "deprecation" )
 	@Nonnull
 	@Override
-	public BlockRenderType getRenderShape( BlockState state ) {
+	public RenderShape getRenderShape( BlockState state ) {
 		
 		if( state.getValue( OPEN ) ) {
-			return BlockRenderType.MODEL;
+			return RenderShape.MODEL;
 		}
-		return BlockRenderType.ENTITYBLOCK_ANIMATED;
+		return RenderShape.ENTITYBLOCK_ANIMATED;
 	}
 	
 	@Nonnull
 	@Override
 	public VoxelShape getShape(
-		BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockState state,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		if( state.getValue( OPEN ) ) {
 			return super.getShape( state, level, pos, context );
 		}
-		return VoxelShapes.block();
+		return Shapes.block();
 	}
 	
 	@Override

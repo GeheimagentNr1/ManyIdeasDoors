@@ -3,11 +3,11 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.BigDoor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 
 
 public class BigDoorJungle extends BigDoor {
@@ -18,7 +18,7 @@ public class BigDoorJungle extends BigDoor {
 	public BigDoorJungle() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

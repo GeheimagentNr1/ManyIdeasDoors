@@ -13,15 +13,15 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPoliceBox;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPortcullis;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndTile;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndEntity;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.warped.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodgePoliceBox;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorTile;
-import net.minecraft.block.Block;
-import net.minecraft.tileentity.TileEntityType;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorEntity;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.registries.ObjectHolder;
 
 
@@ -473,7 +473,7 @@ public class ModBlocks {
 	public static DoorSpecialEnd DOOR_SPECIAL_END;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorSpecialEnd.registry_name )
-	public static TileEntityType<DoorSpecialEndTile> DOOR_SPECIAL_END_TILE;
+	public static BlockEntityType<DoorSpecialEndEntity> DOOR_SPECIAL_END_ENTITY;
 	
 	//Doors: Spruce
 	
@@ -576,5 +576,5 @@ public class ModBlocks {
 	public static PlayerDoorSensor PLAYER_DOOR_SENSOR;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + PlayerDoorSensor.registry_name )
-	public static TileEntityType<PlayerDoorSensorTile> PLAYER_DOOR_SENSOR_TILE;
+	public static BlockEntityType<PlayerDoorSensorEntity> PLAYER_DOOR_SENSOR_ENTITY;
 }

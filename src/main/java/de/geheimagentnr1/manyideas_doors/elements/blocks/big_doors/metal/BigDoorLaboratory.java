@@ -5,18 +5,18 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.item.Item;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.util.Direction;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.Shapes;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 
@@ -44,11 +44,34 @@ public class BigDoorLaboratory extends BigDoor {
 	public BigDoorLaboratory() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			false
 		);
+	}
+	
+	@Nonnull
+	@Override
+	public VoxelShape getShape(
+		@Nonnull BlockState state,
+		@Nonnull BlockGetter level,
+		@Nonnull BlockPos pos,
+		@Nonnull CollisionContext context ) {
+		
+		Direction direction = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
+		
+		if( state.getValue( BlockStateProperties.OPEN ) ) {
+			switch( state.getValue( Z_SIZE ) ) {
+				case 0:
+					return SHAPE_OPEN_LEFT.getShapeFromHorizontalFacing( direction );
+				case 2:
+					return SHAPE_OPEN_RIGHT.getShapeFromHorizontalFacing( direction );
+			}
+		} else {
+			return SHAPE_CLOSED.getShapeFromHorizontalAxis( direction.getAxis() );
+		}
+		return Shapes.empty();
 	}
 	
 	@Override
@@ -67,29 +90,6 @@ public class BigDoorLaboratory extends BigDoor {
 	protected int getZSize() {
 		
 		return 3;
-	}
-	
-	@Nonnull
-	@Override
-	public VoxelShape getShape(
-		BlockState state,
-		@Nonnull IBlockReader level,
-		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
-		
-		Direction direction = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
-		
-		if( state.getValue( BlockStateProperties.OPEN ) ) {
-			switch( state.getValue( Z_SIZE ) ) {
-				case 0:
-					return SHAPE_OPEN_LEFT.getShapeFromHorizontalFacing( direction );
-				case 2:
-					return SHAPE_OPEN_RIGHT.getShapeFromHorizontalFacing( direction );
-			}
-		} else {
-			return SHAPE_CLOSED.getShapeFromHorizontalAxis( direction.getAxis() );
-		}
-		return VoxelShapes.empty();
 	}
 	
 	@Override

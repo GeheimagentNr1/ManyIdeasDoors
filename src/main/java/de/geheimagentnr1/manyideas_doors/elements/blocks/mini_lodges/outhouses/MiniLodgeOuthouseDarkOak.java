@@ -1,7 +1,7 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses;
 
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.item.Item;
+import net.minecraft.world.item.Item;
 
 
 public class MiniLodgeOuthouseDarkOak extends MiniLodgeOuthouse {

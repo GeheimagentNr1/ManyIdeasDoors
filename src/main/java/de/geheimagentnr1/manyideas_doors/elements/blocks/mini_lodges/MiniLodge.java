@@ -2,19 +2,24 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.BlockRenderTypeInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.multi_block.MultiBlock;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.state.properties.DoorHingeSide;
-import net.minecraft.util.*;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.BlockRayTraceResult;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DoorHingeSide;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.BlockHitResult;
 
 import javax.annotation.Nonnull;
 
@@ -22,7 +27,7 @@ import javax.annotation.Nonnull;
 public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInterface {
 	
 	
-	protected MiniLodge( AbstractBlock.Properties _properties, String registry_name ) {
+	protected MiniLodge( BlockBehaviour.Properties _properties, String registry_name ) {
 		
 		super(
 			_properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ),
@@ -68,16 +73,16 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	@SuppressWarnings( "deprecation" )
 	@Nonnull
 	@Override
-	public ActionResultType use(
+	public InteractionResult use(
 		@Nonnull BlockState state,
-		@Nonnull World level,
+		@Nonnull Level level,
 		@Nonnull BlockPos pos,
-		@Nonnull PlayerEntity player,
-		@Nonnull Hand hand,
-		@Nonnull BlockRayTraceResult hitResult ) {
+		@Nonnull Player player,
+		@Nonnull InteractionHand hand,
+		@Nonnull BlockHitResult hitResult ) {
 		
-		if( state.getValue( X_SIZE ) != 0 || state.getValue( Z_SIZE ) != 1 ) {
-			return ActionResultType.PASS;
+		if( state.getValue( X_SIZE ) != 0 || state.getValue( Z_SIZE ) == 2 || state.getValue( Z_SIZE ) != 1 ) {
+			return InteractionResult.PASS;
 		}
 		boolean open = !state.getValue( BlockStateProperties.OPEN );
 		runForBlocks(
@@ -92,14 +97,14 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 			true
 		);
 		playDoorSound( player, level, pos, open );
-		return ActionResultType.SUCCESS;
+		return InteractionResult.SUCCESS;
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public void neighborChanged(
 		@Nonnull BlockState state,
-		@Nonnull World level,
+		@Nonnull Level level,
 		@Nonnull BlockPos pos,
 		@Nonnull Block block,
 		@Nonnull BlockPos fromPos,
@@ -129,13 +134,13 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 		}
 	}
 	
-	private void playDoorSound( PlayerEntity player, World world, BlockPos pos, boolean open ) {
+	private void playDoorSound( Player player, Level level, BlockPos pos, boolean open ) {
 		
-		world.playSound(
+		level.playSound(
 			player,
 			pos,
 			open ? getOpenDoorSound() : getCloseDoorSound(),
-			SoundCategory.BLOCKS,
+			SoundSource.BLOCKS,
 			1.0F,
 			1.0F
 		);
@@ -152,7 +157,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	}
 	
 	@Override
-	protected void createBlockStateDefinition( StateContainer.Builder<Block, BlockState> builder ) {
+	protected void createBlockStateDefinition( StateDefinition.Builder<Block, BlockState> builder ) {
 		
 		super.createBlockStateDefinition( builder );
 		builder.add( BlockStateProperties.DOOR_HINGE, BlockStateProperties.OPEN, BlockStateProperties.POWERED );

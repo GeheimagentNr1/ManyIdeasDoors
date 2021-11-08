@@ -12,29 +12,31 @@ import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
-import net.minecraft.block.BlockState;
-import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.BlockItemUseContext;
-import net.minecraft.item.Item;
-import net.minecraft.state.IntegerProperty;
-import net.minecraft.state.StateContainer;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.shapes.ISelectionContext;
-import net.minecraft.util.math.shapes.VoxelShape;
-import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.world.IBlockReader;
-import net.minecraft.world.IWorld;
-import net.minecraft.world.World;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.LevelAccessor;
+import net.minecraft.world.level.block.BaseEntityBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.IntegerProperty;
+import net.minecraft.world.level.material.Material;
+import net.minecraft.world.phys.shapes.CollisionContext;
+import net.minecraft.world.phys.shapes.VoxelShape;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -42,7 +44,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class PlayerDoorSensor extends Block implements BlockItemInterface, BlockRenderTypeInterface, RedstoneKeyable {
+public class PlayerDoorSensor extends BaseEntityBlock
+	implements BlockItemInterface, BlockRenderTypeInterface, RedstoneKeyable {
 	
 	
 	public static final String registry_name = "player_door_sensor";
@@ -50,7 +53,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	//package_private
 	static final IntegerProperty SENSOR_RANGE = IntegerProperty.create( "sensor_range", 1, 3 );
 	
-	private static final ITextComponent SENSOR_RANGE_CONTAINER_TITLE =
+	private static final Component SENSOR_RANGE_CONTAINER_TITLE =
 		TranslationKeyHelper.generateMessageTranslationTextComponent( ManyIdeasDoors.MODID, "sensor_range" );
 	
 	private static final ResourceLocation ICON_TEXTURES = new ResourceLocation(
@@ -81,7 +84,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	public PlayerDoorSensor() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL )
+			BlockBehaviour.Properties.of( Material.METAL )
 				.strength( 5 )
 				.noOcclusion()
 				.isViewBlocking( ( state, level, pos ) -> false ).sound( SoundType.METAL )
@@ -96,42 +99,45 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Override
 	public VoxelShape getShape(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull ISelectionContext context ) {
+		@Nonnull CollisionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
-		switch( state.getValue( ModBlockStateProperties.BLOCK_SIDE ) ) {
-			case SINGLE:
-				return SINGLE.getShapeFromHorizontalFacing( facing );
-			case LEFT:
-				return LEFT.getShapeFromHorizontalFacing( facing );
-			case MIDDLE:
-				return MIDDLE.getShapeFromHorizontalFacing( facing );
-			case RIGHT:
-				return RIGHT.getShapeFromHorizontalFacing( facing );
-		}
-		return VoxelShapes.empty();
-	}
-	
-	@Override
-	public boolean hasTileEntity( BlockState state ) {
-		
-		return true;
+		return switch( state.getValue( ModBlockStateProperties.BLOCK_SIDE ) ) {
+			case SINGLE -> SINGLE.getShapeFromHorizontalFacing( facing );
+			case LEFT -> LEFT.getShapeFromHorizontalFacing( facing );
+			case MIDDLE -> MIDDLE.getShapeFromHorizontalFacing( facing );
+			case RIGHT -> RIGHT.getShapeFromHorizontalFacing( facing );
+		};
 	}
 	
 	@Nullable
 	@Override
-	public TileEntity createTileEntity( BlockState state, IBlockReader level ) {
+	public BlockEntity newBlockEntity( @Nonnull BlockPos pos, @Nonnull BlockState state ) {
 		
-		return new PlayerDoorSensorTile();
+		return null;
+	}
+	
+	@Nullable
+	@Override
+	public <T extends BlockEntity> BlockEntityTicker<T> getTicker(
+		@Nonnull Level level,
+		@Nonnull BlockState state,
+		@Nonnull BlockEntityType<T> blockEntityType ) {
+		
+		return level.isClientSide ? null : createTickerHelper(
+			blockEntityType,
+			ModBlocks.PLAYER_DOOR_SENSOR_ENTITY,
+			PlayerDoorSensorEntity::tick
+		);
 	}
 	
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public int getDirectSignal(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
 		@Nonnull Direction side ) {
 		
@@ -142,7 +148,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Override
 	public int getSignal(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
 		@Nonnull Direction side ) {
 		
@@ -157,7 +163,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	
 	@Nullable
 	@Override
-	public BlockState getStateForPlacement( @Nonnull BlockItemUseContext context ) {
+	public BlockState getStateForPlacement( @Nonnull BlockPlaceContext context ) {
 		
 		return setProperties( defaultBlockState().setValue(
 			BlockStateProperties.HORIZONTAL_FACING,
@@ -172,7 +178,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		@Nonnull BlockState state,
 		@Nonnull Direction facing,
 		@Nonnull BlockState facingState,
-		@Nonnull IWorld level,
+		@Nonnull LevelAccessor level,
 		@Nonnull BlockPos currentPos,
 		@Nonnull BlockPos facingPos ) {
 		
@@ -184,11 +190,11 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		}
 	}
 	
-	private BlockState setProperties( BlockState stateIn, IWorld worldIn, BlockPos currentPos ) {
+	private BlockState setProperties( BlockState stateIn, LevelAccessor level, BlockPos currentPos ) {
 		
 		Direction direction = stateIn.getValue( BlockStateProperties.HORIZONTAL_FACING );
-		BlockState leftState = worldIn.getBlockState( currentPos.relative( direction.getCounterClockWise() ) );
-		BlockState rightState = worldIn.getBlockState( currentPos.relative( direction.getClockWise() ) );
+		BlockState leftState = level.getBlockState( currentPos.relative( direction.getCounterClockWise() ) );
+		BlockState rightState = level.getBlockState( currentPos.relative( direction.getClockWise() ) );
 		boolean leftBlockIsPlayerDoorSensor = leftState.getBlock() == ModBlocks.PLAYER_DOOR_SENSOR &&
 			leftState.getValue( BlockStateProperties.HORIZONTAL_FACING ) == direction;
 		boolean rightBlockIsPlayerDoorSensor = rightState.getBlock() == ModBlocks.PLAYER_DOOR_SENSOR &&
@@ -216,7 +222,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	@Override
 	public void onRemove(
 		@Nonnull BlockState state,
-		@Nonnull World level,
+		@Nonnull Level level,
 		@Nonnull BlockPos pos,
 		@Nonnull BlockState newState,
 		boolean isMoving ) {
@@ -226,7 +232,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	}
 	
 	@Override
-	protected void createBlockStateDefinition( StateContainer.Builder<Block, BlockState> builder ) {
+	protected void createBlockStateDefinition( StateDefinition.Builder<Block, BlockState> builder ) {
 		
 		builder.add(
 			BlockStateProperties.HORIZONTAL_FACING,
@@ -237,7 +243,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	}
 	
 	//package-private
-	void notifyNeighbors( World world, BlockPos pos, Block block, Direction facing ) {
+	void notifyNeighbors( Level world, BlockPos pos, Block block, Direction facing ) {
 		
 		world.updateNeighborsAt( pos, block );
 		world.updateNeighborsAt( pos.relative( facing ), block );
@@ -250,7 +256,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	}
 	
 	@Override
-	public ITextComponent getTitle() {
+	public Component getTitle() {
 		
 		return SENSOR_RANGE_CONTAINER_TITLE;
 	}
@@ -282,11 +288,11 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	
 	@Override
 	public void setBlockStateValue(
-		World level,
+		Level level,
 		BlockState state,
 		BlockPos pos,
 		int stateIndex,
-		PlayerEntity player ) {
+		Player player ) {
 		
 		level.setBlock( pos, state.setValue( SENSOR_RANGE, stateIndex + 1 ), 3 );
 	}
