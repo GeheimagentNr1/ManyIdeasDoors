@@ -70,7 +70,7 @@ public abstract class MiniLodge extends MultiBlock {
 		@Nonnull Hand handIn,
 		@Nonnull BlockRayTraceResult hit ) {
 		
-		if( state.get( X_SIZE ) != 0 || state.get( Z_SIZE ) != 1 ) {
+		if( state.get( X_SIZE ) != 0 || state.get( Y_SIZE ) == 2 || state.get( Z_SIZE ) != 1 ) {
 			return false;
 		}
 		boolean open = !state.get( BlockStateProperties.OPEN );
