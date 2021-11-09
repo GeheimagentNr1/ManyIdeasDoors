@@ -1,6 +1,5 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.end_block.IEndBlock;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
@@ -21,7 +20,7 @@ import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
-public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock, IEndBlock {
+public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 	
 	
 	public static final String registry_name = "door_special_end";
