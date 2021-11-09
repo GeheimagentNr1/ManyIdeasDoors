@@ -62,6 +62,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	}
 	
 	@SuppressWarnings( "deprecation" )
+	@Nonnull
 	@Override
 	public ActionResultType onBlockActivated(
 		@Nonnull BlockState state,

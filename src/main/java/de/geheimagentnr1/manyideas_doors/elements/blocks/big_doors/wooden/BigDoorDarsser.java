@@ -71,6 +71,7 @@ public class BigDoorDarsser extends BigDoor {
 		return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
 	}
 	
+	@Nonnull
 	@Override
 	public ActionResultType onBlockActivated(
 		@Nonnull BlockState state,
