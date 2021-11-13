@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 
 
 public class DoorIronDwarf extends DoubleDoorBlock {
@@ -16,7 +17,11 @@ public class DoorIronDwarf extends DoubleDoorBlock {
 	public DoorIronDwarf() {
 		
 		super(
-			Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Block.Properties.create( Material.IRON )
+				.hardnessAndResistance( 5.0F )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
+				.sound( SoundType.METAL ),
 			registry_name
 		);
 	}
