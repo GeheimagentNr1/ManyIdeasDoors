@@ -87,7 +87,8 @@ public class PlayerDoorSensor extends BaseEntityBlock
 			BlockBehaviour.Properties.of( Material.METAL )
 				.strength( 5 )
 				.noOcclusion()
-				.isViewBlocking( ( state, level, pos ) -> false ).sound( SoundType.METAL )
+				.isViewBlocking( ( state, level, pos ) -> false )
+				.sound( SoundType.METAL )
 		);
 		setRegistryName( registry_name );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.POWERED, false )
