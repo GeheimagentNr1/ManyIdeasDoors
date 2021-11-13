@@ -6,6 +6,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 
 
 public class BigDoorSafe extends BigDoor {
@@ -16,7 +17,11 @@ public class BigDoorSafe extends BigDoor {
 	public BigDoorSafe() {
 		
 		super(
-			Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Properties.create( Material.IRON )
+				.hardnessAndResistance( 5.0F )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
+				.sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

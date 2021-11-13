@@ -6,6 +6,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 
 
 public class DoorOakBookshelf extends DoubleDoorBlock {
@@ -16,7 +17,10 @@ public class DoorOakBookshelf extends DoubleDoorBlock {
 	public DoorOakBookshelf() {
 		
 		super(
-			Block.Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.WOOD ),
+			Block.Properties.create( Material.WOOD )
+				.hardnessAndResistance( 3.0F )
+				.harvestTool( ToolType.AXE )
+				.sound( SoundType.WOOD ),
 			registry_name
 		);
 	}

@@ -6,6 +6,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 
 
 public class BigDoorBirch extends BigDoor {
@@ -16,7 +17,10 @@ public class BigDoorBirch extends BigDoor {
 	public BigDoorBirch() {
 		
 		super(
-			Properties.create( Material.WOOD ).hardnessAndResistance( 3.0F ).sound( SoundType.GLASS ),
+			Properties.create( Material.WOOD )
+				.hardnessAndResistance( 3.0F )
+				.harvestTool( ToolType.AXE )
+				.sound( SoundType.GLASS ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

@@ -14,6 +14,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -27,7 +28,11 @@ public class DoorSpecialEnd extends DoubleDoorBlock {
 	public DoorSpecialEnd() {
 		
 		super(
-			Block.Properties.create( Material.ROCK ).hardnessAndResistance( 50.0F, 1200.0F ).sound( SoundType.GLASS ),
+			Block.Properties.create( Material.ROCK )
+				.hardnessAndResistance( 50.0F, 1200.0F )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 3 )
+				.sound( SoundType.GLASS ),
 			registry_name
 		);
 	}

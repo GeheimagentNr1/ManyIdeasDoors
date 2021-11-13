@@ -34,6 +34,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -79,7 +80,11 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 	
 	public PlayerDoorSensor() {
 		
-		super( Block.Properties.create( Material.IRON ).hardnessAndResistance( 5 ).sound( SoundType.METAL ) );
+		super( Block.Properties.create( Material.IRON )
+			.hardnessAndResistance( 5 )
+			.harvestTool( ToolType.PICKAXE )
+			.harvestLevel( 0 )
+			.sound( SoundType.METAL ) );
 		setRegistryName( registry_name );
 		setDefaultState( getDefaultState().with( BlockStateProperties.POWERED, false ).with( SENSOR_RANGE, 1 ) );
 	}

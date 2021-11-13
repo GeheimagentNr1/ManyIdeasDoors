@@ -17,6 +17,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 
@@ -38,7 +39,6 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	
 	private static final VoxelShape ROOF_SHAPE = VoxelShapeHelper.vectorsToVoxelShape( new VoxelShapeVector[] {
 		VoxelShapeVector.create( 0, 0, 0, 16, 4, 16 ),
-		//VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 6.5 )
 		VoxelShapeVector.create( 6.5, 4, 6.5, 9.5, 9, 9.5 )
 	} );
 	
@@ -55,7 +55,11 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	public MiniLodgePoliceBox() {
 		
 		super(
-			Block.Properties.create( Material.IRON ).hardnessAndResistance( 5.0F ).sound( SoundType.METAL ),
+			Block.Properties.create( Material.IRON )
+				.hardnessAndResistance( 5.0F )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
+				.sound( SoundType.METAL ),
 			registry_name
 		);
 	}
