@@ -5,6 +5,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.acacia.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.birch.*;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.copper.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.crimson.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.dark_oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.iron.*;
@@ -81,6 +82,17 @@ public class ModBlocks {
 		new DoorBirchOrigin(),//BCPFINRLT
 		new DoorBirchRustic(),//BCPFINRLT
 		new DoorBirchShoji(),//BCPFINRLT
+		//Doors: Copper
+		new DoorCopperBar(),//BCPFINRLT
+		new DoorCopperBarrel(),//BCPFINRLT
+		new DoorCopperBrick(),//BCPFINRLT
+		new DoorCopperCorrugated(),//BCPFINRLT
+		new DoorCopperFactory(),//BCPFINRLT
+		new DoorCopperGlass(),//BCPFINRLT
+		new DoorCopperModern(),//BCPFINRLT
+		new DoorCopperSmoothSandstone(),//BCPFINRLT
+		new DoorCopperShip(),//BCPFINRLT
+		new DoorCopperSteampunk(),//BCPFINRLT
 		//Doors: Crimson
 		new DoorCrimsonBlank(),//BCPFINRLT
 		new DoorCrimsonBookshelf(),//BCPFINRLT
@@ -330,6 +342,38 @@ public class ModBlocks {
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCrimsonShoji.registry_name )
 	public static DoorCrimsonShoji DOOR_CRIMSON_SHOJI;
+	
+	//Doors: Copper
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperBar.registry_name )
+	public static DoorCopperBar DOOR_COPPER_BAR;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperBarrel.registry_name )
+	public static DoorCopperBarrel DOOR_COPPER_BARREL;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperBrick.registry_name )
+	public static DoorCopperBrick DOOR_COPPER_BRICK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperCorrugated.registry_name )
+	public static DoorCopperCorrugated DOOR_COPPER_CORRUGATED;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperFactory.registry_name )
+	public static DoorCopperFactory DOOR_COPPER_FACTORY;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperGlass.registry_name )
+	public static DoorCopperGlass DOOR_COPPER_GLASS;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperModern.registry_name )
+	public static DoorCopperModern DOOR_COPPER_MODERN;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperSmoothSandstone.registry_name )
+	public static DoorCopperSmoothSandstone DOOR_COPPER_SMOOTH_SANDSTONE;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperShip.registry_name )
+	public static DoorCopperShip DOOR_COPPER_SHIP;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + DoorCopperSteampunk.registry_name )
+	public static DoorCopperSteampunk DOOR_COPPER_STEAMPUNK;
 	
 	//Doors: Dark Oak
 	

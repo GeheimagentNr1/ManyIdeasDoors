@@ -26,7 +26,7 @@ public class PlayerDoorSensorEntity extends BlockEntity {
 	}
 	
 	@SuppressWarnings( "WeakerAccess" )
-	public static void tick( Level level, BlockPos pos, BlockState state, PlayerDoorSensorEntity entity) {
+	public static void tick( Level level, BlockPos pos, BlockState state, PlayerDoorSensorEntity entity ) {
 		
 		if( Objects.requireNonNull( level ).isClientSide ) {
 			return;

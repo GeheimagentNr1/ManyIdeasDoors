@@ -1,0 +1,7 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/shapes/glass/door_glass_bottom",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/copper/glass/door_copper_glass_bottom",
+		"edge":   "manyideas_doors:block/doors/copper/copper_endless"
+	}
+}

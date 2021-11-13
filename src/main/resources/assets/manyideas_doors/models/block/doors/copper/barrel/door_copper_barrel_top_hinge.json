@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/types/copper/door_copper_top_hinge",
+	"textures": {
+		"top": "minecraft:block/barrel_top"
+	}
+}

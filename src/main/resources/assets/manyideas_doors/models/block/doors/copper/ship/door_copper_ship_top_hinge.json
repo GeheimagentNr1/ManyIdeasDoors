@@ -1,0 +1,7 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/shapes/ship/door_ship_top_hinge",
+	"textures": {
+		"top":    "manyideas_doors:block/doors/copper/ship/door_copper_ship_top",
+		"bottom": "manyideas_doors:block/doors/copper/ship/door_copper_ship_bottom"
+	}
+}

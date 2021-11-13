@@ -81,7 +81,8 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 		@Nonnull InteractionHand hand,
 		@Nonnull BlockHitResult hitResult ) {
 		
-		if( state.getValue( X_SIZE ) != 0 || state.getValue( Y_SIZE ) == 2 || state.getValue( Z_SIZE ) == 2 || state.getValue( Z_SIZE ) != 1 ) {
+		if( state.getValue( X_SIZE ) != 0 || state.getValue( Y_SIZE ) == 2 || state.getValue( Z_SIZE ) == 2 ||
+			state.getValue( Z_SIZE ) != 1 ) {
 			return InteractionResult.PASS;
 		}
 		boolean open = !state.getValue( BlockStateProperties.OPEN );

@@ -1,0 +1,23 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"C",
+		"G",
+		"I"
+	],
+	"key":     {
+		"C": {
+			"item": "manyideas_core:plate_copper"
+		},
+		"G": {
+			"item": "minecraft:green_stained_glass"
+		},
+		"I": {
+			"item": "manyideas_core:plate_iron"
+		}
+	},
+	"result":  {
+		"item":  "manyideas_doors:door_copper_steampunk",
+		"count": 2
+	}
+}

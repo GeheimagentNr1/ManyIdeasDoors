@@ -1,0 +1,6 @@
+{
+	"parent":   "minecraft:item/generated",
+	"textures": {
+		"layer0": "manyideas_doors:item/doors/copper/door_copper_barrel"
+	}
+}
