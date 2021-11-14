@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.common.ToolType;
 
 
 public class BigDoorFactory extends BigDoor {
@@ -17,7 +18,12 @@ public class BigDoorFactory extends BigDoor {
 	public BigDoorFactory() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL )
+				.strength( 5.0F )
+				.requiresCorrectToolForDrops()
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
+				.sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

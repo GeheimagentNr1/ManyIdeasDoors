@@ -23,6 +23,7 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 
@@ -40,7 +41,10 @@ public class BigDoorDarsser extends BigDoor {
 	public BigDoorDarsser() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			BlockBehaviour.Properties.of( Material.WOOD )
+				.strength( 3.0F )
+				.harvestTool( ToolType.AXE )
+				.sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			false

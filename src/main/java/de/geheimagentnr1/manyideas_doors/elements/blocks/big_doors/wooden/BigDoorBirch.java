@@ -7,6 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraftforge.common.ToolType;
 
 
 public class BigDoorBirch extends BigDoor {
@@ -17,7 +18,10 @@ public class BigDoorBirch extends BigDoor {
 	public BigDoorBirch() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.GLASS ),
+			BlockBehaviour.Properties.of( Material.WOOD )
+				.strength( 3.0F )
+				.harvestTool( ToolType.AXE )
+				.sound( SoundType.GLASS ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

@@ -8,6 +8,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 
 
 public class BigDoorJungle extends BigDoor {
@@ -18,7 +20,10 @@ public class BigDoorJungle extends BigDoor {
 	public BigDoorJungle() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			BlockBehaviour.Properties.of( Material.WOOD )
+				.strength( 3.0F )
+				.harvestTool( ToolType.AXE )
+				.sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			true
