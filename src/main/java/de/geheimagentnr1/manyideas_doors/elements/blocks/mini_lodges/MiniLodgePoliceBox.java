@@ -17,6 +17,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 
@@ -54,7 +55,10 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	public MiniLodgePoliceBox() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
+				.sound( SoundType.METAL ),
 			registry_name
 		);
 	}

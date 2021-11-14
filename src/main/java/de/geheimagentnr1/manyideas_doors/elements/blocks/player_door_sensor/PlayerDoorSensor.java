@@ -35,6 +35,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -83,6 +84,8 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		super(
 			AbstractBlock.Properties.of( Material.METAL )
 				.strength( 5 )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
 				.noOcclusion()
 				.isViewBlocking( ( state, level, pos ) -> false ).sound( SoundType.METAL )
 		);

@@ -23,6 +23,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
+import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 
@@ -40,7 +41,10 @@ public class BigDoorDarsser extends BigDoor {
 	public BigDoorDarsser() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			AbstractBlock.Properties.of( Material.WOOD )
+				.strength( 3.0F )
+				.harvestTool( ToolType.AXE )
+				.sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			false

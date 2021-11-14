@@ -7,6 +7,7 @@ import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.Item;
+import net.minecraftforge.common.ToolType;
 
 
 public class DoorSpecialPoliceBox extends DoubleDoorBlock {
@@ -17,7 +18,10 @@ public class DoorSpecialPoliceBox extends DoubleDoorBlock {
 	public DoorSpecialPoliceBox() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F )
+				.harvestTool( ToolType.PICKAXE )
+				.harvestLevel( 0 )
+				.sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH
 		);
