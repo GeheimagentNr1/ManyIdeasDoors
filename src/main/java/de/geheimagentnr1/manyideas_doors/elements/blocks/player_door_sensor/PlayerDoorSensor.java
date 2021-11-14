@@ -84,6 +84,7 @@ public class PlayerDoorSensor extends Block implements BlockItemInterface, Block
 		super(
 			AbstractBlock.Properties.of( Material.METAL )
 				.strength( 5 )
+				.requiresCorrectToolForDrops()
 				.harvestTool( ToolType.PICKAXE )
 				.harvestLevel( 0 )
 				.noOcclusion()

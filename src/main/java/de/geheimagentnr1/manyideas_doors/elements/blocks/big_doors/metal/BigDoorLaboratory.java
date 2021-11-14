@@ -45,7 +45,9 @@ public class BigDoorLaboratory extends BigDoor {
 	public BigDoorLaboratory() {
 		
 		super(
-			AbstractBlock.Properties.of( Material.METAL ).strength( 5.0F )
+			AbstractBlock.Properties.of( Material.METAL )
+				.strength( 5.0F )
+				.requiresCorrectToolForDrops()
 				.harvestTool( ToolType.PICKAXE )
 				.harvestLevel( 0 )
 				.sound( SoundType.METAL ),
