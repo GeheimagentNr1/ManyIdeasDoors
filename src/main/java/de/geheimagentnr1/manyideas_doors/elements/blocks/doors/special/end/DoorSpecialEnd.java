@@ -15,7 +15,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -32,8 +31,6 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 			BlockBehaviour.Properties.of( Material.STONE )
 				.strength( 50.0F, 1200.0F )
 				.requiresCorrectToolForDrops()
-				.harvestTool( ToolType.PICKAXE )
-				.harvestLevel( 3 )
 				.sound( SoundType.GLASS ),
 			registry_name
 		);

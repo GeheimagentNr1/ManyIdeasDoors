@@ -15,7 +15,7 @@ public class DoorCopperBarrel extends DoubleDoorBlock {
 	public DoorCopperBarrel() {
 		
 		super(
-			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			Properties.of( Material.METAL ).strength( 5.0F ).requiresCorrectToolForDrops().sound( SoundType.METAL ),
 			registry_name
 		);
 	}

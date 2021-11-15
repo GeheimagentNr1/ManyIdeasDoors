@@ -15,7 +15,7 @@ public class DoorCopperShip extends DoubleDoorBlock {
 	public DoorCopperShip() {
 		
 		super(
-			Properties.of( Material.METAL ).strength( 5.0F ).sound( SoundType.METAL ),
+			Properties.of( Material.METAL ).strength( 5.0F ).requiresCorrectToolForDrops().sound( SoundType.METAL ),
 			registry_name
 		);
 	}

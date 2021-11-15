@@ -37,7 +37,6 @@ import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -88,8 +87,6 @@ public class PlayerDoorSensor extends BaseEntityBlock
 			BlockBehaviour.Properties.of( Material.METAL )
 				.strength( 5 )
 				.requiresCorrectToolForDrops()
-				.harvestTool( ToolType.PICKAXE )
-				.harvestLevel( 0 )
 				.noOcclusion()
 				.isViewBlocking( ( state, level, pos ) -> false )
 				.sound( SoundType.METAL )

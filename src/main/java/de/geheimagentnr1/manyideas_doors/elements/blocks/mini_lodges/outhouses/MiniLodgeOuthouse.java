@@ -15,7 +15,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 
@@ -93,7 +92,6 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 		super(
 			BlockBehaviour.Properties.of( Material.WOOD )
 				.strength( 3.0F )
-				.harvestTool( ToolType.AXE )
 				.sound( SoundType.WOOD ),
 			registry_name
 		);

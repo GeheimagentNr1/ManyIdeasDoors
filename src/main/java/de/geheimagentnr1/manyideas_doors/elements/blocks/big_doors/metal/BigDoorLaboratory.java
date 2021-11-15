@@ -17,7 +17,6 @@ import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.ToolType;
 
 import javax.annotation.Nonnull;
 
@@ -48,8 +47,6 @@ public class BigDoorLaboratory extends BigDoor {
 			BlockBehaviour.Properties.of( Material.METAL )
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
-				.harvestTool( ToolType.PICKAXE )
-				.harvestLevel( 0 )
 				.sound( SoundType.METAL ),
 			registry_name,
 			OpenedBy.BOTH,

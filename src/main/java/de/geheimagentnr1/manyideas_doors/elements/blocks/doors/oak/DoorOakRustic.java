@@ -6,7 +6,6 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
-import net.minecraftforge.common.ToolType;
 
 
 public class DoorOakRustic extends DoubleDoorBlock {
@@ -19,7 +18,6 @@ public class DoorOakRustic extends DoubleDoorBlock {
 		super(
 			BlockBehaviour.Properties.of( Material.WOOD )
 				.strength( 3.0F )
-				.harvestTool( ToolType.AXE )
 				.sound( SoundType.WOOD ),
 			registry_name
 		);
