@@ -1,6 +1,6 @@
 {
-  "replace": false,
-  "values": [
-    "manyideas_doors:door_special_end"
-  ]
+	"replace": false,
+	"values":  [
+		"manyideas_doors:door_special_end"
+	]
 }

@@ -289,12 +289,7 @@ public class PlayerDoorSensor extends BaseEntityBlock
 	}
 	
 	@Override
-	public void setBlockStateValue(
-		Level level,
-		BlockState state,
-		BlockPos pos,
-		int stateIndex,
-		Player player ) {
+	public void setBlockStateValue( Level level, BlockState state, BlockPos pos, int stateIndex, Player player ) {
 		
 		level.setBlock( pos, state.setValue( SENSOR_RANGE, stateIndex + 1 ), 3 );
 	}

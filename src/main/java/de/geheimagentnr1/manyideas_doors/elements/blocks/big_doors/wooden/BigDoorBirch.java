@@ -17,9 +17,7 @@ public class BigDoorBirch extends BigDoor {
 	public BigDoorBirch() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.WOOD )
-				.strength( 3.0F )
-				.sound( SoundType.GLASS ),
+			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.GLASS ),
 			registry_name,
 			OpenedBy.BOTH,
 			true

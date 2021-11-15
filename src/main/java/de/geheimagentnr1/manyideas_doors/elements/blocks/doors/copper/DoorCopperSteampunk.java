@@ -5,6 +5,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.Material;
 
 
@@ -16,7 +17,10 @@ public class DoorCopperSteampunk extends DoubleDoorBlock {
 	public DoorCopperSteampunk() {
 		
 		super(
-			Properties.of( Material.METAL ).strength( 5.0F ).requiresCorrectToolForDrops().sound( SoundType.METAL ),
+			BlockBehaviour.Properties.of( Material.METAL )
+				.strength( 5.0F )
+				.requiresCorrectToolForDrops()
+				.sound( SoundType.METAL ),
 			registry_name
 		);
 	}

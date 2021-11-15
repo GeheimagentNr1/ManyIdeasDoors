@@ -1,24 +1,24 @@
 {
-  "replace": false,
-  "values": [
-    "manyideas_doors:big_door_acacia",
-    "manyideas_doors:big_door_barn",
-    "manyideas_doors:big_door_birch",
-    "manyideas_doors:big_door_crimson",
-    "manyideas_doors:big_door_dark_oak",
-    "manyideas_doors:big_door_darsser",
-    "manyideas_doors:big_door_jungle",
-    "manyideas_doors:big_door_oak",
-    "manyideas_doors:big_door_shiro",
-    "manyideas_doors:big_door_spruce",
-    "manyideas_doors:big_door_warped",
-    "manyideas_doors:mini_lodge_outhouse_acacia",
-    "manyideas_doors:mini_lodge_outhouse_birch",
-    "manyideas_doors:mini_lodge_outhouse_crimson",
-    "manyideas_doors:mini_lodge_outhouse_dark_oak",
-    "manyideas_doors:mini_lodge_outhouse_jungle",
-    "manyideas_doors:mini_lodge_outhouse_oak",
-    "manyideas_doors:mini_lodge_outhouse_spruce",
-    "manyideas_doors:mini_lodge_outhouse_warped"
-  ]
+	"replace": false,
+	"values":  [
+		"manyideas_doors:big_door_acacia",
+		"manyideas_doors:big_door_barn",
+		"manyideas_doors:big_door_birch",
+		"manyideas_doors:big_door_crimson",
+		"manyideas_doors:big_door_dark_oak",
+		"manyideas_doors:big_door_darsser",
+		"manyideas_doors:big_door_jungle",
+		"manyideas_doors:big_door_oak",
+		"manyideas_doors:big_door_shiro",
+		"manyideas_doors:big_door_spruce",
+		"manyideas_doors:big_door_warped",
+		"manyideas_doors:mini_lodge_outhouse_acacia",
+		"manyideas_doors:mini_lodge_outhouse_birch",
+		"manyideas_doors:mini_lodge_outhouse_crimson",
+		"manyideas_doors:mini_lodge_outhouse_dark_oak",
+		"manyideas_doors:mini_lodge_outhouse_jungle",
+		"manyideas_doors:mini_lodge_outhouse_oak",
+		"manyideas_doors:mini_lodge_outhouse_spruce",
+		"manyideas_doors:mini_lodge_outhouse_warped"
+	]
 }

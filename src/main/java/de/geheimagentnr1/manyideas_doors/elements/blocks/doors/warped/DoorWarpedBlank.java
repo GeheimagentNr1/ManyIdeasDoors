@@ -15,10 +15,7 @@ public class DoorWarpedBlank extends DoubleDoorBlock {
 	
 	public DoorWarpedBlank() {
 		
-		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
-			registry_name
-		);
+		super( BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ), registry_name );
 	}
 	
 	@Override

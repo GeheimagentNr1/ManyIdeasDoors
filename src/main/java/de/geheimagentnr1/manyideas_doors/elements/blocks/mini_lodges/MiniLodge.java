@@ -29,10 +29,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	
 	protected MiniLodge( BlockBehaviour.Properties _properties, String registry_name ) {
 		
-		super(
-			_properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ),
-			registry_name
-		);
+		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ), registry_name );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
 			.setValue( BlockStateProperties.POWERED, false ) );
 	}

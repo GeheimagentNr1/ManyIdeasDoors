@@ -18,9 +18,7 @@ public class BigDoorJungle extends BigDoor {
 	public BigDoorJungle() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.WOOD )
-				.strength( 3.0F )
-				.sound( SoundType.WOOD ),
+			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
 			registry_name,
 			OpenedBy.BOTH,
 			true
