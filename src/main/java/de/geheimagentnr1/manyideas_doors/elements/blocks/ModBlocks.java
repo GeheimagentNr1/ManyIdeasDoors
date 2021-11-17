@@ -41,22 +41,28 @@ public class ModBlocks {
 	// T - Tags fertig
 	
 	public static final Block[] BLOCKS = new Block[] {//BCPFINRLT
-		//Big Doors : Metal
+		//Big Doors: Metal
+		new BigDoorArt(),//BCPFINRLT
 		new BigDoorDwarf(),//BCPFINRLT
 		new BigDoorFactory(),//BCPFINRLT
+		new BigDoorFrench(),//BCPFINRLT
+		new BigDoorGlass(),//BCPFINRLT
 		new BigDoorLaboratory(),//BCPFINRLT
+		new BigDoorPipe(),//BCPFINRLT
 		new BigDoorPortcullis(),//BCPFINRLT
 		new BigDoorSafe(),//BCPFINRLT
 		new BigDoorTerrace(),//BCPFINRLT
-		//Big Doors : Wooden
+		//Big Doors: Wooden
 		new BigDoorAcacia(),//BCPFINRL
 		new BigDoorBarn(),//BCPFINRLT
 		new BigDoorBirch(),//BCPFINRLT
 		new BigDoorCrimson(),//BCPFINRLT
 		new BigDoorDarkOak(),//BCPFINRLT
 		new BigDoorDarsser(),//BCPFINRL
+		new BigDoorFairyTale(),//BCPFINRLT
 		new BigDoorJungle(),//BCPFINRLT
 		new BigDoorOak(),//BCPFINRLT
+		new BigDoorShip(),//BCPFINRLT
 		new BigDoorShiro(),//BCPFINRL
 		new BigDoorSpruce(),//BCPFINRLT
 		new BigDoorWarped(),//BCPFINRLT
@@ -194,14 +200,26 @@ public class ModBlocks {
 	
 	//Big Doors: Metal
 	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorArt.registry_name )
+	public static BigDoorArt BIG_DOOR_ART;
+	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDwarf.registry_name )
 	public static BigDoorDwarf BIG_DOOR_DWARF;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorFactory.registry_name )
 	public static BigDoorFactory BIG_DOOR_FACTORY;
 	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorFrench.registry_name )
+	public static BigDoorFrench BIG_DOOR_FRENCH;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorGlass.registry_name )
+	public static BigDoorGlass BIG_DOOR_GLASS;
+	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorLaboratory.registry_name )
 	public static BigDoorLaboratory BIG_DOOR_LABORATORY;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorPipe.registry_name )
+	public static BigDoorPipe BIG_DOOR_PIPE;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorPortcullis.registry_name )
 	public static BigDoorPortcullis BIG_DOOR_PORTCULLIS;
@@ -232,11 +250,17 @@ public class ModBlocks {
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorDarsser.registry_name )
 	public static BigDoorDarsser BIG_DOOR_DARSSER;
 	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorFairyTale.registry_name )
+	public static BigDoorFairyTale BIG_DOOR_FAIRY_TALE;
+	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorJungle.registry_name )
 	public static BigDoorJungle BIG_DOOR_JUNGLE;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorOak.registry_name )
 	public static BigDoorOak BIG_DOOR_OAK;
+	
+	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorShip.registry_name )
+	public static BigDoorShip BIG_DOOR_SHIP;
 	
 	@ObjectHolder( ManyIdeasDoors.MODID + ":" + BigDoorShiro.registry_name )
 	public static BigDoorShiro BIG_DOOR_SHIRO;

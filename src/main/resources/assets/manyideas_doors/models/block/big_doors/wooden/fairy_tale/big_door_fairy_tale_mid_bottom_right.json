@@ -1,0 +1,55 @@
+{
+	"ambientocclusion": false,
+	"textures":         {
+		"1":        "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_mid_bottom_right",
+		"particle": "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_mid_bottom_right"
+	},
+	"elements":         [
+		{
+			"name":  "frame west",
+			"from":  [ 0, 0, 0.5 ],
+			"to":    [ 4, 16, 2.5 ],
+			"faces": {
+				"north": { "uv": [ 12, 0, 16, 16 ], "texture": "#1" },
+				"east":  { "uv": [ 12, 0, 13, 16 ], "texture": "#1" },
+				"south": { "uv": [ 16, 0, 12, 16 ], "texture": "#1" },
+				"west":  { "uv": [ 15, 0, 16, 16 ], "texture": "#1", "cullface": "west" }
+			}
+		},
+		{
+			"name":  "filling",
+			"from":  [ 4, 0, 1 ],
+			"to":    [ 16, 16, 2 ],
+			"faces": {
+				"north": { "uv": [ 0, 0, 12, 16 ], "texture": "#1" },
+				"south": { "uv": [ 12, 0, 0, 16 ], "texture": "#1" }
+			}
+		},
+		{
+			"name":  "bolt 1",
+			"from":  [ 2.01, 8, 0 ],
+			"to":    [ 4.01, 10, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 6, 14, 8 ], "texture": "#1", "cullface": "north" },
+				"east":  { "uv": [ 12, 6, 13, 8 ], "texture": "#1" },
+				"south": { "uv": [ 14, 6, 12, 8 ], "texture": "#1" },
+				"west":  { "uv": [ 13, 6, 14, 8 ], "texture": "#1" },
+				"up":    { "uv": [ 14, 6, 12, 7 ], "texture": "#1" },
+				"down":  { "uv": [ 14, 7, 12, 8 ], "texture": "#1" }
+			}
+		},
+		{
+			"name":  "bolt 2",
+			"from":  [ 2.01, 1, 0 ],
+			"to":    [ 4.01, 3, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 13, 14, 15 ], "texture": "#1", "cullface": "north" },
+				"east":  { "uv": [ 13, 13, 14, 15 ], "texture": "#1" },
+				"south": { "uv": [ 14, 13, 12, 15 ], "texture": "#1" },
+				"west":  { "uv": [ 12, 13, 13, 15 ], "texture": "#1" },
+				"up":    { "uv": [ 14, 13, 12, 14 ], "texture": "#1" },
+				"down":  { "uv": [ 14, 14, 12, 15 ], "texture": "#1" }
+			}
+		}
+	]
+}

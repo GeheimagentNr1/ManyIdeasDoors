@@ -1,0 +1,38 @@
+{
+	"ambientocclusion": false,
+	"textures":         {
+		"0":        "manyideas_doors:block/big_doors/wooden/ship/big_door_ship_mid_mid",
+		"particle": "manyideas_doors:block/big_doors/wooden/ship/big_door_ship_mid_mid"
+	},
+	"elements":         [
+		{
+			"name":  "filling",
+			"from":  [ 0, 0, 1 ],
+			"to":    [ 4, 16, 2 ],
+			"faces": {
+				"north": { "uv": [ 12, 0, 16, 16 ], "texture": "#0" },
+				"south": { "uv": [ 16, 0, 12, 16 ], "texture": "#0" }
+			}
+		},
+		{
+			"name":  "filling",
+			"from":  [ 4, 0, 0.75 ],
+			"to":    [ 11, 16, 2.25 ],
+			"faces": {
+				"north": { "uv": [ 5, 0, 12, 16 ], "texture": "#0" },
+				"east":  { "uv": [ 4, 0, 5, 16 ], "texture": "#0" },
+				"south": { "uv": [ 12, 0, 5, 16 ], "texture": "#0" },
+				"west":  { "uv": [ 12, 0, 13, 16 ], "texture": "#0" }
+			}
+		},
+		{
+			"name":  "filling",
+			"from":  [ 11, 0, 1 ],
+			"to":    [ 16, 16, 2 ],
+			"faces": {
+				"north": { "uv": [ 0, 0, 5, 16 ], "texture": "#0" },
+				"south": { "uv": [ 5, 0, 0, 16 ], "texture": "#0" }
+			}
+		}
+	]
+}

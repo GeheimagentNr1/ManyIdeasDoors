@@ -1,0 +1,52 @@
+{
+	"ambientocclusion": false,
+	"textures":         {
+		"1":        "manyideas_doors:block/big_doors/metal/glass/big_door_glass_mid_left",
+		"particle": "manyideas_doors:block/big_doors/metal/glass/big_door_glass_mid_left"
+	},
+	"elements":         [
+		{
+			"name":     "frame east 1",
+			"from":     [ 0, 0, 0 ],
+			"to":       [ 3, 16, 2 ],
+			"rotation": { "angle": 0, "axis": "y", "origin": [ 16, 0, 0 ] },
+			"faces":    {
+				"north": { "uv": [ 3, 0, 0, 16 ], "texture": "#1", "cullface": "north" },
+				"east":  { "uv": [ 1, 0, 3, 16 ], "texture": "#1" },
+				"west":  { "uv": [ 0, 0, 2, 16 ], "texture": "#1", "cullface": "west" }
+			}
+		},
+		{
+			"name":     "frame east 2",
+			"from":     [ 0, 0, 2 ],
+			"to":       [ 3, 16, 3 ],
+			"rotation": { "angle": 0, "axis": "y", "origin": [ 16, 0, 0 ] },
+			"faces":    {
+				"east":  { "uv": [ 3, 0, 2, 16 ], "texture": "#1" },
+				"south": { "uv": [ 0, 0, 3, 16 ], "texture": "#1" },
+				"west":  { "uv": [ 0, 0, 1, 16 ], "texture": "#1", "cullface": "west" }
+			}
+		},
+		{
+			"name":     "clear glass",
+			"from":     [ 4, 0, 1 ],
+			"to":       [ 16, 16, 2 ],
+			"rotation": { "angle": 0, "axis": "y", "origin": [ 16, 0, 0 ] },
+			"faces":    {
+				"north": { "uv": [ 16, 0, 4, 16 ], "texture": "#1" },
+				"south": { "uv": [ 16, 0, 4, 16 ], "texture": "#1" }
+			}
+		},
+		{
+			"name":     "glass frame 2",
+			"from":     [ 3, 0, 1 ],
+			"to":       [ 4, 16, 2 ],
+			"rotation": { "angle": 0, "axis": "y", "origin": [ 16, 0, 0 ] },
+			"faces":    {
+				"north": { "uv": [ 4, 0, 3, 16 ], "texture": "#1" },
+				"east":  { "uv": [ 4, 0, 3, 16 ], "texture": "#1" },
+				"south": { "uv": [ 3, 0, 4, 16 ], "texture": "#1" }
+			}
+		}
+	]
+}

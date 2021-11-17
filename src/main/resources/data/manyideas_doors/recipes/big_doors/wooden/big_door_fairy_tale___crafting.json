@@ -1,0 +1,22 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"CP",
+		"PP",
+		"CP"
+	],
+	"key":     {
+		"C": {
+			"item": "manyideas_core:plate_copper"
+		},
+		"P": {
+			"type":      "recipes_lib:nbt",
+			"item":      "manyideas_core:planks_colored",
+			"nbt":       "{dye: {color: \"purple\"}}",
+			"matchType": "CONTAINS"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_fairy_tale"
+	}
+}

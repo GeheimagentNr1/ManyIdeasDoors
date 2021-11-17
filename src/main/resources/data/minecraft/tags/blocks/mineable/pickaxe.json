@@ -1,9 +1,13 @@
 {
 	"replace": false,
 	"values":  [
+		"manyideas_doors:big_door_art",
 		"manyideas_doors:big_door_dwarf",
 		"manyideas_doors:big_door_factory",
+		"manyideas_doors:big_door_french",
+		"manyideas_doors:big_door_glass",
 		"manyideas_doors:big_door_laboratory",
+		"manyideas_doors:big_door_pipe",
 		"manyideas_doors:big_door_portcullis",
 		"manyideas_doors:big_door_safe",
 		"manyideas_doors:big_door_terrace",

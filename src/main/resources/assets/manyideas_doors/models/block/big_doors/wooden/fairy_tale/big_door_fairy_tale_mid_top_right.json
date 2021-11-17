@@ -1,0 +1,68 @@
+{
+	"ambientocclusion": false,
+	"textures":         {
+		"2":        "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_mid_top_right",
+		"particle": "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_mid_top_right"
+	},
+	"elements":         [
+		{
+			"name":  "frame west",
+			"from":  [ 0, 0, 0.5 ],
+			"to":    [ 4, 16, 2.5 ],
+			"faces": {
+				"north": { "uv": [ 12, 0, 16, 16 ], "texture": "#2" },
+				"east":  { "uv": [ 12, 0, 13, 16 ], "texture": "#2" },
+				"south": { "uv": [ 16, 0, 12, 16 ], "texture": "#2" },
+				"west":  { "uv": [ 15, 0, 16, 16 ], "texture": "#2", "cullface": "west" }
+			}
+		},
+		{
+			"name":  "filling",
+			"from":  [ 4, 0, 1 ],
+			"to":    [ 16, 16, 2 ],
+			"faces": {
+				"north": { "uv": [ 0, 0, 12, 16 ], "texture": "#2" },
+				"south": { "uv": [ 12, 0, 0, 16 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "bolt 1",
+			"from":  [ 2.01, 7, 0 ],
+			"to":    [ 4.01, 9, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 7, 14, 9 ], "texture": "#2", "cullface": "north" },
+				"east":  { "uv": [ 12, 7, 13, 9 ], "texture": "#2" },
+				"south": { "uv": [ 14, 7, 12, 9 ], "texture": "#2" },
+				"west":  { "uv": [ 13, 7, 14, 9 ], "texture": "#2" },
+				"up":    { "uv": [ 14, 7, 12, 8 ], "texture": "#2" },
+				"down":  { "uv": [ 14, 8, 12, 9 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "bolt 2",
+			"from":  [ 2.01, 14, 0 ],
+			"to":    [ 4.01, 16, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 0, 14, 2 ], "texture": "#2", "cullface": "north" },
+				"east":  { "uv": [ 12, 0, 13, 2 ], "texture": "#2" },
+				"south": { "uv": [ 14, 0, 12, 2 ], "texture": "#2" },
+				"west":  { "uv": [ 13, 0, 14, 2 ], "texture": "#2" },
+				"up":    { "uv": [ 14, 0, 12, 1 ], "texture": "#2", "cullface": "up" },
+				"down":  { "uv": [ 14, 1, 12, 2 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "bolt 2",
+			"from":  [ 2.01, 0, 0 ],
+			"to":    [ 4.01, 2, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 14, 14, 16 ], "texture": "#2", "cullface": "north" },
+				"east":  { "uv": [ 13, 14, 14, 16 ], "texture": "#2" },
+				"south": { "uv": [ 14, 14, 12, 16 ], "texture": "#2" },
+				"west":  { "uv": [ 12, 14, 13, 16 ], "texture": "#2" },
+				"up":    { "uv": [ 14, 14, 12, 15 ], "texture": "#2" },
+				"down":  { "uv": [ 14, 15, 12, 16 ], "texture": "#2", "cullface": "down" }
+			}
+		}
+	]
+}

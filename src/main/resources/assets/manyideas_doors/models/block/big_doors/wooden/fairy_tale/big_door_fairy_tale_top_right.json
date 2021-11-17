@@ -1,0 +1,80 @@
+{
+	"ambientocclusion": false,
+	"textures":         {
+		"2":        "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_top_right",
+		"particle": "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_top_right"
+	},
+	"elements":         [
+		{
+			"name":  "frame top",
+			"from":  [ 0, 12, 0.5 ],
+			"to":    [ 16, 16, 2.5 ],
+			"faces": {
+				"north": { "uv": [ 0, 0, 16, 4 ], "texture": "#2" },
+				"south": { "uv": [ 16, 0, 0, 4 ], "texture": "#2" },
+				"west":  { "uv": [ 15, 0, 16, 4 ], "texture": "#2", "cullface": "west" },
+				"up":    { "uv": [ 16, 0, 0, 1 ], "texture": "#2", "cullface": "up" },
+				"down":  { "uv": [ 16, 3, 0, 4 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "frame west",
+			"from":  [ 0, 0, 0.5 ],
+			"to":    [ 4, 12, 2.5 ],
+			"faces": {
+				"north": { "uv": [ 12, 4, 16, 16 ], "texture": "#2" },
+				"east":  { "uv": [ 12, 4, 13, 16 ], "texture": "#2" },
+				"south": { "uv": [ 16, 4, 12, 16 ], "texture": "#2" },
+				"west":  { "uv": [ 15, 4, 16, 16 ], "texture": "#2", "cullface": "west" }
+			}
+		},
+		{
+			"name":  "filling",
+			"from":  [ 4, 0, 1 ],
+			"to":    [ 16, 12, 2 ],
+			"faces": {
+				"north": { "uv": [ 0, 4, 12, 16 ], "texture": "#2" },
+				"south": { "uv": [ 12, 4, 0, 16 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "bolt 1",
+			"from":  [ 2, 11.99, 0 ],
+			"to":    [ 4, 13.99, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 2, 14, 4 ], "texture": "#2", "cullface": "north" },
+				"east":  { "uv": [ 12, 2, 13, 4 ], "texture": "#2" },
+				"south": { "uv": [ 14, 2, 12, 4 ], "texture": "#2" },
+				"west":  { "uv": [ 13, 2, 14, 4 ], "texture": "#2" },
+				"up":    { "uv": [ 14, 2, 12, 3 ], "texture": "#2" },
+				"down":  { "uv": [ 14, 3, 12, 4 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "bolt 2",
+			"from":  [ 9, 11.99, 0 ],
+			"to":    [ 11, 13.99, 3 ],
+			"faces": {
+				"north": { "uv": [ 5, 2, 7, 4 ], "texture": "#2", "cullface": "north" },
+				"east":  { "uv": [ 5, 2, 6, 4 ], "texture": "#2" },
+				"south": { "uv": [ 7, 2, 5, 4 ], "texture": "#2" },
+				"west":  { "uv": [ 6, 2, 7, 4 ], "texture": "#2" },
+				"up":    { "uv": [ 7, 2, 5, 3 ], "texture": "#2" },
+				"down":  { "uv": [ 7, 3, 5, 4 ], "texture": "#2" }
+			}
+		},
+		{
+			"name":  "bolt 3",
+			"from":  [ 2.01, 5, 0 ],
+			"to":    [ 4.01, 7, 3 ],
+			"faces": {
+				"north": { "uv": [ 12, 9, 14, 11 ], "texture": "#2", "cullface": "north" },
+				"east":  { "uv": [ 13, 9, 14, 11 ], "texture": "#2" },
+				"south": { "uv": [ 14, 9, 12, 11 ], "texture": "#2" },
+				"west":  { "uv": [ 12, 9, 13, 11 ], "texture": "#2" },
+				"up":    { "uv": [ 14, 9, 12, 10 ], "texture": "#2" },
+				"down":  { "uv": [ 14, 10, 12, 11 ], "texture": "#2" }
+			}
+		}
+	]
+}

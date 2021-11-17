@@ -1,0 +1,19 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"CPC",
+		"PPP",
+		"CPC"
+	],
+	"key":     {
+		"C": {
+			"item": "manyideas_core:plate_copper"
+		},
+		"P": {
+			"item": "manyideas_core:panel_dark_oak"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_ship"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"type":    "minecraft:crafting_shaped",
+	"pattern": [
+		"CGC",
+		"GGG",
+		"CGC"
+	],
+	"key":     {
+		"C": {
+			"item": "manyideas_core:plate_copper"
+		},
+		"G": {
+			"item": "manyideas_core:rainbow_stained_glass_block"
+		}
+	},
+	"result":  {
+		"item": "manyideas_doors:big_door_art"
+	}
+}
