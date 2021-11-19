@@ -12,7 +12,6 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
-import net.minecraft.pathfinding.PathType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
@@ -21,6 +20,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -95,20 +95,16 @@ public class BigDoorDarsser extends BigDoor {
 	@Override
 	public boolean isPathfindable(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader level,
+		@Nonnull BlockGetter level,
 		@Nonnull BlockPos pos,
-		@Nonnull PathType type ) {
+		@Nonnull PathComputationType type ) {
 		
-		switch( type ) {
-			case LAND: //fall through
-			case AIR:
-				return state.getValue( BlockStateProperties.OPEN ) &&
-					state.getValue( Z_SIZE ) == 1 &&
-					state.getValue( Y_SIZE ) != 2;
-			case WATER: //fall through
-			default:
-				return false;
-		}
+		return switch( type ) {
+			case LAND, AIR -> state.getValue( BlockStateProperties.OPEN ) &&
+				state.getValue( Z_SIZE ) == 1 &&
+				state.getValue( Y_SIZE ) != 2;
+			case WATER -> false;
+		};
 	}
 	
 	@Override
