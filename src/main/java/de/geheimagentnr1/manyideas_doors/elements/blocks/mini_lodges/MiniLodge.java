@@ -5,12 +5,14 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.material.Material;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.StateContainer;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoorHingeSide;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 
 import javax.annotation.Nonnull;
@@ -121,6 +123,18 @@ public abstract class MiniLodge extends MultiBlock {
 			);
 			playDoorSound( null, worldIn, pos, isPowered );
 		}
+	}
+	
+	@SuppressWarnings( "deprecation" )
+	@Deprecated
+	@Override
+	public boolean allowsMovement(
+		@Nonnull BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull PathType type ) {
+		
+		return false;
 	}
 	
 	private void playDoorSound( PlayerEntity player, World world, BlockPos pos, boolean open ) {
