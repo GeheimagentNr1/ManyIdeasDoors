@@ -12,6 +12,7 @@ import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.state.properties.DoorHingeSide;
 import net.minecraft.util.ActionResultType;
@@ -91,6 +92,25 @@ public class BigDoorDarsser extends BigDoor {
 			return super.use( state, level, pos, player, hand, hitResult );
 		}
 		return ActionResultType.PASS;
+	}
+	
+	@SuppressWarnings( "deprecation" )
+	@Deprecated
+	@Override
+	public boolean allowsMovement(
+		@Nonnull BlockState state,
+		@Nonnull IBlockReader worldIn,
+		@Nonnull BlockPos pos,
+		@Nonnull PathType type ) {
+		
+		switch( type ) {
+			case LAND: //fall through
+			case AIR:
+				return state.get( BlockStateProperties.OPEN ) && state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2;
+			case WATER: //fall through
+			default:
+				return false;
+		}
 	}
 	
 	@Override
