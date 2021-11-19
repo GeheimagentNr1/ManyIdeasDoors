@@ -12,6 +12,7 @@ import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
+import net.minecraft.pathfinding.PathType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
@@ -87,6 +88,27 @@ public class BigDoorDarsser extends BigDoor {
 			return super.use( state, level, pos, player, hand, hitResult );
 		}
 		return InteractionResult.PASS;
+	}
+	
+	@SuppressWarnings( "deprecation" )
+	@Deprecated
+	@Override
+	public boolean isPathfindable(
+		@Nonnull BlockState state,
+		@Nonnull IBlockReader level,
+		@Nonnull BlockPos pos,
+		@Nonnull PathType type ) {
+		
+		switch( type ) {
+			case LAND: //fall through
+			case AIR:
+				return state.getValue( BlockStateProperties.OPEN ) &&
+					state.getValue( Z_SIZE ) == 1 &&
+					state.getValue( Y_SIZE ) != 2;
+			case WATER: //fall through
+			default:
+				return false;
+		}
 	}
 	
 	@Override
