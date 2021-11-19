@@ -97,16 +97,18 @@ public class BigDoorDarsser extends BigDoor {
 	@SuppressWarnings( "deprecation" )
 	@Deprecated
 	@Override
-	public boolean allowsMovement(
+	public boolean isPathfindable(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull PathType type ) {
 		
 		switch( type ) {
 			case LAND: //fall through
 			case AIR:
-				return state.get( BlockStateProperties.OPEN ) && state.get( Z_SIZE ) == 1 && state.get( Y_SIZE ) != 2;
+				return state.getValue( BlockStateProperties.OPEN ) &&
+					state.getValue( Z_SIZE ) == 1 &&
+					state.getValue( Y_SIZE ) != 2;
 			case WATER: //fall through
 			default:
 				return false;

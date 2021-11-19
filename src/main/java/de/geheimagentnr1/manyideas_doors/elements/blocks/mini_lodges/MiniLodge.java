@@ -134,9 +134,9 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	@SuppressWarnings( "deprecation" )
 	@Deprecated
 	@Override
-	public boolean allowsMovement(
+	public boolean isPathfindable(
 		@Nonnull BlockState state,
-		@Nonnull IBlockReader worldIn,
+		@Nonnull IBlockReader level,
 		@Nonnull BlockPos pos,
 		@Nonnull PathType type ) {
 		
