@@ -25,6 +25,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.RenderShape;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityTicker;
@@ -96,6 +97,13 @@ public class PlayerDoorSensor extends BaseEntityBlock
 			.setValue( SENSOR_RANGE, 1 ) );
 	}
 	
+	@Nonnull
+	@Override
+	public RenderShape getRenderShape( @Nonnull BlockState state ) {
+		
+		return RenderShape.MODEL;
+	}
+	
 	@SuppressWarnings( "deprecation" )
 	@Nonnull
 	@Override
@@ -118,7 +126,7 @@ public class PlayerDoorSensor extends BaseEntityBlock
 	@Override
 	public BlockEntity newBlockEntity( @Nonnull BlockPos pos, @Nonnull BlockState state ) {
 		
-		return null;
+		return new PlayerDoorSensorEntity( pos, state );
 	}
 	
 	@Nullable
