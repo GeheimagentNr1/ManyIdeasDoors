@@ -23,7 +23,8 @@ public class DoorSpecialEndEntity extends TheEndPortalBlockEntity {
 	boolean shouldRender() {
 		
 		if( level != null ) {
-			return !level.getBlockState( worldPosition ).getValue( BlockStateProperties.OPEN );
+			BlockState state = level.getBlockState( worldPosition );
+			return state.getBlock() == ModBlocks.DOOR_SPECIAL_END && !state.getValue( BlockStateProperties.OPEN );
 		}
 		return true;
 	}
