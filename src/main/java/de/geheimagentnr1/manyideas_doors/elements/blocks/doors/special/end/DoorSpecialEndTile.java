@@ -2,6 +2,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.end_block.EndBlockTile;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.block.BlockState;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.tileentity.EndPortalTileEntity;
 import net.minecraft.util.Direction;
@@ -21,7 +22,8 @@ public class DoorSpecialEndTile extends EndPortalTileEntity {
 	boolean shouldRender() {
 		
 		if( level != null ) {
-			return !level.getBlockState( worldPosition ).getValue( BlockStateProperties.OPEN );
+			BlockState state = level.getBlockState( worldPosition );
+			return state.getBlock() == ModBlocks.DOOR_SPECIAL_END && !state.getValue( BlockStateProperties.OPEN );
 		}
 		return true;
 	}
