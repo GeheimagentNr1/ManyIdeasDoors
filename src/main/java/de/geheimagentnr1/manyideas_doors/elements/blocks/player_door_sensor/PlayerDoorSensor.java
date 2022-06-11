@@ -92,7 +92,6 @@ public class PlayerDoorSensor extends BaseEntityBlock
 				.isViewBlocking( ( state, level, pos ) -> false )
 				.sound( SoundType.METAL )
 		);
-		setRegistryName( registry_name );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.POWERED, false )
 			.setValue( SENSOR_RANGE, 1 ) );
 	}

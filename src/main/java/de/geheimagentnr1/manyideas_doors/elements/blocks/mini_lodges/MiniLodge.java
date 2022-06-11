@@ -29,9 +29,9 @@ import javax.annotation.Nonnull;
 public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInterface {
 	
 	
-	protected MiniLodge( BlockBehaviour.Properties _properties, String registry_name ) {
+	protected MiniLodge( BlockBehaviour.Properties _properties ) {
 		
-		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ), registry_name );
+		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ) );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
 			.setValue( BlockStateProperties.POWERED, false ) );
 	}

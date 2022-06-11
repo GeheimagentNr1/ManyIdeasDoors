@@ -8,16 +8,18 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorS
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorEntity;
 import de.geheimagentnr1.manyideas_doors.elements.item_groups.ModItemGroups;
+import net.minecraft.Util;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
+import net.minecraft.util.datafix.fixes.References;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegisterEvent;
 
 
 @SuppressWarnings( "unused" )
@@ -35,32 +37,48 @@ public class ModEventHandler {
 	}
 	
 	@SubscribeEvent
-	public static void handleBlockRegistryEvent( RegistryEvent.Register<Block> event ) {
+	public static void handleBlockRegistryEvent( RegisterEvent event ) {
 		
-		event.getRegistry().registerAll( ModBlocks.BLOCKS );
+		if( event.getRegistryKey().equals( ForgeRegistries.Keys.BLOCKS ) ) {
+			event.register(
+				ForgeRegistries.Keys.BLOCKS,
+				registerHelper -> ModBlocks.BLOCKS.forEach( registryEntry -> registerHelper.register(
+					registryEntry.getRegistryName(),
+					registryEntry.getValue()
+				) )
+			);
+		}
 	}
 	
 	@SubscribeEvent
-	public static void handleItemRegistryEvent( RegistryEvent.Register<Item> event ) {
+	public static void handleItemRegistryEvent( RegisterEvent event ) {
 		
-		Item.Properties properties = new Item.Properties().tab( ModItemGroups.MANYIDEAS_DOORS_ITEM_GROUP );
-		
-		BlockRegistrationHelper.registerBlockItems( event, ModBlocks.BLOCKS, properties );
+		if( event.getRegistryKey().equals( ForgeRegistries.Keys.ITEMS ) ) {
+			Item.Properties properties = new Item.Properties().tab( ModItemGroups.MANYIDEAS_DOORS_ITEM_GROUP );
+			BlockRegistrationHelper.registerBlockItems( event, ModBlocks.BLOCKS, properties );
+		}
 	}
 	
 	@SuppressWarnings( "ConstantConditions" )
 	@SubscribeEvent
-	public static void handleBlockEntityRegistryEvent( RegistryEvent.Register<BlockEntityType<?>> event ) {
+	public static void handleBlockEntityRegistryEvent( RegisterEvent event ) {
 		
-		event.getRegistry().register(
-			BlockEntityType.Builder.of( DoorSpecialEndEntity::new, ModBlocks.DOOR_SPECIAL_END )
-				.build( null )
-				.setRegistryName( DoorSpecialEnd.registry_name )
-		);
-		event.getRegistry().register(
-			BlockEntityType.Builder.of( PlayerDoorSensorEntity::new, ModBlocks.PLAYER_DOOR_SENSOR )
-				.build( null )
-				.setRegistryName( PlayerDoorSensor.registry_name )
-		);
+		if( event.getRegistryKey().equals( ForgeRegistries.Keys.BLOCK_ENTITY_TYPES ) ) {
+			event.register(
+				ForgeRegistries.Keys.BLOCK_ENTITY_TYPES,
+				registerHelper -> {
+					registerHelper.register(
+						DoorSpecialEnd.registry_name,
+						BlockEntityType.Builder.of( DoorSpecialEndEntity::new, ModBlocks.DOOR_SPECIAL_END )
+							.build( Util.fetchChoiceType( References.BLOCK_ENTITY, DoorSpecialEnd.registry_name ) )
+					);
+					registerHelper.register(
+						PlayerDoorSensor.registry_name,
+						BlockEntityType.Builder.of( PlayerDoorSensorEntity::new, ModBlocks.PLAYER_DOOR_SENSOR )
+							.build( Util.fetchChoiceType( References.BLOCK_ENTITY, PlayerDoorSensor.registry_name ) )
+					);
+				}
+			);
+		}
 	}
 }

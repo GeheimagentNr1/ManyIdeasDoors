@@ -89,7 +89,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	//package-private
 	MiniLodgeOuthouse( String registry_name ) {
 		
-		super( BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ), registry_name );
+		super( BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ) );
 	}
 	
 	@Override

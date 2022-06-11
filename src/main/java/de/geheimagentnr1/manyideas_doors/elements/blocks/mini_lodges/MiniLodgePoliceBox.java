@@ -57,8 +57,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 			BlockBehaviour.Properties.of( Material.METAL )
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
-				.sound( SoundType.METAL ),
-			registry_name
+				.sound( SoundType.METAL )
 		);
 	}
 	
