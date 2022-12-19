@@ -3,6 +3,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -21,7 +22,8 @@ public class DoorSpecialPoliceBox extends DoubleDoorBlock {
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),
-			registry_name,
+			SoundEvents.IRON_DOOR_CLOSE,
+			SoundEvents.IRON_DOOR_OPEN,
 			OpenedBy.BOTH
 		);
 	}

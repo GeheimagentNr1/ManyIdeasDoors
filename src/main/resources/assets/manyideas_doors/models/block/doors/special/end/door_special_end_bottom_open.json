@@ -1,7 +1,7 @@
 {
 	"parent":   "manyideas_doors:block/templates/doors/door_bottom",
 	"textures": {
-		"bottom": "minecraft:entity/end_portal",
-		"edge":   "minecraft:entity/end_portal"
+		"bottom": "manyideas_core:block/end_block/end_portal",
+		"edge":   "manyideas_core:block/end_block/end_portal"
 	}
 }

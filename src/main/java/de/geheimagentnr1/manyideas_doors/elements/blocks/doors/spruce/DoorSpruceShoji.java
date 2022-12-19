@@ -2,6 +2,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -15,7 +16,11 @@ public class DoorSpruceShoji extends DoubleDoorBlock {
 	
 	public DoorSpruceShoji() {
 		
-		super( BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ), registry_name );
+		super(
+			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			SoundEvents.WOODEN_DOOR_CLOSE,
+			SoundEvents.WOODEN_DOOR_OPEN
+		);
 	}
 	
 	@Override

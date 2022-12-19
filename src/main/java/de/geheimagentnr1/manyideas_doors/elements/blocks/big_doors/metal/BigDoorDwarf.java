@@ -21,7 +21,6 @@ public class BigDoorDwarf extends BigDoor {
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),
-			registry_name,
 			OpenedBy.BOTH,
 			true
 		);

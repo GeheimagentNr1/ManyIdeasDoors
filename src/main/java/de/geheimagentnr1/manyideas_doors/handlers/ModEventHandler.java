@@ -7,7 +7,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorS
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndEntityRenderer;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorEntity;
-import de.geheimagentnr1.manyideas_doors.elements.item_groups.ModItemGroups;
+import de.geheimagentnr1.manyideas_doors.elements.creative_mod_tabs.ModCreativeTabs;
 import net.minecraft.Util;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.util.datafix.fixes.References;
@@ -15,6 +15,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -54,9 +55,16 @@ public class ModEventHandler {
 	public static void handleItemRegistryEvent( RegisterEvent event ) {
 		
 		if( event.getRegistryKey().equals( ForgeRegistries.Keys.ITEMS ) ) {
-			Item.Properties properties = new Item.Properties().tab( ModItemGroups.MANYIDEAS_DOORS_ITEM_GROUP );
+			Item.Properties properties = new Item.Properties();
 			BlockRegistrationHelper.registerBlockItems( event, ModBlocks.BLOCKS, properties );
 		}
+	}
+	
+	@SubscribeEvent
+	public static void handleCreativeModeTabRegisterEvent( CreativeModeTabEvent.Register event ) {
+		
+		ModCreativeTabs.CREATIVE_TAB_FACTORIES.forEach( creativeModeTabFactory ->
+			event.registerCreativeModeTab( creativeModeTabFactory.getName(), creativeModeTabFactory ) );
 	}
 	
 	@SuppressWarnings( "ConstantConditions" )

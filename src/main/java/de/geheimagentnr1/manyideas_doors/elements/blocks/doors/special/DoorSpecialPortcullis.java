@@ -7,6 +7,7 @@ import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.SoundType;
@@ -49,7 +50,8 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),
-			registry_name,
+			SoundEvents.IRON_DOOR_CLOSE,
+			SoundEvents.IRON_DOOR_OPEN,
 			OpenedBy.REDSTONE
 		);
 	}

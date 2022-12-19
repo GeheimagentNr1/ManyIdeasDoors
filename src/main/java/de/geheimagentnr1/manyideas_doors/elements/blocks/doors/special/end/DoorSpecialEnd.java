@@ -3,6 +3,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.EntityBlock;
@@ -32,7 +33,8 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 				.strength( 50.0F, 1200.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.GLASS ),
-			registry_name
+			SoundEvents.WOODEN_DOOR_CLOSE,
+			SoundEvents.WOODEN_DOOR_OPEN
 		);
 	}
 	

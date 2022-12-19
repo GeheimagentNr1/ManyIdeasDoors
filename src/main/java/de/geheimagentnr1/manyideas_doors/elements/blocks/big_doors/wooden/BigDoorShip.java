@@ -19,7 +19,6 @@ public class BigDoorShip extends BigDoor {
 			Properties.of( Material.WOOD )
 				.strength( 3.0F )
 				.sound( SoundType.WOOD ),
-			registry_name,
 			OpenedBy.BOTH,
 			true
 		);
