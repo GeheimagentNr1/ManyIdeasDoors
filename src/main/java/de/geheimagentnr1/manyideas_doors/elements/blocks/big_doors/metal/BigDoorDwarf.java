@@ -6,6 +6,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.Material;
 
 
@@ -21,6 +22,7 @@ public class BigDoorDwarf extends BigDoor {
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),
+			BlockSetType.GOLD,
 			OpenedBy.BOTH,
 			true
 		);

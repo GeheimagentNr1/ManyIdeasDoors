@@ -12,6 +12,7 @@ import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.material.Material;
@@ -49,6 +50,7 @@ public class BigDoorTerrace extends BigDoor {
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),
+			BlockSetType.IRON,
 			OpenedBy.BOTH,
 			false
 		);

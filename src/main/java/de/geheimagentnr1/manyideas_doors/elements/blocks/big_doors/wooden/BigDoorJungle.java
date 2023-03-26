@@ -7,6 +7,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.Material;
 
 
@@ -19,6 +20,7 @@ public class BigDoorJungle extends BigDoor {
 		
 		super(
 			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			BlockSetType.JUNGLE,
 			OpenedBy.BOTH,
 			true
 		);

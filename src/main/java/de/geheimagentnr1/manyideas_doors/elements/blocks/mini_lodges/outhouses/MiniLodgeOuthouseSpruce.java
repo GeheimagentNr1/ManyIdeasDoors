@@ -2,6 +2,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses;
 
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 
 
 public class MiniLodgeOuthouseSpruce extends MiniLodgeOuthouse {
@@ -11,7 +12,7 @@ public class MiniLodgeOuthouseSpruce extends MiniLodgeOuthouse {
 	
 	public MiniLodgeOuthouseSpruce() {
 		
-		super( registry_name );
+		super( registry_name, BlockSetType.SPRUCE );
 	}
 	
 	@Override

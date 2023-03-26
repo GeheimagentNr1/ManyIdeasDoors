@@ -2,11 +2,11 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.BlockRenderTypeInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.multi_block.MultiBlock;
+import de.geheimagentnr1.manyideas_core.util.doors.DoorsHelper;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.material.Material;
@@ -29,11 +30,14 @@ import javax.annotation.Nonnull;
 public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInterface {
 	
 	
-	protected MiniLodge( BlockBehaviour.Properties _properties ) {
+	private final BlockSetType type;
+	
+	protected MiniLodge( BlockBehaviour.Properties _properties, BlockSetType _type ) {
 		
 		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ) );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
 			.setValue( BlockStateProperties.POWERED, false ) );
+		type = _type;
 	}
 	
 	@Override
@@ -96,7 +100,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 			),
 			true
 		);
-		playDoorSound( player, level, pos, open );
+		DoorsHelper.playDoorSound( level, pos, type, player, open );
 		return InteractionResult.SUCCESS;
 	}
 	
@@ -130,7 +134,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 				),
 				true
 			);
-			playDoorSound( null, level, pos, isPowered );
+			DoorsHelper.playDoorSound( level, pos, type, null, isPowered );
 		}
 	}
 	
@@ -144,28 +148,6 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 		@Nonnull PathComputationType type ) {
 		
 		return false;
-	}
-	
-	private void playDoorSound( Player player, Level level, BlockPos pos, boolean open ) {
-		
-		level.playSound(
-			player,
-			pos,
-			open ? getOpenDoorSound() : getCloseDoorSound(),
-			SoundSource.BLOCKS,
-			1.0F,
-			1.0F
-		);
-	}
-	
-	private SoundEvent getOpenDoorSound() {
-		
-		return material == Material.METAL ? SoundEvents.IRON_DOOR_OPEN : SoundEvents.WOODEN_DOOR_OPEN;
-	}
-	
-	private SoundEvent getCloseDoorSound() {
-		
-		return material == Material.METAL ? SoundEvents.IRON_DOOR_CLOSE : SoundEvents.WOODEN_DOOR_CLOSE;
 	}
 	
 	@Override

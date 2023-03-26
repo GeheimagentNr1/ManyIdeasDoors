@@ -2,10 +2,10 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.Material;
 
 
@@ -18,8 +18,7 @@ public class DoorSpruceBlank extends DoubleDoorBlock {
 		
 		super(
 			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
-			SoundEvents.WOODEN_DOOR_CLOSE,
-			SoundEvents.WOODEN_DOOR_OPEN
+			BlockSetType.SPRUCE
 		);
 	}
 	
