@@ -196,7 +196,7 @@ Java Native Access Platform (5.10.0) - LGPL-2.1-or-later,Apache-2.0
 Java Native Access Platform
 https://github.com/java-native-access/jna
 
-Java Objective-C Bridge (1.0.0) - Apache License, Version 2.0
+Java-Objective-C-Bridge (1.1) - Apache License, Version 2.0
 A thin bridge that allows for two-way communication from Java to Objective-C.
 https://github.com/shannah/Java-Objective-C-Bridge
 
