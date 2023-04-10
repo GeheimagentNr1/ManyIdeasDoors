@@ -1,0 +1,14 @@
+{
+	"replace": false,
+	"values":  [
+		"manyideas_doors:door_copper_bar",
+		"manyideas_doors:door_copper_barrel",
+		"manyideas_doors:door_copper_corrugated",
+		"manyideas_doors:door_copper_factory",
+		"manyideas_doors:door_copper_glass",
+		"manyideas_doors:door_copper_modern",
+		"manyideas_doors:door_copper_smooth_sandstone",
+		"manyideas_doors:door_copper_ship",
+		"manyideas_doors:door_copper_steampunk"
+	]
+}
