@@ -1,0 +1,15 @@
+{
+	"replace": false,
+	"values":  [
+		"manyideas_doors:door_iron_bookshelf",
+		"manyideas_doors:door_iron_dwarf",
+		"manyideas_doors:door_iron_fantasy",
+		"manyideas_doors:door_iron_glass",
+		"manyideas_doors:door_iron_laboratory",
+		"manyideas_doors:door_iron_rusted",
+		"manyideas_doors:door_iron_safe",
+		"manyideas_doors:door_iron_ship",
+		"manyideas_doors:door_iron_space",
+		"manyideas_doors:door_iron_stone_brick"
+	]
+}
