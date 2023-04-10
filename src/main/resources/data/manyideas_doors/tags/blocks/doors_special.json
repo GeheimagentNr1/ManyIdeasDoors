@@ -1,0 +1,8 @@
+{
+	"replace": false,
+	"values":  [
+		"manyideas_doors:door_special_police_box",
+		"manyideas_doors:door_special_portcullis",
+		"manyideas_doors:door_special_end"
+	]
+}

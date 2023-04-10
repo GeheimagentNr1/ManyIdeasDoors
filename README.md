@@ -17,9 +17,9 @@ A description how to use differnt versions of Minecraft Forge can be found here:
 
 ## Branches
 
-| Branch  | Description |
-| ------------- | ------------- |
-| master | default branch - holds only the licences of the libraries and the README file |
-| develop_X.X.X | develop branch for the Minecraft version X.X.X - holds unstable and possible not compilable or working version. |
-| master_X.X.X | master branch for the Minecraft version X.X.X - holds stable/released versions of the mod/jar files can be found on CurseForge |
-| Other branches | branches for implementing new feature - contains unstable and possible not compilable or working version. |
+| Branch         | Description                                                                                                                    |
+|----------------|--------------------------------------------------------------------------------------------------------------------------------|
+| master         | default branch - holds only the licences of the libraries and the README file                                                  |
+| develop_X.X.X  | develop branch for the Minecraft version X.X.X - holds unstable and possible not compilable or working version.                |
+| master_X.X.X   | master branch for the Minecraft version X.X.X - holds stable/released versions of the mod/jar files can be found on CurseForge |
+| Other branches | branches for implementing new feature - contains unstable and possible not compilable or working version.                      |
