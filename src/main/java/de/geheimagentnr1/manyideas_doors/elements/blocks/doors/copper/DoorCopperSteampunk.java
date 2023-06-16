@@ -1,29 +1,21 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.copper;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.DoorMetal;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 
 
-public class DoorCopperSteampunk extends DoubleDoorBlock {
+public class DoorCopperSteampunk extends DoorMetal {
 	
 	
 	public static final String registry_name = "door_copper_steampunk";
 	
 	public DoorCopperSteampunk() {
 		
-		super(
-			BlockBehaviour.Properties.of( Material.METAL )
-				.strength( 5.0F )
-				.requiresCorrectToolForDrops()
-				.sound( SoundType.METAL ),
-			BlockSetType.IRON
-		);
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.METAL ) );
 	}
 	
 	@Override

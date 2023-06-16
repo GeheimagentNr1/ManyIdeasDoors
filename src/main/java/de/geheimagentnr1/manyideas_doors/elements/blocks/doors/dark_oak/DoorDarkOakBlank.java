@@ -1,25 +1,18 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.dark_oak;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
 
 
-public class DoorDarkOakBlank extends DoubleDoorBlock {
+public class DoorDarkOakBlank extends DoorDarkOak {
 	
 	
 	public static final String registry_name = "door_dark_oak_blank";
 	
 	public DoorDarkOakBlank() {
 		
-		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
-			BlockSetType.DARK_OAK
-		);
+		super( BlockSetType.DARK_OAK );
 	}
 	
 	@Override

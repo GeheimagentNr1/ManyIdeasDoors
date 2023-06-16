@@ -2,7 +2,9 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses;
 
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 
 
 public class MiniLodgeOuthouseWarped extends MiniLodgeOuthouse {
@@ -12,7 +14,7 @@ public class MiniLodgeOuthouseWarped extends MiniLodgeOuthouse {
 	
 	public MiniLodgeOuthouseWarped() {
 		
-		super( registry_name, BlockSetType.WARPED );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.WARPED_HYPHAE ), BlockSetType.WARPED );
 	}
 	
 	@Override

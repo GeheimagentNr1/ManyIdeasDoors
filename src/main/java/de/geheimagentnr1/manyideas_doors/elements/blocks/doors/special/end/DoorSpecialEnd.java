@@ -1,5 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 
+import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
@@ -12,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -29,11 +30,13 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 	public DoorSpecialEnd() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.STONE )
+			BlockBehaviour.Properties.of()
+				.mapColor( MapColor.COLOR_BLACK )
 				.strength( 50.0F, 1200.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.GLASS ),
-			BlockSetType.OAK
+			BlockSetType.OAK,
+			OpenedBy.BOTH
 		);
 	}
 	

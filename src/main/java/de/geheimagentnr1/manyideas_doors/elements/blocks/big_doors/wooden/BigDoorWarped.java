@@ -1,28 +1,20 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden;
 
-import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
-import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.BigDoor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 
 
-public class BigDoorWarped extends BigDoor {
+public class BigDoorWarped extends BigDoorWooden {
 	
 	
 	public static final String registry_name = "big_door_warped";
 	
 	public BigDoorWarped() {
 		
-		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
-			BlockSetType.WARPED,
-			OpenedBy.BOTH,
-			true
-		);
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.WARPED_HYPHAE ), BlockSetType.WARPED );
 	}
 	
 	@Override

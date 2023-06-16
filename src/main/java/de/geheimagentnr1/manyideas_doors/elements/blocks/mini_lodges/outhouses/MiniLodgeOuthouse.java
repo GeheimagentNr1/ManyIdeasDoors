@@ -7,12 +7,10 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
-import net.minecraft.world.level.material.Material;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -88,9 +86,9 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	);
 	
 	//package-private
-	MiniLodgeOuthouse( String registry_name, BlockSetType type ) {
+	MiniLodgeOuthouse( Properties properties, BlockSetType type ) {
 		
-		super( BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ), type );
+		super( properties.strength( 3.0F ).sound( SoundType.WOOD ), type );
 	}
 	
 	@Override

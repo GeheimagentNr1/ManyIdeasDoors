@@ -14,7 +14,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -55,7 +55,8 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	public MiniLodgePoliceBox() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.METAL )
+			BlockBehaviour.Properties.of()
+				.mapColor( MapColor.LAPIS )
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),
@@ -74,7 +75,7 @@ public class MiniLodgePoliceBox extends MiniLodge {
 	}
 	
 	@Override
-	public int getLightEmission( BlockState state, BlockGetter world, BlockPos pos ) {
+	public int getLightEmission( BlockState state, BlockGetter level, BlockPos pos ) {
 		
 		return state.getValue( X_SIZE ) == 1 && state.getValue( Z_SIZE ) == 1 ? 7 : 0;
 	}

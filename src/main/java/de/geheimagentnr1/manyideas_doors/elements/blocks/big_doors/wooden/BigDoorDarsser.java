@@ -1,7 +1,5 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden;
 
-import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
-import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.BigDoor;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
@@ -20,7 +18,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
@@ -29,7 +27,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nonnull;
 
 
-public class BigDoorDarsser extends BigDoor {
+public class BigDoorDarsser extends BigDoorWooden {
 	
 	
 	public static final String registry_name = "big_door_darsser";
@@ -42,9 +40,8 @@ public class BigDoorDarsser extends BigDoor {
 	public BigDoorDarsser() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.WOOD ).strength( 3.0F ).sound( SoundType.WOOD ),
+			BlockBehaviour.Properties.of().mapColor( MapColor.COLOR_GREEN ).sound( SoundType.WOOD ),
 			BlockSetType.OAK,
-			OpenedBy.BOTH,
 			false
 		);
 	}

@@ -1,19 +1,16 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special;
 
-import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
-import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.DoorMetal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
-import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -21,7 +18,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 import javax.annotation.Nonnull;
 
 
-public class DoorSpecialPortcullis extends DoubleDoorBlock {
+public class DoorSpecialPortcullis extends DoorMetal {
 	
 	
 	public static final String registry_name = "door_special_portcullis";
@@ -45,14 +42,7 @@ public class DoorSpecialPortcullis extends DoubleDoorBlock {
 	
 	public DoorSpecialPortcullis() {
 		
-		super(
-			BlockBehaviour.Properties.of( Material.METAL )
-				.strength( 5.0F )
-				.requiresCorrectToolForDrops()
-				.sound( SoundType.METAL ),
-			BlockSetType.IRON,
-			OpenedBy.REDSTONE
-		);
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.DEEPSLATE ) );
 	}
 	
 	@Nonnull

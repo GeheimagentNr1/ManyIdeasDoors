@@ -7,7 +7,7 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 
 
 public class DoorSpecialPoliceBox extends DoubleDoorBlock {
@@ -18,7 +18,8 @@ public class DoorSpecialPoliceBox extends DoubleDoorBlock {
 	public DoorSpecialPoliceBox() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.METAL )
+			BlockBehaviour.Properties.of()
+				.mapColor( MapColor.LAPIS )
 				.strength( 5.0F )
 				.requiresCorrectToolForDrops()
 				.sound( SoundType.METAL ),

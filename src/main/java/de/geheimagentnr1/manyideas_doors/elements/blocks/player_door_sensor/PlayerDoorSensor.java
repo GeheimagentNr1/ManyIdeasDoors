@@ -35,7 +35,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.level.material.Material;
+import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
@@ -85,7 +85,8 @@ public class PlayerDoorSensor extends BaseEntityBlock
 	public PlayerDoorSensor() {
 		
 		super(
-			BlockBehaviour.Properties.of( Material.METAL )
+			BlockBehaviour.Properties.of()
+				.mapColor( MapColor.NONE )
 				.strength( 5 )
 				.requiresCorrectToolForDrops()
 				.noOcclusion()

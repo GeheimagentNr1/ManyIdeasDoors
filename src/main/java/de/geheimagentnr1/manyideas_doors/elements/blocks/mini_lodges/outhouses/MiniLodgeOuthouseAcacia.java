@@ -2,7 +2,9 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses;
 
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import net.minecraft.world.level.material.MapColor;
 
 
 public class MiniLodgeOuthouseAcacia extends MiniLodgeOuthouse {
@@ -12,7 +14,7 @@ public class MiniLodgeOuthouseAcacia extends MiniLodgeOuthouse {
 	
 	public MiniLodgeOuthouseAcacia() {
 		
-		super( registry_name, BlockSetType.ACACIA );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.COLOR_ORANGE ), BlockSetType.ACACIA );
 	}
 	
 	@Override
