@@ -19,10 +19,4 @@ public class DoorSpecialSpace extends DoubleDoorBlock {
 		super( Properties.create( Material.ROCK ).hardnessAndResistance( 4.0F ).sound( SoundType.STONE ),
 			registry_name );
 	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_SPACE, _properties, registry_name );
-	}
 }

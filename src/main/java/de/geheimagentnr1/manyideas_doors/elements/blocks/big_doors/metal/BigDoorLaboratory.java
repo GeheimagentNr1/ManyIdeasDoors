@@ -2,10 +2,8 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal;
 
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,25 +12,28 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BigDoorLaboratory extends BigDoorMetal {
 	
 	
+	@NotNull
 	public static final String registry_name = "big_door_laboratory";
 	
+	@NotNull
 	private static final VoxelShapeMemory SHAPE_CLOSED = VoxelShapeMemory.createHorizontalAxisVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 0, 6.5, 16, 16, 9.5 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory SHAPE_OPEN_LEFT = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 0, 6.5, 6, 16, 9.5 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory SHAPE_OPEN_RIGHT = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 10, 0, 6.5, 16, 16, 9.5 )
@@ -43,22 +44,24 @@ public class BigDoorLaboratory extends BigDoorMetal {
 		super( BlockBehaviour.Properties.of().mapColor( MapColor.METAL ), false );
 	}
 	
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		Direction direction = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		
 		if( state.getValue( BlockStateProperties.OPEN ) ) {
 			switch( state.getValue( Z_SIZE ) ) {
-				case 0:
+				case 0 -> {
 					return SHAPE_OPEN_LEFT.getShapeFromHorizontalFacing( direction );
-				case 2:
+				}
+				case 2 -> {
 					return SHAPE_OPEN_RIGHT.getShapeFromHorizontalFacing( direction );
+				}
 			}
 		} else {
 			return SHAPE_CLOSED.getShapeFromHorizontalAxis( direction.getAxis() );
@@ -82,11 +85,5 @@ public class BigDoorLaboratory extends BigDoorMetal {
 	protected int getZSize() {
 		
 		return 3;
-	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.BIG_DOOR_LABORATORY, _properties, registry_name );
 	}
 }

@@ -1,5 +1,6 @@
 {
 	"ambientocclusion": false,
+	"render_type": "minecraft:translucent",
 	"textures":         {
 		"0":        "manyideas_doors:block/big_doors/metal/art/big_door_art_bottem_left",
 		"particle": "manyideas_doors:block/big_doors/metal/art/big_door_art_bottem_left"

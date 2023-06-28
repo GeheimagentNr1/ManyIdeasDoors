@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures":         {
 		"0":        "manyideas_doors:block/big_doors/wooden/ship/big_door_ship_top_left",

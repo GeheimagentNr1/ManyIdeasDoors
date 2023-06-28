@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorSpruce extends DoorWooden {
 	
 	
-	protected DoorSpruce( BlockSetType _type ) {
+	protected DoorSpruce() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.PODZOL ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.PODZOL ), BlockSetType.SPRUCE );
 	}
 }

@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"12":       "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_top_right_off",
 		"34":       "manyideas_doors:block/big_doors/metal/safe/big_safe_door_outer_top_left_off",

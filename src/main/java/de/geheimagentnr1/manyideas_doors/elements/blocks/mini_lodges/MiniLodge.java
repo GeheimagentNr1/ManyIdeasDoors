@@ -1,9 +1,7 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges;
 
-import de.geheimagentnr1.manyideas_core.elements.blocks.BlockRenderTypeInterface;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.multi_block.MultiBlock;
 import de.geheimagentnr1.manyideas_core.util.doors.DoorsHelper;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
@@ -20,27 +18,21 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 
-
-public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInterface {
+public abstract class MiniLodge extends MultiBlock {
 	
 	
+	@NotNull
 	private final BlockSetType type;
 	
-	protected MiniLodge( BlockBehaviour.Properties _properties, BlockSetType _type ) {
+	protected MiniLodge( @NotNull BlockBehaviour.Properties _properties, @NotNull BlockSetType _type ) {
 		
 		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ) );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
 			.setValue( BlockStateProperties.POWERED, false ) );
 		type = _type;
-	}
-	
-	@Override
-	public RenderType getRenderType() {
-		
-		return RenderType.cutout();
 	}
 	
 	@Override
@@ -61,6 +53,7 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 		return 3;
 	}
 	
+	@NotNull
 	@Override
 	protected BlockState getDefaultState( boolean left_sided ) {
 		
@@ -71,15 +64,15 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	}
 	
 	@SuppressWarnings( "deprecation" )
-	@Nonnull
+	@NotNull
 	@Override
 	public InteractionResult use(
-		@Nonnull BlockState state,
-		@Nonnull Level level,
-		@Nonnull BlockPos pos,
-		@Nonnull Player player,
-		@Nonnull InteractionHand hand,
-		@Nonnull BlockHitResult hitResult ) {
+		@NotNull BlockState state,
+		@NotNull Level level,
+		@NotNull BlockPos pos,
+		@NotNull Player player,
+		@NotNull InteractionHand hand,
+		@NotNull BlockHitResult hitResult ) {
 		
 		if( state.getValue( X_SIZE ) != 0 || state.getValue( Y_SIZE ) == 2 || state.getValue( Z_SIZE ) == 2 ||
 			state.getValue( Z_SIZE ) != 1 ) {
@@ -104,11 +97,11 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	@SuppressWarnings( "deprecation" )
 	@Override
 	public void neighborChanged(
-		@Nonnull BlockState state,
-		@Nonnull Level level,
-		@Nonnull BlockPos pos,
-		@Nonnull Block block,
-		@Nonnull BlockPos fromPos,
+		@NotNull BlockState state,
+		@NotNull Level level,
+		@NotNull BlockPos pos,
+		@NotNull Block block,
+		@NotNull BlockPos fromPos,
 		boolean isMoving ) {
 		
 		if( block == this ) {
@@ -139,16 +132,16 @@ public abstract class MiniLodge extends MultiBlock implements BlockRenderTypeInt
 	@Deprecated
 	@Override
 	public boolean isPathfindable(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull PathComputationType type ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull PathComputationType type ) {
 		
 		return false;
 	}
 	
 	@Override
-	protected void createBlockStateDefinition( StateDefinition.Builder<Block, BlockState> builder ) {
+	protected void createBlockStateDefinition( @NotNull StateDefinition.Builder<Block, BlockState> builder ) {
 		
 		super.createBlockStateDefinition( builder );
 		builder.add( BlockStateProperties.DOOR_HINGE, BlockStateProperties.OPEN, BlockStateProperties.POWERED );

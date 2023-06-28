@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorBirch extends DoorWooden {
 	
 	
-	protected DoorBirch( BlockSetType _type ) {
+	protected DoorBirch() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.SAND ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.SAND ), BlockSetType.BIRCH );
 	}
 }

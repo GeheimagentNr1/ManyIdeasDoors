@@ -1,15 +1,15 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden;
 
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.material.MapColor;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BigDoorAcacia extends BigDoorWooden {
 	
 	
+	@NotNull
 	public static final String registry_name = "big_door_acacia";
 	
 	public BigDoorAcacia() {
@@ -33,11 +33,5 @@ public class BigDoorAcacia extends BigDoorWooden {
 	protected int getZSize() {
 		
 		return 2;
-	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.BIG_DOOR_ACACIA, _properties, registry_name );
 	}
 }

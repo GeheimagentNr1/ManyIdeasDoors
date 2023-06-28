@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle": "manyideas_doors:block/mini_lodges/outhouses/fly",
 		"fly":      "manyideas_doors:block/mini_lodges/outhouses/fly"

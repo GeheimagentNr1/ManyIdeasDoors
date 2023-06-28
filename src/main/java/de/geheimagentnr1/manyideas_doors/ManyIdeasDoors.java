@@ -1,12 +1,31 @@
 package de.geheimagentnr1.manyideas_doors;
 
 
+import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocksRegisterFactory;
+import de.geheimagentnr1.manyideas_doors.elements.creative_mod_tabs.ModCreativeModeTabRegisterFactory;
+import de.geheimagentnr1.minecraft_forge_api.AbstractMod;
 import net.minecraftforge.fml.common.Mod;
+import org.jetbrains.annotations.NotNull;
 
 
 @Mod( ManyIdeasDoors.MODID )
-public class ManyIdeasDoors {
+public class ManyIdeasDoors extends AbstractMod {
 	
 	
+	@NotNull
 	public static final String MODID = "manyideas_doors";
+	
+	@NotNull
+	@Override
+	public String getModId() {
+		
+		return MODID;
+	}
+	
+	@Override
+	protected void initMod() {
+		
+		ModBlocksRegisterFactory modBlocksRegisterFactory = registerEventHandler( new ModBlocksRegisterFactory() );
+		registerEventHandler( new ModCreativeModeTabRegisterFactory( modBlocksRegisterFactory ) );
+	}
 }

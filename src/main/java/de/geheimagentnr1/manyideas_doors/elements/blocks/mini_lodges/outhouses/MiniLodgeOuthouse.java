@@ -7,6 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
@@ -14,40 +15,45 @@ import net.minecraft.world.level.block.state.properties.DoorHingeSide;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public abstract class MiniLodgeOuthouse extends MiniLodge {
 	
 	
+	@NotNull
 	private static final VoxelShapeMemory CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.EAST,
 		VoxelShapeVector.create( 12, 0, 12, 16, 16, 16 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory DOORS_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 0, 0, 16, 16, 3 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory HIGH_ROOF_CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.WEST,
 		VoxelShapeVector.create( 0, 7.5, 0, 5, 12, 6 ),
 		VoxelShapeVector.create( 0, 0, 0, 4, 7.5, 4 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory LOW_ROOF_CORNER_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.EAST,
 		VoxelShapeVector.create( 0, 0, 0, 5, 3, 5 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory HIGH_ROOF_SIDE_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 7.5, 0, 16, 12, 6 ),
 		VoxelShapeVector.create( 0, 0, 0, 16, 7.5, 3 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory LEFT_MID_ROOF_SIDE_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.WEST,
 		VoxelShapeVector.create( 0, 6, 0, 5, 10, 4 ),
@@ -60,6 +66,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 		VoxelShapeVector.create( 0, 0, 12, 3, 1, 16 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory RIGHT_MID_ROOF_SIDE_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.WEST,
 		VoxelShapeVector.create( 0, 1, 0, 5, 5, 4 ),
@@ -72,11 +79,13 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 		VoxelShapeVector.create( 0, 0, 12, 3, 6, 16 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory LOW_ROOF_SIDE_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 0, 0, 16, 3, 5 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory ROOF_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		VoxelShapeVector.create( 0, 6, 0, 16, 10, 4 ),
@@ -86,7 +95,7 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	);
 	
 	//package-private
-	MiniLodgeOuthouse( Properties properties, BlockSetType type ) {
+	MiniLodgeOuthouse( @NotNull BlockBehaviour.Properties properties, @NotNull BlockSetType type ) {
 		
 		super( properties.strength( 3.0F ).sound( SoundType.WOOD ), type );
 	}
@@ -102,28 +111,28 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 	}
 	
 	@SuppressWarnings( { "deprecation", "NestedSwitchStatement" } )
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		int x = state.getValue( X_SIZE );
 		int y = state.getValue( Y_SIZE );
 		int z = state.getValue( Z_SIZE );
 		
-		switch( y ) {
-			case 0: //fall through
-			case 1:
+		switch( y ) { //fall through
+			case 0, 1 -> {
 				switch( x ) {
-					case 0:
+					case 0 -> {
 						switch( z ) {
-							case 0:
+							case 0 -> {
 								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
-							case 1:
+							}
+							case 1 -> {
 								if( state.getValue( BlockStateProperties.OPEN ) ) {
 									if( state.getValue( BlockStateProperties.DOOR_HINGE ) == DoorHingeSide.LEFT ) {
 										return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
@@ -133,66 +142,83 @@ public abstract class MiniLodgeOuthouse extends MiniLodge {
 								} else {
 									return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
 								}
-							case 2:
+							}
+							case 2 -> {
 								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
+							}
 						}
-						break;
-					case 1:
+					}
+					case 1 -> {
 						switch( z ) {
-							case 0:
+							case 0 -> {
 								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
-							case 1:
+							}
+							case 1 -> {
 								return Shapes.empty();
-							case 2:
+							}
+							case 2 -> {
 								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
+							}
 						}
-						break;
-					case 2:
+					}
+					case 2 -> {
 						switch( z ) {
-							case 0:
+							case 0 -> {
 								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
-							case 1:
+							}
+							case 1 -> {
 								return DOORS_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
-							case 2:
+							}
+							case 2 -> {
 								return CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
+							}
 						}
-						break;
+					}
 				}
-				break;
-			case 2:
+			}
+			case 2 -> {
 				switch( x ) {
-					case 0:
+					case 0 -> {
 						switch( z ) {
-							case 0:
+							case 0 -> {
 								return HIGH_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
-							case 1:
+							}
+							case 1 -> {
 								return HIGH_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing );
-							case 2:
+							}
+							case 2 -> {
 								return HIGH_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
+							}
 						}
-						break;
-					case 1:
+					}
+					case 1 -> {
 						switch( z ) {
-							case 0:
+							case 0 -> {
 								return LEFT_MID_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getClockWise() );
-							case 1:
+							}
+							case 1 -> {
 								return ROOF_SHAPES.getShapeFromFacing( facing );
-							case 2:
+							}
+							case 2 -> {
 								return RIGHT_MID_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
+							}
 						}
-						break;
-					case 2:
+					}
+					case 2 -> {
 						switch( z ) {
-							case 0:
+							case 0 -> {
 								return LOW_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing.getCounterClockWise() );
-							case 1:
+							}
+							case 1 -> {
 								return LOW_ROOF_SIDE_SHAPES.getShapeFromHorizontalFacing( facing.getOpposite() );
-							case 2:
+							}
+							case 2 -> {
 								return LOW_ROOF_CORNER_SHAPES.getShapeFromHorizontalFacing( facing );
+							}
 						}
-						break;
+					}
 				}
-				break;
+			}
 		}
 		return Shapes.block();
 	}

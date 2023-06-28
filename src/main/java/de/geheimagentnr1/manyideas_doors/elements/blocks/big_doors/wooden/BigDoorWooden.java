@@ -5,12 +5,13 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Bi
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import org.jetbrains.annotations.NotNull;
 
 
 public abstract class BigDoorWooden extends BigDoor {
 	
 	
-	protected BigDoorWooden( BlockBehaviour.Properties _properties, BlockSetType _type ) {
+	protected BigDoorWooden( @NotNull BlockBehaviour.Properties _properties, @NotNull BlockSetType _type ) {
 		
 		this(
 			_properties.sound( SoundType.WOOD ),
@@ -19,7 +20,10 @@ public abstract class BigDoorWooden extends BigDoor {
 		);
 	}
 	
-	protected BigDoorWooden( BlockBehaviour.Properties _properties, BlockSetType _type, boolean _doubleDoorActive ) {
+	protected BigDoorWooden(
+		@NotNull BlockBehaviour.Properties _properties,
+		@NotNull BlockSetType _type,
+		boolean _doubleDoorActive ) {
 		
 		super(
 			_properties.strength( 3.0F ),

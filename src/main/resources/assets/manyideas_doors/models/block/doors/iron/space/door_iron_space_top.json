@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle": "manyideas_doors:block/doors/iron/space/door_iron_space_top",
 		"top":      "manyideas_doors:block/doors/iron/space/door_iron_space_top"

@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures": {
 		"particle": "manyideas_doors:block/big_doors/wooden/acacia/big_door_acacia_bottom_left_inside"
 	}

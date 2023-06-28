@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"1":        "manyideas_doors:block/big_doors/metal/safe/big_safe_door_inner_bottom_right_off",
 		"particle": "manyideas_doors:block/big_doors/metal/safe/big_safe_door_outer_bottom_left_off"

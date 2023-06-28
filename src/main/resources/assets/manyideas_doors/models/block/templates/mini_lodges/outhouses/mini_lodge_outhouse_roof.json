@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle": "#outhouse",
 		"roof":     "manyideas_doors:block/mini_lodges/outhouses/mini_lodge_outhouse_roof_tiles"

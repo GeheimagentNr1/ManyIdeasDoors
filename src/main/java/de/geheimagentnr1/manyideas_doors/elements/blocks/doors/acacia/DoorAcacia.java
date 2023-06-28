@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorAcacia extends DoorWooden {
 	
 	
-	protected DoorAcacia( BlockSetType _type ) {
+	protected DoorAcacia() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.COLOR_ORANGE ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.COLOR_ORANGE ), BlockSetType.ACACIA );
 	}
 }

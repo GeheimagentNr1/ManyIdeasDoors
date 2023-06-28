@@ -1,7 +1,5 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks;
 
-import de.geheimagentnr1.manyideas_core.elements.RegistryEntry;
-import de.geheimagentnr1.manyideas_core.elements.RegistryKeys;
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden.*;
@@ -17,21 +15,30 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpeci
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPortcullis;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEnd;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndEntity;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end.DoorSpecialEndEntityRenderer;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.spruce.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.warped.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.MiniLodgePoliceBox;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.mini_lodges.outhouses.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensor;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor.PlayerDoorSensorEntity;
+import de.geheimagentnr1.minecraft_forge_api.elements.blocks.BlocksRegisterFactory;
+import de.geheimagentnr1.minecraft_forge_api.registry.RegistryEntry;
+import de.geheimagentnr1.minecraft_forge_api.registry.RegistryHelper;
+import de.geheimagentnr1.minecraft_forge_api.registry.RegistryKeys;
+import net.minecraft.client.renderer.blockentity.BlockEntityRenderers;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ObjectHolder;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
 
 
 @SuppressWarnings( { "StaticNonFinalField", "PublicField", "unused" } )
-public class ModBlocks {
+public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 	
 	//TODO:
 	// B - Block Textur fertig
@@ -43,162 +50,6 @@ public class ModBlocks {
 	// R - Rezept fertig
 	// L - Loottable fertig
 	// T - Tags fertig
-	
-	public static final List<RegistryEntry<? extends Block>> BLOCKS = List.of(//BCPFINRLT
-		//Big Doors: Metal
-		RegistryEntry.create( BigDoorArt.registry_name, new BigDoorArt() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorDwarf.registry_name, new BigDoorDwarf() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorFactory.registry_name, new BigDoorFactory() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorFrench.registry_name, new BigDoorFrench() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorGlass.registry_name, new BigDoorGlass() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorLaboratory.registry_name, new BigDoorLaboratory() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorPipe.registry_name, new BigDoorPipe() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorPortcullis.registry_name, new BigDoorPortcullis() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorSafe.registry_name, new BigDoorSafe() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorTerrace.registry_name, new BigDoorTerrace() ),//BCPFINRLT
-		//Big Doors: Wooden
-		RegistryEntry.create( BigDoorAcacia.registry_name, new BigDoorAcacia() ),//BCPFINRL
-		RegistryEntry.create( BigDoorBarn.registry_name, new BigDoorBarn() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorBirch.registry_name, new BigDoorBirch() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorCrimson.registry_name, new BigDoorCrimson() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorDarkOak.registry_name, new BigDoorDarkOak() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorDarsser.registry_name, new BigDoorDarsser() ),//BCPFINRL
-		RegistryEntry.create( BigDoorFairyTale.registry_name, new BigDoorFairyTale() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorJungle.registry_name, new BigDoorJungle() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorOak.registry_name, new BigDoorOak() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorShip.registry_name, new BigDoorShip() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorShiro.registry_name, new BigDoorShiro() ),//BCPFINRL
-		RegistryEntry.create( BigDoorSpruce.registry_name, new BigDoorSpruce() ),//BCPFINRLT
-		RegistryEntry.create( BigDoorWarped.registry_name, new BigDoorWarped() ),//BCPFINRLT
-		//Doors: Acacia
-		RegistryEntry.create( DoorAcaciaBlank.registry_name, new DoorAcaciaBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaBookshelf.registry_name, new DoorAcaciaBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaCassette.registry_name, new DoorAcaciaCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaFrench.registry_name, new DoorAcaciaFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaFrosted.registry_name, new DoorAcaciaFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaGlass.registry_name, new DoorAcaciaGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaHeart.registry_name, new DoorAcaciaHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaOrigin.registry_name, new DoorAcaciaOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaRustic.registry_name, new DoorAcaciaRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorAcaciaShoji.registry_name, new DoorAcaciaShoji() ),//BCPFINRLT
-		//Doors: Birch
-		RegistryEntry.create( DoorBirchBlank.registry_name, new DoorBirchBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchBookshelf.registry_name, new DoorBirchBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchCassette.registry_name, new DoorBirchCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchFrench.registry_name, new DoorBirchFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchFrosted.registry_name, new DoorBirchFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchGlass.registry_name, new DoorBirchGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchHeart.registry_name, new DoorBirchHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchOrigin.registry_name, new DoorBirchOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchRustic.registry_name, new DoorBirchRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorBirchShoji.registry_name, new DoorBirchShoji() ),//BCPFINRLT
-		//Doors: Copper
-		RegistryEntry.create( DoorCopperBar.registry_name, new DoorCopperBar() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperBarrel.registry_name, new DoorCopperBarrel() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperBrick.registry_name, new DoorCopperBrick() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperCorrugated.registry_name, new DoorCopperCorrugated() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperFactory.registry_name, new DoorCopperFactory() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperGlass.registry_name, new DoorCopperGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperModern.registry_name, new DoorCopperModern() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperSmoothSandstone.registry_name, new DoorCopperSmoothSandstone() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperShip.registry_name, new DoorCopperShip() ),//BCPFINRLT
-		RegistryEntry.create( DoorCopperSteampunk.registry_name, new DoorCopperSteampunk() ),//BCPFINRLT
-		//Doors: Crimson
-		RegistryEntry.create( DoorCrimsonBlank.registry_name, new DoorCrimsonBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonBookshelf.registry_name, new DoorCrimsonBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonCassette.registry_name, new DoorCrimsonCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonFrench.registry_name, new DoorCrimsonFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonFrosted.registry_name, new DoorCrimsonFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonGlass.registry_name, new DoorCrimsonGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonHeart.registry_name, new DoorCrimsonHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonOrigin.registry_name, new DoorCrimsonOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonRustic.registry_name, new DoorCrimsonRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorCrimsonShoji.registry_name, new DoorCrimsonShoji() ),//BCPFINRLT
-		//Doors: Dark Oak
-		RegistryEntry.create( DoorDarkOakBlank.registry_name, new DoorDarkOakBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakBookshelf.registry_name, new DoorDarkOakBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakCassette.registry_name, new DoorDarkOakCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakFrench.registry_name, new DoorDarkOakFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakFrosted.registry_name, new DoorDarkOakFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakGlass.registry_name, new DoorDarkOakGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakHeart.registry_name, new DoorDarkOakHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakOrigin.registry_name, new DoorDarkOakOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakRustic.registry_name, new DoorDarkOakRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorDarkOakShoji.registry_name, new DoorDarkOakShoji() ),//BCPFINRLT
-		//Doors: Iron
-		RegistryEntry.create( DoorIronBookshelf.registry_name, new DoorIronBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronDwarf.registry_name, new DoorIronDwarf() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronFantasy.registry_name, new DoorIronFantasy() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronGlass.registry_name, new DoorIronGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronLaboratory.registry_name, new DoorIronLaboratory() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronRusted.registry_name, new DoorIronRusted() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronSafe.registry_name, new DoorIronSafe() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronShip.registry_name, new DoorIronShip() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronSpace.registry_name, new DoorIronSpace() ),//BCPFINRLT
-		RegistryEntry.create( DoorIronStoneBrick.registry_name, new DoorIronStoneBrick() ),//BCPFINRLT
-		//Doors: Jungle
-		RegistryEntry.create( DoorJungleBlank.registry_name, new DoorJungleBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleBookshelf.registry_name, new DoorJungleBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleCassette.registry_name, new DoorJungleCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleFrench.registry_name, new DoorJungleFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleFrosted.registry_name, new DoorJungleFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleGlass.registry_name, new DoorJungleGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleHeart.registry_name, new DoorJungleHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleOrigin.registry_name, new DoorJungleOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleRustic.registry_name, new DoorJungleRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorJungleShoji.registry_name, new DoorJungleShoji() ),//BCPFINRLT
-		//Doors: Oak
-		RegistryEntry.create( DoorOakBlank.registry_name, new DoorOakBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakBookshelf.registry_name, new DoorOakBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakCassette.registry_name, new DoorOakCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakFrench.registry_name, new DoorOakFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakFrosted.registry_name, new DoorOakFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakGlass.registry_name, new DoorOakGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakHeart.registry_name, new DoorOakHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakOrigin.registry_name, new DoorOakOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakRustic.registry_name, new DoorOakRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorOakShoji.registry_name, new DoorOakShoji() ),//BCPFINRLT
-		//Doors: Special
-		RegistryEntry.create( DoorSpecialPoliceBox.registry_name, new DoorSpecialPoliceBox() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpecialPortcullis.registry_name, new DoorSpecialPortcullis() ),//BCPFINRLT
-		//Doors: Special: End Door
-		RegistryEntry.create( DoorSpecialEnd.registry_name, new DoorSpecialEnd() ),//BCPFINRLT
-		//Doors: Spruce
-		RegistryEntry.create( DoorSpruceBlank.registry_name, new DoorSpruceBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceBookshelf.registry_name, new DoorSpruceBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceCassette.registry_name, new DoorSpruceCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceFrench.registry_name, new DoorSpruceFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceFrosted.registry_name, new DoorSpruceFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceGlass.registry_name, new DoorSpruceGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceHeart.registry_name, new DoorSpruceHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceOrigin.registry_name, new DoorSpruceOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceRustic.registry_name, new DoorSpruceRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorSpruceShoji.registry_name, new DoorSpruceShoji() ),//BCPFINRLT
-		//Doors: Warped
-		RegistryEntry.create( DoorWarpedBlank.registry_name, new DoorWarpedBlank() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedBookshelf.registry_name, new DoorWarpedBookshelf() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedCassette.registry_name, new DoorWarpedCassette() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedFrench.registry_name, new DoorWarpedFrench() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedFrosted.registry_name, new DoorWarpedFrosted() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedGlass.registry_name, new DoorWarpedGlass() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedHeart.registry_name, new DoorWarpedHeart() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedOrigin.registry_name, new DoorWarpedOrigin() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedRustic.registry_name, new DoorWarpedRustic() ),//BCPFINRLT
-		RegistryEntry.create( DoorWarpedShoji.registry_name, new DoorWarpedShoji() ),//BCPFINRLT
-		//Mini Lodges
-		RegistryEntry.create( MiniLodgePoliceBox.registry_name, new MiniLodgePoliceBox() ),//BCPFINRLT
-		//Mini Lodges: Outhouses
-		RegistryEntry.create( MiniLodgeOuthouseAcacia.registry_name, new MiniLodgeOuthouseAcacia() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseBirch.registry_name, new MiniLodgeOuthouseBirch() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseCrimson.registry_name, new MiniLodgeOuthouseCrimson() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseDarkOak.registry_name, new MiniLodgeOuthouseDarkOak() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseJungle.registry_name, new MiniLodgeOuthouseJungle() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseOak.registry_name, new MiniLodgeOuthouseOak() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseSpruce.registry_name, new MiniLodgeOuthouseSpruce() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseWarped.registry_name, new MiniLodgeOuthouseWarped() ),//BCPFINRLT
-		//Player Door Sensor
-		RegistryEntry.create( PlayerDoorSensor.registry_name, new PlayerDoorSensor() )//BCPFINRLT
-	);
 	
 	//Big Doors
 	
@@ -781,4 +632,197 @@ public class ModBlocks {
 	@ObjectHolder( registryName = RegistryKeys.BLOCK_ENTITY_TYPES,
 		value = ManyIdeasDoors.MODID + ":" + PlayerDoorSensor.registry_name )
 	public static BlockEntityType<PlayerDoorSensorEntity> PLAYER_DOOR_SENSOR_ENTITY;
+	
+	@NotNull
+	@Override
+	protected List<RegistryEntry<Block>> blocks() {
+		
+		return List.<RegistryEntry<Block>> of(//BCPFINRLT
+			//Big Doors: Metal
+			RegistryEntry.create( BigDoorArt.registry_name, new BigDoorArt() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorDwarf.registry_name, new BigDoorDwarf() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorFactory.registry_name, new BigDoorFactory() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorFrench.registry_name, new BigDoorFrench() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorGlass.registry_name, new BigDoorGlass() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorLaboratory.registry_name, new BigDoorLaboratory() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorPipe.registry_name, new BigDoorPipe() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorPortcullis.registry_name, new BigDoorPortcullis() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorSafe.registry_name, new BigDoorSafe() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorTerrace.registry_name, new BigDoorTerrace() ),//BCPFINRLT
+			//Big Doors: Wooden
+			RegistryEntry.create( BigDoorAcacia.registry_name, new BigDoorAcacia() ),//BCPFINRL
+			RegistryEntry.create( BigDoorBarn.registry_name, new BigDoorBarn() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorBirch.registry_name, new BigDoorBirch() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorCrimson.registry_name, new BigDoorCrimson() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorDarkOak.registry_name, new BigDoorDarkOak() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorDarsser.registry_name, new BigDoorDarsser() ),//BCPFINRL
+			RegistryEntry.create( BigDoorFairyTale.registry_name, new BigDoorFairyTale() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorJungle.registry_name, new BigDoorJungle() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorOak.registry_name, new BigDoorOak() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorShip.registry_name, new BigDoorShip() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorShiro.registry_name, new BigDoorShiro() ),//BCPFINRL
+			RegistryEntry.create( BigDoorSpruce.registry_name, new BigDoorSpruce() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorWarped.registry_name, new BigDoorWarped() ),//BCPFINRLT
+			//Doors: Acacia
+			RegistryEntry.create( DoorAcaciaBlank.registry_name, new DoorAcaciaBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaBookshelf.registry_name, new DoorAcaciaBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaCassette.registry_name, new DoorAcaciaCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaFrench.registry_name, new DoorAcaciaFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaFrosted.registry_name, new DoorAcaciaFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaGlass.registry_name, new DoorAcaciaGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaHeart.registry_name, new DoorAcaciaHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaOrigin.registry_name, new DoorAcaciaOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaRustic.registry_name, new DoorAcaciaRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorAcaciaShoji.registry_name, new DoorAcaciaShoji() ),//BCPFINRLT
+			//Doors: Birch
+			RegistryEntry.create( DoorBirchBlank.registry_name, new DoorBirchBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchBookshelf.registry_name, new DoorBirchBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchCassette.registry_name, new DoorBirchCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchFrench.registry_name, new DoorBirchFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchFrosted.registry_name, new DoorBirchFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchGlass.registry_name, new DoorBirchGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchHeart.registry_name, new DoorBirchHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchOrigin.registry_name, new DoorBirchOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchRustic.registry_name, new DoorBirchRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorBirchShoji.registry_name, new DoorBirchShoji() ),//BCPFINRLT
+			//Doors: Copper
+			RegistryEntry.create( DoorCopperBar.registry_name, new DoorCopperBar() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperBarrel.registry_name, new DoorCopperBarrel() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperBrick.registry_name, new DoorCopperBrick() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperCorrugated.registry_name, new DoorCopperCorrugated() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperFactory.registry_name, new DoorCopperFactory() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperGlass.registry_name, new DoorCopperGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperModern.registry_name, new DoorCopperModern() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperSmoothSandstone.registry_name, new DoorCopperSmoothSandstone() ),
+			//BCPFINRLT
+			RegistryEntry.create( DoorCopperShip.registry_name, new DoorCopperShip() ),//BCPFINRLT
+			RegistryEntry.create( DoorCopperSteampunk.registry_name, new DoorCopperSteampunk() ),//BCPFINRLT
+			//Doors: Crimson
+			RegistryEntry.create( DoorCrimsonBlank.registry_name, new DoorCrimsonBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonBookshelf.registry_name, new DoorCrimsonBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonCassette.registry_name, new DoorCrimsonCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonFrench.registry_name, new DoorCrimsonFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonFrosted.registry_name, new DoorCrimsonFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonGlass.registry_name, new DoorCrimsonGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonHeart.registry_name, new DoorCrimsonHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonOrigin.registry_name, new DoorCrimsonOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonRustic.registry_name, new DoorCrimsonRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorCrimsonShoji.registry_name, new DoorCrimsonShoji() ),//BCPFINRLT
+			//Doors: Dark Oak
+			RegistryEntry.create( DoorDarkOakBlank.registry_name, new DoorDarkOakBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakBookshelf.registry_name, new DoorDarkOakBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakCassette.registry_name, new DoorDarkOakCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakFrench.registry_name, new DoorDarkOakFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakFrosted.registry_name, new DoorDarkOakFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakGlass.registry_name, new DoorDarkOakGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakHeart.registry_name, new DoorDarkOakHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakOrigin.registry_name, new DoorDarkOakOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakRustic.registry_name, new DoorDarkOakRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorDarkOakShoji.registry_name, new DoorDarkOakShoji() ),//BCPFINRLT
+			//Doors: Iron
+			RegistryEntry.create( DoorIronBookshelf.registry_name, new DoorIronBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronDwarf.registry_name, new DoorIronDwarf() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronFantasy.registry_name, new DoorIronFantasy() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronGlass.registry_name, new DoorIronGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronLaboratory.registry_name, new DoorIronLaboratory() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronRusted.registry_name, new DoorIronRusted() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronSafe.registry_name, new DoorIronSafe() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronShip.registry_name, new DoorIronShip() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronSpace.registry_name, new DoorIronSpace() ),//BCPFINRLT
+			RegistryEntry.create( DoorIronStoneBrick.registry_name, new DoorIronStoneBrick() ),//BCPFINRLT
+			//Doors: Jungle
+			RegistryEntry.create( DoorJungleBlank.registry_name, new DoorJungleBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleBookshelf.registry_name, new DoorJungleBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleCassette.registry_name, new DoorJungleCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleFrench.registry_name, new DoorJungleFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleFrosted.registry_name, new DoorJungleFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleGlass.registry_name, new DoorJungleGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleHeart.registry_name, new DoorJungleHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleOrigin.registry_name, new DoorJungleOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleRustic.registry_name, new DoorJungleRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorJungleShoji.registry_name, new DoorJungleShoji() ),//BCPFINRLT
+			//Doors: Oak
+			RegistryEntry.create( DoorOakBlank.registry_name, new DoorOakBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakBookshelf.registry_name, new DoorOakBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakCassette.registry_name, new DoorOakCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakFrench.registry_name, new DoorOakFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakFrosted.registry_name, new DoorOakFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakGlass.registry_name, new DoorOakGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakHeart.registry_name, new DoorOakHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakOrigin.registry_name, new DoorOakOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakRustic.registry_name, new DoorOakRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorOakShoji.registry_name, new DoorOakShoji() ),//BCPFINRLT
+			//Doors: Special
+			RegistryEntry.create( DoorSpecialPoliceBox.registry_name, new DoorSpecialPoliceBox() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpecialPortcullis.registry_name, new DoorSpecialPortcullis() ),//BCPFINRLT
+			//Doors: Special: End Door
+			RegistryEntry.create( DoorSpecialEnd.registry_name, new DoorSpecialEnd() ),//BCPFINRLT
+			//Doors: Spruce
+			RegistryEntry.create( DoorSpruceBlank.registry_name, new DoorSpruceBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceBookshelf.registry_name, new DoorSpruceBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceCassette.registry_name, new DoorSpruceCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceFrench.registry_name, new DoorSpruceFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceFrosted.registry_name, new DoorSpruceFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceGlass.registry_name, new DoorSpruceGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceHeart.registry_name, new DoorSpruceHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceOrigin.registry_name, new DoorSpruceOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceRustic.registry_name, new DoorSpruceRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorSpruceShoji.registry_name, new DoorSpruceShoji() ),//BCPFINRLT
+			//Doors: Warped
+			RegistryEntry.create( DoorWarpedBlank.registry_name, new DoorWarpedBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedBookshelf.registry_name, new DoorWarpedBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedCassette.registry_name, new DoorWarpedCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedFrench.registry_name, new DoorWarpedFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedFrosted.registry_name, new DoorWarpedFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedGlass.registry_name, new DoorWarpedGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedHeart.registry_name, new DoorWarpedHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedOrigin.registry_name, new DoorWarpedOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedRustic.registry_name, new DoorWarpedRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorWarpedShoji.registry_name, new DoorWarpedShoji() ),//BCPFINRLT
+			//Mini Lodges
+			RegistryEntry.create( MiniLodgePoliceBox.registry_name, new MiniLodgePoliceBox() ),//BCPFINRLT
+			//Mini Lodges: Outhouses
+			RegistryEntry.create( MiniLodgeOuthouseAcacia.registry_name, new MiniLodgeOuthouseAcacia() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseBirch.registry_name, new MiniLodgeOuthouseBirch() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseCrimson.registry_name, new MiniLodgeOuthouseCrimson() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseDarkOak.registry_name, new MiniLodgeOuthouseDarkOak() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseJungle.registry_name, new MiniLodgeOuthouseJungle() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseOak.registry_name, new MiniLodgeOuthouseOak() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseSpruce.registry_name, new MiniLodgeOuthouseSpruce() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseWarped.registry_name, new MiniLodgeOuthouseWarped() ),//BCPFINRLT
+			//Player Door Sensor
+			RegistryEntry.create( PlayerDoorSensor.registry_name, new PlayerDoorSensor() )//BCPFINRLT
+		);
+	}
+	
+	@NotNull
+	@Override
+	protected List<RegistryEntry<BlockEntityType<?>>> blockEntityTypes() {
+		
+		return List.of(
+			RegistryEntry.create(
+				DoorSpecialEnd.registry_name,
+				RegistryHelper.buildBlockEntity(
+					DoorSpecialEnd.registry_name,
+					DoorSpecialEndEntity::new,
+					DOOR_SPECIAL_END
+				)
+			),
+			RegistryEntry.create(
+				PlayerDoorSensor.registry_name,
+				RegistryHelper.buildBlockEntity(
+					PlayerDoorSensor.registry_name,
+					PlayerDoorSensorEntity::new,
+					PLAYER_DOOR_SENSOR
+				)
+			)
+		);
+	}
+	
+	@SubscribeEvent
+	@Override
+	public void handleFMLClientSetupEvent( @NotNull FMLClientSetupEvent event ) {
+		
+		BlockEntityRenderers.register( DOOR_SPECIAL_END_ENTITY, DoorSpecialEndEntityRenderer::new );
+	}
 }

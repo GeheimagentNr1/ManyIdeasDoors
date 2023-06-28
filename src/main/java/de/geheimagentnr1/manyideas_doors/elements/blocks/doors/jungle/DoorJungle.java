@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorJungle extends DoorWooden {
 	
 	
-	protected DoorJungle( BlockSetType _type ) {
+	protected DoorJungle() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.DIRT ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.DIRT ), BlockSetType.JUNGLE );
 	}
 }

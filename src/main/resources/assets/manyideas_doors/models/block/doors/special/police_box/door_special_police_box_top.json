@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle": "manyideas_doors:block/doors/special/police_box/door_special_police_box_top",
 		"top":      "manyideas_doors:block/doors/special/police_box/door_special_police_box_top"

@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle":       "block/cauldron_top",
 		"cauldron_top":   "block/cauldron_top",

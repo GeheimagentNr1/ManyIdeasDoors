@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorWarped extends DoorWooden {
 	
 	
-	protected DoorWarped( BlockSetType _type ) {
+	protected DoorWarped() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.WARPED_HYPHAE ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.WARPED_HYPHAE ), BlockSetType.WARPED );
 	}
 }

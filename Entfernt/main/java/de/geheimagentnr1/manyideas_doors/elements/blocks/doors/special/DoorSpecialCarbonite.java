@@ -21,10 +21,4 @@ public class DoorSpecialCarbonite extends DoubleDoorBlock implements BlockItemIn
 						SoundEvents.IRON_DOOR_CLOSE,
 			SoundEvents.IRON_DOOR_OPEN, );
 	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_CARBONITE, _properties, registry_name );
-	}
 }

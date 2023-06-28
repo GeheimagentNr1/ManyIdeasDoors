@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"1":        "block/quartz_block_bottom",
 		"particle": "manyideas_doors:block/big_doors/metal/terrace/big_door_terrace_mid_right",

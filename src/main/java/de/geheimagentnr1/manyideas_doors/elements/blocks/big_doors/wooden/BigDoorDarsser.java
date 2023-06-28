@@ -2,14 +2,11 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden;
 
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
@@ -23,15 +20,16 @@ import net.minecraft.world.level.pathfinder.PathComputationType;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BigDoorDarsser extends BigDoorWooden {
 	
 	
+	@NotNull
 	public static final String registry_name = "big_door_darsser";
 	
+	@NotNull
 	private static final VoxelShapeMemory DOORS_SHAPES = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		VoxelShapeVector.create( 0, 0, 0, 16, 16, 3 )
@@ -46,19 +44,13 @@ public class BigDoorDarsser extends BigDoorWooden {
 		);
 	}
 	
-	@Override
-	public RenderType getRenderType() {
-		
-		return RenderType.translucent();
-	}
-	
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		if( state.getValue( BlockStateProperties.OPEN ) && state.getValue( Z_SIZE ) == 1 &&
@@ -72,15 +64,15 @@ public class BigDoorDarsser extends BigDoorWooden {
 		return DOORS_SHAPES.getShapeFromHorizontalFacing( facing );
 	}
 	
-	@Nonnull
+	@NotNull
 	@Override
 	public InteractionResult use(
-		@Nonnull BlockState state,
-		@Nonnull Level level,
-		@Nonnull BlockPos pos,
-		@Nonnull Player player,
-		@Nonnull InteractionHand hand,
-		@Nonnull BlockHitResult hitResult ) {
+		@NotNull BlockState state,
+		@NotNull Level level,
+		@NotNull BlockPos pos,
+		@NotNull Player player,
+		@NotNull InteractionHand hand,
+		@NotNull BlockHitResult hitResult ) {
 		
 		if( state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
 			return super.use( state, level, pos, player, hand, hitResult );
@@ -92,10 +84,10 @@ public class BigDoorDarsser extends BigDoorWooden {
 	@Deprecated
 	@Override
 	public boolean isPathfindable(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull PathComputationType type ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull PathComputationType type ) {
 		
 		return switch( type ) {
 			case LAND, AIR -> state.getValue( BlockStateProperties.OPEN ) &&
@@ -121,11 +113,5 @@ public class BigDoorDarsser extends BigDoorWooden {
 	protected int getZSize() {
 		
 		return 3;
-	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.BIG_DOOR_DARSSER, _properties, registry_name );
 	}
 }

@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle":                      "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_bottom_right",
 		"big_door_redbarn_bottom_right": "manyideas_doors:block/big_doors/wooden/barn/big_door_redbarn_bottom_right"

@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorDarkOak extends DoorWooden {
 	
 	
-	protected DoorDarkOak( BlockSetType _type ) {
+	protected DoorDarkOak() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.COLOR_BROWN ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.COLOR_BROWN ), BlockSetType.DARK_OAK );
 	}
 }

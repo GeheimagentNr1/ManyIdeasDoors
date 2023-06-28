@@ -2,9 +2,7 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.OpenedBy;
 import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.DoubleDoorBlock;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.RenderShape;
@@ -17,14 +15,15 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
+import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 
 public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 	
 	
+	@NotNull
 	public static final String registry_name = "door_special_end";
 	
 	public DoorSpecialEnd() {
@@ -42,15 +41,15 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 	
 	@Nullable
 	@Override
-	public BlockEntity newBlockEntity( @Nonnull BlockPos pos, @Nonnull BlockState state ) {
+	public BlockEntity newBlockEntity( @NotNull BlockPos pos, @NotNull BlockState state ) {
 		
 		return new DoorSpecialEndEntity( pos, state );
 	}
 	
 	@SuppressWarnings( "deprecation" )
-	@Nonnull
+	@NotNull
 	@Override
-	public RenderShape getRenderShape( BlockState state ) {
+	public RenderShape getRenderShape( @NotNull BlockState state ) {
 		
 		if( state.getValue( OPEN ) ) {
 			return RenderShape.MODEL;
@@ -58,23 +57,17 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 		return RenderShape.ENTITYBLOCK_ANIMATED;
 	}
 	
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		if( state.getValue( OPEN ) ) {
 			return super.getShape( state, level, pos, context );
 		}
 		return Shapes.block();
-	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_END, _properties, registry_name );
 	}
 }

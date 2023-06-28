@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle":                 "manyideas_doors:block/big_doors/metal/dwarf/big_door_dwarf_top_right",
 		"big_door_dwarf_top_right": "manyideas_doors:block/big_doors/metal/dwarf/big_door_dwarf_top_right"

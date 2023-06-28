@@ -1,22 +1,21 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.end;
 
 import de.geheimagentnr1.manyideas_core.elements.blocks.end_block.EndBlockEntity;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocksRegisterFactory;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.entity.TheEndPortalBlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public class DoorSpecialEndEntity extends TheEndPortalBlockEntity {
 	
 	
-	public DoorSpecialEndEntity( BlockPos pos, BlockState state ) {
+	public DoorSpecialEndEntity( @NotNull BlockPos pos, @NotNull BlockState state ) {
 		
-		super( ModBlocks.DOOR_SPECIAL_END_ENTITY, pos, state );
+		super( ModBlocksRegisterFactory.DOOR_SPECIAL_END_ENTITY, pos, state );
 	}
 	
 	//package-private
@@ -24,13 +23,14 @@ public class DoorSpecialEndEntity extends TheEndPortalBlockEntity {
 		
 		if( level != null ) {
 			BlockState state = level.getBlockState( worldPosition );
-			return state.getBlock() == ModBlocks.DOOR_SPECIAL_END && !state.getValue( BlockStateProperties.OPEN );
+			return state.getBlock() == ModBlocksRegisterFactory.DOOR_SPECIAL_END && !state.getValue(
+				BlockStateProperties.OPEN );
 		}
 		return true;
 	}
 	
 	@Override
-	public boolean shouldRenderFace( @Nonnull Direction face ) {
+	public boolean shouldRenderFace( @NotNull Direction face ) {
 		
 		return EndBlockEntity.shouldRender( level, worldPosition, face );
 	}

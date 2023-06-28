@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"1":        "manyideas_doors:block/big_doors/wooden/dark_oak/big_door_dark_oak_mid_bottom_right_hinge",
 		"2":        "manyideas_core:block/building_blocks/woods/log_stripped_smooth/log_stripped_smooth_dark_oak",

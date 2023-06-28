@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:translucent",
 	"textures":         {
 		"particle":                   "manyideas_doors:block/big_doors/wooden/darsser/big_door_darsser_right_mid",
 		"big_door_emerald_right_mid": "manyideas_doors:block/big_doors/wooden/darsser/big_door_darsser_right_mid"

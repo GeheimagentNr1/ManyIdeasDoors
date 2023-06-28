@@ -20,10 +20,4 @@ public class DoorSpecialRedstone extends DoubleDoorBlock implements BlockItemInt
 		super( Properties.create( Material.ROCK ).hardnessAndResistance( 4.0F ).sound( SoundType.STONE ),
 			registry_name, false );
 	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_REDSTONE, _properties, registry_name );
-	}
 }

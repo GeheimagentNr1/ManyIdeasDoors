@@ -2,11 +2,9 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special;
 
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.DoorMetal;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,26 +12,29 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public class DoorSpecialPortcullis extends DoorMetal {
 	
 	
+	@NotNull
 	public static final String registry_name = "door_special_portcullis";
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_CLOSED = VoxelShapeMemory.createHorizontalAxisVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 14, 5.5, 16, 16, 10.5 ),
 		VoxelShapeVector.create( 0, 0, 6.5, 16, 14, 9.5 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory BOTTOM_CLOSED = VoxelShapeMemory.createHorizontalAxisVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 0, 6.5, 16, 16, 9.5 )
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_OPEN = VoxelShapeMemory.createHorizontalAxisVoxelShapes(
 		Direction.NORTH,
 		VoxelShapeVector.create( 0, 14, 5.5, 16, 16, 10.5 ),
@@ -45,13 +46,13 @@ public class DoorSpecialPortcullis extends DoorMetal {
 		super( BlockBehaviour.Properties.of().mapColor( MapColor.DEEPSLATE ) );
 	}
 	
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		Direction.Axis axis = state.getValue( FACING ).getAxis();
 		if( state.getValue( OPEN ) ) {
@@ -68,24 +69,18 @@ public class DoorSpecialPortcullis extends DoorMetal {
 	}
 	
 	@SuppressWarnings( "deprecation" )
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getCollisionShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		if( state.getValue( OPEN ) ) {
 			return Shapes.empty();
 		} else {
 			return super.getCollisionShape( state, level, pos, context );
 		}
-	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.DOOR_SPECIAL_PORTCULLIS, _properties, registry_name );
 	}
 }

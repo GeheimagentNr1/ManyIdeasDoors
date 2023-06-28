@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"ambientocclusion": false,
 	"textures":         {
 		"1":        "manyideas_doors:block/big_doors/wooden/fairy_tale/big_door_fairy_tale_mid_bottom_right",

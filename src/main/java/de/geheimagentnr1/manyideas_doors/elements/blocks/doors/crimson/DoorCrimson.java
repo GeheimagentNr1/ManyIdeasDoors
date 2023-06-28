@@ -9,8 +9,8 @@ import net.minecraft.world.level.material.MapColor;
 public abstract class DoorCrimson extends DoorWooden {
 	
 	
-	protected DoorCrimson( BlockSetType _type ) {
+	protected DoorCrimson() {
 		
-		super( BlockBehaviour.Properties.of().mapColor( MapColor.CRIMSON_HYPHAE ), _type );
+		super( BlockBehaviour.Properties.of().mapColor( MapColor.CRIMSON_HYPHAE ), BlockSetType.CRIMSON );
 	}
 }

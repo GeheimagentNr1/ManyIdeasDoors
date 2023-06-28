@@ -4,24 +4,23 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public class DoorSpecialEndEntityRenderer extends TheEndPortalRenderer<DoorSpecialEndEntity> {
 	
 	
-	public DoorSpecialEndEntityRenderer( BlockEntityRendererProvider.Context context ) {
+	public DoorSpecialEndEntityRenderer( @NotNull BlockEntityRendererProvider.Context context ) {
 		
 		super( context );
 	}
 	
 	@Override
 	public void render(
-		@Nonnull DoorSpecialEndEntity tileEntity,
+		@NotNull DoorSpecialEndEntity tileEntity,
 		float partialTicks,
-		@Nonnull PoseStack poseStack,
-		@Nonnull MultiBufferSource buffer,
+		@NotNull PoseStack poseStack,
+		@NotNull MultiBufferSource buffer,
 		int combinedLight,
 		int combinedOverlay ) {
 		

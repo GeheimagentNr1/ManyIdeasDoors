@@ -5,12 +5,13 @@ import de.geheimagentnr1.manyideas_core.elements.blocks.template_blocks.doors.Do
 import net.minecraft.world.level.block.SoundType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
+import org.jetbrains.annotations.NotNull;
 
 
 public abstract class DoorMetal extends DoubleDoorBlock {
 	
 	
-	protected DoorMetal( BlockBehaviour.Properties _properties ) {
+	protected DoorMetal( @NotNull BlockBehaviour.Properties _properties ) {
 		
 		super(
 			_properties.strength( 5.0F )

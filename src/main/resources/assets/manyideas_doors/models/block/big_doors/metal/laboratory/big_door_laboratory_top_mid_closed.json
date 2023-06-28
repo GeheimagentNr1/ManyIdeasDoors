@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle":                    "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_mid",
 		"big_door_laboratory_top_mid": "manyideas_doors:block/big_doors/metal/laboratory/big_door_laboratory_top_mid"

@@ -2,10 +2,8 @@ package de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal;
 
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeMemory;
 import de.geheimagentnr1.manyideas_core.util.voxel_shapes.VoxelShapeVector;
-import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocks;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
@@ -14,23 +12,28 @@ import net.minecraft.world.level.material.MapColor;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-
-import javax.annotation.Nonnull;
+import org.jetbrains.annotations.NotNull;
 
 
 public class BigDoorPipe extends BigDoorMetal {
 	
 	
+	@NotNull
 	public static final String registry_name = "big_door_pipe";
 	
+	@NotNull
 	private static final VoxelShapeVector LEFT_SHAPE = VoxelShapeVector.create( 9.5, 0, 0, 16, 16, 16 );
 	
+	@NotNull
 	private static final VoxelShapeVector RIGHT_SHAPE = VoxelShapeVector.create( 0, 0, 0, 6.5, 16, 16 );
 	
+	@NotNull
 	private static final VoxelShapeVector TOP_SHAPE = VoxelShapeVector.create( 0, 9, 0, 16, 16, 16 );
 	
+	@NotNull
 	private static final VoxelShapeVector DOOR_SHAPE = VoxelShapeVector.create( 0, 0, 6.5, 16, 16, 9.5 );
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_LEFT_CLOSED = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		TOP_SHAPE,
@@ -38,12 +41,14 @@ public class BigDoorPipe extends BigDoorMetal {
 		DOOR_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_CLOSED = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		TOP_SHAPE,
 		DOOR_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_RIGHT_CLOSED = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		TOP_SHAPE,
@@ -51,45 +56,53 @@ public class BigDoorPipe extends BigDoorMetal {
 		DOOR_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory LEFT_CLOSED = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		LEFT_SHAPE,
 		DOOR_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory RIGHT_CLOSED = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		RIGHT_SHAPE,
 		DOOR_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_LEFT_OPEN = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		TOP_SHAPE,
 		LEFT_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_OPEN = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		TOP_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory TOP_RIGHT_OPEN = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		TOP_SHAPE,
 		RIGHT_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory LEFT_OPEN = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		LEFT_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory RIGHT_OPEN = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		RIGHT_SHAPE
 	);
 	
+	@NotNull
 	private static final VoxelShapeMemory DOOR = VoxelShapeMemory.createHorizontalVoxelShapes(
 		Direction.SOUTH,
 		DOOR_SHAPE
@@ -101,18 +114,18 @@ public class BigDoorPipe extends BigDoorMetal {
 	}
 	
 	@Override
-	public int getLightEmission( BlockState state, BlockGetter world, BlockPos pos ) {
+	public int getLightEmission( @NotNull BlockState state, @NotNull BlockGetter level, @NotNull BlockPos pos ) {
 		
 		return state.getValue( Y_SIZE ) == 2 && state.getValue( Z_SIZE ) == 1 ? 15 : 0;
 	}
 	
-	@Nonnull
+	@NotNull
 	@Override
 	public VoxelShape getShape(
-		@Nonnull BlockState state,
-		@Nonnull BlockGetter level,
-		@Nonnull BlockPos pos,
-		@Nonnull CollisionContext context ) {
+		@NotNull BlockState state,
+		@NotNull BlockGetter level,
+		@NotNull BlockPos pos,
+		@NotNull CollisionContext context ) {
 		
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		int y = state.getValue( Y_SIZE );
@@ -169,11 +182,5 @@ public class BigDoorPipe extends BigDoorMetal {
 	protected int getZSize() {
 		
 		return 3;
-	}
-	
-	@Override
-	public Item getBlockItem( Item.Properties _properties ) {
-		
-		return createBlockItem( ModBlocks.BIG_DOOR_PIPE, _properties, registry_name );
 	}
 }

@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"big_door_shiro_bottom_right_inside": "manyideas_doors:block/big_doors/wooden/shiro/big_door_shiro_bottom_right_inside",
 		"particle":                           "manyideas_doors:block/big_doors/wooden/shiro/big_door_shiro_bottom_left_outside",

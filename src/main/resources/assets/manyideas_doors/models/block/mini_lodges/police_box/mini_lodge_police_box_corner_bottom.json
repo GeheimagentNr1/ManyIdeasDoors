@@ -1,4 +1,5 @@
 {
+	"render_type": "minecraft:cutout",
 	"textures":         {
 		"particle": "manyideas_doors:block/mini_lodges/police_box/mini_lodge_police_box_roof",
 		"roof":     "manyideas_doors:block/mini_lodges/police_box/mini_lodge_police_box_roof"
