@@ -1,1 +1,1 @@
-- Fix that double doors work with Quark
+""Ported to 1.20"" 
