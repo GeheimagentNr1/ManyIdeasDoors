@@ -49,25 +49,25 @@ public class PlayerDoorSensorEntity extends BlockEntity {
 		Direction facing = state.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		AABB toCheckArea;
 		switch( facing ) {
-			case NORTH -> toCheckArea = new AABB(
+			case NORTH -> toCheckArea = AABB.encapsulatingFullBlocks(
 				pos,
 				pos.relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
 					.relative( facing.getOpposite(), 2 )
 					.relative( facing.getClockWise() )
 			);
-			case EAST -> toCheckArea = new AABB(
+			case EAST -> toCheckArea = AABB.encapsulatingFullBlocks(
 				pos.relative( facing ),
 				pos.relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
 					.relative( facing.getOpposite() )
 					.relative( facing.getClockWise() )
 			);
-			case SOUTH -> toCheckArea = new AABB(
+			case SOUTH -> toCheckArea = AABB.encapsulatingFullBlocks(
 				pos.relative( facing ),
 				pos.relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
 					.relative( facing.getOpposite() )
 					.relative( facing.getCounterClockWise() )
 			);
-			case WEST -> toCheckArea = new AABB(
+			case WEST -> toCheckArea = AABB.encapsulatingFullBlocks(
 				pos,
 				pos.relative( Direction.DOWN, state.getValue( PlayerDoorSensor.SENSOR_RANGE ) )
 					.relative( facing.getOpposite(), 2 )

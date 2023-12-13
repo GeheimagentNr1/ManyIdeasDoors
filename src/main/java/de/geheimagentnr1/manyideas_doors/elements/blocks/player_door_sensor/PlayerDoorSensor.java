@@ -1,5 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor;
 
+import com.mojang.serialization.MapCodec;
 import de.geheimagentnr1.manyideas_core.ManyIdeasCore;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.BlockSide;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.ModBlockStateProperties;
@@ -48,7 +49,9 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 	@NotNull
 	public static final String registry_name = "player_door_sensor";
 	
-	//package_private
+	@NotNull
+	public static final MapCodec<PlayerDoorSensor> CODEC = simpleCodec( properties -> new PlayerDoorSensor() );
+	
 	@NotNull
 	static final IntegerProperty SENSOR_RANGE = IntegerProperty.create( "sensor_range", 1, 3 );
 	
@@ -99,6 +102,12 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 		);
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.POWERED, false )
 			.setValue( SENSOR_RANGE, 1 ) );
+	}
+	
+	@Override
+	protected MapCodec<? extends BaseEntityBlock> codec() {
+		
+		return CODEC;
 	}
 	
 	@NotNull
