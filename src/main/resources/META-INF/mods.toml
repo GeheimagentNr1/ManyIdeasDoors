@@ -66,7 +66,7 @@ Provides over 125 big multiblock and normal-sized doors.
 [[dependencies.manyideas_doors]]
     modId="manyideas_core"
     mandatory=true
-    versionRange="[1.4.0,)"
+    versionRange="[1.6.0,)"
     ordering="NONE"
     side="BOTH"
 [[dependencies.manyideas_doors]]

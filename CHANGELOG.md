@@ -1,1 +1,13 @@
-- Fix that double doors work with Quark
+- Add Doors
+    - Big Mangrove Door
+    - Mangrove Blank Door
+    - Mangrove Bookshelf Door
+    - Mangrove Cassette Door
+    - Mangrove French Door
+    - Mangrove Frosted Door
+    - Mangrove Glass Door
+    - Mangrove Heart Door
+    - Mangrove Origin Door
+    - Mangrove Rustic Door
+    - Mangrove Shoji Door
+    - Mangrove Outhouse
