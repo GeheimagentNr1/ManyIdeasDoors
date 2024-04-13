@@ -1,6 +1,5 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks;
 
-import de.geheimagentnr1.manyideas_core.elements.RegistryEntry;
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden.*;
@@ -851,7 +850,8 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 			RegistryEntry.create( MiniLodgeOuthouseCrimson.registry_name, new MiniLodgeOuthouseCrimson() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseDarkOak.registry_name, new MiniLodgeOuthouseDarkOak() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseJungle.registry_name, new MiniLodgeOuthouseJungle() ),//BCPFINRLT
-			RegistryEntry.create( MiniLodgeOuthouseMangrove.registry_name, new MiniLodgeOuthouseMangrove() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseMangrove.registry_name, new MiniLodgeOuthouseMangrove() ),
+			//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseOak.registry_name, new MiniLodgeOuthouseOak() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseSpruce.registry_name, new MiniLodgeOuthouseSpruce() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseWarped.registry_name, new MiniLodgeOuthouseWarped() ),//BCPFINRLT
