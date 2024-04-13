@@ -206,7 +206,7 @@ public class ModBlocks {
 		RegistryEntry.create( MiniLodgeOuthouseCrimson.registry_name, new MiniLodgeOuthouseCrimson() ),//BCPFINRLT
 		RegistryEntry.create( MiniLodgeOuthouseDarkOak.registry_name, new MiniLodgeOuthouseDarkOak() ),//BCPFINRLT
 		RegistryEntry.create( MiniLodgeOuthouseJungle.registry_name, new MiniLodgeOuthouseJungle() ),//BCPFINRLT
-		RegistryEntry.create( MiniLodgeOuthouseMangrove.registry_name, new MiniLodgeOuthouseMangrove() ),//BCPFIN_LT
+		RegistryEntry.create( MiniLodgeOuthouseMangrove.registry_name, new MiniLodgeOuthouseMangrove() ),//BCPFINRLT
 		RegistryEntry.create( MiniLodgeOuthouseOak.registry_name, new MiniLodgeOuthouseOak() ),//BCPFINRLT
 		RegistryEntry.create( MiniLodgeOuthouseSpruce.registry_name, new MiniLodgeOuthouseSpruce() ),//BCPFINRLT
 		RegistryEntry.create( MiniLodgeOuthouseWarped.registry_name, new MiniLodgeOuthouseWarped() ),//BCPFINRLT
