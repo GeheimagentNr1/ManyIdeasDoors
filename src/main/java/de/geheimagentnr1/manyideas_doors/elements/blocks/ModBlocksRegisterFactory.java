@@ -1,5 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks;
 
+import de.geheimagentnr1.manyideas_core.elements.RegistryEntry;
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.metal.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.big_doors.wooden.*;
@@ -10,6 +11,7 @@ import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.crimson.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.dark_oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.iron.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.jungle.*;
+import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.mangrove.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.oak.*;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPoliceBox;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.doors.special.DoorSpecialPortcullis;
@@ -124,6 +126,10 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
 		value = ManyIdeasDoors.MODID + ":" + BigDoorJungle.registry_name )
 	public static BigDoorJungle BIG_DOOR_JUNGLE;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + BigDoorMangrove.registry_name )
+	public static BigDoorMangrove BIG_DOOR_MANGROVE;
 	
 	@ObjectHolder( registryName = RegistryKeys.BLOCKS, value = ManyIdeasDoors.MODID + ":" + BigDoorOak.registry_name )
 	public static BigDoorOak BIG_DOOR_OAK;
@@ -437,6 +443,48 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 		value = ManyIdeasDoors.MODID + ":" + DoorJungleShoji.registry_name )
 	public static DoorJungleShoji DOOR_JUNGLE_SHOJI;
 	
+	//Doors: Mangrove
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveBlank.registry_name )
+	public static DoorMangroveBlank DOOR_MANGROVE_BLANK;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveBookshelf.registry_name )
+	public static DoorMangroveBookshelf DOOR_MANGROVE_BOOKSHELF;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveCassette.registry_name )
+	public static DoorMangroveCassette DOOR_MANGROVE_CASSETTE;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveFrench.registry_name )
+	public static DoorMangroveFrench DOOR_MANGROVE_FRENCH;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveFrosted.registry_name )
+	public static DoorMangroveFrosted DOOR_MANGROVE_FROSTED;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveGlass.registry_name )
+	public static DoorMangroveGlass DOOR_MANGROVE_GLASS;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveHeart.registry_name )
+	public static DoorMangroveHeart DOOR_MANGROVE_HEART;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveOrigin.registry_name )
+	public static DoorMangroveOrigin DOOR_MANGROVE_ORIGIN;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveRustic.registry_name )
+	public static DoorMangroveRustic DOOR_MANGROVE_RUSTIC;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + DoorMangroveShoji.registry_name )
+	public static DoorMangroveShoji DOOR_MANGROVE_SHOJI;
+	
 	//Doors: Oak
 	
 	@ObjectHolder( registryName = RegistryKeys.BLOCKS, value =
@@ -612,6 +660,10 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 	public static MiniLodgeOuthouseJungle MINI_LODGE_OUTHOUSE_JUNGLE;
 	
 	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
+		value = ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseMangrove.registry_name )
+	public static MiniLodgeOuthouseMangrove MINI_LODGE_OUTHOUSE_MANGROVE;
+	
+	@ObjectHolder( registryName = RegistryKeys.BLOCKS,
 		value = ManyIdeasDoors.MODID + ":" + MiniLodgeOuthouseOak.registry_name )
 	public static MiniLodgeOuthouseOak MINI_LODGE_OUTHOUSE_OAK;
 	
@@ -658,6 +710,7 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 			RegistryEntry.create( BigDoorDarsser.registry_name, new BigDoorDarsser() ),//BCPFINRL
 			RegistryEntry.create( BigDoorFairyTale.registry_name, new BigDoorFairyTale() ),//BCPFINRLT
 			RegistryEntry.create( BigDoorJungle.registry_name, new BigDoorJungle() ),//BCPFINRLT
+			RegistryEntry.create( BigDoorMangrove.registry_name, new BigDoorMangrove() ),//BCPFINRLT
 			RegistryEntry.create( BigDoorOak.registry_name, new BigDoorOak() ),//BCPFINRLT
 			RegistryEntry.create( BigDoorShip.registry_name, new BigDoorShip() ),//BCPFINRLT
 			RegistryEntry.create( BigDoorShiro.registry_name, new BigDoorShiro() ),//BCPFINRL
@@ -741,6 +794,17 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 			RegistryEntry.create( DoorJungleOrigin.registry_name, new DoorJungleOrigin() ),//BCPFINRLT
 			RegistryEntry.create( DoorJungleRustic.registry_name, new DoorJungleRustic() ),//BCPFINRLT
 			RegistryEntry.create( DoorJungleShoji.registry_name, new DoorJungleShoji() ),//BCPFINRLT
+			//Doors: Mangrove
+			RegistryEntry.create( DoorMangroveBlank.registry_name, new DoorMangroveBlank() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveBookshelf.registry_name, new DoorMangroveBookshelf() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveCassette.registry_name, new DoorMangroveCassette() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveFrench.registry_name, new DoorMangroveFrench() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveFrosted.registry_name, new DoorMangroveFrosted() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveGlass.registry_name, new DoorMangroveGlass() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveHeart.registry_name, new DoorMangroveHeart() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveOrigin.registry_name, new DoorMangroveOrigin() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveRustic.registry_name, new DoorMangroveRustic() ),//BCPFINRLT
+			RegistryEntry.create( DoorMangroveShoji.registry_name, new DoorMangroveShoji() ),//BCPFINRLT
 			//Doors: Oak
 			RegistryEntry.create( DoorOakBlank.registry_name, new DoorOakBlank() ),//BCPFINRLT
 			RegistryEntry.create( DoorOakBookshelf.registry_name, new DoorOakBookshelf() ),//BCPFINRLT
@@ -787,6 +851,7 @@ public class ModBlocksRegisterFactory extends BlocksRegisterFactory {
 			RegistryEntry.create( MiniLodgeOuthouseCrimson.registry_name, new MiniLodgeOuthouseCrimson() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseDarkOak.registry_name, new MiniLodgeOuthouseDarkOak() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseJungle.registry_name, new MiniLodgeOuthouseJungle() ),//BCPFINRLT
+			RegistryEntry.create( MiniLodgeOuthouseMangrove.registry_name, new MiniLodgeOuthouseMangrove() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseOak.registry_name, new MiniLodgeOuthouseOak() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseSpruce.registry_name, new MiniLodgeOuthouseSpruce() ),//BCPFINRLT
 			RegistryEntry.create( MiniLodgeOuthouseWarped.registry_name, new MiniLodgeOuthouseWarped() ),//BCPFINRLT

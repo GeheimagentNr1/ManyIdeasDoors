@@ -1,0 +1,6 @@
+{
+	"parent":   "manyideas_doors:block/templates/doors/types/mangrove/door_mangrove_bottom_hinge",
+	"textures": {
+		"bottom": "manyideas_doors:block/doors/mangrove/bookshelf/door_mangrove_bookshelf_bottom"
+	}
+}

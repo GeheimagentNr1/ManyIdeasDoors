@@ -1,0 +1,32 @@
+{
+	"ambientocclusion": false,
+	"textures": {
+		"0": "manyideas_doors:block/big_doors/wooden/mangrove/big_door_mangrove_mid_bottom_mid",
+		"particle": "manyideas_doors:block/big_doors/wooden/mangrove/big_door_mangrove_mid_bottom_mid"
+	},
+	"elements": [
+		{
+			"name": "detail panel",
+			"from": [0, 0, 0.5],
+			"to": [16, 15, 2.5],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 1, 0, 16], "texture": "#0"},
+				"east": {"uv": [16, 1, 15, 16], "texture": "#0", "cullface": "west"},
+				"south": {"uv": [0, 1, 16, 16], "texture": "#0"},
+				"west": {"uv": [1, 1, 0, 16], "texture": "#0", "cullface": "east"},
+				"up": {"uv": [0, 1, 16, 2], "texture": "#0"},
+				"down": {"uv": [0, 15, 16, 16], "texture": "#0", "cullface": "down"}
+			}
+		},
+		{
+			"from": [0, 15, 1],
+			"to": [16, 16, 2],
+			"rotation": {"angle": 0, "axis": "y", "origin": [16, 0, 0]},
+			"faces": {
+				"north": {"uv": [16, 0, 0, 1], "texture": "#0"},
+				"south": {"uv": [0, 0, 16, 1], "texture": "#0"}
+			}
+		}
+	]
+}
