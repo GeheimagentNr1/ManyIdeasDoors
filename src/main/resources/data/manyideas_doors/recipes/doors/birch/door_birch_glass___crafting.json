@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_birch_glass",
+		"id":  "manyideas_doors:door_birch_glass",
 		"count": 2
 	}
 }

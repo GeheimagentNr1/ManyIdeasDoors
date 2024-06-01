@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_copper_barrel",
+		"id":  "manyideas_doors:door_copper_barrel",
 		"count": 2
 	}
 }

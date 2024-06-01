@@ -1,22 +1,26 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"CP",
 		"PP",
 		"CP"
 	],
-	"key":     {
+	"key": {
 		"C": {
 			"item": "manyideas_core:plate_copper"
 		},
 		"P": {
-			"type":      "recipes_lib:nbt",
-			"item":      "manyideas_core:planks_colored",
-			"nbt":       "{dye: {color: \"purple\"}}",
+			"type": "recipes_lib:components",
+			"item": {
+				"id": "manyideas_core:planks_colored",
+				"components": {
+					"manyideas_core:color": "purple"
+				}
+			},
 			"matchType": "CONTAINS"
 		}
 	},
-	"result":  {
-		"item": "manyideas_doors:big_door_fairy_tale"
+	"result": {
+		"id": "manyideas_doors:big_door_fairy_tale"
 	}
 }

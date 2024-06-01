@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_spruce_blank",
+		"id":  "manyideas_doors:door_spruce_blank",
 		"count": 2
 	}
 }

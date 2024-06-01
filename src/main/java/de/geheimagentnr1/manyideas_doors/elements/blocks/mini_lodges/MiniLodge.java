@@ -6,7 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
@@ -63,38 +65,35 @@ public abstract class MiniLodge extends MultiBlock {
 		);
 	}
 	
-	@SuppressWarnings( "deprecation" )
 	@NotNull
 	@Override
-	public InteractionResult use(
-		@NotNull BlockState state,
-		@NotNull Level level,
-		@NotNull BlockPos pos,
-		@NotNull Player player,
-		@NotNull InteractionHand hand,
-		@NotNull BlockHitResult hitResult ) {
+	protected InteractionResult useWithoutItem(
+		@NotNull BlockState pState,
+		@NotNull Level pLevel,
+		@NotNull BlockPos pPos,
+		@NotNull Player pPlayer,
+		@NotNull BlockHitResult pHitResult ) {
 		
-		if( state.getValue( X_SIZE ) != 0 || state.getValue( Y_SIZE ) == 2 || state.getValue( Z_SIZE ) == 2 ||
-			state.getValue( Z_SIZE ) != 1 ) {
+		if( pState.getValue( X_SIZE ) != 0 || pState.getValue( Y_SIZE ) == 2 || pState.getValue( Z_SIZE ) == 2 ||
+			pState.getValue( Z_SIZE ) != 1 ) {
 			return InteractionResult.PASS;
 		}
-		boolean open = !state.getValue( BlockStateProperties.OPEN );
+		boolean open = !pState.getValue( BlockStateProperties.OPEN );
 		runForBlocks(
-			level,
-			getZeroPos( state, pos ),
-			state.getValue( BlockStateProperties.HORIZONTAL_FACING ),
-			( x, y, z, blockPos ) -> level.setBlock(
+			pLevel,
+			getZeroPos( pState, pPos ),
+			pState.getValue( BlockStateProperties.HORIZONTAL_FACING ),
+			( x, y, z, blockPos ) -> pLevel.setBlock(
 				blockPos,
-				level.getBlockState( blockPos ).setValue( BlockStateProperties.OPEN, open ),
+				pLevel.getBlockState( blockPos ).setValue( BlockStateProperties.OPEN, open ),
 				3
 			),
 			true
 		);
-		DoorsHelper.playDoorSound( level, pos, type, player, open );
+		DoorsHelper.playDoorSound( pLevel, pPos, type, pPlayer, open );
 		return InteractionResult.SUCCESS;
 	}
 	
-	@SuppressWarnings( "deprecation" )
 	@Override
 	public void neighborChanged(
 		@NotNull BlockState state,
@@ -128,14 +127,8 @@ public abstract class MiniLodge extends MultiBlock {
 		}
 	}
 	
-	@SuppressWarnings( "deprecation" )
-	@Deprecated
 	@Override
-	public boolean isPathfindable(
-		@NotNull BlockState state,
-		@NotNull BlockGetter level,
-		@NotNull BlockPos pos,
-		@NotNull PathComputationType type ) {
+	protected boolean isPathfindable( @NotNull BlockState pState, @NotNull PathComputationType pPathComputationType ) {
 		
 		return false;
 	}

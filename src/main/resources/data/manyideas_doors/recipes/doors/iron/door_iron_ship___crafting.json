@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_iron_ship",
+		"id":  "manyideas_doors:door_iron_ship",
 		"count": 2
 	}
 }

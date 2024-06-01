@@ -16,7 +16,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:player_door_sensor",
+		"id":  "manyideas_doors:player_door_sensor",
 		"count": 2
 	}
 }

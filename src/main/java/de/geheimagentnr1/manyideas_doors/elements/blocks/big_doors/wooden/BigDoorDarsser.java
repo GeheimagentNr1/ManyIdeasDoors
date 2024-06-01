@@ -6,7 +6,9 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.SoundType;
@@ -66,33 +68,28 @@ public class BigDoorDarsser extends BigDoorWooden {
 	
 	@NotNull
 	@Override
-	public InteractionResult use(
-		@NotNull BlockState state,
-		@NotNull Level level,
-		@NotNull BlockPos pos,
-		@NotNull Player player,
-		@NotNull InteractionHand hand,
-		@NotNull BlockHitResult hitResult ) {
+	protected ItemInteractionResult useItemOn(
+		@NotNull ItemStack pStack,
+		@NotNull BlockState pState,
+		@NotNull Level pLevel,
+		@NotNull BlockPos pPos,
+		@NotNull Player pPlayer,
+		@NotNull InteractionHand pHand,
+		@NotNull BlockHitResult pHitResult ) {
 		
-		if( state.getValue( Z_SIZE ) == 1 && state.getValue( Y_SIZE ) != 2 ) {
-			return super.use( state, level, pos, player, hand, hitResult );
+		if( pState.getValue( Z_SIZE ) == 1 && pState.getValue( Y_SIZE ) != 2 ) {
+			return super.useItemOn( pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult );
 		}
-		return InteractionResult.PASS;
+		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
 	}
 	
-	@SuppressWarnings( "deprecation" )
-	@Deprecated
 	@Override
-	public boolean isPathfindable(
-		@NotNull BlockState state,
-		@NotNull BlockGetter level,
-		@NotNull BlockPos pos,
-		@NotNull PathComputationType type ) {
+	protected boolean isPathfindable( @NotNull BlockState pState, @NotNull PathComputationType pPathComputationType ) {
 		
-		return switch( type ) {
-			case LAND, AIR -> state.getValue( BlockStateProperties.OPEN ) &&
-				state.getValue( Z_SIZE ) == 1 &&
-				state.getValue( Y_SIZE ) != 2;
+		return switch( pPathComputationType ) {
+			case LAND, AIR -> pState.getValue( BlockStateProperties.OPEN ) &&
+				pState.getValue( Z_SIZE ) == 1 &&
+				pState.getValue( Y_SIZE ) != 2;
 			case WATER -> false;
 		};
 	}

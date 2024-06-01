@@ -1,15 +1,19 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"B",
 		"I",
 		"N"
 	],
-	"key":     {
+	"key": {
 		"B": {
-			"type":      "recipes_lib:nbt",
-			"item":      "manyideas_core:wood_colored",
-			"nbt":       "{dye: {color: \"black\"}}",
+			"type": "recipes_lib:components",
+			"item": {
+				"id": "manyideas_core:wood_colored",
+				"components": {
+					"manyideas_core:color": "black"
+				}
+			},
 			"matchType": "CONTAINS"
 		},
 		"I": {
@@ -19,7 +23,7 @@
 			"item": "minecraft:netherite_ingot"
 		}
 	},
-	"result":  {
-		"item": "manyideas_doors:door_special_portcullis"
+	"result": {
+		"id": "manyideas_doors:door_special_portcullis"
 	}
 }

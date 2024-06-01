@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_iron_bookshelf",
+		"id":  "manyideas_doors:door_iron_bookshelf",
 		"count": 2
 	}
 }

@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_mangrove_blank",
+		"id":  "manyideas_doors:door_mangrove_blank",
 		"count": 2
 	}
 }

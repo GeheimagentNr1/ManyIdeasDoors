@@ -14,7 +14,7 @@
 		}
 	},
 	"result":  {
-		"item":  "manyideas_doors:door_oak_glass",
+		"id":  "manyideas_doors:door_oak_glass",
 		"count": 2
 	}
 }
