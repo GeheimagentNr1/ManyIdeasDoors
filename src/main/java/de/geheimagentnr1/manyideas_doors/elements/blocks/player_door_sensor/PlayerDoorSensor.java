@@ -60,7 +60,7 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 		TranslationKeyHelper.generateMessageTranslationTextComponent( ManyIdeasDoors.MODID, "sensor_range" );
 	
 	@NotNull
-	private static final ResourceLocation ICON_TEXTURES = new ResourceLocation(
+	private static final ResourceLocation ICON_TEXTURES = ResourceLocation.fromNamespaceAndPath(
 		ManyIdeasCore.MODID,
 		"textures/gui/redstone_key/icons/icons_numbers.png"
 	);
