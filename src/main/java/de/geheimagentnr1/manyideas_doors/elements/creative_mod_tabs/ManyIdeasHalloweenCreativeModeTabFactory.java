@@ -2,9 +2,10 @@ package de.geheimagentnr1.manyideas_doors.elements.creative_mod_tabs;
 
 import de.geheimagentnr1.manyideas_doors.ManyIdeasDoors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocksRegisterFactory;
-import de.geheimagentnr1.minecraft_forge_api.elements.creative_mod_tabs.CreativeModeTabFactory;
-import de.geheimagentnr1.minecraft_forge_api.registry.RegistryEntry;
+import de.geheimagentnr1.manyideas_core.core.elements.creative_mod_tabs.CreativeModeTabFactory;
+import de.geheimagentnr1.manyideas_core.core.registry.RegistryEntry;
 import lombok.RequiredArgsConstructor;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import org.jetbrains.annotations.NotNull;
@@ -38,5 +39,12 @@ public class ManyIdeasHalloweenCreativeModeTabFactory implements CreativeModeTab
 	public List<RegistryEntry<Block>> getDisplayBlocks() {
 		
 		return modBlocksRegisterFactory.getBlocks();
+	}
+	
+	@NotNull
+	@Override
+	public List<RegistryEntry<Item>> getDisplayItems() {
+		
+		return List.of();
 	}
 }

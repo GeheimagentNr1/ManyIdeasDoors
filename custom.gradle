@@ -18,7 +18,7 @@ dependencies {
     runtimeOnly "de.geheimagentnr1.recipes_lib:RecipesLibrary-${minecraft_version}:${rl_version}"
     // compile against the JEI API but do not include it at runtime
     compileOnly "mezz.jei:jei-${jei_mc_version}-common-api:${jei_version}"
-    compileOnly "mezz.jei:jei-${jei_mc_version}-forge-api:${jei_version}"
-    // at runtime, use the full JEI jar for Forge
-    runtimeOnly "mezz.jei:jei-${jei_mc_version}-forge:${jei_version}"
+    compileOnly "mezz.jei:jei-${jei_mc_version}-neoforge-api:${jei_version}"
+    // at runtime, use the full JEI jar for NeoForge
+    runtimeOnly "mezz.jei:jei-${jei_mc_version}-neoforge:${jei_version}"
 }
