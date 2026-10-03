@@ -6,7 +6,8 @@ import net.minecraft.client.renderer.blockentity.AbstractEndPortalRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.state.EndPortalRenderState;
 import net.minecraft.client.renderer.feature.ModelFeatureRenderer;
-import net.minecraft.client.renderer.state.CameraRenderState;
+import net.minecraft.client.renderer.rendertype.RenderTypes;
+import net.minecraft.client.renderer.state.level.CameraRenderState;
 import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -46,21 +47,10 @@ public class DoorSpecialEndEntityRenderer
 		@NotNull SubmitNodeCollector submitNodeCollector,
 		@NotNull CameraRenderState cameraRenderState ) {
 		
+		//Full block (vanilla end portal: 0.375 - 0.75)
 		if( renderState.shouldRender ) {
-			super.submit( renderState, poseStack, submitNodeCollector, cameraRenderState );
+			submitCube( renderState.facesToShow, RenderTypes.endPortal(), poseStack, submitNodeCollector );
 		}
-	}
-	
-	@Override
-	protected float getOffsetUp() {
-		
-		return 1;
-	}
-	
-	@Override
-	protected float getOffsetDown() {
-		
-		return 0;
 	}
 	
 	public static class RenderState extends EndPortalRenderState {
