@@ -17,7 +17,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
@@ -64,7 +64,7 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 		TranslationKeyHelper.generateMessageTranslationTextComponent( ManyIdeasDoors.MODID, "sensor_range" );
 	
 	@NotNull
-	private static final ResourceLocation ICON_TEXTURES = ResourceLocation.fromNamespaceAndPath(
+	private static final Identifier ICON_TEXTURES = Identifier.fromNamespaceAndPath(
 		ManyIdeasCore.MODID,
 		"textures/gui/redstone_key/icons/icons_numbers.png"
 	);
@@ -282,7 +282,7 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 	
 	@NotNull
 	@Override
-	public ResourceLocation getIconTextures() {
+	public Identifier getIconTextures() {
 		
 		return ICON_TEXTURES;
 	}

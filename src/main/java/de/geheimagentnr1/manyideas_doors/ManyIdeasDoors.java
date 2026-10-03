@@ -4,7 +4,7 @@ package de.geheimagentnr1.manyideas_doors;
 import de.geheimagentnr1.manyideas_doors.elements.blocks.ModBlocksRegisterFactory;
 import de.geheimagentnr1.manyideas_doors.elements.creative_mod_tabs.ModCreativeModeTabRegisterFactory;
 import de.geheimagentnr1.manyideas_core.core.AbstractMod;
-import net.minecraft.resources.ResourceLocation;
+import net.minecraft.resources.Identifier;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
 import net.neoforged.fml.common.Mod;
@@ -24,9 +24,9 @@ public class ManyIdeasDoors extends AbstractMod {
 	}
 	
 	@NotNull
-	public static ResourceLocation modLoc( @NotNull String path ) {
+	public static Identifier modLoc( @NotNull String path ) {
 		
-		return ResourceLocation.fromNamespaceAndPath( MODID, path );
+		return Identifier.fromNamespaceAndPath( MODID, path );
 	}
 	
 	@NotNull
