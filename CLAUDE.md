@@ -2,11 +2,26 @@
 
 ## Projekt-Übersicht
 
-**ManyIdeas Doors** ist ein NeoForge Minecraft Mod für Minecraft 1.21.1.
+**ManyIdeas Doors** ist ein NeoForge Minecraft Mod.
 - **Mod ID**: `manyideas_doors`
 - **Package**: `de.geheimagentnr1.manyideas_doors`
-- **Java Version**: 21
-- **NeoForge Version**: 21.1.x
+- **Java Version**: 21 (`develop_26.1`/`develop_26.3`: 25, `jdk-25.0.4.7-hotspot`)
+- **NeoForge Version**: je Branch, siehe Tabelle
+
+| Branch | MC | Range | NeoForge (kompiliert gegen) | Core-Jar (`mic_minecraft_version`) | Hinweis |
+|---|---|---|---|---|---|
+| `develop_1.21.1` | 1.21.1 | `[1.21.1,1.21.2)` | `21.1.216` | 1.21.1 | Fix-Release 2.0.2 (Behutsamkeit große Birkentür, Modell-Fixes) |
+| `develop_1.21.2` | 1.21.2 - 1.21.3 | `[1.21.2,1.21.4)` | `21.2.1-beta` | 1.21.2 | Blöcke per Supplier registriert, Rezept-JSON, Klick-Ergebnisse, `neighborChanged`/`updateShape` |
+| `develop_1.21.4` | 1.21.4 | `[1.21.4,1.21.5)` | `21.4.158` | 1.21.4 | Client-Item-Definitionen, `RenderShape.INVISIBLE` |
+| `develop_1.21.5` | 1.21.5 - 1.21.8 | `[1.21.5,1.21.9)` | `21.5.98` | 1.21.5 | Ein Jar auf Core 1.21.5 **und** 1.21.6 (Bytecode identisch); `affectNeighborsAfterRemoval`, End-Portal-Renderer |
+| `develop_1.21.9` | 1.21.9 - 1.21.10 | `[1.21.9,1.21.11)` | `21.9.16-beta` | 1.21.9 | Submit-Renderer der End-Tür, `isClientSide()` |
+| `develop_1.21.11` | 1.21.11 | `[1.21.11,1.21.12)` | `21.11.45` | 1.21.11 | `Identifier` |
+| `develop_26.1` | 26.1 - 26.2 | `[26.1,26.3)` | `26.1.0.19-beta` (Java 25) | 26.1 | 26.x-Tooling, End-Tür `submitCube` |
+| `develop_26.3` | 26.3 | `[26.3,27)` | `26.3.0.36-beta` (Java 25) | 26.3 | Loot in beiden Formaten (`condition`/`match_block`), `isViewBlocking` mit 4 Parametern, kein Block-`codec()` |
+
+Alle 2.0.2, released 2026-10-03 (ingame getestet auf 1.21.1 - 26.3), ab 1.21.2 abhängig von ManyIdeasCore `[3.0.2,)`. Die Core-Abhängigkeit hängt an `mic_minecraft_version` statt `minecraft_version`, damit ein Doors-Jar mehrere MC-Versionen abdecken und `bincheck.ps1` andere Versionen setzen kann. Details: [`../Docs/migrations/1.21.1-to-1.21.2.md`](../Docs/migrations/1.21.1-to-1.21.2.md) 4i, [`../Docs/migrations/1.21.11-to-26.1.md`](../Docs/migrations/1.21.11-to-26.1.md).
+
+**Modelle:** UVs müssen in 0 - 16 liegen (ab 26.1 wird ein Modell sonst verworfen, verifiziert an der großen Fallgitter-Tür), keine Flächen mit `#missing`. **Loot:** große Türen droppen nur am Ursprungsblock (`x=0,y=0,z=0`); ab 26.3 zusätzlich als `match_block` im neuen Format.
 
 Bietet über 125 große Multiblock-Türen und normal große Türen.
 
@@ -78,7 +93,7 @@ Verschiedene Java-Versionen sind unter `C:\Program Files\Eclipse Adoptium` insta
 
 ```powershell
 # Java 21 für MC 1.20.5+ (NeoForge)
-$env:JAVA_HOME = "C:\Program Files\Eclipse Adoptium\jdk-21.0.9.10-hotspot"
+$env:JAVA_HOME = "C:\Program Files\Eclipse Adoptium\jdk-21.0.12.8-hotspot"
 ./gradlew build
 ```
 
@@ -100,7 +115,7 @@ Für Integration Tests in einer echten Minecraft-Umgebung:
 ./gradlew runGameTestServer
 ```
 
-GameTest-Klassen werden mit `@GameTestHolder` annotiert und liegen unter `src/main/java/.../elements/gametests/`.
+Der triviale GameTest wurde beim 1.21.2-Port entfernt (annotationsbasierte GameTests gibt es ab 1.21.5 nicht mehr).
 
 ### CI/CD (GitHub Actions)
 
