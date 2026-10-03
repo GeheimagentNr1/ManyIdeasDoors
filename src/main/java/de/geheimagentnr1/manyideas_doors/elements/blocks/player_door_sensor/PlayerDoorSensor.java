@@ -1,5 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor;
 
+import de.geheimagentnr1.manyideas_core.core.registry.RegistryHelper;
 import com.mojang.serialization.MapCodec;
 import de.geheimagentnr1.manyideas_core.ManyIdeasCore;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.BlockSide;
@@ -20,7 +21,6 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.RenderShape;
@@ -30,6 +30,9 @@ import net.minecraft.world.level.block.entity.BlockEntityTicker;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.util.RandomSource;
+import net.minecraft.world.level.ScheduledTickAccess;
+import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
@@ -92,7 +95,7 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 	public PlayerDoorSensor() {
 		
 		super(
-			BlockBehaviour.Properties.of()
+			RegistryHelper.withBlockId( BlockBehaviour.Properties.of() )
 				.mapColor( MapColor.NONE )
 				.strength( 5 )
 				.requiresCorrectToolForDrops()
@@ -193,11 +196,13 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 	@Override
 	public BlockState updateShape(
 		@NotNull BlockState state,
-		@NotNull Direction facing,
-		@NotNull BlockState facingState,
-		@NotNull LevelAccessor level,
+		@NotNull LevelReader level,
+		@NotNull ScheduledTickAccess tickAccess,
 		@NotNull BlockPos currentPos,
-		@NotNull BlockPos facingPos ) {
+		@NotNull Direction facing,
+		@NotNull BlockPos facingPos,
+		@NotNull BlockState facingState,
+		@NotNull RandomSource random ) {
 		
 		BlockState newState = setProperties( state, level, currentPos );
 		if( facingState.getBlock() == this ) {
@@ -207,7 +212,7 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 		}
 	}
 	
-	private BlockState setProperties( BlockState stateIn, LevelAccessor level, BlockPos currentPos ) {
+	private BlockState setProperties( BlockState stateIn, LevelReader level, BlockPos currentPos ) {
 		
 		Direction direction = stateIn.getValue( BlockStateProperties.HORIZONTAL_FACING );
 		BlockState leftState = level.getBlockState( currentPos.relative( direction.getCounterClockWise() ) );

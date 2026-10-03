@@ -1,7 +1,5 @@
 {
-	"type":       "manyideas_core:table_sawing_stone",
-	"ingredient": {
-		"item": "manyideas_doors:door_acacia_blank"
-	},
-	"result":     "manyideas_doors:door_acacia_cassette"
+	"type": "manyideas_core:table_sawing_stone",
+	"ingredient": "manyideas_doors:door_acacia_blank",
+	"result": "manyideas_doors:door_acacia_cassette"
 }

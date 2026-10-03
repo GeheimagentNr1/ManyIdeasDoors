@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"G",
 		"C",
 		"C"
 	],
-	"key":     {
-		"G": {
-			"item": "minecraft:glass"
-		},
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		}
+	"key": {
+		"G": "minecraft:glass",
+		"C": "manyideas_core:plate_copper"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_copper_ship",
+	"result": {
+		"id": "manyideas_doors:door_copper_ship",
 		"count": 2
 	}
 }

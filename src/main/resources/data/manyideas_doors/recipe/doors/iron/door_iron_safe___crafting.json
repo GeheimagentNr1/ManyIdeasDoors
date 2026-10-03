@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"I",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:plate_iron"
-		},
-		"I": {
-			"item": "minecraft:iron_ingot"
-		}
+	"key": {
+		"P": "manyideas_core:plate_iron",
+		"I": "minecraft:iron_ingot"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_iron_safe",
+	"result": {
+		"id": "manyideas_doors:door_iron_safe",
 		"count": 2
 	}
 }

@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"W",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_acacia"
-		},
-		"W": {
-			"item": "minecraft:white_wool"
-		}
+	"key": {
+		"P": "manyideas_core:panel_acacia",
+		"W": "minecraft:white_wool"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_acacia_shoji",
+	"result": {
+		"id": "manyideas_doors:door_acacia_shoji",
 		"count": 2
 	}
 }

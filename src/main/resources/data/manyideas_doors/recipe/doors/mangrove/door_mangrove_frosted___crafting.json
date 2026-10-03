@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"W",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_mangrove"
-		},
-		"W": {
-			"item": "minecraft:white_stained_glass"
-		}
+	"key": {
+		"P": "manyideas_core:panel_mangrove",
+		"W": "minecraft:white_stained_glass"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_mangrove_frosted",
+	"result": {
+		"id": "manyideas_doors:door_mangrove_frosted",
 		"count": 2
 	}
 }

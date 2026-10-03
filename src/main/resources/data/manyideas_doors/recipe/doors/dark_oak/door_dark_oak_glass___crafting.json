@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"G",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_dark_oak"
-		},
-		"G": {
-			"item": "minecraft:glass"
-		}
+	"key": {
+		"P": "manyideas_core:panel_dark_oak",
+		"G": "minecraft:glass"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_dark_oak_glass",
+	"result": {
+		"id": "manyideas_doors:door_dark_oak_glass",
 		"count": 2
 	}
 }

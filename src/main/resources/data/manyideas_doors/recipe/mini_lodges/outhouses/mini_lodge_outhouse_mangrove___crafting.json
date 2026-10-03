@@ -1,25 +1,17 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		" C ",
 		"PPP",
 		"WDP"
 	],
-	"key":     {
-		"C": {
-			"item": "minecraft:gray_concrete"
-		},
-		"P": {
-			"item": "minecraft:mangrove_planks"
-		},
-		"W": {
-			"item": "manyideas_core:wood_stripped_smooth_mangrove"
-		},
-		"D": {
-			"item": "manyideas_doors:door_mangrove_heart"
-		}
+	"key": {
+		"C": "minecraft:gray_concrete",
+		"P": "minecraft:mangrove_planks",
+		"W": "manyideas_core:wood_stripped_smooth_mangrove",
+		"D": "manyideas_doors:door_mangrove_heart"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:mini_lodge_outhouse_mangrove"
 	}
 }

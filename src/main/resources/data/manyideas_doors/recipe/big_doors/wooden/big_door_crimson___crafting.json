@@ -1,22 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"WP",
 		"GG",
 		"WP"
 	],
-	"key":     {
-		"W": {
-			"item": "manyideas_core:wood_stripped_smooth_crimson"
-		},
-		"P": {
-			"item": "manyideas_core:panel_crimson"
-		},
-		"G": {
-			"item": "minecraft:gold_ingot"
-		}
+	"key": {
+		"W": "manyideas_core:wood_stripped_smooth_crimson",
+		"P": "manyideas_core:panel_crimson",
+		"G": "minecraft:gold_ingot"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:big_door_crimson"
 	}
 }

@@ -1,19 +1,15 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"TT",
 		"II",
 		"II"
 	],
-	"key":     {
-		"T": {
-			"item": "minecraft:iron_trapdoor"
-		},
-		"I": {
-			"item": "manyideas_core:plate_iron"
-		}
+	"key": {
+		"T": "minecraft:iron_trapdoor",
+		"I": "manyideas_core:plate_iron"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:big_door_factory"
 	}
 }

@@ -7,7 +7,7 @@
 	],
 	"key": {
 		"B": {
-			"type": "recipes_lib:components",
+			"neoforge:ingredient_type": "recipes_lib:components",
 			"item": {
 				"id": "manyideas_core:wood_colored",
 				"components": {
@@ -16,12 +16,8 @@
 			},
 			"matchType": "CONTAINS"
 		},
-		"N": {
-			"item": "minecraft:netherite_ingot"
-		},
-		"I": {
-			"item": "minecraft:iron_bars"
-		}
+		"N": "minecraft:netherite_ingot",
+		"I": "minecraft:iron_bars"
 	},
 	"result": {
 		"id": "manyideas_doors:big_door_portcullis"

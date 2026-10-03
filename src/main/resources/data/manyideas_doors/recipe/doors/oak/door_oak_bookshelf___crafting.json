@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"B",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_oak"
-		},
-		"B": {
-			"item": "minecraft:bookshelf"
-		}
+	"key": {
+		"P": "manyideas_core:panel_oak",
+		"B": "minecraft:bookshelf"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_oak_bookshelf",
+	"result": {
+		"id": "manyideas_doors:door_oak_bookshelf",
 		"count": 2
 	}
 }

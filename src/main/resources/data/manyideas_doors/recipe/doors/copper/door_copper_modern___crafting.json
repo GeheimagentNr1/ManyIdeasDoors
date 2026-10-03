@@ -1,17 +1,15 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"C",
 		"C",
 		"C"
 	],
-	"key":     {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		}
+	"key": {
+		"C": "manyideas_core:plate_copper"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_copper_modern",
+	"result": {
+		"id": "manyideas_doors:door_copper_modern",
 		"count": 2
 	}
 }

@@ -7,7 +7,7 @@
 	],
 	"key": {
 		"P": {
-			"type": "recipes_lib:components",
+			"neoforge:ingredient_type": "recipes_lib:components",
 			"item": {
 				"id": "manyideas_core:planks_colored",
 				"components": {
@@ -16,12 +16,8 @@
 			},
 			"matchType": "CONTAINS"
 		},
-		"R": {
-			"item": "minecraft:red_dye"
-		},
-		"I": {
-			"item": "minecraft:iron_bars"
-		}
+		"R": "minecraft:red_dye",
+		"I": "minecraft:iron_bars"
 	},
 	"result": {
 		"id": "manyideas_doors:big_door_shiro"

@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"I",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_birch"
-		},
-		"I": {
-			"item": "minecraft:iron_ingot"
-		}
+	"key": {
+		"P": "manyideas_core:panel_birch",
+		"I": "minecraft:iron_ingot"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_birch_blank",
+	"result": {
+		"id": "manyideas_doors:door_birch_blank",
 		"count": 2
 	}
 }

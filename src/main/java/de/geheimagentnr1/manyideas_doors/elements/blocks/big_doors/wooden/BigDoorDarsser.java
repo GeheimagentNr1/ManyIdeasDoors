@@ -6,7 +6,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -68,7 +67,7 @@ public class BigDoorDarsser extends BigDoorWooden {
 	
 	@NotNull
 	@Override
-	protected ItemInteractionResult useItemOn(
+	protected InteractionResult useItemOn(
 		@NotNull ItemStack pStack,
 		@NotNull BlockState pState,
 		@NotNull Level pLevel,
@@ -80,7 +79,7 @@ public class BigDoorDarsser extends BigDoorWooden {
 		if( pState.getValue( Z_SIZE ) == 1 && pState.getValue( Y_SIZE ) != 2 ) {
 			return super.useItemOn( pStack, pState, pLevel, pPos, pPlayer, pHand, pHitResult );
 		}
-		return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+		return InteractionResult.TRY_WITH_EMPTY_HAND;
 	}
 	
 	@Override

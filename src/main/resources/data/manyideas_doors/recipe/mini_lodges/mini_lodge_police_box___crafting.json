@@ -1,22 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		" L ",
 		"DBD",
 		"DBD"
 	],
-	"key":     {
-		"L": {
-			"item": "minecraft:lantern"
-		},
-		"D": {
-			"item": "manyideas_doors:door_special_police_box"
-		},
-		"B": {
-			"item": "minecraft:lapis_block"
-		}
+	"key": {
+		"L": "minecraft:lantern",
+		"D": "manyideas_doors:door_special_police_box",
+		"B": "minecraft:lapis_block"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:mini_lodge_police_box"
 	}
 }

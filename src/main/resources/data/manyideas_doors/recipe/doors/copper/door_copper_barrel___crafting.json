@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"C",
 		"B",
 		"C"
 	],
-	"key":     {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		},
-		"B": {
-			"item": "minecraft:barrel"
-		}
+	"key": {
+		"C": "manyideas_core:plate_copper",
+		"B": "minecraft:barrel"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_copper_barrel",
+	"result": {
+		"id": "manyideas_doors:door_copper_barrel",
 		"count": 2
 	}
 }

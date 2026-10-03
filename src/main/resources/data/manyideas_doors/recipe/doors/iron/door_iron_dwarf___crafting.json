@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"R",
 		"P",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:plate_iron"
-		},
-		"R": {
-			"item": "minecraft:redstone"
-		}
+	"key": {
+		"P": "manyideas_core:plate_iron",
+		"R": "minecraft:redstone"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_iron_dwarf",
+	"result": {
+		"id": "manyideas_doors:door_iron_dwarf",
 		"count": 2
 	}
 }

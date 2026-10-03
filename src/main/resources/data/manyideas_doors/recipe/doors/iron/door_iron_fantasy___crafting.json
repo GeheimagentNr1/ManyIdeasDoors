@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"L",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:plate_iron"
-		},
-		"L": {
-			"item": "minecraft:lapis_block"
-		}
+	"key": {
+		"P": "manyideas_core:plate_iron",
+		"L": "minecraft:lapis_block"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_iron_fantasy",
+	"result": {
+		"id": "manyideas_doors:door_iron_fantasy",
 		"count": 2
 	}
 }

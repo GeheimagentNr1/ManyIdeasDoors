@@ -1,22 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"IGI",
 		"GDG",
 		"IGI"
 	],
-	"key":     {
-		"I": {
-			"item": "manyideas_core:plate_iron"
-		},
-		"G": {
-			"item": "minecraft:glass"
-		},
-		"D": {
-			"item": "minecraft:diamond"
-		}
+	"key": {
+		"I": "manyideas_core:plate_iron",
+		"G": "minecraft:glass",
+		"D": "minecraft:diamond"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:big_door_laboratory"
 	}
 }

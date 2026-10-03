@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"C",
 		"B",
 		"C"
 	],
-	"key":     {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		},
-		"B": {
-			"item": "minecraft:bricks"
-		}
+	"key": {
+		"C": "manyideas_core:plate_copper",
+		"B": "minecraft:bricks"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_copper_brick",
+	"result": {
+		"id": "manyideas_doors:door_copper_brick",
 		"count": 2
 	}
 }

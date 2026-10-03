@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"G",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_acacia"
-		},
-		"G": {
-			"item": "minecraft:glass"
-		}
+	"key": {
+		"P": "manyideas_core:panel_acacia",
+		"G": "minecraft:glass"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_acacia_glass",
+	"result": {
+		"id": "manyideas_doors:door_acacia_glass",
 		"count": 2
 	}
 }

@@ -1,19 +1,15 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"CG",
 		"CG",
 		"CG"
 	],
-	"key":     {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		},
-		"G": {
-			"item": "minecraft:glass"
-		}
+	"key": {
+		"C": "manyideas_core:plate_copper",
+		"G": "minecraft:glass"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:big_door_glass"
 	}
 }

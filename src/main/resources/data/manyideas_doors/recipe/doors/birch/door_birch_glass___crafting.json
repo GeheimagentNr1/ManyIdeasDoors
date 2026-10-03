@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"G",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:panel_birch"
-		},
-		"G": {
-			"item": "minecraft:glass"
-		}
+	"key": {
+		"P": "manyideas_core:panel_birch",
+		"G": "minecraft:glass"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_birch_glass",
+	"result": {
+		"id": "manyideas_doors:door_birch_glass",
 		"count": 2
 	}
 }

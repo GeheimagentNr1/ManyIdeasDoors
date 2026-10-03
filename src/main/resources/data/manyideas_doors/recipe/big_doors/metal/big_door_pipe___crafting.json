@@ -1,19 +1,15 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"CLC",
 		"CCC",
 		"CCC"
 	],
-	"key":     {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		},
-		"L": {
-			"item": "minecraft:lantern"
-		}
+	"key": {
+		"C": "manyideas_core:plate_copper",
+		"L": "minecraft:lantern"
 	},
-	"result":  {
+	"result": {
 		"id": "manyideas_doors:big_door_pipe"
 	}
 }

@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"C",
 		"S",
 		"C"
 	],
-	"key":     {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		},
-		"S": {
-			"item": "minecraft:smooth_sandstone"
-		}
+	"key": {
+		"C": "manyideas_core:plate_copper",
+		"S": "minecraft:smooth_sandstone"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_copper_smooth_sandstone",
+	"result": {
+		"id": "manyideas_doors:door_copper_smooth_sandstone",
 		"count": 2
 	}
 }

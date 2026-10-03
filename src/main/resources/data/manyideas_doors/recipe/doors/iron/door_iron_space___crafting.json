@@ -1,20 +1,16 @@
 {
-	"type":    "minecraft:crafting_shaped",
+	"type": "minecraft:crafting_shaped",
 	"pattern": [
 		"P",
 		"R",
 		"P"
 	],
-	"key":     {
-		"P": {
-			"item": "manyideas_core:plate_iron"
-		},
-		"R": {
-			"item": "minecraft:redstone_block"
-		}
+	"key": {
+		"P": "manyideas_core:plate_iron",
+		"R": "minecraft:redstone_block"
 	},
-	"result":  {
-		"id":  "manyideas_doors:door_iron_space",
+	"result": {
+		"id": "manyideas_doors:door_iron_space",
 		"count": 2
 	}
 }

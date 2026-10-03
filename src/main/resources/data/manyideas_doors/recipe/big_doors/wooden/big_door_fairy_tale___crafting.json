@@ -6,11 +6,9 @@
 		"CP"
 	],
 	"key": {
-		"C": {
-			"item": "manyideas_core:plate_copper"
-		},
+		"C": "manyideas_core:plate_copper",
 		"P": {
-			"type": "recipes_lib:components",
+			"neoforge:ingredient_type": "recipes_lib:components",
 			"item": {
 				"id": "manyideas_core:planks_colored",
 				"components": {
