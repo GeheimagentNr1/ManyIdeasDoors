@@ -32,7 +32,7 @@ public abstract class MiniLodge extends MultiBlock {
 	
 	protected MiniLodge( @NotNull BlockBehaviour.Properties _properties, @NotNull BlockSetType _type ) {
 		
-		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos ) -> false ) );
+		super( _properties.noOcclusion().isViewBlocking( ( state, level, pos, nearPlaneBox ) -> false ) );
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.OPEN, false )
 			.setValue( BlockStateProperties.POWERED, false ) );
 		type = _type;

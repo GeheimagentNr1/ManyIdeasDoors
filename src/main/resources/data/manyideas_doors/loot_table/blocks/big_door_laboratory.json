@@ -1,29 +1,40 @@
 {
-	"type":  "minecraft:block",
+	"type": "minecraft:block",
 	"pools": [
 		{
-			"rolls":      1,
-			"entries":    [
+			"rolls": 1,
+			"entries": [
 				{
-					"type":       "minecraft:item",
+					"type": "minecraft:item",
 					"conditions": [
 						{
-							"condition":  "minecraft:block_state_property",
-							"block":      "manyideas_doors:big_door_laboratory",
+							"condition": "minecraft:block_state_property",
+							"block": "manyideas_doors:big_door_laboratory",
 							"properties": {
 								"y": "0",
 								"z": "0"
 							}
 						}
 					],
-					"name":       "manyideas_doors:big_door_laboratory"
+					"name": "manyideas_doors:big_door_laboratory",
+					"condition": {
+						"type": "minecraft:match_block",
+						"blocks": "manyideas_doors:big_door_laboratory",
+						"state": {
+							"y": "0",
+							"z": "0"
+						}
+					}
 				}
 			],
 			"conditions": [
 				{
 					"condition": "minecraft:survives_explosion"
 				}
-			]
+			],
+			"condition": {
+				"type": "minecraft:survives_explosion"
+			}
 		}
 	]
 }

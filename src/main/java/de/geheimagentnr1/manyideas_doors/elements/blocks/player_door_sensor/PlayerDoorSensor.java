@@ -1,7 +1,6 @@
 package de.geheimagentnr1.manyideas_doors.elements.blocks.player_door_sensor;
 
 import de.geheimagentnr1.manyideas_core.core.registry.RegistryHelper;
-import com.mojang.serialization.MapCodec;
 import de.geheimagentnr1.manyideas_core.ManyIdeasCore;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.BlockSide;
 import de.geheimagentnr1.manyideas_core.elements.block_state_properties.ModBlockStateProperties;
@@ -54,9 +53,6 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 	public static final String registry_name = "player_door_sensor";
 	
 	@NotNull
-	public static final MapCodec<PlayerDoorSensor> CODEC = simpleCodec( properties -> new PlayerDoorSensor() );
-	
-	@NotNull
 	static final IntegerProperty SENSOR_RANGE = IntegerProperty.create( "sensor_range", 1, 3 );
 	
 	@NotNull
@@ -101,17 +97,11 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 				.strength( 5 )
 				.requiresCorrectToolForDrops()
 				.noOcclusion()
-				.isViewBlocking( ( state, level, pos ) -> false )
+				.isViewBlocking( ( state, level, pos, nearPlaneBox ) -> false )
 				.sound( SoundType.METAL )
 		);
 		registerDefaultState( defaultBlockState().setValue( BlockStateProperties.POWERED, false )
 			.setValue( SENSOR_RANGE, 1 ) );
-	}
-	
-	@Override
-	protected MapCodec<? extends BaseEntityBlock> codec() {
-		
-		return CODEC;
 	}
 	
 	@NotNull

@@ -1,15 +1,15 @@
 {
-	"type":  "minecraft:block",
+	"type": "minecraft:block",
 	"pools": [
 		{
-			"rolls":      1,
-			"entries":    [
+			"rolls": 1,
+			"entries": [
 				{
-					"type":       "minecraft:item",
+					"type": "minecraft:item",
 					"conditions": [
 						{
-							"condition":  "minecraft:block_state_property",
-							"block":      "manyideas_doors:big_door_glass",
+							"condition": "minecraft:block_state_property",
+							"block": "manyideas_doors:big_door_glass",
 							"properties": {
 								"x": "0",
 								"y": "0",
@@ -17,14 +17,26 @@
 							}
 						}
 					],
-					"name":       "manyideas_doors:big_door_glass"
+					"name": "manyideas_doors:big_door_glass",
+					"condition": {
+						"type": "minecraft:match_block",
+						"blocks": "manyideas_doors:big_door_glass",
+						"state": {
+							"x": "0",
+							"y": "0",
+							"z": "0"
+						}
+					}
 				}
 			],
 			"conditions": [
 				{
 					"condition": "minecraft:survives_explosion"
 				}
-			]
+			],
+			"condition": {
+				"type": "minecraft:survives_explosion"
+			}
 		}
 	]
 }
