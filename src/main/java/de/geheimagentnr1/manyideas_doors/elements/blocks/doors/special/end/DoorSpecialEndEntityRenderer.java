@@ -4,6 +4,7 @@ import com.mojang.blaze3d.vertex.PoseStack;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.client.renderer.blockentity.TheEndPortalRenderer;
+import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 
@@ -22,10 +23,11 @@ public class DoorSpecialEndEntityRenderer extends TheEndPortalRenderer<DoorSpeci
 		@NotNull PoseStack poseStack,
 		@NotNull MultiBufferSource buffer,
 		int combinedLight,
-		int combinedOverlay ) {
+		int combinedOverlay,
+		@NotNull Vec3 cameraPos ) {
 		
 		if( tileEntity.shouldRender() ) {
-			super.render( tileEntity, partialTicks, poseStack, buffer, combinedLight, combinedOverlay );
+			super.render( tileEntity, partialTicks, poseStack, buffer, combinedLight, combinedOverlay, cameraPos );
 		}
 	}
 	

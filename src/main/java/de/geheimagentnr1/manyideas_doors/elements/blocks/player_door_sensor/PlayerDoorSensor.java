@@ -16,6 +16,7 @@ import de.geheimagentnr1.manyideas_core.core.util.TranslationKeyHelper;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.context.BlockPlaceContext;
@@ -240,16 +241,13 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 		}
 	}
 	
-	@SuppressWarnings( "deprecation" )
 	@Override
-	public void onRemove(
+	protected void affectNeighborsAfterRemoval(
 		@NotNull BlockState state,
-		@NotNull Level level,
+		@NotNull ServerLevel level,
 		@NotNull BlockPos pos,
-		@NotNull BlockState newState,
-		boolean isMoving ) {
+		boolean movedByPiston ) {
 		
-		super.onRemove( state, level, pos, newState, isMoving );
 		notifyNeighbors( level, pos, this, state.getValue( BlockStateProperties.HORIZONTAL_FACING ) );
 	}
 	
