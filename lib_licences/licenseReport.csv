@@ -115,7 +115,7 @@ LWJGL - OpenGL bindings,"The most widely adopted 2D and 3D graphics API in the i
 LWJGL - stb bindings,"Single-file public domain libraries for fonts, images, ogg vorbis files and more.",3.3.3,Ioannis Tsakpinis,https://www.lwjgl.org,,BSD-3-Clause,https://www.lwjgl.org/license,org.lwjgl:lwjgl-stb:3.3.3
 LWJGL - Tiny File Dialogs bindings,Provides basic modal dialogs.,3.3.3,Ioannis Tsakpinis,https://www.lwjgl.org,,BSD-3-Clause,https://www.lwjgl.org/license,org.lwjgl:lwjgl-tinyfd:3.3.3
 LZ4 and xxHash,Java ports and bindings of the LZ4 compression algorithm and the xxHash hashing algorithm,1.8.0,"Adrien Grand,Rei Odaira",https://github.com/lz4/lz4-java,,"The Apache Software License, Version 2.0",http://www.apache.org/licenses/LICENSE-2.0.txt,org.lz4:lz4-java:1.8.0
-ManyIdeasCore-1.21.2,,3.0.1,,,,,,de.geheimagentnr1.manyideas_core:ManyIdeasCore-1.21.2:3.0.1
+ManyIdeasCore-1.21.5,,3.0.2,,,,,,de.geheimagentnr1.manyideas_core:ManyIdeasCore-1.21.5:3.0.2
 Maven Artifact,"Maven is a software build management and
     comprehension tool. Based on the concept of a project object model:
     builds, dependency management, documentation creation, site
