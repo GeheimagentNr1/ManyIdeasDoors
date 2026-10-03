@@ -33,7 +33,7 @@ public class PlayerDoorSensorEntity extends BlockEntity {
 		@NotNull BlockState state,
 		@NotNull PlayerDoorSensorEntity entity ) {
 		
-		if( Objects.requireNonNull( level ).isClientSide ) {
+		if( Objects.requireNonNull( level ).isClientSide() ) {
 			return;
 		}
 		entity.update_timer--;

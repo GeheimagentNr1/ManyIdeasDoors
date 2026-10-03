@@ -153,7 +153,7 @@ public class PlayerDoorSensor extends BaseEntityBlock implements BlockItemInterf
 		@NotNull BlockState state,
 		@NotNull BlockEntityType<T> blockEntityType ) {
 		
-		return level.isClientSide ? null : createTickerHelper(
+		return level.isClientSide() ? null : createTickerHelper(
 			blockEntityType,
 			ModBlocksRegisterFactory.PLAYER_DOOR_SENSOR_ENTITY,
 			PlayerDoorSensorEntity::tick
