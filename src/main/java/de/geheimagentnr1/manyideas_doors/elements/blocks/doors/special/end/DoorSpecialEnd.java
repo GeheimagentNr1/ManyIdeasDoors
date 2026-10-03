@@ -54,7 +54,7 @@ public class DoorSpecialEnd extends DoubleDoorBlock implements EntityBlock {
 		if( state.getValue( OPEN ) ) {
 			return RenderShape.MODEL;
 		}
-		return RenderShape.ENTITYBLOCK_ANIMATED;
+		return RenderShape.INVISIBLE;
 	}
 	
 	@NotNull
