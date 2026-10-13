@@ -1,145 +1,52 @@
 # CLAUDE.md - ManyIdeas Doors
 
-## Projekt-Übersicht
+Über 125 Türen: große Mehrblock-Türen (Holz und Metall), normal große Holz-/Metall-/Spezial-Türen (u. a. End-Tür mit End-Portal-Renderer, Polizeibox, Fallgitter), Mini-Häuschen (Plumpsklos, Polizeibox) und ein Spieler-Tür-Sensor. Mod-ID `manyideas_doors`, Package `de.geheimagentnr1.manyideas_doors`, Client+Server. Baut vollständig auf ManyIdeasCore auf.
 
-**ManyIdeas Doors** ist ein NeoForge Minecraft Mod.
-- **Mod ID**: `manyideas_doors`
-- **Package**: `de.geheimagentnr1.manyideas_doors`
-- **Java Version**: 21 (`develop_26.1`/`develop_26.3`: 25, `jdk-25.0.4.7-hotspot`)
-- **NeoForge Version**: je Branch, siehe Tabelle
+Diese Datei ist auf allen `develop_*`-Branches identisch; Quelle: `../Docs/mod-claude/ManyIdeasDoors.md` (Änderungen dort, dann `Docs/tools/sync_mod_claude_md.sh`). Versionsstand: [`../Docs/VERSIONEN.md`](../Docs/VERSIONEN.md).
 
-| Branch | MC | Range | NeoForge (kompiliert gegen) | Core-Jar (`mic_minecraft_version`) | Hinweis |
-|---|---|---|---|---|---|
-| `develop_1.21.1` | 1.21.1 | `[1.21.1,1.21.2)` | `21.1.216` | 1.21.1 | Fix-Release 2.0.2 (Behutsamkeit große Birkentür, Modell-Fixes) |
-| `develop_1.21.2` | 1.21.2 - 1.21.3 | `[1.21.2,1.21.4)` | `21.2.1-beta` | 1.21.2 | Blöcke per Supplier registriert, Rezept-JSON, Klick-Ergebnisse, `neighborChanged`/`updateShape` |
-| `develop_1.21.4` | 1.21.4 | `[1.21.4,1.21.5)` | `21.4.158` | 1.21.4 | Client-Item-Definitionen, `RenderShape.INVISIBLE` |
-| `develop_1.21.5` | 1.21.5 - 1.21.8 | `[1.21.5,1.21.9)` | `21.5.98` | 1.21.5 | Ein Jar auf Core 1.21.5 **und** 1.21.6 (Bytecode identisch); `affectNeighborsAfterRemoval`, End-Portal-Renderer |
-| `develop_1.21.9` | 1.21.9 - 1.21.10 | `[1.21.9,1.21.11)` | `21.9.16-beta` | 1.21.9 | Submit-Renderer der End-Tür, `isClientSide()` |
-| `develop_1.21.11` | 1.21.11 | `[1.21.11,1.21.12)` | `21.11.45` | 1.21.11 | `Identifier` |
-| `develop_26.1` | 26.1 - 26.2 | `[26.1,26.3)` | `26.1.0.19-beta` (Java 25) | 26.1 | 26.x-Tooling, End-Tür `submitCube` |
-| `develop_26.3` | 26.3 | `[26.3,27)` | `26.3.0.36-beta` (Java 25) | 26.3 | Loot in beiden Formaten (`condition`/`match_block`), `isViewBlocking` mit 4 Parametern, kein Block-`codec()` |
+## Versionen
 
-Alle 2.0.2, released 2026-10-03 (ingame getestet auf 1.21.1 - 26.3), ab 1.21.2 abhängig von ManyIdeasCore `[3.0.2,)`. Die Core-Abhängigkeit hängt an `mic_minecraft_version` statt `minecraft_version`, damit ein Doors-Jar mehrere MC-Versionen abdecken und `bincheck.ps1` andere Versionen setzen kann. Details: [`../Docs/migrations/1.21.1-to-1.21.2.md`](../Docs/migrations/1.21.1-to-1.21.2.md) 4i, [`../Docs/migrations/1.21.11-to-26.1.md`](../Docs/migrations/1.21.11-to-26.1.md).
-
-**Modelle:** UVs müssen in 0 - 16 liegen (ab 26.1 wird ein Modell sonst verworfen, verifiziert an der großen Fallgitter-Tür), keine Flächen mit `#missing`. **Loot:** große Türen droppen nur am Ursprungsblock (`x=0,y=0,z=0`); ab 26.3 zusätzlich als `match_block` im neuen Format.
-
-Bietet über 125 große Multiblock-Türen und normal große Türen.
+- Jars, Branches, Ranges und Tags: [`../Docs/VERSIONEN.md`](../Docs/VERSIONEN.md). NeoForge ab `develop_1.21.1`, Forge bis `develop_1.21` plus `develop_1.21.1_forge`.
+- Jede Doors-Version braucht das **passende Core-Jar**: `custom.gradle` bindet `ManyIdeasCore-<mc>:${mic_version}` (`implementation`) und `RecipesLibrary-<mc>:${rl_version}` (nur `runtimeOnly`) aus `ModdingMavenRepositories`. Bis 1.21.1 (auch Forge) ist `<mc>` = `${minecraft_version}`, ab 1.21.2 `${mic_minecraft_version}` bzw. `${rl_minecraft_version}` - bewusst getrennt von `minecraft_version`: ein Doors-Jar wird gegen das Core-Jar der niedrigsten Version kompiliert und kann mehrere Core-Jars abdecken (z. B. ein Doors-Jar 1.21.5 - 1.21.8 auf Core 1.21.5 und 1.21.6); `bincheck.ps1` setzt die Variable für Zwischenversionen.
+- Die 1.21.1-Releases bis 2.0.1 hatten Range bis 1.21.10, laden wegen Core aber nur auf 1.21.1.
+- CurseForge-Projekt `433643`, Modrinth `B4U5vxjd`.
 
 ## Abhängigkeiten
 
-- **ManyIdeas Core** (`manyideas_core`) - Required
-- **Recipes Library** (`recipes_lib`) - Required
-
-## Projektstruktur
-
-```
-src/main/java/de/geheimagentnr1/manyideas_doors/
-├── ManyIdeasDoors.java                    # Haupt-Mod-Klasse (erweitert AbstractMod)
-└── elements/
-    ├── blocks/                            # Block-Definitionen
-    │   ├── ModBlocksRegisterFactory.java  # Block-Registry
-    │   ├── big_doors/                     # Große Multiblock-Türen
-    │   ├── mini_lodges/                   # Mini-Häuschen (Outhouses, Police Box)
-    │   └── player_door_sensor/            # Spieler-Tür-Sensor mit BlockEntity
-    └── creative_mod_tabs/                 # Creative-Tab Registration
-```
+- **ManyIdeasCore** (`manyideas_core`, required) - Framework, Tür-Templates, Tischsägen-Rezepttypen.
+- **RecipesLibrary** (`recipes_lib`, required) - nur JSON: Ingredient `recipes_lib:components` in einigen Rezepten (gefärbte Dielen mit `manyideas_core:color` als Zutat).
+- Forge 1.20 - 1.21.1-Forge zusätzlich MinecraftForgeAPI, siehe [`../Docs/forge/README.md`](../Docs/forge/README.md).
 
 ## Architektur
 
-Dieser Mod erweitert `AbstractMod` aus ManyIdeas Core und nutzt dessen Registry-System:
-```java
-@Mod( ManyIdeasDoors.MODID )
-public class ManyIdeasDoors extends AbstractMod {
-    @Override
-    protected void initMod() {
-        ModBlocksRegisterFactory modBlocksRegisterFactory = registerEventHandler( new ModBlocksRegisterFactory() );
-        registerEventHandler( new ModCreativeModeTabRegisterFactory( modBlocksRegisterFactory ) );
-    }
-}
-```
+- `ManyIdeasDoors` erweitert Core-`AbstractMod` (NeoForge: aus Core; Forge 1.20+: aus MinecraftForgeAPI) und registriert `ModBlocksRegisterFactory` + `ModCreativeModeTabRegisterFactory`.
+- `elements/blocks/big_doors/{wooden,metal}/` - große Türen, erweitern Core-`BigDoor` (`MultiBlock`, `RedstoneKeyable`).
+- `elements/blocks/doors/<holzart|iron|copper|special>/` - normal große Türen auf Basis von `DoorWooden`/`DoorMetal` bzw. Core-`DoubleDoorBlock`; `special/end/` mit BlockEntity und End-Portal-Renderer.
+- `elements/blocks/mini_lodges/` - Mini-Häuschen (Core-`MultiBlock`), `player_door_sensor/` - Sensor mit BlockEntity (`PlayerDoorSensorEntity`), gibt Redstone aus, wenn Spieler im Erfassungsbereich (Blockstate `SENSOR_RANGE`) stehen.
+- `elements/creative_mod_tabs/` (Factory-Klasse heißt historisch `ManyIdeasHalloweenCreativeModeTabFactory`); `getDisplayItems()` bleibt leer, Blöcke kommen über `getDisplayBlocks()`.
+- Ressourcen: viele Rezepte vom Typ `manyideas_core:table_sawing_stone`/`_diamond`; `Entfernt/` enthält alte, nicht kompilierte Dateien.
 
-## Code-Stil
+## Funktionen, Befehle, Konfiguration
 
-- **Annotations**: `@NotNull` aus `org.jetbrains.annotations`
-- **Lombok**: Projekt nutzt Lombok
-- **Formatierung**: Leerzeichen nach `(` und vor `)` bei Methodenaufrufen
-- **Imports**: Keine Wildcard-Imports
+Keine Befehle, keine Config. Türen öffnen per Hand, Redstone oder beides - umschaltbar mit dem Redstone-Schlüssel aus Core.
 
-## Build & Test
+## Fallstricke
 
-```bash
-./gradlew build
-./gradlew runClient
-./gradlew runServer
-./gradlew runData
-```
+- **Registrierung ab 1.21.2:** Einträge nur als `RegistryEntry.create( name, () -> new X() )`; die ID setzen die Core-Templates. Eine Doors-Änderung setzt oft eine Core-Änderung voraus - dann Core zuerst bauen/veröffentlichen.
+- **Loot:** große Türen droppen nur am Ursprungsblock (`x=0,y=0,z=0`); ab 26.3 Loot-Tabellen in beiden Formaten (`block_state_property`/`conditions` und `match_block`/`condition`). Behutsamkeit (große Birkentür) nur im Prädikat-Format `"predicates": { "minecraft:enchantments": [..] }`.
+- **Modelle:** UVs nur 0 - 16 (ab 26.1 sonst verworfen, große Fallgitter-Tür), keine Flächen mit `#missing`. Fehler stehen nur im Client-Log.
+- **Klick-Ergebnisse** ab 1.21.2 und Wasser/Eimer an Mehrblöcken regelt Core (siehe Core-CLAUDE.md); Doors-Fehler in diesen Bereichen meist dort beheben.
+- 26.3: `isViewBlocking`-Lambda mit 4 Parametern, kein Block-`codec()`.
+- Rezept-JSON ab 1.21.2: Custom-Ingredients über `"neoforge:ingredient_type"`, Vanilla-Ingredients als String ([`../Docs/migrations/1.21.1-to-1.21.2.md`](../Docs/migrations/1.21.1-to-1.21.2.md) 3).
 
-## Deployment
+## Testen
 
-- **CurseForge**: `./gradlew curseforge`
-- **Modrinth**: `./gradlew modrinth`
+- Allgemein: [`../Docs/testing/README.md`](../Docs/testing/README.md). Doors immer mit dem passenden Core- und RecipesLibrary-Jar in Server-Pack und Client-Instanz.
+- Prüfpunkte: große Tür setzen/öffnen/abbauen (ein Drop), Explosion, Redstone-Schlüssel, End-Tür-Renderer, Spieler-Sensor, Tischsägen-Rezepte und JEI, Rezepte mit `recipes_lib:components` (gefärbte Dielen).
+- Server-Smoke `Docs/testing/tools/neoforge_smoke_all.sh` setzt eine `big_door_acacia` und prüft, dass Wasser sie nicht entfernt; RCON-Loot-Test: `setblock` + `loot spawn .. mine ..` (Nicht-Ursprungsteil → 0 Drops, Ursprung → 1).
 
-## Wichtige Hinweise
+## Links
 
-1. **Abhängig von ManyIdeas Core**: Nutzt `AbstractMod` und Registry-Patterns aus dem Core-Mod
-2. **Multiblock-Türen**: Große Türen bestehen aus mehreren Blöcken
-3. **BlockEntities**: `PlayerDoorSensor` hat eine zugehörige `PlayerDoorSensorEntity`
-
-## Testing
-
-### Java-Versionen
-
-Verschiedene Java-Versionen sind unter `C:\Program Files\Eclipse Adoptium` installiert. Für einen Gradle-Build muss die passende Java-Version gewählt werden:
-
-```powershell
-# Java 21 für MC 1.20.5+ (NeoForge)
-$env:JAVA_HOME = "C:\Program Files\Eclipse Adoptium\jdk-21.0.12.8-hotspot"
-./gradlew build
-```
-
-### Unit Tests (JUnit 5)
-
-Für reine Logik-Tests ohne Minecraft-Abhängigkeiten:
-
-```bash
-./gradlew test
-```
-
-Tests liegen unter `src/test/java/`. Ergebnisse: `build/reports/tests/test/index.html`
-
-### NeoForge GameTest Framework
-
-Für Integration Tests in einer echten Minecraft-Umgebung:
-
-```bash
-./gradlew runGameTestServer
-```
-
-Der triviale GameTest wurde beim 1.21.2-Port entfernt (annotationsbasierte GameTests gibt es ab 1.21.5 nicht mehr).
-
-### CI/CD (GitHub Actions)
-
-Der Workflow `.github/workflows/build-and-test.yml` führt automatisch aus:
-1. **Build**: Kompiliert den Mod
-2. **Unit Tests**: Führt JUnit Tests aus
-3. **GameTests**: Startet GameTestServer (optional)
-
-### Was kann automatisiert getestet werden?
-
-| Aspekt | Automatisiert? | Methode |
-|--------|----------------|---------|
-| Utility-Klassen | ✅ | JUnit |
-| Config-Parsing | ✅ | JUnit |
-| Commands | ✅ | GameTest |
-| Block/Item-Verhalten | ✅ | GameTest |
-| Multi-MC-Version | ⚠️ Pro Branch | CI Matrix |
-
-## Referenzen
-
-- [NeoForge Migration Primer](https://docs.neoforged.net/primer/docs/) — Dokumentiert API-Aenderungen zwischen Minecraft/NeoForge-Versionen; nuetzlich fuer die Pruefung von Breaking Changes beim Upgrade auf neue Versionen
-
----
-
-## Wissensdatenbank
-
-Versionsübergreifende Migrations- und Entwicklungs-Erkenntnisse (Breaking Changes, Fixes, Testumgebungs-Patterns) werden zentral in [`../Docs/`](../Docs/) gepflegt. Bei neuen relevanten Erkenntnissen dort ergänzen, nicht nur hier.
+- Wiki: https://github.com/GeheimagentNr1/ManyIdeasDoors/wiki
+- CurseForge: https://www.curseforge.com/minecraft/mc-mods/many-ideas-doors, Modrinth: https://modrinth.com/mod/B4U5vxjd
+- [`../Docs/migrations/1.21.1-to-1.21.2.md`](../Docs/migrations/1.21.1-to-1.21.2.md) 4i, [`../Docs/migrations/1.21.11-to-26.1.md`](../Docs/migrations/1.21.11-to-26.1.md), [`../Docs/migrations/BREAKING_CHANGES.md`](../Docs/migrations/BREAKING_CHANGES.md)
